@@ -8,10 +8,57 @@ $white: #e8e5e5;
 $animationTime: 0.4s;
 
 
+// ================================================================================
+//                     FLOATING WINDOWS
+// ================================================================================
 .container {
   position: relative;
   width: 100%;
   height: 100vh;
+}
+
+.box {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.box-text {
+  color: $white;
+  padding: 2rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.box-btn {
+  margin: 2rem;
+  padding: 0;
+  font-size: 1rem;
+  display: block;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #046e04;
+  color: $white;
+  overflow: hidden;
+  transition: $animationTime;
+  opacity: 0;
+}
+
+.left {
+  align-self: flex-end;
+}
+.right {
+ align-self: flex-start;
 }
 
 .overlay-left {
@@ -27,10 +74,10 @@ $animationTime: 0.4s;
 }
 
 .overlay-left:hover {
-  .text-container > p {
+  .box-text {
     opacity: 1;
   }
-  .btn {
+  .box-btn {
     opacity: 1;
   }
 }
@@ -57,59 +104,16 @@ $animationTime: 0.4s;
   left: 0;
 }
 
-.text-container {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  width: 600px;
-  height: 300px;
-  color: $white;
-  text-align: center;
-}
-
-.text-container > p {
-  position: absolute;
-  left: 45%;
-  top: 65%;
-  opacity: 0;
-}
-
-
 .overlay-right:hover {
-  .text-container > p {
+  .box-text {
     opacity: 1
   }
-  .btn {
+  .box-btn {
     opacity: 1;
   }
 }
 
-.btn {
-  font-size: 1rem;
-  position: absolute;
-  top: 80%;
-  width: 150px;
-  height: 50px;
-  line-height: 50px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  cursor: pointer;
-  background-color: #046e04;
-  color: $white;
-  overflow: hidden;
-  transition: $animationTime;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  opacity: 0;
-}
- .btn-left {
-  left: 80%;
-}
- .btn-right {
-   left: 20%;
- }
-.btn:hover , .btn-mobile:hover {
+.box-btn:hover , .btn-mobile:hover {
   background-color: $dark-green;
 }
 
@@ -130,6 +134,9 @@ $animationTime: 0.4s;
   color: $white;
 }
 
+// ================================================================================
+//                     MAIN CONTENT
+// ================================================================================
 .cinemas-container {
   margin: 0;
   padding: 0;
@@ -156,6 +163,9 @@ $animationTime: 0.4s;
   object-fit: cover;
 }
 
+// ================================================================================
+//                     FOR MOBILE
+// ================================================================================
 @media (max-width: 650px) {
   .cinemas-container {
     flex-direction: column;
@@ -174,7 +184,7 @@ $animationTime: 0.4s;
 
   .overlay-left ,
   .overlay-right ,
-  .text-container {
+  .box-text {
     display: none;
   }
 

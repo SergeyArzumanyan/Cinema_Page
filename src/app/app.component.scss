@@ -1,7 +1,9 @@
 $gray: #3a3434;
 $dark-gray: #1f1d1d;
 $orange: #b0650c;
+$dark-orange: #602103;
 $green: #106b10;
+$dark-green: #063a06;
 $white: #e8e5e5;
 $animationTime: 0.4s;
 
@@ -59,7 +61,6 @@ $animationTime: 0.4s;
 .login {
   position: relative;
   color: $green;
-  border-radius: 50px;
 }
 
 .login > div {
@@ -118,6 +119,9 @@ $animationTime: 0.4s;
   100% { opacity: 1; }
 }
 
+// ================================================================================
+//                     FOR MOBILE
+// ================================================================================
 @media (max-width: 650px) {
   .empty-block {
     display: block;
