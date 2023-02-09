@@ -1,11 +1,15 @@
 <header>
   <nav>
     <ul class="nav-ul">
-      <li class="nav-item brand-logo"><a [routerLink]="['/cinemas']" class="nav-link">Logo</a></li>
+      <li class="nav-item brand-name"><a [routerLink]="['/cinemas']" class="nav-link">BrandName</a></li>
+      <div class="empty-block"></div>
       <li class="nav-item"><a [routerLink]="['/log-in']" class="nav-link login">Log In <div></div></a></li>
       <li class="nav-item"><a [routerLink]="['/movies']" class="nav-link">Movies</a></li>
       <li class="nav-item"><a [routerLink]="['/cinemas']" routerLinkActive="active" class="nav-link">Cinemas</a></li>
 
+
+
+      <div class="logo-img-container"><img src="../assets/images/logo.png" alt=""></div>
       <div class="hamburger-menu" (click)="toggle()" id="menu">
           <div class="bar1"></div>
           <div class="bar2"></div>
@@ -18,16 +22,16 @@
 <footer>
   <div class="footer-container">
       <div class="footer-info">
-        <p><a>NAME</a></p>
-        <p><a>NAME</a></p>
-        <p><a>NAME</a></p>
-        <p><a>NAME</a></p>
+        <p><a>About us</a></p>
+        <p><a>Temporary</a></p>
+        <p><a>Incoming</a></p>
+        <p><a>Contact</a></p>
       </div>
     <div class="footer-contact">
-      <p><a>CONTACT</a></p>
-      <p><a>CONTACT</a></p>
-      <p><a>CONTACT</a></p>
-      <p><a>CONTACT</a></p>
+      <p><a>Call</a></p>
+      <p><a>Email</a></p>
+      <p><a>Facebook</a></p>
+      <p><a>Instagram</a></p>
     </div>
   </div>
 </footer>
