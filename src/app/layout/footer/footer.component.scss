@@ -1,0 +1,41 @@
+@import '../../data.scss';
+
+.footer-container {
+  bottom: 0;
+  margin: 0;
+  padding: 1.5rem 0;
+  width: 100%;
+  height: 150px;
+  background-color: $dark-gray;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-contact {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-info > p > a ,
+.footer-contact > p > a {
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: $white;
+  transition: $animationTime;
+}
+
+.footer-info > p > a:hover ,
+.footer-contact > p > a:hover {
+  box-shadow: 0 0 2px 0 $white;
+}
+
+@media (max-width: 650px) {
+  .footer-container {
+    font-size: 0.8rem;
+  }
+}

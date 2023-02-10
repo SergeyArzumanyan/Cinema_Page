@@ -2,32 +2,32 @@
   <div class="cinema" id="cinema1">
     <div class="container">
       <img src="../../../assets/images/cinema1.png" alt="cinemaImg1" class="img">
-      <h2 class="cinema-title">Hall 1</h2>
+      <h2 class="cinema-title">Cinema 1</h2>
       <div class="overlay-left">
           <div class="box">
               <p class="box-text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam blanditiis culpa debitis eius incidunt nobis porro quae ratione vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad culpa cum cupiditate distinctio dolorem eum explicabo, fugit inventore ipsum laboriosam nam nihil officiis quod rem similique tenetur unde vitae.
               </p>
-            <button class="box-btn left">See Tickets</button>
+            <button class="box-btn left" [routerLink]="['/movies/cinema-one']">See Movies</button>
           </div>
       </div>
-      <button class="btn-mobile">See Movies</button>
+      <button class="btn-mobile" [routerLink]="['/movies/cinema-one']">See Movies</button>
     </div>
   </div>
   <div class="cinema" id="cinema2">
 
     <div class="container">
       <img src="../../../assets/images/cinema2.png" alt="CinemaImg2" class="img">
-      <h2 class="cinema-title">Hall 2</h2>
+      <h2 class="cinema-title">Cinema 2</h2>
       <div class="overlay-right">
         <div class="box">
           <p class="box-text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam blanditiis culpa debitis eius incidunt nobis porro quae ratione vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad culpa cum cupiditate distinctio dolorem eum explicabo, fugit inventore ipsum laboriosam nam nihil officiis quod rem similique tenetur unde vitae.
           </p>
-          <button class="box-btn right">See Tickets</button>
+          <button class="box-btn right" [routerLink]="['/movies/cinema-two']">See Movies</button>
         </div>
       </div>
-      <button class="btn-mobile">See Movies</button>
+      <button class="btn-mobile" [routerLink]="['/movies/cinema-two']">See Movies</button>
     </div>
 
   </div>

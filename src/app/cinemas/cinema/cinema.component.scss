@@ -1,12 +1,4 @@
-$gray: #3a3434;
-$dark-gray: #1f1d1d;
-$orange: #b0650c;
-$dark-orange: #602103;
-$green: #106b10;
-$dark-green: #063a06;
-$white: #e8e5e5;
-$animationTime: 0.4s;
-
+@import "../../data.scss";
 
 // ================================================================================
 //                     FLOATING WINDOWS
@@ -71,6 +63,7 @@ $animationTime: 0.4s;
   width: 0;
   height: 100vh;
   transition: $animationTime ease;
+  opacity: 0.8;
 }
 
 .overlay-left:hover {
@@ -97,6 +90,7 @@ $animationTime: 0.4s;
   width: 0;
   height: 100vh;
   transition: $animationTime ease;
+  opacity: 0.8;
 }
 
 .container:hover .overlay-right {
@@ -173,7 +167,12 @@ $animationTime: 0.4s;
 
   .cinema {
     width: 100%;
+    box-shadow: 0 0 0 0 $white;
   }
+
+    #cinema2 {
+      box-shadow: 0 0 2px 0 $white;
+    }
 
   .cinema-title {
     top: 1rem;

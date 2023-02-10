@@ -1,0 +1,96 @@
+@import "../../../data";
+
+.movies-container {
+  width: 75%;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  width: 280px;
+  height: 400px;
+  background-color: #6b6b6b;
+  position: relative;
+  cursor: pointer;
+}
+
+.card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: $animationTime;
+}
+
+.movie-title {
+  width: 75%;
+  margin: 0;
+  padding: 0;
+  color: $white;
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: $animationTime;
+}
+
+.movie-btn {
+    visibility: hidden;
+    width: 100%;
+    height: 15%;
+    cursor: pointer;
+    border: none;
+    border-bottom-left-radius:  0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    outline: none;
+    font-size: 0.9rem;
+    background-color: $orange;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  transition: $animationTime;
+  }
+
+.card:hover {
+  .movie-img {
+    opacity: 0.5;
+  }
+
+  .movie-title {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .movies-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    margin: 0.5rem auto;
+    width: 115px;
+    height: 170px;
+  }
+
+  .movie-title {
+    font-size: 0.7rem;
+  }
+
+  .card:hover {
+    .movie-btn {
+      visibility: visible;
+      bottom: -10%;
+      opacity: 1;
+    }
+  }
+}

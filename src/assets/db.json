@@ -1,0 +1,36 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "cinemaId": [true , false],
+      "hallId": [1 , 3],
+      "name": "Movie 1",
+      "imgUrl": "URL1",
+      "description": "Description 1"
+    },
+    {
+      "id": 2,
+      "cinemaId": [false , true],
+      "hallId": [2 , 4],
+      "name": "Movie 2",
+      "imgUrl": "URL2",
+      "description": "Description 2"
+    },
+    {
+      "id": 3,
+      "cinemaId": [true , true],
+      "hallId": [1],
+      "name": "Movie 3",
+      "imgUrl": "URL3",
+      "description": "Description 3"
+    },
+    {
+      "id": 4,
+      "cinemaId": [false , true],
+      "hallId": [1 , 3 , 4],
+      "name": "Movie 4",
+      "imgUrl": "URL4",
+      "description": "Description 4"
+    }
+  ]
+}
