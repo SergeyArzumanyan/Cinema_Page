@@ -1,0 +1,156 @@
+@import "../../../data.scss";
+
+.single-wrapper {
+  margin: 3rem auto;
+  padding: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $white;
+  background-color: $gray;
+  border-radius: 10px;
+  box-shadow: $shadow;
+}
+
+.movie-title {
+  color: $white;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.info-block {
+  width: 80%;
+  padding: 1rem;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.block-one {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.img-wrapper , .img-wrapper > img {
+  width: 220px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: $shadow;
+}
+
+.text-info {
+  width: 300px;
+}
+
+.block-two {
+  margin: 2rem;
+}
+
+.trailer-wrapper , .trailer-wrapper > iframe{
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: $shadow;
+
+}
+
+.book-block {
+  display: flex;
+  box-shadow: $shadow;
+  border-radius: 8px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: $dark-gray;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.month {
+  width: 75px;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $white;
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.border {
+  padding: 0.5rem;
+  border: 1px solid $white;
+  cursor: pointer;
+  transition: $animationTime;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.border:hover , .booked {
+  background-color: $white;
+  color: $dark-gray;
+}
+
+.sessions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+
+@media (max-width: 1000px) {
+  .single-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .movie-title {
+    font-size: 1.5rem;
+  }
+
+  .info-block {
+    width: 95%;
+  }
+
+  .block-one {
+    gap: 10px;
+  }
+
+  .text-info {
+    width: 130px;
+    font-size: 0.8rem;
+  }
+
+  .block-two {
+    width: 200px;
+    height: 150px;
+    margin: 2rem auto;
+  }
+
+  .trailer-wrapper , .trailer-wrapper > iframe {
+    margin: 0 auto;
+    width: 200px;
+    height: 150px;
+  }
+
+  .img-wrapper , .img-wrapper > img {
+    width: 115px;
+    height: 160px;
+  }
+
+  .book-block {
+    padding: 1.5rem;
+    margin: 2rem auto 3rem auto;
+    font-size: 0.9rem;
+  }
+}
+
+

@@ -1,5 +1,11 @@
 export interface MovieInterface {
-  id: number,
-  movieName: string,
-  movieDate: string,
+  "cinemaId": object,
+  "days": string[],
+  "description": string,
+  "hallId": object,
+  "id": number,
+  "imgUrl": string,
+  "name": string,
+  "sessions": any
+  trailerUrl: string,
 }

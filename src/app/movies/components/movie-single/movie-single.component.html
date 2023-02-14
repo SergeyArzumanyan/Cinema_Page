@@ -1,0 +1,39 @@
+<h1 class="movie-title">{{ selected_movie.name }}</h1>
+<div class="single-wrapper">
+
+  <div class="info-block">
+    <div class="block-one">
+      <div class="img-wrapper">
+        <img [src]="selected_movie['imgUrl']" alt="movie-img">
+      </div>
+      <div class="text-info">
+        {{ selected_movie.description }}
+      </div>
+    </div>
+    <div class="block-two">
+      <div class="trailer-wrapper">
+<!--        <iframe [title]="selected_movie.name" loading="lazy" frameborder="0" [src]="safeURL"></iframe>-->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="book-block">
+    <h3 class="month">Feb</h3>
+
+    <div class="days">
+      <div class="border"
+           *ngFor="let day of days, let i = index"
+           [ngClass]="{'booked': day === selectedDay}"
+           (click)="showSession(i)">
+        {{ day }}
+      </div>
+    </div>
+    <div class="sessions">
+      <div class="border" *ngFor="let session of sessions">{{ session[0] }} <small>{{ session[1] }}</small></div>
+    </div>
+
+
+
+  </div>
+</div>

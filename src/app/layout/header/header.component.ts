@@ -23,4 +23,14 @@ export class HeaderComponent implements OnInit {
     this.getNavItems().map(item => item.classList.toggle('hide'))
     nav_ul?.classList.toggle('addHeight');
   }
+
+  public closeMenu() {
+    let nav_ul = document.querySelector('.nav-ul');
+    let menu = document.getElementById( 'menu' );
+    if ( window.innerWidth <= 650 ) {
+      menu?.classList.toggle( 'change' );
+      nav_ul?.classList.toggle('addHeight');
+      this.getNavItems().map(item => item.classList.toggle('hide'))
+    }
+  }
 }

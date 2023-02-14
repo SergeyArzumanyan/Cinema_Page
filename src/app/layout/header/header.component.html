@@ -1,15 +1,14 @@
 <header>
   <nav>
     <ul class="nav-ul">
+      <div class="logo-img-container" [routerLink]="['/cinemas']"><img src="../../../assets/images/logo.png" alt="logo"></div>
       <li class="nav-item brand-name"><a [routerLink]="['/cinemas']" class="nav-link">BrandName</a></li>
       <div class="empty-block"></div>
-      <li class="nav-item"><a [routerLink]="['/login']" class="nav-link login" >Log In <div></div></a></li>
-      <li class="nav-item"><a [routerLink]="['/movies']" routerLinkActive="active" class="nav-link">Movies</a></li>
-      <li class="nav-item"><a [routerLink]="['/cinemas']" routerLinkActive="active" class="nav-link">Cinemas</a></li>
+      <li class="nav-item"><a [routerLink]="['/login']" class="nav-link login" (click)="closeMenu()" >Log In <div></div></a></li>
+      <li class="nav-item"><a [routerLink]="['/shop']" routerLinkActive="active" (click)="closeMenu()" class="nav-link">Shop</a></li>
+      <li class="nav-item"><a [routerLink]="['/movies']" routerLinkActive="active" (click)="closeMenu()" class="nav-link">Movies</a></li>
+      <li class="nav-item"><a [routerLink]="['/cinemas']" routerLinkActive="active" (click)="closeMenu()" class="nav-link">Cinemas</a></li>
 
-
-
-      <div class="logo-img-container" [routerLink]="['/cinemas']"><img src="../../../assets/images/logo.png" alt="logo"></div>
       <div class="hamburger-menu" (click)="toggle()" id="menu">
         <div class="bar1"></div>
         <div class="bar2"></div>

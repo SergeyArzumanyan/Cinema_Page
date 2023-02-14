@@ -1,0 +1,154 @@
+<div class="form-wrapper">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <h2 class="form-title">Register</h2>
+      <div class="form-section form-section-one">
+        <div class="form-content">
+          <div class="form-label">
+            <label for="name">Name</label>
+          </div>
+
+          <input type="text" id="name" class="form-input" placeholder="Your name..." formControlName="name">
+
+          <small
+            *ngIf="
+            form.controls.name.errors?.['required']
+            &&
+            form.controls.name.touched
+            "
+            class="warning">
+            Name is required.
+          </small>
+
+        </div>
+        <div class="form-content">
+          <div class="form-label">
+            <label for="surname">Surname</label>
+          </div>
+
+          <input type="text" id="surname" class="form-input" placeholder="Your surname..." formControlName="surname">
+
+          <small
+            *ngIf="
+            form.controls.surname.errors?.['required']
+            &&
+            form.controls.surname.touched
+            "
+            class="warning">
+            Surname is required.
+          </small>
+
+        </div>
+        <div class="form-content">
+          <div class="form-label">
+            <label for="email">Email</label>
+          </div>
+
+          <input type="email" id="email" class="form-input" placeholder="Your email..." formControlName="email">
+
+          <small
+            *ngIf="
+            form.controls.email.errors?.['required']
+            &&
+            form.controls.email.touched
+            "
+            class="warning">
+            Email is required.
+          </small>
+
+          <small
+            *ngIf="
+            form.controls.email.errors?.['email']
+            &&
+            form.controls.email.touched
+            "
+            class="warning">
+            Email format is incorrect.
+          </small>
+
+        </div>
+      </div>
+
+      <div class="form-section form-section-two">
+        <div class="form-content">
+          <div class="form-label">
+            <label for="age">Age</label>
+          </div>
+
+          <input type="number" id="age" class="form-input" placeholder="Your age..." formControlName="age" min="16" max="100">
+
+          <small
+            *ngIf="
+            form.controls.age.errors?.['required']
+            &&
+            form.controls.age.touched
+            "
+            class="warning">
+            Age is required.
+          </small>
+
+          <small
+            *ngIf="
+            form.controls.age.errors?.['max']
+            &&
+            form.controls.age.touched
+            "
+            class="warning">
+            Age can't be greater than 100.
+          </small>
+
+          <small
+            *ngIf="
+            form.controls.age.errors?.['min']
+            &&
+            form.controls.age.touched
+            "
+            class="warning">
+            Age can't be less than 16.
+          </small>
+
+        </div>
+        <div class="form-content">
+          <div class="form-label">
+            <label for="password" class="form-label">Password</label>
+          </div>
+
+          <input type="password" id="password" class="form-input" placeholder="Your password..." formControlName="password">
+
+          <small
+            *ngIf="
+            form.controls.password.errors?.['required']
+            &&
+            form.controls.password.touched
+            "
+            class="warning">
+            Password is required.
+          </small>
+
+          <small
+            *ngIf="
+            form.controls.password.errors?.['max']
+            &&
+            form.controls.password.touched
+            "
+            class="warning">
+            Password is too long.
+          </small>
+
+          <small
+            *ngIf="
+            form.controls.password.errors?.['min']
+            &&
+            form.controls.password.touched
+            "
+            class="warning">
+            Password is too short.
+          </small>
+
+        </div>
+        <button class="form-btn">Register</button>
+      </div>
+    </div>
+  </form>
+
+</div>

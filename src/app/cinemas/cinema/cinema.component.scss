@@ -115,7 +115,7 @@
   display: none;
   font-size: 1rem;
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   right: 10%;
   width: 120px;
   height: 40px;
@@ -160,12 +160,21 @@
 // ================================================================================
 //                     FOR MOBILE
 // ================================================================================
-@media (max-width: 650px) {
+@media (max-width: 1200px) {
   .cinemas-container {
     flex-direction: column;
   }
 
+  .container {
+    height: 50vh;
+
+    img {
+      height: 50vh;
+    }
+  }
+
   .cinema {
+    height: 50vh;
     width: 100%;
     box-shadow: 0 0 0 0 $white;
   }

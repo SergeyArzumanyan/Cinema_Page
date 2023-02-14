@@ -1,9 +1,12 @@
 <div class="movies-container">
-  <div class="card">
-    <img
-      src=""
-      alt="movie-img" class="movie-img">
-    <p class="movie-title">Movie name: Movie End</p>
-    <button class="movie-btn">See Tickets</button>
+  <div class="card" *ngFor="let movie of incomingMovies">
+    <img *ngIf="!screenWidth"
+         [src]="movie.imgUrl"
+         alt="movie-img" class="movie-img" [routerLink]="['/movies' , movie.id]">
+    <img *ngIf="screenWidth"
+         [src]="movie.imgUrl"
+         alt="movie-img" class="movie-img">
+    <p class="movie-title" [routerLink]="['/movies' , movie.id]">{{movie.name}}</p>
+    <button class="movie-btn" [routerLink]="['/movies' , movie.id]">See Tickets</button>
   </div>
 </div>

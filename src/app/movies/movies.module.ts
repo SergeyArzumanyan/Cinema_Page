@@ -5,6 +5,7 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesComponent } from './components/movies/movies.component';
 import { CinemaOneComponent } from './components/cinema-one/cinema-one.component';
 import { CinemaTwoComponent } from './components/cinema-two/cinema-two.component';
+import { MovieSingleComponent } from './components/movie-single/movie-single.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { CinemaTwoComponent } from './components/cinema-two/cinema-two.component
     MoviesComponent,
     CinemaOneComponent,
     CinemaTwoComponent,
+    MovieSingleComponent
   ],
   imports: [
     CommonModule,

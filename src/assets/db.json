@@ -1,36 +1,188 @@
 {
-  "movies": [
+  "cinemas": [
     {
-      "id": 1,
-      "cinemaId": [true , false],
-      "hallId": [1 , 3],
-      "name": "Movie 1",
-      "imgUrl": "URL1",
-      "description": "Description 1"
+      "cinemaId": 1,
+      "cinemaName": "Cinema 1",
+      "cinemaImg": "./assets/images/cinemas/cinema1.png",
+      "cinemaDescription": "description 1"
     },
     {
-      "id": 2,
+      "cinemaId": 2,
+      "cinemaName": "Cinema 2",
+      "cinemaImg": "./assets/images/cinemas/cinema2.png",
+      "cinemaDescription": "description 2"
+    }
+  ],
+
+  "movies": [
+    {
+      "cinemaId": [true , false],
+      "days": [ "13" , "14" , "15" , "16" , "17" , "18" , "19" ],
+      "description": "Scott Lang and Hope Van Dyne, along with Hank Pym and Janet Van Dyne, explore the Quantum Realm, where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible.",
+      "hallId": [1 , 3],
+      "id": 1,
+      "imgUrl": "./assets/images/movie-pictures/1.jpg",
+      "name": "Ant-Man and the Wasp: Quantumania",
+      "sessions": [
+        [ [2000 , "12:00"] , [3000 , "17:00"] , [2000 , "18:00"] ],
+        [ [1500 , "11:30"] , [2000 , "14:45"] , [3000 , "16:30"] ],
+        [ [1500 , "11:00"] , [3000 , "17:00"] , [3500 , "22:00"] ],
+        [ [2000 , "12:00"] , [3000 , "17:00"] , [2000 , "18:00"] ],
+        [ [1500 , "12:30"] , [2500 , "18:45"] , [3500 , "19:00"] ],
+        [ [1000 , "10:00"] , [2000 , "14:45"] , [2500 , "17:30"] ],
+        [ [1500 , "11:00"] , [2000 , "19:25"] , [4000 , "22:30"] ]
+      ],
+      "trailerUrl": ""
+    },
+    {
       "cinemaId": [false , true],
-      "hallId": [2 , 4],
+      "id": 2,
+      "hallId": [1 , 3],
       "name": "Movie 2",
-      "imgUrl": "URL2",
-      "description": "Description 2"
+      "imgUrl": "./assets/images/movie-pictures/2.jpg",
+      "trailerUrl": "",
+      "description": "Description 2",
+      "sessions": [ [1500 , "11:00"] , [3000 , "17:00"] , [3500 , "22:00"] ]
     },
     {
       "id": 3,
-      "cinemaId": [true , true],
-      "hallId": [1],
-      "name": "Movie 3",
-      "imgUrl": "URL3",
-      "description": "Description 3"
+      "cinemaId": [true , false],
+      "hallId": [1 , 3],
+      "name": "Abyzou",
+      "imgUrl": "./assets/images/movie-pictures/3.jpg",
+      "trailerUrl": "",
+      "description": "A family struggling with loss finds themselves at the mercy of an ancient demon trying to destroy them from the inside.",
+      "sessions": [ [2000 , "10:50"] , [2000 , "14:45"] , [4000 , "23:50"] ]
     },
     {
       "id": 4,
       "cinemaId": [false , true],
-      "hallId": [1 , 3 , 4],
-      "name": "Movie 4",
-      "imgUrl": "URL4",
-      "description": "Description 4"
+      "hallId": [1 , 3],
+      "name": "Ernest and Celestine: A Trip to Gibberitia\n",
+      "imgUrl": "./assets/images/movie-pictures/4.jpg",
+      "trailerUrl": "",
+      "description": "Ernest and Célestine return to Ernest's country to have his broken violin repaired. They discover that music is banned throughout the country. They will attempt to right this injustice in order to bring joy back to bear country.",
+      "sessions": [ [1000 , "10:00"] , [2000 , "14:45"] , [2500 , "17:30"] ]
+    },
+    {
+      "id": 5,
+      "cinemaId": [true , false],
+      "hallId": [1 , 3],
+      "name": "Men",
+      "imgUrl": "./assets/images/movie-pictures/5.jpg",
+      "trailerUrl": "",
+      "description": "Three friends, taxi drivers, use all the possible and impossible ways to acquaint their unlucky friend with his beloved girl. #MerKinon",
+      "sessions": [ [2000 , "12:00"] , [2000 , "18:00"] , [3500 , "19:00"] ]
+    },
+    {
+      "id": 6,
+      "cinemaId": [false , true],
+      "hallId": [1 , 3],
+      "name": "What's Love Got to Do with It?\n",
+      "imgUrl": "./assets/images/movie-pictures/6.jpg",
+      "trailerUrl": "",
+      "description": "Best friends since childhood, Zoe and Kazim have always had the same attitude towards such concepts as love and marriage. But Zoe has been unable to find her true love in all of London for many years, while Kazim suddenly decides to marry a complete stranger chosen by his parents.",
+      "sessions": [ [2500 , "13:00"] , [4500 , "15:00"] ]
+    },
+    {
+      "id": 7,
+      "cinemaId": [true , false],
+      "hallId": [1 , 3],
+      "name": "Titanic",
+      "imgUrl": "./assets/images/movie-pictures/7.jpg",
+      "trailerUrl": "",
+      "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+      "sessions": [ [1500 , "11:30"] , [2000 , "14:45"] , [3000 , "16:30"] ]
+    },
+    {
+      "id": 8,
+      "cinemaId": [false , true],
+      "hallId": [1 , 3],
+      "name": "Movie 8",
+      "imgUrl": "./assets/images/movie-pictures/8.jpg",
+      "trailerUrl": "",
+      "description": "Description 8",
+      "sessions": [ [1500 , "12:30"] , [2500 , "18:45"] , [3500 , "19:00"] ]
+    },
+    {
+      "id": 9,
+      "cinemaId": [true , false],
+      "hallId": [1 , 3],
+      "name": "Movie 9",
+      "imgUrl": "./assets/images/movie-pictures/9.jpg",
+      "trailerUrl": "",
+      "description": "Dsescription 9",
+      "sessions": [ [3500 , "12:15"] , [2000 , "14:45"] , [4000 , "22:30"] ]
+    },
+    {
+      "id": 10,
+      "cinemaId": [false , true],
+      "hallId": [1 , 3],
+      "name": "Movie 10",
+      "imgUrl": "./assets/images/movie-pictures/10.jpg",
+      "trailerUrl": "",
+      "description": "Description 10",
+      "sessions": [ [2000 , "12:00"] , [3000 , "17:00"] , [4000 , "22:30"] ]
+    },
+    {
+      "id": 11,
+      "cinemaId": [true , false],
+      "hallId": [1 , 3],
+      "name": "Movie 11",
+      "imgUrl": "./assets/images/movie-pictures/11.jpg",
+      "trailerUrl": "",
+      "description": "Description 11",
+      "sessions": [ [1000 , "09:00"] , [2000 , "14:45"] ]
+    },
+    {
+      "id": 12,
+      "cinemaId": [false , true],
+      "hallId": [1 , 3],
+      "name": "Movie 12",
+      "imgUrl": "./assets/images/movie-pictures/12.jpg",
+      "trailerUrl": "",
+      "description": "Description 12",
+      "sessions": [ [2000 , "12:45"] , [2500 , "13:15"] , [3500 , "19:00"] ]
+    },
+    {
+      "id": 13,
+      "cinemaId": [true , true],
+      "hallId": [1 , 3],
+      "name": "Movie 13",
+      "imgUrl": "./assets/images/movie-pictures/13.jpg",
+      "trailerUrl": "",
+      "description": "Description 13",
+      "sessions": [ [1500 , "11:00"] , [2000 , "19:25"] , [4000 , "22:30"] ]
+    },
+    {
+      "id": 14,
+      "cinemaId": [true , true],
+      "hallId": [1 , 3],
+      "name": "Movie 14",
+      "imgUrl": "./assets/images/movie-pictures/14.jpg",
+      "trailerUrl": "",
+      "description": "Description 14",
+      "sessions": [ [1500 , "10:30"] , [3500 , "19:00"] ]
+    },
+    {
+      "id": 15,
+      "cinemaId": [true , true],
+      "hallId": [1 , 3],
+      "name": "Movie 15",
+      "imgUrl": "./assets/images/movie-pictures/15.jpg",
+      "trailerUrl": "",
+      "description": "Description 15",
+      "sessions": [ [1000 , "09:30"] , [3000 , "17:00"] , [4000 , "22:30"] ]
+    },
+    {
+      "id": 16,
+      "cinemaId": [true , true],
+      "hallId": [1 , 3],
+      "name": "Movie 16",
+      "imgUrl": "./assets/images/movie-pictures/16.jpg",
+      "trailerUrl": "",
+      "description": "Description 16",
+      "sessions": [ [2500 , "12:30"] , [5000 , "22:00"] ]
     }
   ]
 }

@@ -1,0 +1,76 @@
+@import "../../../data.scss";
+
+.shop-container {
+  margin: 2rem auto;
+  padding: 3rem 0;
+  width: 75%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $dark-gray;
+  border-radius: 8px;
+  box-shadow: 0 0 2px 0 $white;
+  color: $white;
+  position: relative;
+}
+
+.shop-title {
+  position: absolute;
+  top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $white;
+  width: 125px;
+  text-align: center;
+}
+
+.section {
+  width: 75%;
+  height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 0 2px 0 $white;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: $gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 900;
+  box-shadow: 0 0 2px 0 $white;
+  border-radius: 15px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: $animationTime;
+}
+
+.arrow:hover {
+  background-color: $dark-gray;
+  box-shadow: none;
+}
+
+.slider {
+  margin: 0;
+  padding: 1rem;
+  width: 660px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.slider-item {
+  display: block;
+  width: 110px;
+  height: 100%;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequesthttpService } from "../../shared/services/requesthttp.service";
+import { CinemaInterface } from "../../shared/interfaces/cinema.interface";
 import { HttpErrorResponse } from "@angular/common/http";
-import { MovieInterface } from "../../shared/interfaces/movie.interface";
 
 @Component( {
   selector: 'app-cinema',
@@ -9,20 +9,27 @@ import { MovieInterface } from "../../shared/interfaces/movie.interface";
   styleUrls: [ './cinema.component.scss' ]
 } )
 export class CinemaComponent implements OnInit {
-  constructor( private http: RequesthttpService ) {
+  public requestedCinemas?: CinemaInterface[] = [];
+  public cinemaInfo_1: CinemaInterface | null = {}
+  public cinemaInfo_2: CinemaInterface | null = {}
+  constructor(
+    private http: RequesthttpService,
+  ) {
   }
-
-  private sub = this.http.getMovies();
 
   ngOnInit(): void {
-    this.sub.subscribe( {
-      next: ( data: MovieInterface[] ) => {
-
-      },
-      error: ( err: HttpErrorResponse ) => {
-        console.log( err );
-      }
-    } )
+    this.http.getCinemas()
+      .subscribe( {
+        next: ( data: CinemaInterface[] ) => {
+          this.requestedCinemas = data;
+          if ( this.requestedCinemas[0] && this.requestedCinemas[1] ) {
+            this.cinemaInfo_1 = this.requestedCinemas[0];
+            this.cinemaInfo_2 = this.requestedCinemas[1];
+          }
+        },
+        error: ( err: HttpErrorResponse ) => {
+          console.log( err );
+        }
+      } )
   }
-
 }
