@@ -2,187 +2,2325 @@
   "cinemas": [
     {
       "cinemaId": 1,
-      "cinemaName": "Cinema 1",
+      "cinemaName": "Rio Mall",
       "cinemaImg": "./assets/images/cinemas/cinema1.png",
-      "cinemaDescription": "description 1"
+      "cinemaDescription": "Rio Mall is an Easygoing retail center with stores, a food court & a cinema, plus kids' play options & a zoo.",
+      "cinemaAddress": "8 Vahram Papazyan St, Yerevan 0012"
     },
     {
       "cinemaId": 2,
-      "cinemaName": "Cinema 2",
+      "cinemaName": "Dalma Garden Mall",
       "cinemaImg": "./assets/images/cinemas/cinema2.png",
-      "cinemaDescription": "description 2"
+      "cinemaDescription": "Dalma Garden Mall is an Armenian enclosed shopping mall. It is located near the Tsitsernakaberd hill in the Armenian capital Yerevan. It is the first mall in Armenia.",
+      "cinemaAddress": "3 Tsitsernakaberd Hwy, Yerevan 0082"
     }
   ],
-
-  "movies": [
+  "sessions": [
     {
-      "cinemaId": [true , false],
-      "days": [ "13" , "14" , "15" , "16" , "17" , "18" , "19" ],
+      "date": "2023-02-01T13:30:00.000Z",
+      "id": 1000,
+      "movieId": 1,
+      "price": 2000
+    },
+    {
+      "date": "2023-02-01T14:45:00.000Z",
+      "id": 2000,
+      "movieId": 1,
+      "price": 6000
+    },
+    {
+      "date": "2023-02-02T12:00:00.000Z",
+      "id": 3000,
+      "movieId": 1,
+      "price": 1500
+    },
+    {
+      "date": "2023-02-02T16:00:00.000Z",
+      "id": 4000,
+      "movieId": 1,
+      "price": 4500
+    }
+  ],
+  "users": [
+    {
+      "name": "Poxos",
+      "surname": "Petrosyan",
+      "email": "poxos.petrosyan@gmail.com",
+      "age": 39,
+      "password": "Poxos1234",
+      "id": 1
+    },
+    {
+      "name": "Petros",
+      "surname": "Poxosyan",
+      "email": "petros.poxosyan@gmail.com",
+      "age": 50,
+      "password": "Petros1234",
+      "id": 2
+    }
+  ],
+  "movies": [
+
+
+    {
+      "cinemaId": [
+        true,
+        false
+      ],
       "description": "Scott Lang and Hope Van Dyne, along with Hank Pym and Janet Van Dyne, explore the Quantum Realm, where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible.",
-      "hallId": [1 , 3],
       "id": 1,
       "imgUrl": "./assets/images/movie-pictures/1.jpg",
       "name": "Ant-Man and the Wasp: Quantumania",
+      "trailerUrl": ""
+    },
+
+
+    {
+      "cinemaId": [
+        false,
+        true
+      ],
+      "description": "A family struggling with loss finds themselves at the mercy of an ancient demon trying to destroy them from the inside.",
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 2,
+      "imgUrl": "./assets/images/movie-pictures/2.jpg",
+      "name": "Abyzou",
+      "trailerUrl": ""
+    },
+    {
+      "cinemaId": [
+        true,
+        false
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "Ernest and Célestine return to Ernest's country to have his broken violin repaired. They discover that music is banned throughout the country. They will attempt to right this injustice in order to bring joy back to bear country.",
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 3,
+      "imgUrl": "./assets/images/movie-pictures/3.jpg",
+      "name": "Ernest and Celestine: A Trip to Gibberitia",
       "sessions": [
-        [ [2000 , "12:00"] , [3000 , "17:00"] , [2000 , "18:00"] ],
-        [ [1500 , "11:30"] , [2000 , "14:45"] , [3000 , "16:30"] ],
-        [ [1500 , "11:00"] , [3000 , "17:00"] , [3500 , "22:00"] ],
-        [ [2000 , "12:00"] , [3000 , "17:00"] , [2000 , "18:00"] ],
-        [ [1500 , "12:30"] , [2500 , "18:45"] , [3500 , "19:00"] ],
-        [ [1000 , "10:00"] , [2000 , "14:45"] , [2500 , "17:30"] ],
-        [ [1500 , "11:00"] , [2000 , "19:25"] , [4000 , "22:30"] ]
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ]
       ],
       "trailerUrl": ""
     },
     {
-      "cinemaId": [false , true],
-      "id": 2,
-      "hallId": [1 , 3],
-      "name": "Movie 2",
-      "imgUrl": "./assets/images/movie-pictures/2.jpg",
-      "trailerUrl": "",
-      "description": "Description 2",
-      "sessions": [ [1500 , "11:00"] , [3000 , "17:00"] , [3500 , "22:00"] ]
-    },
-    {
-      "id": 3,
-      "cinemaId": [true , false],
-      "hallId": [1 , 3],
-      "name": "Abyzou",
-      "imgUrl": "./assets/images/movie-pictures/3.jpg",
-      "trailerUrl": "",
-      "description": "A family struggling with loss finds themselves at the mercy of an ancient demon trying to destroy them from the inside.",
-      "sessions": [ [2000 , "10:50"] , [2000 , "14:45"] , [4000 , "23:50"] ]
-    },
-    {
-      "id": 4,
-      "cinemaId": [false , true],
-      "hallId": [1 , 3],
-      "name": "Ernest and Celestine: A Trip to Gibberitia\n",
-      "imgUrl": "./assets/images/movie-pictures/4.jpg",
-      "trailerUrl": "",
-      "description": "Ernest and Célestine return to Ernest's country to have his broken violin repaired. They discover that music is banned throughout the country. They will attempt to right this injustice in order to bring joy back to bear country.",
-      "sessions": [ [1000 , "10:00"] , [2000 , "14:45"] , [2500 , "17:30"] ]
-    },
-    {
-      "id": 5,
-      "cinemaId": [true , false],
-      "hallId": [1 , 3],
-      "name": "Men",
-      "imgUrl": "./assets/images/movie-pictures/5.jpg",
-      "trailerUrl": "",
+      "cinemaId": [
+        false,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
       "description": "Three friends, taxi drivers, use all the possible and impossible ways to acquaint their unlucky friend with his beloved girl. #MerKinon",
-      "sessions": [ [2000 , "12:00"] , [2000 , "18:00"] , [3500 , "19:00"] ]
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 4,
+      "imgUrl": "./assets/images/movie-pictures/4.jpg",
+      "name": "Men",
+      "sessions": [
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
-      "id": 6,
-      "cinemaId": [false , true],
-      "hallId": [1 , 3],
-      "name": "What's Love Got to Do with It?\n",
-      "imgUrl": "./assets/images/movie-pictures/6.jpg",
-      "trailerUrl": "",
+      "cinemaId": [
+        true,
+        false
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
       "description": "Best friends since childhood, Zoe and Kazim have always had the same attitude towards such concepts as love and marriage. But Zoe has been unable to find her true love in all of London for many years, while Kazim suddenly decides to marry a complete stranger chosen by his parents.",
-      "sessions": [ [2500 , "13:00"] , [4500 , "15:00"] ]
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 5,
+      "imgUrl": "./assets/images/movie-pictures/5.jpg",
+      "name": "What's Love Got to Do with It?",
+      "sessions": [
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
-      "id": 7,
-      "cinemaId": [true , false],
-      "hallId": [1 , 3],
-      "name": "Titanic",
-      "imgUrl": "./assets/images/movie-pictures/7.jpg",
-      "trailerUrl": "",
+      "cinemaId": [
+        false,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
       "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-      "sessions": [ [1500 , "11:30"] , [2000 , "14:45"] , [3000 , "16:30"] ]
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 6,
+      "imgUrl": "./assets/images/movie-pictures/6.jpg",
+      "name": "Titanic",
+      "sessions": [
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        false
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "While vacationing, a girl and her parents are taken hostage by armed strangers who demand that the family make a choice to avert the apocalypse.",
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 7,
+      "imgUrl": "./assets/images/movie-pictures/7.jpg",
+      "name": "Knock at the Cabin",
+      "sessions": [
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
+    },
+    {
+      "cinemaId": [
+        false,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "The film follows the fun adventures of three ancient Egyptian mummies who live in an underground secret city, hidden in ancient Egypt. The trio includes a princess, a former charioteer, his younger brother, and their pet baby crocodile. Through a series of unfortunate events, the mummies end up in present-day London and embark on a wacky and hilarious journey in search of an old ring belonging to the Royal Family, which was stolen by the ambitious archaeologist Lord Carnaby.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 8,
-      "cinemaId": [false , true],
-      "hallId": [1 , 3],
-      "name": "Movie 8",
       "imgUrl": "./assets/images/movie-pictures/8.jpg",
-      "trailerUrl": "",
-      "description": "Description 8",
-      "sessions": [ [1500 , "12:30"] , [2500 , "18:45"] , [3500 , "19:00"] ]
+      "name": "Mummies",
+      "sessions": [
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        false
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "A pilot finds himself caught in a war zone after he's forced to land his commercial aircraft during a terrible storm.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 9,
-      "cinemaId": [true , false],
-      "hallId": [1 , 3],
-      "name": "Movie 9",
       "imgUrl": "./assets/images/movie-pictures/9.jpg",
-      "trailerUrl": "",
-      "description": "Dsescription 9",
-      "sessions": [ [3500 , "12:15"] , [2000 , "14:45"] , [4000 , "22:30"] ]
+      "name": "Plane",
+      "sessions": [
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        false,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "Little Torik, was a shy and quet child. Everything was all right until he became an adult and married a girl from a brothel.The sodiety could not forgive him that. The young man turns into a resolute and courageous defendant of his own happiness. #MerKinon\n\n",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 10,
-      "cinemaId": [false , true],
-      "hallId": [1 , 3],
-      "name": "Movie 10",
       "imgUrl": "./assets/images/movie-pictures/10.jpg",
-      "trailerUrl": "",
-      "description": "Description 10",
-      "sessions": [ [2000 , "12:00"] , [3000 , "17:00"] , [4000 , "22:30"] ]
+      "name": "A Piece of Sky",
+      "sessions": [
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        false
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "A robotics engineer at a toy company builds a life-like doll that begins to take on a life of its own.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 11,
-      "cinemaId": [true , false],
-      "hallId": [1 , 3],
-      "name": "Movie 11",
       "imgUrl": "./assets/images/movie-pictures/11.jpg",
-      "trailerUrl": "",
-      "description": "Description 11",
-      "sessions": [ [1000 , "09:00"] , [2000 , "14:45"] ]
+      "name": "M3gan",
+      "sessions": [
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "A couple's extravagant destination wedding is hijacked by criminals. In the process of saving their families, they rediscover why they fell in love in the first place.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 12,
-      "cinemaId": [false , true],
-      "hallId": [1 , 3],
-      "name": "Movie 12",
       "imgUrl": "./assets/images/movie-pictures/12.jpg",
-      "trailerUrl": "",
-      "description": "Description 12",
-      "sessions": [ [2000 , "12:45"] , [2500 , "13:15"] , [3500 , "19:00"] ]
+      "name": "Shotgun Wedding",
+      "sessions": [
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "This story follows Maurice, a goofy streetwise cat, who has the perfect money-making scam. He finds a dumb-looking kid who plays a pipe and has his very own horde of rats, who are strangely literate.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 13,
-      "cinemaId": [true , true],
-      "hallId": [1 , 3],
-      "name": "Movie 13",
       "imgUrl": "./assets/images/movie-pictures/13.jpg",
-      "trailerUrl": "",
-      "description": "Description 13",
-      "sessions": [ [1500 , "11:00"] , [2000 , "19:25"] , [4000 , "22:30"] ]
+      "name": "The Amazing Maurice",
+      "sessions": [
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "Two lifelong friends find themselves at an impasse when one abruptly ends their relationship, with alarming consequences for both of them.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 14,
-      "cinemaId": [true , true],
-      "hallId": [1 , 3],
-      "name": "Movie 14",
       "imgUrl": "./assets/images/movie-pictures/14.jpg",
-      "trailerUrl": "",
-      "description": "Description 14",
-      "sessions": [ [1500 , "10:30"] , [3500 , "19:00"] ]
+      "name": "The Banshees of Inisherin",
+      "sessions": [
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "Special agent Orson Fortune and his team of operatives recruit one of Hollywood's biggest movie stars to help them on an undercover mission when the sale of a deadly new weapons technology threatens to disrupt the world order.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 15,
-      "cinemaId": [true , true],
-      "hallId": [1 , 3],
-      "name": "Movie 15",
       "imgUrl": "./assets/images/movie-pictures/15.jpg",
-      "trailerUrl": "",
-      "description": "Description 15",
-      "sessions": [ [1000 , "09:30"] , [3000 , "17:00"] , [4000 , "22:30"] ]
+      "name": "Operation Fortune: Ruse de guerre",
+      "sessions": [
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     },
     {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
+      "hallId": [
+        1,
+        3
+      ],
       "id": 16,
-      "cinemaId": [true , true],
-      "hallId": [1 , 3],
-      "name": "Movie 16",
       "imgUrl": "./assets/images/movie-pictures/16.jpg",
-      "trailerUrl": "",
-      "description": "Description 16",
-      "sessions": [ [2500 , "12:30"] , [5000 , "22:00"] ]
+      "name": "Puss in Boots: The Last Wish",
+      "sessions": [
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
+    },
+    {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "Jake Sully lives with his newfound family formed on the planet of Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their planet.",
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 17,
+      "imgUrl": "./assets/images/movie-pictures/17.jpg",
+      "name": "Avatar: The Way of Water",
+      "sessions": [
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
+    },
+    {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "Jess, a separated and nurse who moves with her daughter and young son Owen back into her old farmhouse. Shortly after settling in, Owen is bitten by the dog, resulting in a mysterious infection from the bite.",
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 18,
+      "imgUrl": "./assets/images/movie-pictures/18.jpg",
+      "name": "Blood",
+      "sessions": [
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
+    },
+    {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "The only daughter of the Chinese emperor Han Xuandi, escapes from a strict prince and seeks help from the Gauls and the two brave warriors Asterix and Obelix.",
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 19,
+      "imgUrl": "./assets/images/movie-pictures/19.jpg",
+      "name": "Asterix & Obelix: The Middle Kingdom",
+      "sessions": [
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
+    },
+    {
+      "cinemaId": [
+        true,
+        true
+      ],
+      "days": [
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "description": "An oddball group of cops, criminals, tourists, and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
+      "hallId": [
+        1,
+        3
+      ],
+      "id": 20,
+      "imgUrl": "./assets/images/movie-pictures/20.jpg",
+      "name": "Cocaine Bear",
+      "sessions": [
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            2000,
+            "19:25"
+          ],
+          [
+            4000,
+            "22:30"
+          ]
+        ],
+        [
+          [
+            1000,
+            "10:00"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            2500,
+            "17:30"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            2000,
+            "12:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            2000,
+            "18:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "12:30"
+          ],
+          [
+            2500,
+            "18:45"
+          ],
+          [
+            3500,
+            "19:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:00"
+          ],
+          [
+            3000,
+            "17:00"
+          ],
+          [
+            3500,
+            "22:00"
+          ]
+        ],
+        [
+          [
+            1500,
+            "11:30"
+          ],
+          [
+            2000,
+            "14:45"
+          ],
+          [
+            3000,
+            "16:30"
+          ]
+        ]
+      ],
+      "trailerUrl": ""
     }
   ]
 }

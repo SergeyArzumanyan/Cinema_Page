@@ -62,7 +62,7 @@
   }
 
 .card:hover {
-  box-shadow: 0 0 2px 0 $white;
+  box-shadow: 0 0 3px 0 $white;
   .movie-img {
     opacity: 0.5;
   }
@@ -81,6 +81,7 @@
 
 @media (max-width: 650px) {
   .movies-container {
+    width: 80%;
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;

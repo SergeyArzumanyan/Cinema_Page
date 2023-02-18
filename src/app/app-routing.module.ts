@@ -6,8 +6,8 @@ const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
       { path: 'cinemas', loadChildren: () => import('./cinemas/cinemas.module').then(m => m.CinemasModule) },
       { path: 'movies' , loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule) },
-      { path: 'login' , loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-      { path: 'register' , loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
+      { path: 'login' , loadChildren: () => import('./authorization/login/login.module').then( m => m.LoginModule) },
+      { path: 'register' , loadChildren: () => import('./authorization/register/register.module').then( m => m.RegisterModule) },
       { path: 'shop' , loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule) },
       { path: '', redirectTo: 'cinemas', pathMatch: 'full' }
     ]

@@ -1,4 +1,4 @@
-@import "../../../data.scss";
+@import "../../../../data";
 
 .form-wrapper {
   margin: 0;
@@ -61,6 +61,20 @@
   color: $white;
 }
 
+form {
+  &.ng-submitted {
+    .form-input {
+      &.ng-invalid.ng-touched {
+        box-shadow: 0 0 0 1px $red;
+      }
+
+      &.ng-valid.ng-touched {
+        box-shadow: 0 0 0 1px $lightGreen;
+      }
+    }
+  }
+}
+
 .form-input {
   width: 100%;
   height: 35px;
@@ -71,14 +85,10 @@
   outline: none;
   box-shadow: 0 0 2px $gray;
   transition: $animationTime;
+}
 
-  &.ng-invalid.ng-touched {
-    box-shadow: 0 0 0 1px $red;
-  }
-
-  &.ng-valid.ng-touched {
-    box-shadow: 0 0 0 1px $lightGreen;
-  }
+.redBorder {
+  box-shadow: 0 0 0 1px $red;
 }
 
 .form-input:focus {
@@ -121,7 +131,7 @@
   .form-container {
     flex-direction: column;
     align-items: center;
-    width: 95%;
+    width: 300px;
     height: 100%;
     margin: 0 auto;
     gap: 0;

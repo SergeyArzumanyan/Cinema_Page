@@ -3,7 +3,7 @@
 .single-wrapper {
   margin: 3rem auto;
   padding: 1rem;
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,6 +31,7 @@
 .block-one {
   display: flex;
   justify-content: space-evenly;
+  gap: 15px;
 }
 
 .img-wrapper , .img-wrapper > img {
@@ -49,15 +50,16 @@
 }
 
 .trailer-wrapper , .trailer-wrapper > iframe{
-  width: 500px;
+  width: 450px;
   height: 300px;
   margin: 0 auto;
+  border: none;
   border-radius: 8px;
   box-shadow: $shadow;
-
 }
 
-.book-block {
+.date-block {
+  width: 45%;
   display: flex;
   box-shadow: $shadow;
   border-radius: 8px;
@@ -82,7 +84,7 @@
 }
 
 .border {
-  padding: 0.5rem;
+  padding: 0.5rem  0.8rem;
   border: 1px solid $white;
   cursor: pointer;
   transition: $animationTime;
@@ -101,7 +103,49 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+.day {
+  color: $lightOrange;
+}
 
+.price {
+  color: $lightGreen;
+}
+
+.disabled {
+  width: 50%;
+  margin: 1rem auto;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: $white;
+  background-color: transparent;
+  box-shadow: 0 0 2px 0 $white;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: $animationTime;
+}
+
+.date-select-btn {
+  width: 50%;
+  margin: 1rem auto;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: $white;
+  background-color: $orange;
+  box-shadow: 0 0 2px 0 $white;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: $animationTime;
+}
+
+.date-select-btn:hover {
+  background-color: $dark-orange;
+} .date-select-btn:active {
+    background-color: black;
+  }
 
 @media (max-width: 1000px) {
   .single-wrapper {
@@ -146,7 +190,16 @@
     height: 160px;
   }
 
-  .book-block {
+  .border {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .disabled , .date-select-btn {
+    font-size: 0.8rem;
+  }
+
+  .date-block {
+    width: 90%;
     padding: 1.5rem;
     margin: 2rem auto 3rem auto;
     font-size: 0.9rem;

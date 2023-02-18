@@ -1,39 +1,57 @@
-<h1 class="movie-title">{{ selected_movie.name }}</h1>
+<h1 class="movie-title">{{ selected_movie?.name }}</h1>
 <div class="single-wrapper">
 
   <div class="info-block">
     <div class="block-one">
       <div class="img-wrapper">
-        <img [src]="selected_movie['imgUrl']" alt="movie-img">
+        <img [src]="selected_movie?.imgUrl" alt="movie-img">
       </div>
       <div class="text-info">
-        {{ selected_movie.description }}
+        {{ selected_movie?.description }}
       </div>
     </div>
     <div class="block-two">
       <div class="trailer-wrapper">
-<!--        <iframe [title]="selected_movie.name" loading="lazy" frameborder="0" [src]="safeURL"></iframe>-->
+        <iframe [title]="selected_movie?.name"
+                loading="lazy"
+                [src]="safeURL"></iframe>
       </div>
     </div>
   </div>
 
 
-  <div class="book-block">
+  <div class="date-block">
     <h3 class="month">Feb</h3>
 
     <div class="days">
       <div class="border"
-           *ngFor="let day of days, let i = index"
+           *ngFor="let day of dayArr, let i = index"
            [ngClass]="{'booked': day === selectedDay}"
-           (click)="showSession(i)">
-        {{ day }}
+           (click)="pickDay( i )">
+           {{ day }}
       </div>
     </div>
+
     <div class="sessions">
-      <div class="border" *ngFor="let session of sessions">{{ session[0] }} <small>{{ session[1] }}</small></div>
+      <div class="border"
+           *ngFor="let session of sessionsArr , let i = index"
+           [ngClass]="{'booked': session === selectedSession}"
+           (click)="pickSession( i )"
+      >
+
+        {{ session?.date | date: 'HH:mm' }}
+
+        <small class="price">{{ session?.price }}</small>
+        <br>
+<!--    <small class="hall">hall: {{ selected_movie.halls[i] ? selected_movie.halls[i]['hallNumber'] : 1 }}</small>-->
+      </div>
     </div>
 
-
-
+    <button  *ngIf="!dateIsSelected" class="disabled">Choose ticket</button>
+    <button *ngIf="dateIsSelected"
+            class="date-select-btn"
+            [routerLink]="['/movies/' , selected_movie.id , selectedSession.id]"
+            [queryParams]="{}">Choose ticket
+    </button>
   </div>
 </div>

@@ -11,11 +11,8 @@
           <input type="text" id="name" class="form-input" placeholder="Your name..." formControlName="name">
 
           <small
-            *ngIf="
-            form.controls.name.errors?.['required']
-            &&
-            form.controls.name.touched
-            "
+            *ngIf="form.get('name')?.hasError('required') &&
+            form.controls.name.touched"
             class="warning">
             Name is required.
           </small>
@@ -29,11 +26,8 @@
           <input type="text" id="surname" class="form-input" placeholder="Your surname..." formControlName="surname">
 
           <small
-            *ngIf="
-            form.controls.surname.errors?.['required']
-            &&
-            form.controls.surname.touched
-            "
+            *ngIf="form.get('surname')?.hasError('required') &&
+            form.controls.surname.touched"
             class="warning">
             Surname is required.
           </small>
@@ -44,24 +38,18 @@
             <label for="email">Email</label>
           </div>
 
-          <input type="email" id="email" class="form-input" placeholder="Your email..." formControlName="email">
+          <input type="email" id="email" class="form-input"  placeholder="Your email..." formControlName="email">
 
           <small
-            *ngIf="
-            form.controls.email.errors?.['required']
-            &&
-            form.controls.email.touched
-            "
+            *ngIf="form.get('email')?.hasError('required') &&
+            form.controls.email.touched"
             class="warning">
             Email is required.
           </small>
 
           <small
-            *ngIf="
-            form.controls.email.errors?.['email']
-            &&
-            form.controls.email.touched
-            "
+            *ngIf="form.get('email')?.hasError('email') &&
+            form.controls.email.touched "
             class="warning">
             Email format is incorrect.
           </small>
@@ -78,33 +66,24 @@
           <input type="number" id="age" class="form-input" placeholder="Your age..." formControlName="age" min="16" max="100">
 
           <small
-            *ngIf="
-            form.controls.age.errors?.['required']
-            &&
-            form.controls.age.touched
-            "
+            *ngIf="form.get('age')?.hasError('required') &&
+            form.controls.age.touched"
             class="warning">
             Age is required.
           </small>
 
           <small
-            *ngIf="
-            form.controls.age.errors?.['max']
-            &&
-            form.controls.age.touched
-            "
+            *ngIf="form.get('age')?.hasError('max') &&
+            form.controls.age.touched"
             class="warning">
-            Age can't be greater than 100.
+            Your age can't be more than 100.
           </small>
 
           <small
-            *ngIf="
-            form.controls.age.errors?.['min']
-            &&
-            form.controls.age.touched
-            "
+            *ngIf="form.get('age')?.hasError('min') &&
+            form.controls.age.touched"
             class="warning">
-            Age can't be less than 16.
+            Your age must be at least 16.
           </small>
 
         </div>
@@ -116,31 +95,22 @@
           <input type="password" id="password" class="form-input" placeholder="Your password..." formControlName="password">
 
           <small
-            *ngIf="
-            form.controls.password.errors?.['required']
-            &&
-            form.controls.password.touched
-            "
+            *ngIf="form.get('password')?.hasError('required') &&
+            form.controls.password.touched"
             class="warning">
             Password is required.
           </small>
 
           <small
-            *ngIf="
-            form.controls.password.errors?.['max']
-            &&
-            form.controls.password.touched
-            "
+            *ngIf="form.get('password')?.hasError('maxlength') &&
+            form.controls.password.touched"
             class="warning">
             Password is too long.
           </small>
 
           <small
-            *ngIf="
-            form.controls.password.errors?.['min']
-            &&
-            form.controls.password.touched
-            "
+            *ngIf="form.get('password')?.hasError('minlength') &&
+            form.controls.password.touched"
             class="warning">
             Password is too short.
           </small>

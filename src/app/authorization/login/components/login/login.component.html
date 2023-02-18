@@ -1,0 +1,49 @@
+<div class="form-wrapper">
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2 class="form-title">Log in</h2>
+      <div class="form-content">
+        <div class="form-label">
+          <label for="email">Email</label>
+        </div>
+
+        <input type="email" id="email" class="form-input" placeholder="Your email..." formControlName="email">
+        <small *ngIf="form.get('email')?.hasError('required') &&
+            form.controls.email.touched"
+               class="warning">
+          Email field is required.
+        </small>
+
+        <small *ngIf="form.get('email')?.hasError('email') &&
+            form.controls.email.touched"
+               class="warning">
+          Email format iss incorrect.
+        </small>
+
+      </div>
+      <div class="form-content">
+        <div class="form-label">
+          <label for="password" class="form-label">Password</label>
+        </div>
+
+        <input type="password" id="password" class="form-input" placeholder="Your password..." formControlName="password">
+        <small *ngIf="form.get('password')?.hasError('required') &&
+            form.controls.password.touched"
+            class="warning">
+          Password field is required.
+        </small>
+
+        <small *ngIf="form.get('password')?.hasError('maxlength') && form.controls.password.touched ||
+        form.get('password')?.hasError('minlength') && form.controls.password.touched"
+               class="warning">
+          Password is incorrect.
+        </small>
+
+      </div>
+      <button class="form-btn">Log in</button>
+    </form>
+  </div>
+  <div class="register-text">
+    <small>If you don't have an account <a [routerLink]="['/register']">create one</a>.</small>
+  </div>
+</div>

@@ -6,7 +6,8 @@
       <div class="overlay-left">
         <div class="box">
           <p class="box-text">
-            {{ cinemaInfo_1?.cinemaDescription }}
+            {{ cinemaInfo_1?.cinemaDescription }}<br><br>
+            <small>{{ cinemaInfo_1?.cinemaAddress }}</small>
           </p>
           <button class="box-btn left" [routerLink]="['/movies/cinema-one']">See Movies</button>
         </div>
@@ -22,7 +23,8 @@
       <div class="overlay-right">
         <div class="box">
           <p class="box-text">
-            {{ cinemaInfo_2?.cinemaDescription }}
+            {{ cinemaInfo_2?.cinemaDescription }}<br><br>
+            <small>{{ cinemaInfo_2?.cinemaAddress }}</small>
           </p>
           <button class="box-btn right" [routerLink]="['/movies/cinema-two']">See Movies</button>
         </div>

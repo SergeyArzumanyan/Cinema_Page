@@ -1,8 +1,7 @@
-export interface MovieInterface {
+export interface IMovie {
   "cinemaId": object,
-  "days": string[],
   "description": string,
-  "hallId": object,
+  "halls": any,
   "id": number,
   "imgUrl": string,
   "name": string,

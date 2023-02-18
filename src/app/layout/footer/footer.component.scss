@@ -43,7 +43,8 @@
 
 @media (max-width: 650px) {
   .footer-container {
-    font-size: 0.8rem;
+    font-size: $mobileFontSize;
+    height: 100px;
 
     .footer-info {
       width: 100%;

@@ -6,6 +6,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { CinemaOneComponent } from './components/cinema-one/cinema-one.component';
 import { CinemaTwoComponent } from './components/cinema-two/cinema-two.component';
 import { MovieSingleComponent } from './components/movie-single/movie-single.component';
+import { SessionBookComponent } from './components/session-book/session-book.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MovieSingleComponent } from './components/movie-single/movie-single.com
     MoviesComponent,
     CinemaOneComponent,
     CinemaTwoComponent,
-    MovieSingleComponent
+    MovieSingleComponent,
+    SessionBookComponent
   ],
   imports: [
     CommonModule,

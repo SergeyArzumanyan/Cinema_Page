@@ -8,6 +8,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from './layout/header/header.component';
 import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -21,6 +23,10 @@ import { FooterComponent } from './layout/footer/footer.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      maxOpened: 1
+    }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

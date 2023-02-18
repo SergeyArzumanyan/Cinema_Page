@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequesthttpService } from "../../shared/services/requesthttp.service";
-import { CinemaInterface } from "../../shared/interfaces/cinema.interface";
+import { ICinema } from "../../shared/interfaces/cinema.interface";
 import { HttpErrorResponse } from "@angular/common/http";
 
 @Component( {
@@ -9,9 +9,9 @@ import { HttpErrorResponse } from "@angular/common/http";
   styleUrls: [ './cinema.component.scss' ]
 } )
 export class CinemaComponent implements OnInit {
-  public requestedCinemas?: CinemaInterface[] = [];
-  public cinemaInfo_1: CinemaInterface | null = {}
-  public cinemaInfo_2: CinemaInterface | null = {}
+  public requestedCinemas?: ICinema[] = [];
+  public cinemaInfo_1: ICinema | null = {}
+  public cinemaInfo_2: ICinema | null = {}
   constructor(
     private http: RequesthttpService,
   ) {
@@ -20,7 +20,7 @@ export class CinemaComponent implements OnInit {
   ngOnInit(): void {
     this.http.getCinemas()
       .subscribe( {
-        next: ( data: CinemaInterface[] ) => {
+        next: ( data: ICinema[] ) => {
           this.requestedCinemas = data;
           if ( this.requestedCinemas[0] && this.requestedCinemas[1] ) {
             this.cinemaInfo_1 = this.requestedCinemas[0];

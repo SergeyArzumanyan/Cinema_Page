@@ -1,0 +1,121 @@
+<div class="session-wrapper">
+  <div class="info-block">
+    <h2 class="movie-name">{{ selected_movie?.name }}</h2>
+    <div class="session-info">
+      <p class="session-date">{{ dateInfo }}</p>
+    </div>
+    <p class="hall-id">Hall Id</p>
+  </div>
+
+  <div class="main-block">
+      <div class="seats-block">
+        <div class="screen"></div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        <div class="row">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+      </div>
+    <div class="seat-info">
+      <div class="seat-states">
+        <div class="seat-state selected"></div>
+        <div class="seat-state free"></div>
+        <div class="seat-state reserved"></div>
+      </div>
+      <div class="state-descriptions">
+          <div class="state-description">Selected</div>
+          <div class="state-description">Free</div>
+          <div class="state-description">Reserved</div>
+      </div>
+    </div>
+      <div class="tickets-block">
+          <h3 class="tickets-heading">Tickets</h3>
+        <div class="ticket">
+          <div class="cancel-btn">x</div>
+          <span class="ticket-date">{{ timeInfo }}</span>
+            <span class="ticket-price">{{ sessionInfo?.price }}</span>
+          </div>
+
+        <div class="purchase-block">
+          <div class="purchase-info-block">
+            <div class="ticket-count">0x tickets</div>
+            <div class="cost-block">
+              <span class="cost">Cost</span>
+              <div class="priceSum">0 AMD</div>
+            </div>
+          </div>
+          <div class="buy-btn-block">
+            <button class="buy-btn">Buy</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
