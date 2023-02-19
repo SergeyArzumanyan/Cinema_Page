@@ -20,25 +20,29 @@
       "date": "2023-02-01T13:30:00.000Z",
       "id": 1000,
       "movieId": 1,
-      "price": 2000
+      "price": 2000,
+      "seats": ["seat1-1" , "seat1-2" , "seat6-5" , "seat6-6"]
     },
     {
-      "date": "2023-02-01T14:45:00.000Z",
+      "date": "2023-02-02T14:45:00.000Z",
       "id": 2000,
       "movieId": 1,
-      "price": 6000
+      "price": 6000,
+      "seats": ["seat1-10" , "seat1-9" , "seat4-3" , "seat4-1"]
     },
     {
-      "date": "2023-02-02T12:00:00.000Z",
+      "date": "2023-02-03T12:00:00.000Z",
       "id": 3000,
       "movieId": 1,
-      "price": 1500
+      "price": 1500,
+      "seats": ["seat2-1" , "seat3-7" , "seat5-2" , "seat6-8"]
     },
     {
-      "date": "2023-02-02T16:00:00.000Z",
+      "date": "2023-02-04T16:00:00.000Z",
       "id": 4000,
       "movieId": 1,
-      "price": 4500
+      "price": 4500,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
     }
   ],
   "users": [
@@ -47,7 +51,7 @@
       "surname": "Petrosyan",
       "email": "poxos.petrosyan@gmail.com",
       "age": 39,
-      "password": "Poxos1234",
+      "password": "user1234",
       "id": 1
     },
     {
@@ -55,13 +59,11 @@
       "surname": "Poxosyan",
       "email": "petros.poxosyan@gmail.com",
       "age": 50,
-      "password": "Petros1234",
+      "password": "user1234",
       "id": 2
     }
   ],
   "movies": [
-
-
     {
       "cinemaId": [
         true,
@@ -73,8 +75,6 @@
       "name": "Ant-Man and the Wasp: Quantumania",
       "trailerUrl": ""
     },
-
-
     {
       "cinemaId": [
         false,

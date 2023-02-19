@@ -7,6 +7,9 @@ import { CinemaOneComponent } from './components/cinema-one/cinema-one.component
 import { CinemaTwoComponent } from './components/cinema-two/cinema-two.component';
 import { MovieSingleComponent } from './components/movie-single/movie-single.component';
 import { SessionBookComponent } from './components/session-book/session-book.component';
+import { RowPipe } from "../shared/pipes/row.pipe";
+import { SeatPipe } from "../shared/pipes/seat.pipe";
+
 
 
 @NgModule({
@@ -15,7 +18,9 @@ import { SessionBookComponent } from './components/session-book/session-book.com
     CinemaOneComponent,
     CinemaTwoComponent,
     MovieSingleComponent,
-    SessionBookComponent
+    SessionBookComponent,
+    RowPipe,
+    SeatPipe
   ],
   imports: [
     CommonModule,

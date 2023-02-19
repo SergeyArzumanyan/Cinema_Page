@@ -2,87 +2,88 @@
   <div class="info-block">
     <h2 class="movie-name">{{ selected_movie?.name }}</h2>
     <div class="session-info">
-      <p class="session-date">{{ dateInfo }}</p>
+      <p class="session-date">{{ sessionInfo?.date | date }}  {{ sessionInfo?.date | date: 'HH:mm' }}</p>
     </div>
     <p class="hall-id">Hall Id</p>
   </div>
 
   <div class="main-block">
-      <div class="seats-block">
-        <div class="screen"></div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
+    <div class="seats-block">
+      <div class="screen"></div>
+      <div id="row1" class="row" (click)="selectSeat($event.target)">
+        <div class="seat" id="seat1-1"></div>
+        <div class="seat" id="seat1-2"></div>
+        <div class="seat" id="seat1-3"></div>
+        <div class="seat" id="seat1-4"></div>
+        <div class="seat" id="seat1-5"></div>
+        <div class="seat" id="seat1-6"></div>
+        <div class="seat" id="seat1-7"></div>
+        <div class="seat" id="seat1-8"></div>
+        <div class="seat" id="seat1-9"></div>
+        <div class="seat" id="seat1-10"></div>
       </div>
+      <div id="row2" class="row" (click)="selectSeat($event.target)">
+        <div class="seat" id="seat2-1"></div>
+        <div class="seat" id="seat2-2"></div>
+        <div class="seat" id="seat2-3"></div>
+        <div class="seat" id="seat2-4"></div>
+        <div class="seat" id="seat2-5"></div>
+        <div class="seat" id="seat2-6"></div>
+        <div class="seat" id="seat2-7"></div>
+        <div class="seat" id="seat2-8"></div>
+        <div class="seat" id="seat2-9"></div>
+        <div class="seat" id="seat2-10"></div>
+      </div>
+      <div id="row3" class="row" (click)="selectSeat($event.target)">
+        <div class="seat" id="seat3-1"></div>
+        <div class="seat" id="seat3-2"></div>
+        <div class="seat" id="seat3-3"></div>
+        <div class="seat" id="seat3-4"></div>
+        <div class="seat" id="seat3-5"></div>
+        <div class="seat" id="seat3-6"></div>
+        <div class="seat" id="seat3-7"></div>
+        <div class="seat" id="seat3-8"></div>
+        <div class="seat" id="seat3-9"></div>
+        <div class="seat" id="seat3-10"></div>
+      </div>
+      <div id="row4" class="row" (click)="selectSeat($event.target)">
+        <div class="seat" id="seat4-1"></div>
+        <div class="seat" id="seat4-2"></div>
+        <div class="seat" id="seat4-3"></div>
+        <div class="seat" id="seat4-4"></div>
+        <div class="seat" id="seat4-5"></div>
+        <div class="seat" id="seat4-6"></div>
+        <div class="seat" id="seat4-7"></div>
+        <div class="seat" id="seat4-8"></div>
+        <div class="seat" id="seat4-9"></div>
+        <div class="seat" id="seat4-10"></div>
+      </div>
+      <div id="row5" class="row" (click)="selectSeat($event.target)">
+        <div class="seat" id="seat5-1"></div>
+        <div class="seat" id="seat5-2"></div>
+        <div class="seat" id="seat5-3"></div>
+        <div class="seat" id="seat5-4"></div>
+        <div class="seat" id="seat5-5"></div>
+        <div class="seat" id="seat5-6"></div>
+        <div class="seat" id="seat5-7"></div>
+        <div class="seat" id="seat5-8"></div>
+        <div class="seat" id="seat5-9"></div>
+        <div class="seat" id="seat5-10"></div>
+      </div>
+      <div id="row6" class="row" (click)="selectSeat($event.target)">
+        <div class="seat" id="seat6-1"></div>
+        <div class="seat" id="seat6-2"></div>
+        <div class="seat" id="seat6-3"></div>
+        <div class="seat" id="seat6-4"></div>
+        <div class="seat" id="seat6-5"></div>
+        <div class="seat" id="seat6-6"></div>
+        <div class="seat" id="seat6-7"></div>
+        <div class="seat" id="seat6-8"></div>
+        <div class="seat" id="seat6-9"></div>
+        <div class="seat" id="seat6-10"></div>
+      </div>
+    </div>
+
     <div class="seat-info">
       <div class="seat-states">
         <div class="seat-state selected"></div>
@@ -90,32 +91,44 @@
         <div class="seat-state reserved"></div>
       </div>
       <div class="state-descriptions">
-          <div class="state-description">Selected</div>
-          <div class="state-description">Free</div>
-          <div class="state-description">Reserved</div>
+        <div class="state-description">Selected</div>
+        <div class="state-description">Free</div>
+        <div class="state-description">Reserved</div>
       </div>
     </div>
-      <div class="tickets-block">
-          <h3 class="tickets-heading">Tickets</h3>
-        <div class="ticket">
-          <div class="cancel-btn">x</div>
-          <span class="ticket-date">{{ timeInfo }}</span>
-            <span class="ticket-price">{{ sessionInfo?.price }}</span>
-          </div>
 
-        <div class="purchase-block">
-          <div class="purchase-info-block">
-            <div class="ticket-count">0x tickets</div>
-            <div class="cost-block">
-              <span class="cost">Cost</span>
-              <div class="priceSum">0 AMD</div>
-            </div>
+    <div class="tickets-block">
+      <h3 class="tickets-heading">Tickets</h3>
+
+      <div class="tickets-wrapper" *ngIf="ticketsArr.length">
+        <div class="ticket" *ngFor="let ticket of ticketsArr">
+          <div class="cancel-btn" (click)="deleteTicket(ticket)">x</div>
+          <span class="ticket-date">{{ sessionInfo.date | date: "HH:mm" }}</span>
+          <div class="seat-number">
+            <span class="seat-row"> Row {{ ticket.id | seatRow }} </span>
+            <span class="seat-seat"> Seat {{ ticket.id | seat }} </span>
           </div>
-          <div class="buy-btn-block">
-            <button class="buy-btn">Buy</button>
-          </div>
+          <span class="ticket-price">{{ sessionInfo?.price }}</span>
         </div>
       </div>
+
+      <div class="purchase-block">
+
+        <div class="purchase-info-block">
+          <div class="ticket-count">{{ ticketsArr.length }}x Tickets</div>
+          <div class="cost-block">
+            <span class="cost">Cost</span>
+            <div class="priceSum">{{ ticketsAllPrice }} AMD</div>
+          </div>
+        </div>
+
+        <div class="buy-btn-block">
+          <button class="buy-btn" [ngClass]="{'buy-btn-enabled': ticketsArr.length , 'buy-btn-disabled': !ticketsArr.length}">Buy</button>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
 </div>

@@ -16,8 +16,9 @@ export class SessionBookComponent implements OnInit {
   public session_id: string | null = "";
   public selected_movie!: IMovie;
   public sessionInfo!: ISession;
-  public dateInfo: string = "";
-  public timeInfo: string = "";
+  public ticketsArr: any[] = [];
+  public ticketsAllPrice: number = 0;
+  public reservedSeats: any[] = [];
 
   constructor(
     private http: RequesthttpService,
@@ -44,20 +45,10 @@ export class SessionBookComponent implements OnInit {
       .subscribe( {
         next: ( sessionData: ISession ) => {
           this.sessionInfo = sessionData;
-          let year = new Date( this.sessionInfo.date ).getFullYear().toString();
-          let day = new Date( this.sessionInfo.date ).getDate().toString();
-          let month = ( new Date( this.sessionInfo.date ).getMonth() + 1 ).toString();
-          let hours = new Date( this.sessionInfo.date ).getHours().toString();
-          let minutes = new Date( this.sessionInfo.date ).getMinutes().toString();
-          if ( hours === "0" ) {
-            hours = "00";
+          this.reservedSeats = this.sessionInfo.seats;
+          for ( let seat of this.reservedSeats ) {
+            document.getElementById( seat )?.classList.add( 'reserved' );
           }
-          if ( minutes === "0" ) {
-            minutes = "00";
-          }
-
-          this.dateInfo = month + '/' + day + '/' + year;
-          this.timeInfo = hours + ':' + minutes;
 
         },
         error: ( err: HttpErrorResponse ) => {
@@ -65,6 +56,26 @@ export class SessionBookComponent implements OnInit {
         }
       } )
 
+
   }
 
+  public selectSeat( target: any ): void {
+    if ( target.className !== 'row' && !target.classList.contains('reserved') ) {
+      target.classList.toggle( 'selected' );
+      if ( !this.ticketsArr.includes( target ) ) {
+        this.ticketsArr.push( target );
+        this.ticketsAllPrice += this.sessionInfo.price;
+      } else {
+        this.ticketsAllPrice -= this.sessionInfo.price;
+        this.ticketsArr.splice( this.ticketsArr.indexOf( target ), 1 );
+      }
+    }
+
+  }
+
+  public deleteTicket( ticket: any ) {
+    ticket.classList.remove( 'selected' );
+    this.ticketsAllPrice -= this.sessionInfo.price;
+    this.ticketsArr.splice( this.ticketsArr.indexOf( ticket ), 1 );
+  }
 }

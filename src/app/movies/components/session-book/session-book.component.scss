@@ -67,10 +67,6 @@
   transition: $animationTime;
 }
 
-.seat:hover {
-  background-color: $gray;
-}
-
 .seat-info {
   display: flex;
   flex-direction: column;
@@ -113,6 +109,7 @@
 }
 
 .reserved {
+  cursor: default;
   border: 2px solid $orange;
 }
 
@@ -131,15 +128,21 @@
   border-bottom: 1px solid $white;
 }
 
+.tickets-wrapper {
+  height: 350px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
 .ticket {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 85%;
   height: 75px;
   border-radius: 1rem;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
   padding: 1rem;
   background-color: $dark-gray;
   box-shadow: $shadow;
@@ -191,17 +194,22 @@
   height: 50px;
   border-radius: 1rem;
   outline: none;
-  background-color: $green;
   color: $white;
   border: 1px solid $dark-gray;
   cursor: pointer;
   transition: $animationTime;
 }
 
-.buy-btn:hover {
+.buy-btn-disabled {
+  cursor: default;
   background-color: $dark-green;
 }
 
+.buy-btn-enabled {
+  background-color: $green;
+}  .buy-btn-enabled:hover {
+     background-color: $dark-green;
+   }
 
 @media (max-width: 650px) {
   .session-wrapper {
@@ -226,10 +234,6 @@
     height: 0.8rem;
   }
 
-  .seat:hover {
-    background-color: $lightGray;
-  }
-
   .seat-info {
     width: 100%;
   }
@@ -247,7 +251,11 @@
     font-size: 0.9rem;
   }
 
-  .ticket-date , .ticket-price {
+  .tickets-wrapper {
+    height: 200px;
+  }
+
+  .ticket-date, .ticket-price , .seat-row , .seat-seat {
     font-size: 0.8rem;
   }
 
