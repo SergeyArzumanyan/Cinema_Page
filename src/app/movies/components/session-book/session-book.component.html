@@ -4,7 +4,6 @@
     <div class="session-info">
       <p class="session-date">{{ sessionInfo?.date | date }}  {{ sessionInfo?.date | date: 'HH:mm' }}</p>
     </div>
-    <p class="hall-id">Hall Id</p>
   </div>
 
   <div class="main-block">
@@ -108,7 +107,7 @@
             <span class="seat-row"> Row {{ ticket.id | seatRow }} </span>
             <span class="seat-seat"> Seat {{ ticket.id | seat }} </span>
           </div>
-          <span class="ticket-price">{{ sessionInfo?.price }}</span>
+          <span class="ticket-price">{{ sessionInfo?.price }} AMD</span>
         </div>
       </div>
 

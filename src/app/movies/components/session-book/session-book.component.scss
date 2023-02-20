@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.hall-id, .session-info {
+.session-info {
   color: $white;
 }
 
@@ -149,6 +149,11 @@
   color: $white;
 }
 
+
+.ticket-price {
+  color: $lightGreen;
+}
+
 .ticket-count {
   border-bottom: 1px solid $white;
   padding-bottom: 2px;
@@ -216,7 +221,7 @@
     width: 90%;
   }
 
-  .session-date, .hall-id {
+  .session-date {
     font-size: $mobileFontSize;
   }
 

@@ -61,8 +61,7 @@
   color: $white;
 }
 
-form {
-  &.ng-submitted {
+form.ng-submitted {
     .form-input {
       &.ng-invalid.ng-touched {
         box-shadow: 0 0 0 1px $red;
@@ -73,7 +72,7 @@ form {
       }
     }
   }
-}
+
 
 .form-input {
   width: 100%;

@@ -43,6 +43,535 @@
       "movieId": 1,
       "price": 4500,
       "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 5000,
+      "movieId": 2,
+      "price": 2500,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-02T15:00:00.000Z",
+      "id": 6000,
+      "movieId": 2,
+      "price": 4500,
+      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+    },
+    {
+      "date": "2023-02-03T12:10:00.000Z",
+      "id": 7000,
+      "movieId": 2,
+      "price": 3500,
+      "seats": ["seat2-2" , "seat3-3" , "seat5-5" , "seat6-6"]
+    },
+    {
+      "date": "2023-02-04T12:50:00.000Z",
+      "id": 8000,
+      "movieId": 2,
+      "price": 3000,
+      "seats": ["seat4-7" , "seat5-5" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 9000,
+      "movieId": 3,
+      "price": 1000,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-02T15:00:00.000Z",
+      "id": 10000,
+      "movieId": 3,
+      "price": 1500,
+      "seats": ["seat1-2" , "seat1-3" , "seat1-4" , "seat1-5"]
+    },
+    {
+      "date": "2023-02-04T12:10:00.000Z",
+      "id": 11000,
+      "movieId": 3,
+      "price": 2500,
+      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-07T12:50:00.000Z",
+      "id": 12000,
+      "movieId": 3,
+      "price": 3000,
+      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+    },
+    {
+      "date": "2023-02-01T13:15:00.000Z",
+      "id": 13000,
+      "movieId": 4,
+      "price": 1500,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-02T12:40:00.000Z",
+      "id": 14000,
+      "movieId": 4,
+      "price": 1000,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-04T15:25:00.000Z",
+      "id": 15000,
+      "movieId": 4,
+      "price": 5000,
+      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+    },
+    {
+      "date": "2023-02-06T12:15:00.000Z",
+      "id": 16000,
+      "movieId": 4,
+      "price": 2000,
+      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-04T12:10:00.000Z",
+      "id": 17000,
+      "movieId": 5,
+      "price": 2000,
+      "seats": ["seat2-2" , "seat2-1" , "seat2-3" , "seat2-4" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-04T15:25:00.000Z",
+      "id": 18000,
+      "movieId": 5,
+      "price": 3500,
+      "seats": ["seat1-1" , "seat1-2" , "seat4-2" , "seat4-1"]
+    },
+    {
+      "date": "2023-02-03T12:10:00.000Z",
+      "id": 19000,
+      "movieId": 5,
+      "price": 2500,
+      "seats": ["seat3-5" , "seat5-1" , "seat5-2" , "seat6-3"]
+    },
+    {
+      "date": "2023-02-04T12:50:00.000Z",
+      "id": 20000,
+      "movieId": 5,
+      "price": 1500,
+      "seats": ["seat2-7" , "seat2-8" , "seat6-7" , "seat6-8"]
+    },
+    {
+      "date": "2023-02-07T12:00:00.000Z",
+      "id": 21000,
+      "movieId": 6,
+      "price": 2500,
+      "seats": ["seat4-4" , "seat4-6" , "seat4-8" , "seat4-10"]
+    },
+    {
+      "date": "2023-02-02T13:10:00.000Z",
+      "id": 22000,
+      "movieId": 6,
+      "price": 4500,
+      "seats": ["seat1-4" , "seat1-5" , "seat4-6" , "seat4-7"]
+    },
+    {
+      "date": "2023-02-03T11:20:00.000Z",
+      "id": 23000,
+      "movieId": 6,
+      "price": 2000,
+      "seats": ["seat2-1" , "seat3-2" , "seat4-4" , "seat6-6"]
+    },
+    {
+      "date": "2023-02-04T19:00:00.000Z",
+      "id": 24000,
+      "movieId": 6,
+      "price": 5000,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-07T10:40:00.000Z",
+      "id": 25000,
+      "movieId": 7,
+      "price": 2000,
+      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+    },
+    {
+      "date": "2023-02-01T13:35:00.000Z",
+      "id": 26000,
+      "movieId": 7,
+      "price": 3500,
+      "seats": ["seat2-5" , "seat2-6" , "sea3-5" , "seat6-4"]
+    },    {
+      "date": "2023-02-04T10:30:00.000Z",
+      "id": 27000,
+      "movieId": 7,
+      "price": 4500,
+      "seats": ["seat5-7" , "seat5-6" , "seat5-4" , "seat5-3"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 28000,
+      "movieId": 7,
+      "price": 2500,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-4" , "seat6-2"]
+    },
+    {
+      "date": "2023-02-03T12:10:00.000Z",
+      "id": 29000,
+      "movieId": 8,
+      "price": 4000,
+      "seats": ["seat2-5" , "seat3-5" , "seat5-5" , "seat6-5"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 30000,
+      "movieId": 8,
+      "price": 2000,
+      "seats": ["seat1-2" , "seat1-3" , "seat6-2" , "seat6-3"]
+    },
+    {
+      "date": "2023-02-07T12:00:00.000Z",
+      "id": 31000,
+      "movieId": 8,
+      "price": 1500,
+      "seats": ["seat4-2" , "seat4-4" , "seat4-8" , "seat4-10"]
+    },
+    {
+      "date": "2023-02-02T14:45:00.000Z",
+      "id": 32000,
+      "movieId": 8,
+      "price": 3000,
+      "seats": ["seat1-1" , "seat1-10" , "seat4-1" , "seat4-10"]
+    },
+    {
+      "date": "2023-02-01T13:30:00.000Z",
+      "id": 33000,
+      "movieId": 9,
+      "price": 2000,
+      "seats": ["seat1-1" , "seat1-2" , "seat6-5" , "seat6-6"]
+    },
+    {
+      "date": "2023-02-02T14:45:00.000Z",
+      "id": 34000,
+      "movieId": 9,
+      "price": 6000,
+      "seats": ["seat1-10" , "seat1-9" , "seat4-3" , "seat4-1"]
+    },
+    {
+      "date": "2023-02-03T12:00:00.000Z",
+      "id": 35000,
+      "movieId": 9,
+      "price": 1500,
+      "seats": ["seat2-1" , "seat3-7" , "seat5-2" , "seat6-8"]
+    },
+    {
+      "date": "2023-02-04T16:00:00.000Z",
+      "id": 36000,
+      "movieId": 9,
+      "price": 4500,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 37000,
+      "movieId": 10,
+      "price": 2500,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-02T15:00:00.000Z",
+      "id": 38000,
+      "movieId": 10,
+      "price": 4500,
+      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+    },
+    {
+      "date": "2023-02-03T12:10:00.000Z",
+      "id": 39000,
+      "movieId": 10,
+      "price": 3500,
+      "seats": ["seat2-2" , "seat3-3" , "seat5-5" , "seat6-6"]
+    },
+    {
+      "date": "2023-02-04T12:50:00.000Z",
+      "id": 40000,
+      "movieId": 10,
+      "price": 3000,
+      "seats": ["seat4-7" , "seat5-5" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 41000,
+      "movieId": 11,
+      "price": 1000,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-02T15:00:00.000Z",
+      "id": 42000,
+      "movieId": 11,
+      "price": 1500,
+      "seats": ["seat1-2" , "seat1-3" , "seat1-4" , "seat1-5"]
+    },
+    {
+      "date": "2023-02-04T12:10:00.000Z",
+      "id": 43000,
+      "movieId": 11,
+      "price": 2500,
+      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-07T12:50:00.000Z",
+      "id": 44000,
+      "movieId": 11,
+      "price": 3000,
+      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+    },
+    {
+      "date": "2023-02-01T13:15:00.000Z",
+      "id": 45000,
+      "movieId": 12,
+      "price": 1500,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-02T12:40:00.000Z",
+      "id": 46000,
+      "movieId": 12,
+      "price": 1000,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-04T15:25:00.000Z",
+      "id": 47000,
+      "movieId": 12,
+      "price": 5000,
+      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+    },
+    {
+      "date": "2023-02-06T12:15:00.000Z",
+      "id": 48000,
+      "movieId": 12,
+      "price": 2000,
+      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-04T12:10:00.000Z",
+      "id": 49000,
+      "movieId": 13,
+      "price": 2000,
+      "seats": ["seat2-2" , "seat2-1" , "seat2-3" , "seat2-4" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-04T15:25:00.000Z",
+      "id": 50000,
+      "movieId": 13,
+      "price": 3500,
+      "seats": ["seat1-1" , "seat1-2" , "seat4-2" , "seat4-1"]
+    },
+    {
+      "date": "2023-02-03T12:10:00.000Z",
+      "id": 51000,
+      "movieId": 13,
+      "price": 2500,
+      "seats": ["seat3-5" , "seat5-1" , "seat5-2" , "seat6-3"]
+    },
+    {
+      "date": "2023-02-04T12:50:00.000Z",
+      "id": 52000,
+      "movieId": 13,
+      "price": 1500,
+      "seats": ["seat2-7" , "seat2-8" , "seat6-7" , "seat6-8"]
+    },
+    {
+      "date": "2023-02-07T12:00:00.000Z",
+      "id": 53000,
+      "movieId": 14,
+      "price": 2500,
+      "seats": ["seat4-4" , "seat4-6" , "seat4-8" , "seat4-10"]
+    },
+    {
+      "date": "2023-02-02T13:10:00.000Z",
+      "id": 54000,
+      "movieId": 14,
+      "price": 4500,
+      "seats": ["seat1-4" , "seat1-5" , "seat4-6" , "seat4-7"]
+    },
+    {
+      "date": "2023-02-03T11:20:00.000Z",
+      "id": 55000,
+      "movieId": 14,
+      "price": 2000,
+      "seats": ["seat2-1" , "seat3-2" , "seat4-4" , "seat6-6"]
+    },
+    {
+      "date": "2023-02-04T19:00:00.000Z",
+      "id": 56000,
+      "movieId": 14,
+      "price": 5000,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-07T10:40:00.000Z",
+      "id": 57000,
+      "movieId": 15,
+      "price": 2000,
+      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+    },
+    {
+      "date": "2023-02-01T13:35:00.000Z",
+      "id": 58000,
+      "movieId": 15,
+      "price": 3500,
+      "seats": ["seat2-5" , "seat2-6" , "sea3-5" , "seat6-4"]
+    },    {
+      "date": "2023-02-04T10:30:00.000Z",
+      "id": 59000,
+      "movieId": 15,
+      "price": 4500,
+      "seats": ["seat5-7" , "seat5-6" , "seat5-4" , "seat5-3"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 60000,
+      "movieId": 15,
+      "price": 2500,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-4" , "seat6-2"]
+    },
+    {
+      "date": "2023-02-03T12:10:00.000Z",
+      "id": 61000,
+      "movieId": 16,
+      "price": 4000,
+      "seats": ["seat2-5" , "seat3-5" , "seat5-5" , "seat6-5"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 62000,
+      "movieId": 16,
+      "price": 2000,
+      "seats": ["seat1-2" , "seat1-3" , "seat6-2" , "seat6-3"]
+    },
+    {
+      "date": "2023-02-07T12:00:00.000Z",
+      "id": 63000,
+      "movieId": 16,
+      "price": 1500,
+      "seats": ["seat4-2" , "seat4-4" , "seat4-8" , "seat4-10"]
+    },
+    {
+      "date": "2023-02-02T14:45:00.000Z",
+      "id": 64000,
+      "movieId": 16,
+      "price": 3000,
+      "seats": ["seat1-1" , "seat1-10" , "seat4-1" , "seat4-10"]
+    },
+    {
+      "date": "2023-02-02T12:40:00.000Z",
+      "id": 65000,
+      "movieId": 17,
+      "price": 1000,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-04T15:25:00.000Z",
+      "id": 66000,
+      "movieId": 17,
+      "price": 5000,
+      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+    },
+    {
+      "date": "2023-02-06T12:15:00.000Z",
+      "id": 67000,
+      "movieId": 17,
+      "price": 2000,
+      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-04T12:10:00.000Z",
+      "id": 68000,
+      "movieId": 17,
+      "price": 2000,
+      "seats": ["seat2-2" , "seat2-1" , "seat2-3" , "seat2-4" , "seat1-2"]
+    },
+    {
+      "date": "2023-02-02T14:45:00.000Z",
+      "id": 69000,
+      "movieId": 18,
+      "price": 6000,
+      "seats": ["seat1-10" , "seat1-9" , "seat4-3" , "seat4-1"]
+    },
+    {
+      "date": "2023-02-03T12:00:00.000Z",
+      "id": 70000,
+      "movieId": 18,
+      "price": 1500,
+      "seats": ["seat2-1" , "seat3-7" , "seat5-2" , "seat6-8"]
+    },
+    {
+      "date": "2023-02-04T16:00:00.000Z",
+      "id": 71000,
+      "movieId": 18,
+      "price": 4500,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 72000,
+      "movieId": 18,
+      "price": 2500,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+    },
+    {
+      "date": "2023-02-02T13:10:00.000Z",
+      "id": 73000,
+      "movieId": 19,
+      "price": 4500,
+      "seats": ["seat1-4" , "seat1-5" , "seat4-6" , "seat4-7"]
+    },
+    {
+      "date": "2023-02-03T11:20:00.000Z",
+      "id": 74000,
+      "movieId": 19,
+      "price": 2000,
+      "seats": ["seat2-1" , "seat3-2" , "seat4-4" , "seat6-6"]
+    },
+    {
+      "date": "2023-02-04T19:00:00.000Z",
+      "id": 75000,
+      "movieId": 19,
+      "price": 5000,
+      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+    },
+    {
+      "date": "2023-02-07T10:40:00.000Z",
+      "id": 76000,
+      "movieId": 19,
+      "price": 2000,
+      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+    },
+    {
+      "date": "2023-02-01T13:35:00.000Z",
+      "id": 77000,
+      "movieId": 20,
+      "price": 3500,
+      "seats": ["seat2-5" , "seat2-6" , "sea3-5" , "seat6-4"]
+    },    {
+      "date": "2023-02-04T10:30:00.000Z",
+      "id": 78000,
+      "movieId": 20,
+      "price": 4500,
+      "seats": ["seat5-7" , "seat5-6" , "seat5-4" , "seat5-3"]
+    },
+    {
+      "date": "2023-02-01T11:30:00.000Z",
+      "id": 79000,
+      "movieId": 20,
+      "price": 2500,
+      "seats": ["seat1-6" , "seat1-7" , "seat6-4" , "seat6-2"]
+    },
+    {
+      "date": "2023-02-03T12:10:00.000Z",
+      "id": 80000,
+      "movieId": 20,
+      "price": 4000,
+      "seats": ["seat2-5" , "seat3-5" , "seat5-5" , "seat6-5"]
     }
   ],
   "users": [

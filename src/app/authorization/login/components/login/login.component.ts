@@ -5,6 +5,7 @@ import { RequesthttpService } from "../../../../shared/services/requesthttp.serv
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
+import { UserService } from "../../../../shared/services/user.service";
 
 @Component( {
   selector: 'app-login',
@@ -14,13 +15,14 @@ import { ToastrService } from "ngx-toastr";
 export class LoginComponent implements OnInit {
   private users: IUser[] = [];
   private userDataCheck: boolean = false;
-  private userName: string | null | undefined = "";
+  private loggedUser!: IUser;
   public message: string = "";
 
   constructor(
     private http: RequesthttpService,
     private router: Router,
-    private toaster: ToastrService
+    private toaster: ToastrService,
+    private userService: UserService
   ) {
   }
 
@@ -38,9 +40,9 @@ export class LoginComponent implements OnInit {
 
   private loginMatch(): void {
     this.users?.map( user => {
-      if ( user.email === this.form.value.email && user.password === this.form.value.password  ) {
+      if ( user.email === this.form.value.email && user.password === this.form.value.password ) {
         this.userDataCheck = true;
-        this.userName = user.name ;
+        this.loggedUser = user;
       }
     } )
   }
@@ -64,11 +66,12 @@ export class LoginComponent implements OnInit {
       this.loginMatch();
 
       if ( this.userDataCheck ) {
-        this.toaster.success(  "Logged as " + this.userName , "Logged successfully." , {
+        this.toaster.success( "Logged as " + this.loggedUser.name, "Logged successfully.", {
           timeOut: 1000,
           closeButton: true,
           extendedTimeOut: 1000,
         } );
+        this.userService.logUser( this.loggedUser );
         this.router.navigateByUrl( "/movies" ).then();
       } else {
         this.toaster.error( "Email or password is incorrect", "Error.", {

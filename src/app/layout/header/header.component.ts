@@ -1,36 +1,56 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from "../../shared/services/user.service";
+import { IUser } from "../../shared/interfaces/authorization.interface";
+import { ErrorObserver } from "rxjs";
 
-@Component({
+@Component( {
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
-})
+  styleUrls: [ './header.component.scss' ]
+} )
 export class HeaderComponent implements OnInit {
+  public userName: string | null | undefined = "";
+
+  constructor(
+    public userService: UserService
+  ) {
+  }
+
   ngOnInit(): void {
-    if (window.innerWidth <= 650) {
-      this.getNavItems().map(item => item.classList.add('hide'))
-    }
+    this.userService.notSignedIn = true;
+    this.getUserData();
   }
 
-  private getNavItems() {
-    return Array.from(document.querySelectorAll('.nav-item'))
+  private getUserData(): void {
+    this.userService.user$.subscribe( {
+      next: ( user: IUser | null ) => {
+        this.userName = user?.name;
+      },
+      error: ( err: ErrorObserver<IUser> ) => {
+        console.log( err );
+      }
+    } )
   }
 
-  public toggle() {
-    let nav_ul = document.querySelector('.nav-ul');
-    let menu = document.getElementById( 'menu' );
-    menu?.classList.toggle( 'change' );
-    this.getNavItems().map(item => item.classList.toggle('hide'))
-    nav_ul?.classList.toggle('addHeight');
+  public logOutUser() {
+    this.toggleDropdown();
+    this.userService.notSignedIn = true;
   }
 
-  public closeMenu() {
-    let nav_ul = document.querySelector('.nav-ul');
-    let menu = document.getElementById( 'menu' );
-    if ( window.innerWidth <= 650 ) {
-      menu?.classList.toggle( 'change' );
-      nav_ul?.classList.toggle('addHeight');
-      this.getNavItems().map(item => item.classList.toggle('hide'))
-    }
+  public toggleMenu() {
+    document.querySelector( '.hamburger-menu' )?.classList.toggle( 'open' );
+    document.querySelector( '#nav-links' )?.classList.remove( 'links' );
+    document.querySelector( '#nav-links' )?.classList.add( 'links-mobile' );
+    document.querySelector( '#nav-links' )?.classList.toggle( 'visibility' );
   }
+
+  public closeMenu(): void {
+    document.querySelector( '.hamburger-menu' )?.classList.toggle( 'open' );
+  }
+
+  public toggleDropdown(): void {
+    document.querySelector('.dropdown-sign-out')?.classList.toggle('dropdown-sign-out-disabled')
+    document.querySelector('.dropdown-sign-out')?.classList.toggle('dropdown-sign-out-enabled');
+  }
+
 }

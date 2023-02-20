@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { RequesthttpService } from "../../../shared/services/requesthttp.service";
 import { IMovie } from "../../../shared/interfaces/movie.interface";
 import { ISession } from "../../../shared/interfaces/session.interface";
 import { HttpErrorResponse } from "@angular/common/http";
 import { DomSanitizer } from "@angular/platform-browser";
-import { logMessages } from "@angular-devkit/build-angular/src/builders/browser-esbuild/esbuild";
+import { ToastrService } from "ngx-toastr";
 
 @Component( {
   selector: 'app-movie-single',
@@ -27,7 +27,9 @@ export class MovieSingleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: RequesthttpService,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
+    private router: Router,
+    private toaster: ToastrService
   ) {
   }
 
@@ -45,10 +47,15 @@ export class MovieSingleComponent implements OnInit {
           this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl( movieData.trailerUrl );
           this.filterDays( this.dayArr );
           this.selectedDay = this.dayArr[ 0 ];
-          this.filterSessionsByDay( this.selectedDay , this.sessionsArr );
+          this.filterSessionsByDay( this.selectedDay, this.sessionsArr );
         },
         error: ( err: HttpErrorResponse ) => {
-          console.log( err );
+          this.router.navigate( [ '/movies' ] ).then();
+          this.toaster.error( err.statusText, "Error", {
+            timeOut: 1000,
+            closeButton: true,
+            extendedTimeOut: 1000,
+          } );
         }
       } )
 
@@ -61,18 +68,19 @@ export class MovieSingleComponent implements OnInit {
       this.selected_movie.sessions.map( ( session: any ) => {
         if ( !arr.includes( new Date( session.date ).getDate() ) ) {
           arr.push( new Date( session.date ).getDate() );
+          arr.sort( ( a: any, b: any ) => a - b );
         }
-      });
+      } );
 
     }
   }
 
-  private filterSessionsByDay( day: any , arr: any): void {
-     this.selected_movie.sessions.map( ( session: any ) => {
+  private filterSessionsByDay( day: any, arr: any ): void {
+    this.selected_movie.sessions.map( ( session: any ) => {
       if ( new Date( session.date ).getDate() === day ) {
         arr.push( session );
       }
-    });
+    } );
   }
 
   public pickDay( dayIndex: number ): void {
@@ -80,7 +88,7 @@ export class MovieSingleComponent implements OnInit {
     this.sessionsArr = [];
     this.dateIsSelected = false;
     this.selectedDay = this.dayArr[ dayIndex ];
-    this.filterSessionsByDay( this.selectedDay , this.sessionsArr )
+    this.filterSessionsByDay( this.selectedDay, this.sessionsArr )
   }
 
 
