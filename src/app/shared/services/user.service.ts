@@ -11,8 +11,12 @@ export class UserService {
   public user$: BehaviorSubject<IUser | null> = new BehaviorSubject<IUser | null>( null );
 
   public logUser( user: IUser ): void {
-    this.notSignedIn = false;
-    this.user$.next( user );
+      this.notSignedIn = false;
+      this.user$.next( user );
+  }
+
+  public logOutUser(): void {
+    this.notSignedIn = true;
   }
 
 }

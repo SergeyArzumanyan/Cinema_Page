@@ -14,7 +14,8 @@
       <div class="trailer-wrapper">
         <iframe [title]="selected_movie?.name"
                 loading="lazy"
-                [src]="safeURL"></iframe>
+                [src]="safeURL">
+        </iframe>
       </div>
     </div>
   </div>
@@ -28,7 +29,7 @@
            *ngFor="let day of dayArr, let i = index"
            [ngClass]="{'booked': day === selectedDay}"
            (click)="pickDay( i )">
-           {{ day }}
+        {{ day }}
       </div>
     </div>
 
@@ -36,22 +37,23 @@
       <div class="border"
            *ngFor="let session of sessionsArr , let i = index"
            [ngClass]="{'booked': session === selectedSession}"
-           (click)="pickSession( i )"
-      >
+           (click)="pickSession( i )">
 
         {{ session?.date | date: 'HH:mm' }}
 
         <small class="price">{{ session?.price }}</small>
-        <br>
-<!--    <small class="hall">hall: {{ selected_movie.halls[i] ? selected_movie.halls[i]['hallNumber'] : 1 }}</small>-->
       </div>
     </div>
 
-    <button  *ngIf="!dateIsSelected" class="disabled">Choose ticket</button>
+    <button *ngIf="!dateIsSelected"
+            class="disabled">
+      Choose ticket
+    </button>
     <button *ngIf="dateIsSelected"
             class="date-select-btn"
             [routerLink]="['/movies/' , selected_movie.id , selectedSession.id]"
-            [queryParams]="{}">Choose ticket
+            [queryParams]="{}">
+      Choose ticket
     </button>
   </div>
 </div>

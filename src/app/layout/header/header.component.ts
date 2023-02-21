@@ -10,7 +10,7 @@ import { ErrorObserver } from "rxjs";
 } )
 export class HeaderComponent implements OnInit {
   public userName: string | null | undefined = "";
-
+  public screenWidth: boolean = window.innerWidth <= 650;
   constructor(
     public userService: UserService
   ) {
@@ -33,19 +33,36 @@ export class HeaderComponent implements OnInit {
   }
 
   public logOutUser() {
-    this.toggleDropdown();
-    this.userService.notSignedIn = true;
+    setTimeout(() => {
+      this.userService.logOutUser();
+      this.toggleDropdown();
+    }, 750)
   }
 
   public toggleMenu() {
     document.querySelector( '.hamburger-menu' )?.classList.toggle( 'open' );
-    document.querySelector( '#nav-links' )?.classList.remove( 'links' );
-    document.querySelector( '#nav-links' )?.classList.add( 'links-mobile' );
-    document.querySelector( '#nav-links' )?.classList.toggle( 'visibility' );
+    document.querySelector( '#nav-links' )?.classList.toggle( 'fadeOut' );
+
+    setTimeout(() => {
+      document.querySelector( '#nav-links' )?.classList.remove( 'links' );
+      document.querySelector( '#nav-links' )?.classList.add( 'links-mobile' );
+      document.querySelector( '#nav-links' )?.classList.toggle( 'visibility' );
+      document.querySelector( '#nav-links' )?.classList.toggle( 'fadeIn' );
+    } , 200);
   }
 
   public closeMenu(): void {
     document.querySelector( '.hamburger-menu' )?.classList.toggle( 'open' );
+    document.querySelector( '#nav-links' )?.classList.toggle( 'visibility' );
+    if ( this.screenWidth ) {
+      document.querySelector( '#nav-links' )?.classList.toggle( 'fadeOut' );
+    }
+
+    setTimeout(() => {
+      if ( this.screenWidth ) {
+        document.querySelector( '#nav-links' )?.classList.toggle( 'fadeIn' );
+      }
+    }, 1000)
   }
 
   public toggleDropdown(): void {

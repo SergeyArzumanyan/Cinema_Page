@@ -6,7 +6,8 @@
     <img *ngIf="screenWidth"
          [src]="movie.imgUrl"
          alt="movie-img" class="movie-img">
-    <p class="movie-title" [routerLink]="['/movies' , movie.id]">{{movie.name}}</p>
+    <p class="movie-title" *ngIf="!screenWidth" [routerLink]="['/movies' , movie.id]">{{movie.name}}</p>
+    <p class="movie-title" *ngIf="screenWidth">{{movie.name}}</p>
     <button class="movie-btn" [routerLink]="['/movies' , movie.id]">See Tickets</button>
   </div>
 </div>

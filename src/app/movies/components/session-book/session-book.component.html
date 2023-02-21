@@ -122,7 +122,8 @@
         </div>
 
         <div class="buy-btn-block">
-          <button class="buy-btn" [ngClass]="{'buy-btn-enabled': ticketsArr.length , 'buy-btn-disabled': !ticketsArr.length}">Buy</button>
+          <button class="buy-btn buy-btn-enabled" *ngIf="ticketsArr.length" (click)="reserveSeats()">Buy</button>
+          <button class="buy-btn buy-btn-disabled" *ngIf="!ticketsArr.length">Buy</button>
         </div>
 
       </div>

@@ -79,6 +79,7 @@ export class MovieSingleComponent implements OnInit {
     this.selected_movie.sessions.map( ( session: any ) => {
       if ( new Date( session.date ).getDate() === day ) {
         arr.push( session );
+        arr.sort( ( a: any, b: any ) => a - b );
       }
     } );
   }

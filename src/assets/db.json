@@ -21,557 +21,978 @@
       "id": 1000,
       "movieId": 1,
       "price": 2000,
-      "seats": ["seat1-1" , "seat1-2" , "seat6-5" , "seat6-6"]
+      "seats": [
+        "seat1-1",
+        "seat6-10",
+        "seat6-7",
+        "seat6-1",
+        "seat5-4",
+        "seat5-5"
+      ]
     },
     {
       "date": "2023-02-02T14:45:00.000Z",
       "id": 2000,
       "movieId": 1,
       "price": 6000,
-      "seats": ["seat1-10" , "seat1-9" , "seat4-3" , "seat4-1"]
+      "seats": [
+        "seat1-10",
+        "seat1-9",
+        "seat4-3",
+        "seat4-1"
+      ]
     },
     {
       "date": "2023-02-03T12:00:00.000Z",
       "id": 3000,
       "movieId": 1,
       "price": 1500,
-      "seats": ["seat2-1" , "seat3-7" , "seat5-2" , "seat6-8"]
+      "seats": [
+        "seat2-1",
+        "seat3-7",
+        "seat5-2",
+        "seat6-8"
+      ]
     },
     {
       "date": "2023-02-04T16:00:00.000Z",
       "id": 4000,
       "movieId": 1,
       "price": 4500,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 5000,
       "movieId": 2,
       "price": 2500,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9"
+      ]
     },
     {
       "date": "2023-02-02T15:00:00.000Z",
       "id": 6000,
       "movieId": 2,
       "price": 4500,
-      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+      "seats": [
+        "seat1-1",
+        "seat1-8",
+        "seat4-3",
+        "seat4-2"
+      ]
     },
     {
       "date": "2023-02-03T12:10:00.000Z",
       "id": 7000,
       "movieId": 2,
       "price": 3500,
-      "seats": ["seat2-2" , "seat3-3" , "seat5-5" , "seat6-6"]
+      "seats": [
+        "seat2-2",
+        "seat3-3",
+        "seat5-5",
+        "seat6-6",
+        "seat6-9",
+        "seat6-10",
+        "seat1-9",
+        "seat1-10"
+      ]
     },
     {
       "date": "2023-02-04T12:50:00.000Z",
       "id": 8000,
       "movieId": 2,
       "price": 3000,
-      "seats": ["seat4-7" , "seat5-5" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat5-5",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 9000,
       "movieId": 3,
       "price": 1000,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9"
+      ]
     },
     {
       "date": "2023-02-02T15:00:00.000Z",
       "id": 10000,
       "movieId": 3,
       "price": 1500,
-      "seats": ["seat1-2" , "seat1-3" , "seat1-4" , "seat1-5"]
+      "seats": [
+        "seat1-2",
+        "seat1-3",
+        "seat1-4",
+        "seat1-5"
+      ]
     },
     {
       "date": "2023-02-04T12:10:00.000Z",
       "id": 11000,
       "movieId": 3,
       "price": 2500,
-      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat3-2",
+        "seat5-2",
+        "seat6-2",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-07T12:50:00.000Z",
       "id": 12000,
       "movieId": 3,
       "price": 3000,
-      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+      "seats": [
+        "seat4-5",
+        "seat4-6",
+        "seat6-5",
+        "seat6-4"
+      ]
     },
     {
       "date": "2023-02-01T13:15:00.000Z",
       "id": 13000,
       "movieId": 4,
       "price": 1500,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-02T12:40:00.000Z",
       "id": 14000,
       "movieId": 4,
       "price": 1000,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9"
+      ]
     },
     {
       "date": "2023-02-04T15:25:00.000Z",
       "id": 15000,
       "movieId": 4,
       "price": 5000,
-      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+      "seats": [
+        "seat1-1",
+        "seat1-8",
+        "seat4-3",
+        "seat4-2"
+      ]
     },
     {
       "date": "2023-02-06T12:15:00.000Z",
       "id": 16000,
       "movieId": 4,
       "price": 2000,
-      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat3-2",
+        "seat5-2",
+        "seat6-2",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-04T12:10:00.000Z",
       "id": 17000,
       "movieId": 5,
       "price": 2000,
-      "seats": ["seat2-2" , "seat2-1" , "seat2-3" , "seat2-4" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat2-1",
+        "seat2-3",
+        "seat2-4",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-04T15:25:00.000Z",
       "id": 18000,
       "movieId": 5,
       "price": 3500,
-      "seats": ["seat1-1" , "seat1-2" , "seat4-2" , "seat4-1"]
+      "seats": [
+        "seat1-1",
+        "seat1-2",
+        "seat4-2",
+        "seat4-1"
+      ]
     },
     {
       "date": "2023-02-03T12:10:00.000Z",
       "id": 19000,
       "movieId": 5,
       "price": 2500,
-      "seats": ["seat3-5" , "seat5-1" , "seat5-2" , "seat6-3"]
+      "seats": [
+        "seat3-5",
+        "seat5-1",
+        "seat5-2",
+        "seat6-3"
+      ]
     },
     {
       "date": "2023-02-04T12:50:00.000Z",
       "id": 20000,
       "movieId": 5,
       "price": 1500,
-      "seats": ["seat2-7" , "seat2-8" , "seat6-7" , "seat6-8"]
+      "seats": [
+        "seat2-7",
+        "seat2-8",
+        "seat6-7",
+        "seat6-8"
+      ]
     },
     {
       "date": "2023-02-07T12:00:00.000Z",
       "id": 21000,
       "movieId": 6,
       "price": 2500,
-      "seats": ["seat4-4" , "seat4-6" , "seat4-8" , "seat4-10"]
+      "seats": [
+        "seat4-4",
+        "seat4-6",
+        "seat4-8",
+        "seat4-10"
+      ]
     },
     {
       "date": "2023-02-02T13:10:00.000Z",
       "id": 22000,
       "movieId": 6,
       "price": 4500,
-      "seats": ["seat1-4" , "seat1-5" , "seat4-6" , "seat4-7"]
+      "seats": [
+        "seat1-4",
+        "seat1-5",
+        "seat4-6",
+        "seat4-7"
+      ]
     },
     {
       "date": "2023-02-03T11:20:00.000Z",
       "id": 23000,
       "movieId": 6,
       "price": 2000,
-      "seats": ["seat2-1" , "seat3-2" , "seat4-4" , "seat6-6"]
+      "seats": [
+        "seat2-1",
+        "seat3-2",
+        "seat4-4",
+        "seat6-6"
+      ]
     },
     {
       "date": "2023-02-04T19:00:00.000Z",
       "id": 24000,
       "movieId": 6,
       "price": 5000,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-07T10:40:00.000Z",
       "id": 25000,
       "movieId": 7,
       "price": 2000,
-      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+      "seats": [
+        "seat4-5",
+        "seat4-6",
+        "seat6-5",
+        "seat6-4"
+      ]
     },
     {
       "date": "2023-02-01T13:35:00.000Z",
       "id": 26000,
       "movieId": 7,
       "price": 3500,
-      "seats": ["seat2-5" , "seat2-6" , "sea3-5" , "seat6-4"]
-    },    {
+      "seats": [
+        "seat2-5",
+        "seat2-6",
+        "sea3-5",
+        "seat6-4"
+      ]
+    },
+    {
       "date": "2023-02-04T10:30:00.000Z",
       "id": 27000,
       "movieId": 7,
       "price": 4500,
-      "seats": ["seat5-7" , "seat5-6" , "seat5-4" , "seat5-3"]
+      "seats": [
+        "seat5-7",
+        "seat5-6",
+        "seat5-4",
+        "seat5-3"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 28000,
       "movieId": 7,
       "price": 2500,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-4" , "seat6-2"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-4",
+        "seat6-2"
+      ]
     },
     {
       "date": "2023-02-03T12:10:00.000Z",
       "id": 29000,
       "movieId": 8,
       "price": 4000,
-      "seats": ["seat2-5" , "seat3-5" , "seat5-5" , "seat6-5"]
+      "seats": [
+        "seat2-5",
+        "seat3-5",
+        "seat5-5",
+        "seat6-5"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 30000,
       "movieId": 8,
       "price": 2000,
-      "seats": ["seat1-2" , "seat1-3" , "seat6-2" , "seat6-3"]
+      "seats": [
+        "seat1-2",
+        "seat1-3",
+        "seat6-2",
+        "seat6-3"
+      ]
     },
     {
       "date": "2023-02-07T12:00:00.000Z",
       "id": 31000,
       "movieId": 8,
       "price": 1500,
-      "seats": ["seat4-2" , "seat4-4" , "seat4-8" , "seat4-10"]
+      "seats": [
+        "seat4-2",
+        "seat4-4",
+        "seat4-8",
+        "seat4-10"
+      ]
     },
     {
       "date": "2023-02-02T14:45:00.000Z",
       "id": 32000,
       "movieId": 8,
       "price": 3000,
-      "seats": ["seat1-1" , "seat1-10" , "seat4-1" , "seat4-10"]
+      "seats": [
+        "seat1-1",
+        "seat1-10",
+        "seat4-1",
+        "seat4-10"
+      ]
     },
     {
       "date": "2023-02-01T13:30:00.000Z",
       "id": 33000,
       "movieId": 9,
       "price": 2000,
-      "seats": ["seat1-1" , "seat1-2" , "seat6-5" , "seat6-6"]
+      "seats": [
+        "seat1-1",
+        "seat1-2",
+        "seat6-5",
+        "seat6-6"
+      ]
     },
     {
       "date": "2023-02-02T14:45:00.000Z",
       "id": 34000,
       "movieId": 9,
       "price": 6000,
-      "seats": ["seat1-10" , "seat1-9" , "seat4-3" , "seat4-1"]
+      "seats": [
+        "seat1-10",
+        "seat1-9",
+        "seat4-3",
+        "seat4-1"
+      ]
     },
     {
       "date": "2023-02-03T12:00:00.000Z",
       "id": 35000,
       "movieId": 9,
       "price": 1500,
-      "seats": ["seat2-1" , "seat3-7" , "seat5-2" , "seat6-8"]
+      "seats": [
+        "seat2-1",
+        "seat3-7",
+        "seat5-2",
+        "seat6-8"
+      ]
     },
     {
       "date": "2023-02-04T16:00:00.000Z",
       "id": 36000,
       "movieId": 9,
       "price": 4500,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 37000,
       "movieId": 10,
       "price": 2500,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9",
+        "seat1-1",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-02T15:00:00.000Z",
       "id": 38000,
       "movieId": 10,
       "price": 4500,
-      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+      "seats": [
+        "seat1-1",
+        "seat1-8",
+        "seat4-3",
+        "seat4-2"
+      ]
     },
     {
       "date": "2023-02-03T12:10:00.000Z",
       "id": 39000,
       "movieId": 10,
       "price": 3500,
-      "seats": ["seat2-2" , "seat3-3" , "seat5-5" , "seat6-6"]
+      "seats": [
+        "seat2-2",
+        "seat3-3",
+        "seat5-5",
+        "seat6-6"
+      ]
     },
     {
       "date": "2023-02-04T12:50:00.000Z",
       "id": 40000,
       "movieId": 10,
       "price": 3000,
-      "seats": ["seat4-7" , "seat5-5" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat5-5",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 41000,
       "movieId": 11,
       "price": 1000,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9"
+      ]
     },
     {
       "date": "2023-02-02T15:00:00.000Z",
       "id": 42000,
       "movieId": 11,
       "price": 1500,
-      "seats": ["seat1-2" , "seat1-3" , "seat1-4" , "seat1-5"]
+      "seats": [
+        "seat1-2",
+        "seat1-3",
+        "seat1-4",
+        "seat1-5"
+      ]
     },
     {
       "date": "2023-02-04T12:10:00.000Z",
       "id": 43000,
       "movieId": 11,
       "price": 2500,
-      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat3-2",
+        "seat5-2",
+        "seat6-2",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-07T12:50:00.000Z",
       "id": 44000,
       "movieId": 11,
       "price": 3000,
-      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+      "seats": [
+        "seat4-5",
+        "seat4-6",
+        "seat6-5",
+        "seat6-4"
+      ]
     },
     {
       "date": "2023-02-01T13:15:00.000Z",
       "id": 45000,
       "movieId": 12,
       "price": 1500,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-02T12:40:00.000Z",
       "id": 46000,
       "movieId": 12,
       "price": 1000,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9"
+      ]
     },
     {
       "date": "2023-02-04T15:25:00.000Z",
       "id": 47000,
       "movieId": 12,
       "price": 5000,
-      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+      "seats": [
+        "seat1-1",
+        "seat1-8",
+        "seat4-3",
+        "seat4-2"
+      ]
     },
     {
       "date": "2023-02-06T12:15:00.000Z",
       "id": 48000,
       "movieId": 12,
       "price": 2000,
-      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat3-2",
+        "seat5-2",
+        "seat6-2",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-04T12:10:00.000Z",
       "id": 49000,
       "movieId": 13,
       "price": 2000,
-      "seats": ["seat2-2" , "seat2-1" , "seat2-3" , "seat2-4" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat2-1",
+        "seat2-3",
+        "seat2-4",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-04T15:25:00.000Z",
       "id": 50000,
       "movieId": 13,
       "price": 3500,
-      "seats": ["seat1-1" , "seat1-2" , "seat4-2" , "seat4-1"]
+      "seats": [
+        "seat1-1",
+        "seat1-2",
+        "seat4-2",
+        "seat4-1"
+      ]
     },
     {
       "date": "2023-02-03T12:10:00.000Z",
       "id": 51000,
       "movieId": 13,
       "price": 2500,
-      "seats": ["seat3-5" , "seat5-1" , "seat5-2" , "seat6-3"]
+      "seats": [
+        "seat3-5",
+        "seat5-1",
+        "seat5-2",
+        "seat6-3"
+      ]
     },
     {
       "date": "2023-02-04T12:50:00.000Z",
       "id": 52000,
       "movieId": 13,
       "price": 1500,
-      "seats": ["seat2-7" , "seat2-8" , "seat6-7" , "seat6-8"]
+      "seats": [
+        "seat2-7",
+        "seat2-8",
+        "seat6-7",
+        "seat6-8"
+      ]
     },
     {
       "date": "2023-02-07T12:00:00.000Z",
       "id": 53000,
       "movieId": 14,
       "price": 2500,
-      "seats": ["seat4-4" , "seat4-6" , "seat4-8" , "seat4-10"]
+      "seats": [
+        "seat4-4",
+        "seat4-6",
+        "seat4-8",
+        "seat4-10"
+      ]
     },
     {
       "date": "2023-02-02T13:10:00.000Z",
       "id": 54000,
       "movieId": 14,
       "price": 4500,
-      "seats": ["seat1-4" , "seat1-5" , "seat4-6" , "seat4-7"]
+      "seats": [
+        "seat1-4",
+        "seat1-5",
+        "seat4-6",
+        "seat4-7"
+      ]
     },
     {
       "date": "2023-02-03T11:20:00.000Z",
       "id": 55000,
       "movieId": 14,
       "price": 2000,
-      "seats": ["seat2-1" , "seat3-2" , "seat4-4" , "seat6-6"]
+      "seats": [
+        "seat2-1",
+        "seat3-2",
+        "seat4-4",
+        "seat6-6"
+      ]
     },
     {
       "date": "2023-02-04T19:00:00.000Z",
       "id": 56000,
       "movieId": 14,
       "price": 5000,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
+    },
+    {
+      "date": "2023-02-01T10:35:00.000Z",
+      "id": 58000,
+      "movieId": 15,
+      "price": 3500,
+      "seats": [
+        "seat2-5",
+        "seat2-6",
+        "sea3-5",
+        "seat6-4"
+      ]
     },
     {
       "date": "2023-02-07T10:40:00.000Z",
       "id": 57000,
       "movieId": 15,
       "price": 2000,
-      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+      "seats": [
+        "seat4-5",
+        "seat4-6",
+        "seat6-5",
+        "seat6-4"
+      ]
     },
     {
-      "date": "2023-02-01T13:35:00.000Z",
-      "id": 58000,
-      "movieId": 15,
-      "price": 3500,
-      "seats": ["seat2-5" , "seat2-6" , "sea3-5" , "seat6-4"]
-    },    {
       "date": "2023-02-04T10:30:00.000Z",
       "id": 59000,
       "movieId": 15,
       "price": 4500,
-      "seats": ["seat5-7" , "seat5-6" , "seat5-4" , "seat5-3"]
+      "seats": [
+        "seat5-7",
+        "seat5-6",
+        "seat5-4",
+        "seat5-3"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 60000,
       "movieId": 15,
       "price": 2500,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-4" , "seat6-2"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-4",
+        "seat6-2"
+      ]
     },
     {
       "date": "2023-02-03T12:10:00.000Z",
       "id": 61000,
       "movieId": 16,
       "price": 4000,
-      "seats": ["seat2-5" , "seat3-5" , "seat5-5" , "seat6-5"]
+      "seats": [
+        "seat2-5",
+        "seat3-5",
+        "seat5-5",
+        "seat6-5"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 62000,
       "movieId": 16,
       "price": 2000,
-      "seats": ["seat1-2" , "seat1-3" , "seat6-2" , "seat6-3"]
+      "seats": [
+        "seat1-2",
+        "seat1-3",
+        "seat6-2",
+        "seat6-3"
+      ]
     },
     {
       "date": "2023-02-07T12:00:00.000Z",
       "id": 63000,
       "movieId": 16,
       "price": 1500,
-      "seats": ["seat4-2" , "seat4-4" , "seat4-8" , "seat4-10"]
+      "seats": [
+        "seat4-2",
+        "seat4-4",
+        "seat4-8",
+        "seat4-10"
+      ]
     },
     {
       "date": "2023-02-02T14:45:00.000Z",
       "id": 64000,
       "movieId": 16,
       "price": 3000,
-      "seats": ["seat1-1" , "seat1-10" , "seat4-1" , "seat4-10"]
+      "seats": [
+        "seat1-1",
+        "seat1-10",
+        "seat4-1",
+        "seat4-10"
+      ]
     },
     {
       "date": "2023-02-02T12:40:00.000Z",
       "id": 65000,
       "movieId": 17,
       "price": 1000,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9",
+        "seat4-3",
+        "seat4-2"
+      ]
     },
     {
       "date": "2023-02-04T15:25:00.000Z",
       "id": 66000,
       "movieId": 17,
       "price": 5000,
-      "seats": ["seat1-1" , "seat1-8" , "seat4-3" , "seat4-2"]
+      "seats": [
+        "seat1-1",
+        "seat1-8",
+        "seat4-3",
+        "seat4-2"
+      ]
     },
     {
       "date": "2023-02-06T12:15:00.000Z",
       "id": 67000,
       "movieId": 17,
       "price": 2000,
-      "seats": ["seat2-2" , "seat3-2" , "seat5-2" , "seat6-2" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat3-2",
+        "seat5-2",
+        "seat6-2",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-04T12:10:00.000Z",
       "id": 68000,
       "movieId": 17,
       "price": 2000,
-      "seats": ["seat2-2" , "seat2-1" , "seat2-3" , "seat2-4" , "seat1-2"]
+      "seats": [
+        "seat2-2",
+        "seat2-1",
+        "seat2-3",
+        "seat2-4",
+        "seat1-2"
+      ]
     },
     {
       "date": "2023-02-02T14:45:00.000Z",
       "id": 69000,
       "movieId": 18,
       "price": 6000,
-      "seats": ["seat1-10" , "seat1-9" , "seat4-3" , "seat4-1"]
+      "seats": [
+        "seat1-10",
+        "seat1-9",
+        "seat4-3",
+        "seat4-1"
+      ]
     },
     {
       "date": "2023-02-03T12:00:00.000Z",
       "id": 70000,
       "movieId": 18,
       "price": 1500,
-      "seats": ["seat2-1" , "seat3-7" , "seat5-2" , "seat6-8"]
+      "seats": [
+        "seat2-1",
+        "seat3-7",
+        "seat5-2",
+        "seat6-8"
+      ]
     },
     {
       "date": "2023-02-04T16:00:00.000Z",
       "id": 71000,
       "movieId": 18,
       "price": 4500,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 72000,
       "movieId": 18,
       "price": 2500,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-8" , "seat6-9"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-8",
+        "seat6-9"
+      ]
     },
     {
       "date": "2023-02-02T13:10:00.000Z",
       "id": 73000,
       "movieId": 19,
       "price": 4500,
-      "seats": ["seat1-4" , "seat1-5" , "seat4-6" , "seat4-7"]
+      "seats": [
+        "seat1-4",
+        "seat1-5",
+        "seat4-6",
+        "seat4-7"
+      ]
     },
     {
       "date": "2023-02-03T11:20:00.000Z",
       "id": 74000,
       "movieId": 19,
       "price": 2000,
-      "seats": ["seat2-1" , "seat3-2" , "seat4-4" , "seat6-6"]
+      "seats": [
+        "seat2-1",
+        "seat3-2",
+        "seat4-4",
+        "seat6-6"
+      ]
     },
     {
       "date": "2023-02-04T19:00:00.000Z",
       "id": 75000,
       "movieId": 19,
       "price": 5000,
-      "seats": ["seat4-7" , "seat1-7" , "seat6-7" , "seat7-7"]
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7",
+        "seat7-7"
+      ]
     },
     {
       "date": "2023-02-07T10:40:00.000Z",
       "id": 76000,
       "movieId": 19,
       "price": 2000,
-      "seats": ["seat4-5" , "seat4-6" , "seat6-5" , "seat6-4"]
+      "seats": [
+        "seat4-5",
+        "seat4-6",
+        "seat6-5",
+        "seat6-4"
+      ]
     },
     {
       "date": "2023-02-01T13:35:00.000Z",
       "id": 77000,
       "movieId": 20,
       "price": 3500,
-      "seats": ["seat2-5" , "seat2-6" , "sea3-5" , "seat6-4"]
-    },    {
+      "seats": [
+        "seat2-5",
+        "seat2-6",
+        "sea3-5",
+        "seat6-4"
+      ]
+    },
+    {
       "date": "2023-02-04T10:30:00.000Z",
       "id": 78000,
       "movieId": 20,
       "price": 4500,
-      "seats": ["seat5-7" , "seat5-6" , "seat5-4" , "seat5-3"]
+      "seats": [
+        "seat5-7",
+        "seat5-6",
+        "seat5-4",
+        "seat5-3"
+      ]
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 79000,
       "movieId": 20,
       "price": 2500,
-      "seats": ["seat1-6" , "seat1-7" , "seat6-4" , "seat6-2"]
+      "seats": [
+        "seat1-6",
+        "seat1-7",
+        "seat6-4",
+        "seat6-2"
+      ]
     },
     {
       "date": "2023-02-03T12:10:00.000Z",
       "id": 80000,
       "movieId": 20,
       "price": 4000,
-      "seats": ["seat2-5" , "seat3-5" , "seat5-5" , "seat6-5"]
+      "seats": [
+        "seat2-5",
+        "seat3-5",
+        "seat5-5",
+        "seat6-5"
+      ]
     }
   ],
   "users": [
@@ -610,10 +1031,6 @@
         true
       ],
       "description": "A family struggling with loss finds themselves at the mercy of an ancient demon trying to destroy them from the inside.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 2,
       "imgUrl": "./assets/images/movie-pictures/2.jpg",
       "name": "Abyzou",
@@ -624,123 +1041,10 @@
         true,
         false
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Ernest and Célestine return to Ernest's country to have his broken violin repaired. They discover that music is banned throughout the country. They will attempt to right this injustice in order to bring joy back to bear country.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 3,
       "imgUrl": "./assets/images/movie-pictures/3.jpg",
       "name": "Ernest and Celestine: A Trip to Gibberitia",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -748,123 +1052,10 @@
         false,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Three friends, taxi drivers, use all the possible and impossible ways to acquaint their unlucky friend with his beloved girl. #MerKinon",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 4,
       "imgUrl": "./assets/images/movie-pictures/4.jpg",
       "name": "Men",
-      "sessions": [
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -872,123 +1063,10 @@
         true,
         false
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Best friends since childhood, Zoe and Kazim have always had the same attitude towards such concepts as love and marriage. But Zoe has been unable to find her true love in all of London for many years, while Kazim suddenly decides to marry a complete stranger chosen by his parents.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 5,
       "imgUrl": "./assets/images/movie-pictures/5.jpg",
       "name": "What's Love Got to Do with It?",
-      "sessions": [
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -996,123 +1074,10 @@
         false,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 6,
       "imgUrl": "./assets/images/movie-pictures/6.jpg",
       "name": "Titanic",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1120,123 +1085,10 @@
         true,
         false
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "While vacationing, a girl and her parents are taken hostage by armed strangers who demand that the family make a choice to avert the apocalypse.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 7,
       "imgUrl": "./assets/images/movie-pictures/7.jpg",
       "name": "Knock at the Cabin",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1244,123 +1096,10 @@
         false,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "The film follows the fun adventures of three ancient Egyptian mummies who live in an underground secret city, hidden in ancient Egypt. The trio includes a princess, a former charioteer, his younger brother, and their pet baby crocodile. Through a series of unfortunate events, the mummies end up in present-day London and embark on a wacky and hilarious journey in search of an old ring belonging to the Royal Family, which was stolen by the ambitious archaeologist Lord Carnaby.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 8,
       "imgUrl": "./assets/images/movie-pictures/8.jpg",
       "name": "Mummies",
-      "sessions": [
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1368,123 +1107,10 @@
         true,
         false
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "A pilot finds himself caught in a war zone after he's forced to land his commercial aircraft during a terrible storm.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 9,
       "imgUrl": "./assets/images/movie-pictures/9.jpg",
       "name": "Plane",
-      "sessions": [
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1492,123 +1118,10 @@
         false,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Little Torik, was a shy and quet child. Everything was all right until he became an adult and married a girl from a brothel.The sodiety could not forgive him that. The young man turns into a resolute and courageous defendant of his own happiness. #MerKinon\n\n",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 10,
       "imgUrl": "./assets/images/movie-pictures/10.jpg",
       "name": "A Piece of Sky",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1616,123 +1129,10 @@
         true,
         false
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "A robotics engineer at a toy company builds a life-like doll that begins to take on a life of its own.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 11,
       "imgUrl": "./assets/images/movie-pictures/11.jpg",
       "name": "M3gan",
-      "sessions": [
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1740,123 +1140,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "A couple's extravagant destination wedding is hijacked by criminals. In the process of saving their families, they rediscover why they fell in love in the first place.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 12,
       "imgUrl": "./assets/images/movie-pictures/12.jpg",
       "name": "Shotgun Wedding",
-      "sessions": [
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1864,123 +1151,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "This story follows Maurice, a goofy streetwise cat, who has the perfect money-making scam. He finds a dumb-looking kid who plays a pipe and has his very own horde of rats, who are strangely literate.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 13,
       "imgUrl": "./assets/images/movie-pictures/13.jpg",
       "name": "The Amazing Maurice",
-      "sessions": [
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -1988,123 +1162,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Two lifelong friends find themselves at an impasse when one abruptly ends their relationship, with alarming consequences for both of them.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 14,
       "imgUrl": "./assets/images/movie-pictures/14.jpg",
       "name": "The Banshees of Inisherin",
-      "sessions": [
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -2112,123 +1173,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Special agent Orson Fortune and his team of operatives recruit one of Hollywood's biggest movie stars to help them on an undercover mission when the sale of a deadly new weapons technology threatens to disrupt the world order.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 15,
       "imgUrl": "./assets/images/movie-pictures/15.jpg",
       "name": "Operation Fortune: Ruse de guerre",
-      "sessions": [
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -2236,123 +1184,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 16,
       "imgUrl": "./assets/images/movie-pictures/16.jpg",
       "name": "Puss in Boots: The Last Wish",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -2360,123 +1195,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Jake Sully lives with his newfound family formed on the planet of Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their planet.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 17,
       "imgUrl": "./assets/images/movie-pictures/17.jpg",
       "name": "Avatar: The Way of Water",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -2484,123 +1206,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "Jess, a separated and nurse who moves with her daughter and young son Owen back into her old farmhouse. Shortly after settling in, Owen is bitten by the dog, resulting in a mysterious infection from the bite.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 18,
       "imgUrl": "./assets/images/movie-pictures/18.jpg",
       "name": "Blood",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -2608,123 +1217,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "The only daughter of the Chinese emperor Han Xuandi, escapes from a strict prince and seeks help from the Gauls and the two brave warriors Asterix and Obelix.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 19,
       "imgUrl": "./assets/images/movie-pictures/19.jpg",
       "name": "Asterix & Obelix: The Middle Kingdom",
-      "sessions": [
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     },
     {
@@ -2732,123 +1228,10 @@
         true,
         true
       ],
-      "days": [
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19"
-      ],
       "description": "An oddball group of cops, criminals, tourists, and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
-      "hallId": [
-        1,
-        3
-      ],
       "id": 20,
       "imgUrl": "./assets/images/movie-pictures/20.jpg",
       "name": "Cocaine Bear",
-      "sessions": [
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            2000,
-            "19:25"
-          ],
-          [
-            4000,
-            "22:30"
-          ]
-        ],
-        [
-          [
-            1000,
-            "10:00"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            2500,
-            "17:30"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            2000,
-            "12:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            2000,
-            "18:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "12:30"
-          ],
-          [
-            2500,
-            "18:45"
-          ],
-          [
-            3500,
-            "19:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:00"
-          ],
-          [
-            3000,
-            "17:00"
-          ],
-          [
-            3500,
-            "22:00"
-          ]
-        ],
-        [
-          [
-            1500,
-            "11:30"
-          ],
-          [
-            2000,
-            "14:45"
-          ],
-          [
-            3000,
-            "16:30"
-          ]
-        ]
-      ],
       "trailerUrl": ""
     }
   ]

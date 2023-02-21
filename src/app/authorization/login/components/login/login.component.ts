@@ -59,6 +59,26 @@ export class LoginComponent implements OnInit {
     ] )
   } )
 
+  private loginSuccess(): void {
+    setTimeout(() => {
+      this.toaster.success( "Logged as " + this.loggedUser.name, "Logged successfully.", {
+        timeOut: 1000,
+        closeButton: true,
+        extendedTimeOut: 1000,
+      } );
+      this.userService.logUser( this.loggedUser );
+      this.router.navigateByUrl( "/movies" ).then();
+    }, 1000);
+  }
+
+  private loginFail(): void {
+    this.toaster.error( "Email or password is incorrect", "Error.", {
+      timeOut: 1000,
+      closeButton: true,
+      extendedTimeOut: 1000,
+    } );
+  }
+
   public onSubmit(): void {
     this.form.markAllAsTouched();
     if ( this.form.valid ) {
@@ -66,19 +86,9 @@ export class LoginComponent implements OnInit {
       this.loginMatch();
 
       if ( this.userDataCheck ) {
-        this.toaster.success( "Logged as " + this.loggedUser.name, "Logged successfully.", {
-          timeOut: 1000,
-          closeButton: true,
-          extendedTimeOut: 1000,
-        } );
-        this.userService.logUser( this.loggedUser );
-        this.router.navigateByUrl( "/movies" ).then();
+        this.loginSuccess();
       } else {
-        this.toaster.error( "Email or password is incorrect", "Error.", {
-          timeOut: 1000,
-          closeButton: true,
-          extendedTimeOut: 1000,
-        } );
+        this.loginFail();
       }
 
     }

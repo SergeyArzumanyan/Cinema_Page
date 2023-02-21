@@ -64,7 +64,7 @@
         </a>
       </div>
     </div>
-    <div id="nav-links" class="links">
+    <div id="nav-links" class="links" [ngClass]="{fadeOut: screenWidth}">
       <div class="nav-item" [routerLink]="['/cinemas']" routerLinkActive="active" (click)="closeMenu()">
         <a class="nav-link">
           Cinemas

@@ -6,6 +6,7 @@ import { RequesthttpService } from "../../../../shared/services/requesthttp.serv
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
+import { UserService } from "../../../../shared/services/user.service";
 
 @Component( {
   selector: 'app-register',
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
     private sendHttp: SendhttpService,
     private requestHttp: RequesthttpService,
     private router: Router,
-    private toaster: ToastrService
+    private toaster: ToastrService,
+    private userService: UserService
   ) {
   }
 
@@ -64,7 +66,7 @@ export class RegisterComponent implements OnInit {
     this.users?.map( user => {
       if ( user.email === this.form.value.email ) {
         this.userCheck = true;
-        this.toaster.error( "Account with that email already exists", "Error" , {
+        this.toaster.error( "Account with that email already exists", "Error", {
           timeOut: 1000,
           closeButton: true,
           extendedTimeOut: 1000,
@@ -74,11 +76,11 @@ export class RegisterComponent implements OnInit {
   }
 
   private registerSuccess(): void {
-    this.toaster.success( "Successfully registered", "Done" , {
+    this.toaster.success( "Successfully registered", "Done", {
       timeOut: 1000,
       closeButton: true,
       extendedTimeOut: 1000,
-    });
+    } );
     this.sendHttp.sendUserData( this.form.value ).subscribe();
     this.form.reset()
     this.router.navigateByUrl( '/movies' ).then();  //  navigate to ticket booking section
@@ -89,7 +91,10 @@ export class RegisterComponent implements OnInit {
     if ( this.form.valid ) {
       this.registerEmailMatch();
       if ( !this.userCheck ) {
-        this.registerSuccess();
+        setTimeout( () => {
+          this.userService.logUser( this.form.value );
+          this.registerSuccess();
+        }, 1000 );
       }
     } else {
       this.form.markAllAsTouched();
