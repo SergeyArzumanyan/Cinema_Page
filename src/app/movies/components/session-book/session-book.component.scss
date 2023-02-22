@@ -1,7 +1,7 @@
 @import "../../../data.scss";
 
 .session-wrapper {
-  margin: 10% auto;
+  margin: 2.5rem auto;
   padding: 2rem;
   width: 60%;
   min-height: 50vh;
@@ -219,6 +219,7 @@
 @media (max-width: 650px) {
   .session-wrapper {
     width: 90%;
+    margin: 10% auto;
   }
 
   .session-date {

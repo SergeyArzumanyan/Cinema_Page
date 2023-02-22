@@ -65,7 +65,15 @@ export class SessionBookComponent implements OnInit {
         }
       } )
 
+  }
 
+  public generateTimes( n: number ): any {
+    let arr = [];
+    for ( let i = 0; i <   n; i++ ) {
+      arr.push(i);
+    }
+
+    return arr;
   }
 
   public selectSeat( target: any ): void {
@@ -107,16 +115,16 @@ export class SessionBookComponent implements OnInit {
       this.updatedSessionInfo = this.sessionInfo;
       this.updateSeatsArr = this.ticketsArr.map( ( seat: any ) => seat.id );
       for ( let reservedSeat of this.updateSeatsArr ) {
-        if ( !this.updatedSessionInfo.seats.includes(reservedSeat) ) {
+        if ( !this.updatedSessionInfo.seats.includes( reservedSeat ) ) {
           this.updatedSessionInfo.seats.push( reservedSeat );
         }
       }
-      this.sendHttp.sendReservedSeats( this.session_id , this.updatedSessionInfo )
+      this.sendHttp.sendReservedSeats( this.session_id, this.updatedSessionInfo )
         .subscribe( {
-          next: (data: ISession) => {
-            this.router.navigate(['/movies']).then();
+          next: ( data: ISession ) => {
+            this.router.navigate( [ '/movies/all' ] ).then();
           },
-          error: (err: HttpErrorResponse) => {
+          error: ( err: HttpErrorResponse ) => {
             console.log( err );
           }
         } )

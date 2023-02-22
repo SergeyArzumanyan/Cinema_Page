@@ -12,8 +12,7 @@ import { IUser } from "../interfaces/authorization.interface";
 export class RequesthttpService {
   private REQUEST_URL = ' http://localhost:3000'
 
-  constructor( private http: HttpClient ) {
-  }
+  constructor( private http: HttpClient ) {}
 
   public getCinemas(): Observable<ICinema[]> {
     return this.http.get<ICinema[]>( this.REQUEST_URL + '/cinemas' );

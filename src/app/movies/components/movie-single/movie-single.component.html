@@ -6,15 +6,18 @@
       <div class="img-wrapper">
         <img [src]="selected_movie?.imgUrl" alt="movie-img">
       </div>
-      <div class="text-info">
+      <div class="text-info"
+           (click)="toggleWithClick()">
         {{ selected_movie?.description }}
       </div>
     </div>
     <div class="block-two">
       <div class="trailer-wrapper">
         <iframe [title]="selected_movie?.name"
+                *ngIf="selected_movie?.trailerUrl"
                 loading="lazy"
-                [src]="safeURL">
+                [src]="selected_movie?.trailerUrl | safe: 'resourceUrl'"
+                allowfullscreen>
         </iframe>
       </div>
     </div>
@@ -41,7 +44,7 @@
 
         {{ session?.date | date: 'HH:mm' }}
 
-        <small class="price">{{ session?.price }}</small>
+        <small class="price">{{ session['price'] }}</small>
       </div>
     </div>
 
@@ -51,7 +54,7 @@
     </button>
     <button *ngIf="dateIsSelected"
             class="date-select-btn"
-            [routerLink]="['/movies/' , selected_movie.id , selectedSession.id]"
+            [routerLink]="['/movies/' + cinema_id , selected_movie.id , selectedSession.id]"
             [queryParams]="{}">
       Choose ticket
     </button>

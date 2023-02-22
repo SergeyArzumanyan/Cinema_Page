@@ -83,7 +83,7 @@ export class RegisterComponent implements OnInit {
     } );
     this.sendHttp.sendUserData( this.form.value ).subscribe();
     this.form.reset()
-    this.router.navigateByUrl( '/movies' ).then();  //  navigate to ticket booking section
+    this.router.navigateByUrl( '/movies/all' ).then();  //  navigate to ticket booking section
   }
 
   public onSubmit(): void {

@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
         extendedTimeOut: 1000,
       } );
       this.userService.logUser( this.loggedUser );
-      this.router.navigateByUrl( "/movies" ).then();
+      this.router.navigateByUrl( "/movies/all" ).then();
     }, 1000);
   }
 

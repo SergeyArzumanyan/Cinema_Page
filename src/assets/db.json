@@ -63,7 +63,11 @@
         "seat4-7",
         "seat1-7",
         "seat6-7",
-        "seat7-7"
+        "seat7-7",
+        "seat0-9",
+        "seat0-8",
+        "seat5-0",
+        "seat5-1"
       ]
     },
     {
@@ -442,7 +446,11 @@
         "seat2-1",
         "seat3-7",
         "seat5-2",
-        "seat6-8"
+        "seat6-8",
+        "seat4-6",
+        "seat4-7",
+        "seat4-8",
+        "seat4-9"
       ]
     },
     {
@@ -1023,7 +1031,7 @@
       "id": 1,
       "imgUrl": "./assets/images/movie-pictures/1.jpg",
       "name": "Ant-Man and the Wasp: Quantumania",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/5WfTEZJnv_8"
     },
     {
       "cinemaId": [
@@ -1034,7 +1042,7 @@
       "id": 2,
       "imgUrl": "./assets/images/movie-pictures/2.jpg",
       "name": "Abyzou",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/36Bsn5iQGWA"
     },
     {
       "cinemaId": [
@@ -1045,7 +1053,7 @@
       "id": 3,
       "imgUrl": "./assets/images/movie-pictures/3.jpg",
       "name": "Ernest and Celestine: A Trip to Gibberitia",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/PyU-mSUOnSs"
     },
     {
       "cinemaId": [
@@ -1056,7 +1064,7 @@
       "id": 4,
       "imgUrl": "./assets/images/movie-pictures/4.jpg",
       "name": "Men",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/xdhcYrwHWXk"
     },
     {
       "cinemaId": [
@@ -1067,7 +1075,7 @@
       "id": 5,
       "imgUrl": "./assets/images/movie-pictures/5.jpg",
       "name": "What's Love Got to Do with It?",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/0LqOp2MNwao"
     },
     {
       "cinemaId": [
@@ -1078,7 +1086,7 @@
       "id": 6,
       "imgUrl": "./assets/images/movie-pictures/6.jpg",
       "name": "Titanic",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/kVrqfYjkTdQ"
     },
     {
       "cinemaId": [
@@ -1089,7 +1097,7 @@
       "id": 7,
       "imgUrl": "./assets/images/movie-pictures/7.jpg",
       "name": "Knock at the Cabin",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/0wiBHEACNHs"
     },
     {
       "cinemaId": [
@@ -1100,7 +1108,7 @@
       "id": 8,
       "imgUrl": "./assets/images/movie-pictures/8.jpg",
       "name": "Mummies",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/WRB8YIc4U68"
     },
     {
       "cinemaId": [
@@ -1111,7 +1119,7 @@
       "id": 9,
       "imgUrl": "./assets/images/movie-pictures/9.jpg",
       "name": "Plane",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/M25zXBIUVr0"
     },
     {
       "cinemaId": [
@@ -1133,7 +1141,7 @@
       "id": 11,
       "imgUrl": "./assets/images/movie-pictures/11.jpg",
       "name": "M3gan",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/BRb4U99OU80"
     },
     {
       "cinemaId": [
@@ -1144,7 +1152,7 @@
       "id": 12,
       "imgUrl": "./assets/images/movie-pictures/12.jpg",
       "name": "Shotgun Wedding",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/U8gz0rUzTAY"
     },
     {
       "cinemaId": [
@@ -1155,7 +1163,7 @@
       "id": 13,
       "imgUrl": "./assets/images/movie-pictures/13.jpg",
       "name": "The Amazing Maurice",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/fotvV-Ty9rU"
     },
     {
       "cinemaId": [
@@ -1166,7 +1174,7 @@
       "id": 14,
       "imgUrl": "./assets/images/movie-pictures/14.jpg",
       "name": "The Banshees of Inisherin",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/uRu3zLOJN2c"
     },
     {
       "cinemaId": [
@@ -1177,7 +1185,7 @@
       "id": 15,
       "imgUrl": "./assets/images/movie-pictures/15.jpg",
       "name": "Operation Fortune: Ruse de guerre",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/W8Sqk1GcqxY"
     },
     {
       "cinemaId": [
@@ -1188,7 +1196,7 @@
       "id": 16,
       "imgUrl": "./assets/images/movie-pictures/16.jpg",
       "name": "Puss in Boots: The Last Wish",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/RqrXhwS33yc"
     },
     {
       "cinemaId": [
@@ -1199,7 +1207,7 @@
       "id": 17,
       "imgUrl": "./assets/images/movie-pictures/17.jpg",
       "name": "Avatar: The Way of Water",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/d9MyW72ELq0"
     },
     {
       "cinemaId": [
@@ -1210,7 +1218,7 @@
       "id": 18,
       "imgUrl": "./assets/images/movie-pictures/18.jpg",
       "name": "Blood",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/YpaR4qU2h4c"
     },
     {
       "cinemaId": [
@@ -1221,7 +1229,7 @@
       "id": 19,
       "imgUrl": "./assets/images/movie-pictures/19.jpg",
       "name": "Asterix & Obelix: The Middle Kingdom",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/9PLl0qJjDrQ"
     },
     {
       "cinemaId": [
@@ -1232,7 +1240,7 @@
       "id": 20,
       "imgUrl": "./assets/images/movie-pictures/20.jpg",
       "name": "Cocaine Bear",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/DuWEEKeJLMI"
     }
   ]
 }

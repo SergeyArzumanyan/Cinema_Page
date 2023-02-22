@@ -9,78 +9,16 @@
   <div class="main-block">
     <div class="seats-block">
       <div class="screen"></div>
-      <div id="row1" class="row" (click)="selectSeat($event.target)">
-        <div class="seat" id="seat1-1"></div>
-        <div class="seat" id="seat1-2"></div>
-        <div class="seat" id="seat1-3"></div>
-        <div class="seat" id="seat1-4"></div>
-        <div class="seat" id="seat1-5"></div>
-        <div class="seat" id="seat1-6"></div>
-        <div class="seat" id="seat1-7"></div>
-        <div class="seat" id="seat1-8"></div>
-        <div class="seat" id="seat1-9"></div>
-        <div class="seat" id="seat1-10"></div>
+
+      <div class="row"
+           *ngFor="let row of generateTimes(6), let rowIndex">
+        <div class="seat"
+          (click)="selectSeat($event.target)"
+          *ngFor="let seat of generateTimes(10), let seatIndex"
+          [id]="'seat' + rowIndex+ '-' + seatIndex">
+        </div>
       </div>
-      <div id="row2" class="row" (click)="selectSeat($event.target)">
-        <div class="seat" id="seat2-1"></div>
-        <div class="seat" id="seat2-2"></div>
-        <div class="seat" id="seat2-3"></div>
-        <div class="seat" id="seat2-4"></div>
-        <div class="seat" id="seat2-5"></div>
-        <div class="seat" id="seat2-6"></div>
-        <div class="seat" id="seat2-7"></div>
-        <div class="seat" id="seat2-8"></div>
-        <div class="seat" id="seat2-9"></div>
-        <div class="seat" id="seat2-10"></div>
-      </div>
-      <div id="row3" class="row" (click)="selectSeat($event.target)">
-        <div class="seat" id="seat3-1"></div>
-        <div class="seat" id="seat3-2"></div>
-        <div class="seat" id="seat3-3"></div>
-        <div class="seat" id="seat3-4"></div>
-        <div class="seat" id="seat3-5"></div>
-        <div class="seat" id="seat3-6"></div>
-        <div class="seat" id="seat3-7"></div>
-        <div class="seat" id="seat3-8"></div>
-        <div class="seat" id="seat3-9"></div>
-        <div class="seat" id="seat3-10"></div>
-      </div>
-      <div id="row4" class="row" (click)="selectSeat($event.target)">
-        <div class="seat" id="seat4-1"></div>
-        <div class="seat" id="seat4-2"></div>
-        <div class="seat" id="seat4-3"></div>
-        <div class="seat" id="seat4-4"></div>
-        <div class="seat" id="seat4-5"></div>
-        <div class="seat" id="seat4-6"></div>
-        <div class="seat" id="seat4-7"></div>
-        <div class="seat" id="seat4-8"></div>
-        <div class="seat" id="seat4-9"></div>
-        <div class="seat" id="seat4-10"></div>
-      </div>
-      <div id="row5" class="row" (click)="selectSeat($event.target)">
-        <div class="seat" id="seat5-1"></div>
-        <div class="seat" id="seat5-2"></div>
-        <div class="seat" id="seat5-3"></div>
-        <div class="seat" id="seat5-4"></div>
-        <div class="seat" id="seat5-5"></div>
-        <div class="seat" id="seat5-6"></div>
-        <div class="seat" id="seat5-7"></div>
-        <div class="seat" id="seat5-8"></div>
-        <div class="seat" id="seat5-9"></div>
-        <div class="seat" id="seat5-10"></div>
-      </div>
-      <div id="row6" class="row" (click)="selectSeat($event.target)">
-        <div class="seat" id="seat6-1"></div>
-        <div class="seat" id="seat6-2"></div>
-        <div class="seat" id="seat6-3"></div>
-        <div class="seat" id="seat6-4"></div>
-        <div class="seat" id="seat6-5"></div>
-        <div class="seat" id="seat6-6"></div>
-        <div class="seat" id="seat6-7"></div>
-        <div class="seat" id="seat6-8"></div>
-        <div class="seat" id="seat6-9"></div>
-        <div class="seat" id="seat6-10"></div>
-      </div>
+
     </div>
 
     <div class="seat-info">

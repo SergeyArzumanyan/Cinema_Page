@@ -1,110 +1,142 @@
-<!--<header>-->
-<!--  <nav>-->
-<!--    <ul class="nav-ul">-->
-<!--      <div class="logo-img-container" [routerLink]="['/cinemas']">-->
-<!--        <img src="../../../assets/images/logo.png" alt="logo">-->
-<!--      </div>-->
-<!--      <li class="nav-item brand-name">-->
-<!--        <a [routerLink]="['/cinemas']" class="nav-link">-->
-<!--          BrandName-->
-<!--        </a>-->
-<!--      </li>-->
-<!--      <div class="empty-block"></div>-->
-
-<!--      <li class="nav-item" *ngIf="userService.notSignedIn">-->
-<!--        <a [routerLink]="['/login']" class="nav-link login" (click)="closeMenu()" >Sign In <div></div></a>-->
-<!--      </li>-->
-
-<!--        <li class="nav-item dropdown-item" *ngIf="!userService.notSignedIn">-->
-<!--          <a class="nav-link dropdown-link profile" (mouseenter)="showLogOut()" (mouseleave)="hideLogOut()">-->
-<!--            {{ userName }}-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <div class="dropdown-toggle" (mouseenter)="showLogOut()" (mouseleave)="hideLogOut()">-->
-<!--          <li class="dropdown-item" (click)="logOutUser()"><a class="dropdown-link log-out" >Log Out</a></li>-->
-<!--        </div>-->
-
-<!--      <li class="nav-item">-->
-<!--        <a [routerLink]="['/shop']" routerLinkActive="active" (click)="closeMenu()" class="nav-link">-->
-<!--          Shop-->
-<!--        </a>-->
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a [routerLink]="['/movies']" routerLinkActive="active" (click)="closeMenu()" class="nav-link">-->
-<!--          Movies-->
-<!--        </a>-->
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a [routerLink]="['/cinemas']" routerLinkActive="active" (click)="closeMenu()" class="nav-link">-->
-<!--          Cinemas-->
-<!--        </a>-->
-<!--      </li>-->
-
-<!--      <div class="hamburger-menu" (click)="toggle()" id="menu">-->
-<!--        <div class="bar1"></div>-->
-<!--        <div class="bar2"></div>-->
-<!--        <div class="bar3"></div>-->
-<!--      </div>-->
-<!--    </ul>-->
-<!--  </nav>-->
-<!--</header>-->
-
-
 <header>
-
-  <nav class="navbar">
-
-    <div class="brand">
-      <div class="nav-logo" [routerLink]="['/cinemas']">
+  <nav class="navbar" [ngClass]="{
+  'navbar-large': screenIsLarge,
+  'navbar-small': !screenIsLarge
+  }">
+    <div class="brand" [ngClass]="{
+    'brand-large': screenIsLarge,
+    'brand-small': !screenIsLarge
+    }">
+      <div class="nav-logo"
+           [ngClass]="{
+           'nav-logo-large': screenIsLarge,
+           'nav-logo-small': !screenIsLarge
+           }"
+           [routerLink]="['/cinemas']">
         <img src="../../../assets/images/logo.png" alt="logo-img">
       </div>
-      <div class="nav-item" [routerLink]="['/cinemas']">
+      <div class="nav-item"
+           [ngClass]="{
+           'nav-item-large': screenIsLarge,
+           'nav-item-small': !screenIsLarge
+           }"
+           [routerLink]="['/cinemas']">
         <a class="nav-link">
-          <span class="brand-name">Brand</span>Name
+          <span class="brand-name"
+                [ngClass]="{
+                'brand-name-large': screenIsLarge,
+                'brand-name-small': !screenIsLarge
+                }">
+            Brand
+          </span>
+          Name
         </a>
       </div>
     </div>
-    <div id="nav-links" class="links" [ngClass]="{fadeOut: screenWidth}">
-      <div class="nav-item" [routerLink]="['/cinemas']" routerLinkActive="active" (click)="closeMenu()">
+    <div id="nav-links"
+         class="links"
+         [ngClass]="{
+         'links-large': screenIsLarge,
+         'links-small': !screenIsLarge,
+         'fadeOut': !screenIsLarge
+         }">
+      <div class="nav-item"
+           [ngClass]="{
+           'nav-item-large': screenIsLarge,
+           'nav-item-small': !screenIsLarge
+           }"
+           [routerLink]="['/cinemas']"
+           routerLinkActive="active"
+           (click)="closeMenu()">
         <a class="nav-link">
           Cinemas
         </a>
       </div>
 
-      <div class="nav-item" [routerLink]="['/movies']" routerLinkActive="active" (click)="closeMenu()">
+      <div class="nav-item"
+           [ngClass]="{
+           'nav-item-large': screenIsLarge,
+           'nav-item-small': !screenIsLarge
+           }"
+           [routerLink]="['/movies/all']"
+           routerLinkActive="active"
+           (click)="closeMenu()">
         <a class="nav-link">
           Movies
         </a>
       </div>
 
-      <div *ngIf="userService.notSignedIn" class="nav-item sign-in" [routerLink]="['/login']" (click)="closeMenu()">
-        <a class="nav-link">
+      <div class="nav-item sign-in-all"
+           [ngClass]="{
+           'nav-item-large': screenIsLarge,
+           'nav-item-small': !screenIsLarge
+           }"
+           *ngIf="userService.notSignedIn"
+           [routerLink]="['/login']"
+           (click)="closeMenu()">
+        <a class="nav-link"
+           [ngClass]="{
+           'nav-link-large': screenIsLarge,
+           'nav-link-small': !screenIsLarge}
+">
           Sign In
-          <span class="line"></span>
+          <span class="line"
+                [ngClass]="{
+                'line-large': screenIsLarge,
+                'line-small': !screenIsLarge
+                }">
+          </span>
         </a>
       </div>
 
-      <div *ngIf="!userService.notSignedIn" class="nav-item sign-out" (click)="toggleDropdown()">
-        <a class="nav-link">
+      <div *ngIf="!userService.notSignedIn"
+           class="nav-item sign-out-all"
+           [ngClass]="{
+           'nav-item-large': screenIsLarge,
+           'nav-item-small': !screenIsLarge
+           }"
+           (click)="toggleDropdown()">
+        <a class="nav-link"
+           [ngClass]="{
+           'nav-link-large': screenIsLarge,
+           'nav-link-small': !screenIsLarge
+           }">
           {{ userName }} <span> > </span>
         </a>
       </div>
 
-      <div class="dropdown-sign-out dropdown-sign-out-disabled">
-        <div class="dropdown-item" (click)="logOutUser()">Log out</div>
+      <div class="dropdown-sign-out dropdown-sign-out-disabled"
+           [ngClass]="{
+           'dropdown-sign-out-large': screenIsLarge,
+           'dropdown-sign-out-small': !screenIsLarge
+           }">
+        <div class="dropdown-item"
+             [ngClass]="{
+             'dropdown-item-large': screenIsLarge,
+             'dropdown-item-small': !screenIsLarge
+             }"
+             (click)="logOutUser()">Log out
+        </div>
       </div>
 
     </div>
 
-    <div class="hamburger-wrapper">
-      <div class="hamburger-menu" (click)="toggleMenu()">
+    <div class="hamburger-wrapper"
+         [ngClass]="{
+             'hamburger-wrapper-large': screenIsLarge,
+             'hamburger-wrapper-small': !screenIsLarge
+             }">
+      <div class="hamburger-menu"
+           [ngClass]="{
+             'hamburger-menu-large': screenIsLarge,
+             'hamburger-menu-small': !screenIsLarge
+             }"
+           (click)="toggleMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
     </div>
-
   </nav>
-
 </header>
