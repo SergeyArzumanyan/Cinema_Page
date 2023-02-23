@@ -130,13 +130,15 @@
 
 .links-small {
   display: flex;
+  flex-direction: column;
   width: 100%;
   margin-top: 50px;
   min-height: 150px;
-  flex-direction: column;
   visibility: hidden;
   background-color: $gray;
   z-index: 100;
+  transition: $animationTime;
+  opacity: 0;
 }
 
 .brand-name-large {
@@ -171,6 +173,7 @@
 
 .visibility {
   visibility: visible;
+  opacity: 1;
 }
 
 .hamburger-wrapper-large , .hamburger-menu-large {

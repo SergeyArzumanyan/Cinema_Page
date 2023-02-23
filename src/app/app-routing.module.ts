@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'register' , loadChildren: () => import('./authorization/register/register.module').then( m => m.RegisterModule) },
   { path: 'shop' , loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule) },
   { path: '', redirectTo: 'cinemas', pathMatch: 'full' },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'cinemas', pathMatch: 'full' },
 ];
 
 @NgModule( {

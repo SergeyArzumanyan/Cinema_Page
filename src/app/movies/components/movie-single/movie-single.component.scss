@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   color: $white;
-  background-color: $gray;
+  background-color: rgba($gray , 0.5);
   border-radius: 10px;
   box-shadow: $shadow;
 }
@@ -43,7 +43,7 @@
 
 .text-info {
   width: 300px;
-  font-size: 1.3rem1;
+  font-size: 1.3rem;
 }
 
 .block-two {
@@ -200,7 +200,7 @@
   }
 
   .date-block {
-    width: 90%;
+    width: 88%;
     padding: 1.5rem;
     margin: 2rem auto 3rem auto;
     font-size: 0.9rem;

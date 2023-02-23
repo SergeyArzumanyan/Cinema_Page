@@ -1,5 +1,15 @@
 @import "../../../data";
 
+.movies-title {
+  width: 35%;
+  margin: 2rem auto;
+  color: $white;
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $white;
+}
+
 .movies-container {
   width: 75%;
   margin: 1.5rem auto;
@@ -80,6 +90,11 @@
 }
 
 @media (max-width: 650px) {
+  .movies-title {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
   .movies-container {
     width: 80%;
     display: grid;

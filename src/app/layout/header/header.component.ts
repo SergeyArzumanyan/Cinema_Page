@@ -13,6 +13,7 @@ import { ErrorObserver } from "rxjs";
 export class HeaderComponent implements OnInit {
   public userName: string | null | undefined = "";
   public screenIsLarge: boolean = true;
+  public menu: boolean = false;
 
   constructor(
     public userService: UserService
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
   @HostListener( 'window:resize', [ '$event.target' ] )
   private onScreenSizeChange() {
     this.screenIsLarge = !( window.innerWidth <= 650 );
+    this.menu = !this.screenIsLarge;
   }
 
   ngOnInit(): void {
@@ -49,23 +51,16 @@ export class HeaderComponent implements OnInit {
   }
 
   public toggleMenu() {
+    this.menu = !this.menu;
+    document.querySelector( '#nav-links' )?.classList.toggle( 'visibility' );
     document.querySelector( '.hamburger-menu' )?.classList.toggle( 'open' );
-    document.querySelector( '#nav-links' )?.classList.toggle( 'fadeOut' );
-
-    setTimeout( () => {
-      document.querySelector( '#nav-links' )?.classList.toggle( 'fadeIn' );
-      document.querySelector( '#nav-links' )?.classList.toggle( 'visibility' );
-    }, 200 );
   }
 
   public closeMenu(): void {
+    this.menu = false;
     if ( !this.screenIsLarge ) {
-      document.querySelector( '.hamburger-menu' )?.classList.toggle( 'open' );
       document.querySelector( '#nav-links' )?.classList.toggle( 'visibility' );
-      document.querySelector( '#nav-links' )?.classList.toggle( 'fadeOut' );
-      setTimeout( () => {
-        document.querySelector( '#nav-links' )?.classList.toggle( 'fadeIn' );
-      }, 1000 )
+      document.querySelector( '.hamburger-menu' )?.classList.toggle( 'open' );
     }
   }
 
@@ -73,5 +68,4 @@ export class HeaderComponent implements OnInit {
     document.querySelector( '.dropdown-sign-out' )?.classList.toggle( 'dropdown-sign-out-disabled' )
     document.querySelector( '.dropdown-sign-out' )?.classList.toggle( 'dropdown-sign-out-enabled' );
   }
-
 }
