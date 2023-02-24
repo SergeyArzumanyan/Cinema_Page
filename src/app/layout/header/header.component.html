@@ -37,7 +37,8 @@
          class="links"
          [ngClass]="{
          'links-large': screenIsLarge,
-         'links-small': !screenIsLarge
+         'links-small': !screenIsLarge,
+         'visibility': menu
          }">
       <div class="nav-item"
            [ngClass]="{
@@ -57,7 +58,7 @@
            'nav-item-large': screenIsLarge,
            'nav-item-small': !screenIsLarge
            }"
-           [routerLink]="['/movies/all']"
+           [routerLink]="['/movies']"
            routerLinkActive="active"
            (click)="closeMenu()">
         <a class="nav-link">
@@ -65,44 +66,48 @@
         </a>
       </div>
 
-      <div class="nav-item sign-in-all"
-           [ngClass]="{
+
+      <ng-container *ngIf="userService.user$ | async as user; else loginBlock">
+        <div
+          class="nav-item sign-out-all"
+          [ngClass]="{
            'nav-item-large': screenIsLarge,
            'nav-item-small': !screenIsLarge
            }"
-           *ngIf="userService.notSignedIn"
-           [routerLink]="['/login']"
-           (click)="closeMenu()">
-        <a class="nav-link"
-           [ngClass]="{
+          (click)="toggleDropdown()">
+            <a class="nav-link"
+               [ngClass]="{
+                 'nav-link-large': screenIsLarge,
+                 'nav-link-small': !screenIsLarge
+                 }">
+              {{ user?.name }} <span> > </span>
+            </a>
+        </div>
+      </ng-container>
+      <ng-template #loginBlock>
+        <div class="nav-item sign-in-all"
+             [ngClass]="{
+           'nav-item-large': screenIsLarge,
+           'nav-item-small': !screenIsLarge
+           }"
+             [routerLink]="['/login']"
+             (click)="closeMenu()">
+          <a class="nav-link"
+             [ngClass]="{
            'nav-link-large': screenIsLarge,
            'nav-link-small': !screenIsLarge}
 ">
-          Sign In
-          <span class="line"
-                [ngClass]="{
+            Sign In
+            <span class="line"
+                  [ngClass]="{
                 'line-large': screenIsLarge,
                 'line-small': !screenIsLarge
                 }">
           </span>
-        </a>
-      </div>
+          </a>
+        </div>
+      </ng-template>
 
-      <div *ngIf="!userService.notSignedIn"
-           class="nav-item sign-out-all"
-           [ngClass]="{
-           'nav-item-large': screenIsLarge,
-           'nav-item-small': !screenIsLarge
-           }"
-           (click)="toggleDropdown()">
-        <a class="nav-link"
-           [ngClass]="{
-           'nav-link-large': screenIsLarge,
-           'nav-link-small': !screenIsLarge
-           }">
-          {{ userName }} <span> > </span>
-        </a>
-      </div>
 
       <div class="dropdown-sign-out dropdown-sign-out-disabled"
            [ngClass]="{
@@ -128,7 +133,8 @@
       <div class="hamburger-menu"
            [ngClass]="{
              'hamburger-menu-large': screenIsLarge,
-             'hamburger-menu-small': !screenIsLarge
+             'hamburger-menu-small': !screenIsLarge,
+             'open': menu
              }"
            (click)="toggleMenu()">
         <div class="bar"></div>

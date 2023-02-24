@@ -1024,8 +1024,7 @@
   "movies": [
     {
       "cinemaId": [
-        true,
-        false
+        "cinema-one"
       ],
       "description": "Scott Lang and Hope Van Dyne, along with Hank Pym and Janet Van Dyne, explore the Quantum Realm, where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible.",
       "id": 1,
@@ -1035,8 +1034,7 @@
     },
     {
       "cinemaId": [
-        false,
-        true
+        "cinema-two"
       ],
       "description": "A family struggling with loss finds themselves at the mercy of an ancient demon trying to destroy them from the inside.",
       "id": 2,
@@ -1046,8 +1044,7 @@
     },
     {
       "cinemaId": [
-        true,
-        false
+        "cinema-one"
       ],
       "description": "Ernest and Célestine return to Ernest's country to have his broken violin repaired. They discover that music is banned throughout the country. They will attempt to right this injustice in order to bring joy back to bear country.",
       "id": 3,
@@ -1057,8 +1054,7 @@
     },
     {
       "cinemaId": [
-        false,
-        true
+        "cinema-two"
       ],
       "description": "Three friends, taxi drivers, use all the possible and impossible ways to acquaint their unlucky friend with his beloved girl. #MerKinon",
       "id": 4,
@@ -1068,10 +1064,9 @@
     },
     {
       "cinemaId": [
-        true,
-        false
+        "cinema-one"
       ],
-      "description": "Best friends since childhood, Zoe and Kazim have always had the same attitude towards such concepts as love and marriage. But Zoe has been unable to find her true love in all of London for many years, while Kazim suddenly decides to marry a complete stranger chosen by his parents.",
+      "description": "Best friends since childhood, Zoe and Kazim have always had the same attitude towards such concepts as love and marriage. But Zoe has been unable to find her 1 love in all of London for many years, while Kazim suddenly decides to marry a complete stranger chosen by his parents.",
       "id": 5,
       "imgUrl": "./assets/images/movie-pictures/5.jpg",
       "name": "What's Love Got to Do with It?",
@@ -1079,8 +1074,7 @@
     },
     {
       "cinemaId": [
-        false,
-        true
+        "cinema-two"
       ],
       "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
       "id": 6,
@@ -1090,8 +1084,7 @@
     },
     {
       "cinemaId": [
-        true,
-        false
+        "cinema-one"
       ],
       "description": "While vacationing, a girl and her parents are taken hostage by armed strangers who demand that the family make a choice to avert the apocalypse.",
       "id": 7,
@@ -1101,8 +1094,7 @@
     },
     {
       "cinemaId": [
-        false,
-        true
+        "cinema-two"
       ],
       "description": "The film follows the fun adventures of three ancient Egyptian mummies who live in an underground secret city, hidden in ancient Egypt. The trio includes a princess, a former charioteer, his younger brother, and their pet baby crocodile. Through a series of unfortunate events, the mummies end up in present-day London and embark on a wacky and hilarious journey in search of an old ring belonging to the Royal Family, which was stolen by the ambitious archaeologist Lord Carnaby.",
       "id": 8,
@@ -1112,8 +1104,7 @@
     },
     {
       "cinemaId": [
-        true,
-        false
+        "cinema-one"
       ],
       "description": "A pilot finds himself caught in a war zone after he's forced to land his commercial aircraft during a terrible storm.",
       "id": 9,
@@ -1123,19 +1114,17 @@
     },
     {
       "cinemaId": [
-        false,
-        true
+        "cinema-two"
       ],
       "description": "Little Torik, was a shy and quet child. Everything was all right until he became an adult and married a girl from a brothel.The sodiety could not forgive him that. The young man turns into a resolute and courageous defendant of his own happiness. #MerKinon\n\n",
       "id": 10,
       "imgUrl": "./assets/images/movie-pictures/10.jpg",
       "name": "A Piece of Sky",
-      "trailerUrl": ""
+      "trailerUrl": "https://www.youtube.com/embed/txOD6ZraURg"
     },
     {
       "cinemaId": [
-        true,
-        false
+        "cinema-one"
       ],
       "description": "A robotics engineer at a toy company builds a life-like doll that begins to take on a life of its own.",
       "id": 11,
@@ -1145,8 +1134,7 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-one"
       ],
       "description": "A couple's extravagant destination wedding is hijacked by criminals. In the process of saving their families, they rediscover why they fell in love in the first place.",
       "id": 12,
@@ -1156,8 +1144,7 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-two"
       ],
       "description": "This story follows Maurice, a goofy streetwise cat, who has the perfect money-making scam. He finds a dumb-looking kid who plays a pipe and has his very own horde of rats, who are strangely literate.",
       "id": 13,
@@ -1167,8 +1154,7 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-one"
       ],
       "description": "Two lifelong friends find themselves at an impasse when one abruptly ends their relationship, with alarming consequences for both of them.",
       "id": 14,
@@ -1178,8 +1164,7 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-two"
       ],
       "description": "Special agent Orson Fortune and his team of operatives recruit one of Hollywood's biggest movie stars to help them on an undercover mission when the sale of a deadly new weapons technology threatens to disrupt the world order.",
       "id": 15,
@@ -1189,8 +1174,8 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-one",
+        "cinema-two"
       ],
       "description": "Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
       "id": 16,
@@ -1200,8 +1185,8 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-one",
+        "cinema-two"
       ],
       "description": "Jake Sully lives with his newfound family formed on the planet of Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their planet.",
       "id": 17,
@@ -1211,8 +1196,8 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-one",
+        "cinema-two"
       ],
       "description": "Jess, a separated and nurse who moves with her daughter and young son Owen back into her old farmhouse. Shortly after settling in, Owen is bitten by the dog, resulting in a mysterious infection from the bite.",
       "id": 18,
@@ -1222,8 +1207,8 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-one",
+        "cinema-two"
       ],
       "description": "The only daughter of the Chinese emperor Han Xuandi, escapes from a strict prince and seeks help from the Gauls and the two brave warriors Asterix and Obelix.",
       "id": 19,
@@ -1233,8 +1218,8 @@
     },
     {
       "cinemaId": [
-        true,
-        true
+        "cinema-one",
+        "cinema-two"
       ],
       "description": "An oddball group of cops, criminals, tourists, and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
       "id": 20,

@@ -92,7 +92,7 @@ export class RegisterComponent implements OnInit {
       this.registerEmailMatch();
       if ( !this.userCheck ) {
         setTimeout( () => {
-          this.userService.logUser( this.form.value );
+          // this.userService.logUser( this.form.value );
           this.registerSuccess();
         }, 1000 );
       }

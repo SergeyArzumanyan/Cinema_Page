@@ -1,5 +1,5 @@
 export interface IMovie {
-  "cinemaId": object,
+  "cinemaId": any,
   "description": string,
   "halls": any,
   "id": number,

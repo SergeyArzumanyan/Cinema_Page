@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: ':cinema-id', component: MoviesComponent },
   { path: ':cinema-id/:movie-id', component: MovieSingleComponent },
   { path: ':cinema-id/:movie-id/:session-id', component: SessionBookComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full'},
+
 ];
 
 @NgModule( {

@@ -12,14 +12,19 @@ import { IUser } from "../interfaces/authorization.interface";
 export class RequesthttpService {
   private REQUEST_URL = ' http://localhost:3000'
 
-  constructor( private http: HttpClient ) {}
+  constructor( private http: HttpClient ) {
+  }
 
   public getCinemas(): Observable<ICinema[]> {
     return this.http.get<ICinema[]>( this.REQUEST_URL + '/cinemas' );
   }
 
-  public getMovies(): Observable<IMovie[]> {
-    return this.http.get<IMovie[]>( this.REQUEST_URL + '/movies' );
+  public getMovies( cinema: string ): Observable<IMovie[]> {
+    if ( !cinema ) {
+      return this.http.get<IMovie[]>(this.REQUEST_URL + "/movies");
+    } else {
+      return this.http.get<IMovie[]>( this.REQUEST_URL + `/movies/?cinemaId=cinema-one,cinema-two&cinemaId=${cinema}` );
+    }
   }
 
   public getMovie( query: string ): Observable<IMovie> {
@@ -32,5 +37,12 @@ export class RequesthttpService {
 
   public getUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>( this.REQUEST_URL + '/users' );
+  }
+
+  public checkForUser(
+    email: string | null | undefined,
+    password: string | null | undefined
+  ): Observable<IUser[] | []> {
+    return this.http.get<IUser[] | []>( this.REQUEST_URL + `/users/?email=${ email }&password=${ password }` );
   }
 }

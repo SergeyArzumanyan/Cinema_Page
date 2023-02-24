@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { IUser } from "../interfaces/authorization.interface";
 
 @Injectable( {
@@ -7,16 +7,19 @@ import { IUser } from "../interfaces/authorization.interface";
 } )
 export class UserService {
 
-  public notSignedIn: boolean = true;
-  public user$: BehaviorSubject<IUser | null> = new BehaviorSubject<IUser | null>( null );
+  private loggedUser: IUser | null = sessionStorage.getItem( 'loggedUser' ) ? JSON.parse( sessionStorage.getItem( 'loggedUser' )! ) : null;
+  public user$: BehaviorSubject<IUser | null> = new BehaviorSubject<IUser | null>( this.loggedUser );
 
   public logUser( user: IUser ): void {
-      this.notSignedIn = false;
-      this.user$.next( user );
+    sessionStorage.setItem( 'signedIn', 'true' );
+    sessionStorage.setItem( 'loggedUser', JSON.stringify( user ) );
+    this.user$.next( user );
   }
 
   public logOutUser(): void {
-    this.notSignedIn = true;
+    sessionStorage.removeItem( "loggedUser" );
+    sessionStorage.setItem( 'signedIn', 'false' );
+    this.user$.next( null );
   }
 
 }

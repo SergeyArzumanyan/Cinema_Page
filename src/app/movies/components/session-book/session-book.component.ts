@@ -97,7 +97,7 @@ export class SessionBookComponent implements OnInit {
   }
 
   public reserveSeats(): void {
-    if ( this.userService.notSignedIn ) {
+    if ( true ) {
       this.toaster.error( "You need to sign in.", "Error", {
         timeOut: 1000,
         closeButton: true,

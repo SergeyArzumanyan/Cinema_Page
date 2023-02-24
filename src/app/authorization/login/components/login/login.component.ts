@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ILoginForm, IUser } from "../../../../shared/interfaces/authorization.interface";
 import { RequesthttpService } from "../../../../shared/services/requesthttp.service";
-import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { UserService } from "../../../../shared/services/user.service";
@@ -12,11 +11,7 @@ import { UserService } from "../../../../shared/services/user.service";
   templateUrl: './login.component.html',
   styleUrls: [ './login.component.scss' ]
 } )
-export class LoginComponent implements OnInit {
-  private users: IUser[] = [];
-  private userDataCheck: boolean = false;
-  private loggedUser!: IUser;
-  public message: string = "";
+export class LoginComponent {
 
   constructor(
     private http: RequesthttpService,
@@ -24,27 +19,6 @@ export class LoginComponent implements OnInit {
     private toaster: ToastrService,
     private userService: UserService
   ) {
-  }
-
-  ngOnInit(): void {
-    this.http.getUsers()
-      .subscribe( {
-        next: ( users: IUser[] ) => {
-          this.users = users;
-        },
-        error: ( err: HttpErrorResponse ) => {
-          console.log( err );
-        }
-      } )
-  }
-
-  private loginMatch(): void {
-    this.users?.map( user => {
-      if ( user.email === this.form.value.email && user.password === this.form.value.password ) {
-        this.userDataCheck = true;
-        this.loggedUser = user;
-      }
-    } )
   }
 
   public form = new FormGroup<ILoginForm>( {
@@ -59,19 +33,18 @@ export class LoginComponent implements OnInit {
     ] )
   } )
 
-  private loginSuccess(): void {
-    setTimeout(() => {
-      this.toaster.success( "Logged as " + this.loggedUser.name, "Logged successfully.", {
-        timeOut: 1000,
-        closeButton: true,
-        extendedTimeOut: 1000,
-      } );
-      this.userService.logUser( this.loggedUser );
-      this.router.navigateByUrl( "/movies/all" ).then();
-    }, 1000);
+  private loginSuccess( user: IUser ): void {
+    this.userService.logUser( user );
+    this.toaster.success( "Logged as " + user.name, "Logged successfully.", {
+      timeOut: 1000,
+      closeButton: true,
+      extendedTimeOut: 1000,
+    } );
+    this.router.navigateByUrl( "/movies/all" ).then();
   }
 
   private loginFail(): void {
+    this.userService.logOutUser();
     this.toaster.error( "Email or password is incorrect", "Error.", {
       timeOut: 1000,
       closeButton: true,
@@ -81,16 +54,21 @@ export class LoginComponent implements OnInit {
 
   public onSubmit(): void {
     this.form.markAllAsTouched();
+
     if ( this.form.valid ) {
-      this.userDataCheck = false;
-      this.loginMatch();
-
-      if ( this.userDataCheck ) {
-        this.loginSuccess();
-      } else {
-        this.loginFail();
-      }
-
+      this.http.checkForUser( this.form.value.email, this.form.value.password )
+        .subscribe( {
+          next: ( userInfo: IUser[] | [] ) => {
+            if ( userInfo.length === 0 ) {
+              this.loginFail();
+              return;
+            }
+            this.loginSuccess( userInfo[ 0 ] );
+          },
+          error: ( err ) => {
+            console.log( err );
+          }
+        } )
     }
   }
 
