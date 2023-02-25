@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RequesthttpService } from "../../shared/services/requesthttp.service";
-import { ICinema } from "../../shared/interfaces/cinema.interface";
+import { RequesthttpService } from "@project-services/requesthttp.service";
+import { ICinema } from "@project-interfaces/cinema.interface";
 import { HttpErrorResponse } from "@angular/common/http";
 
 @Component( {

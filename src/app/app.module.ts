@@ -6,8 +6,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { ToastrModule } from "ngx-toastr";
     ToastrModule.forRoot({
       maxOpened: 1
     }),
-    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

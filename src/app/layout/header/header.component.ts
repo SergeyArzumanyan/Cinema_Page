@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { UserService } from "../../shared/services/user.service";
-import { IUser } from "../../shared/interfaces/authorization.interface";
-import { ErrorObserver } from "rxjs";
+import { UserService } from "@project-services/user.service";
+import { IUser } from "@project-interfaces/authorization.interface";
 
 @Component( {
   selector: 'app-header',
@@ -12,6 +11,7 @@ import { ErrorObserver } from "rxjs";
 export class HeaderComponent implements OnInit {
   public loggedUser: IUser | null = null;
   public screenIsLarge: boolean = true;
+  public dropdownState: boolean = false;
   public menu: boolean = false;
 
   constructor( public userService: UserService ) {
@@ -24,22 +24,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.screenIsLarge = !( window.innerWidth <= 650 );
-    // this.getUserData();
   }
-
-  // private getUserData(): void {
-  //   this.userService.user$.subscribe( {
-  //     next: ( user: IUser | null ) => {
-  //       this.loggedUser = user;
-  //       console.log( "subject next => ", this.loggedUser );
-  //     },
-  //     error: ( err: ErrorObserver<IUser> ) => {
-  //       console.log( err );
-  //     }
-  //   } )
-  //
-  //   this.userService.user$.subscribe();
-  // }
 
   public logOutUser(): void {
     this.userService.logOutUser();
@@ -57,7 +42,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public toggleDropdown(): void {
-    document.querySelector( '.dropdown-sign-out' )?.classList.toggle( 'dropdown-sign-out-disabled' );
-    document.querySelector( '.dropdown-sign-out' )?.classList.toggle( 'dropdown-sign-out-enabled' );
+    this.dropdownState = !this.dropdownState;
   }
+
 }

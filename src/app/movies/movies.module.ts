@@ -8,6 +8,7 @@ import { SessionBookComponent } from './components/session-book/session-book.com
 import { RowPipe } from "../shared/pipes/row.pipe";
 import { SeatPipe } from "../shared/pipes/seat.pipe";
 import { SafePipe } from "../shared/pipes/safe.pipe";
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -22,7 +23,8 @@ import { SafePipe } from "../shared/pipes/safe.pipe";
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    NgxSpinnerModule
   ]
 })
 export class MoviesModule { }

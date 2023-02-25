@@ -5,11 +5,11 @@ import { MovieSingleComponent } from "./components/movie-single/movie-single.com
 import { SessionBookComponent } from "./components/session-book/session-book.component";
 
 const routes: Routes = [
-  { path: '', component: MoviesComponent },
   { path: ':cinema-id', component: MoviesComponent },
   { path: ':cinema-id/:movie-id', component: MovieSingleComponent },
   { path: ':cinema-id/:movie-id/:session-id', component: SessionBookComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full'},
+  { path: '', redirectTo: 'all', pathMatch: 'full' },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 
 ];
 

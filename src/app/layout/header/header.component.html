@@ -58,7 +58,7 @@
            'nav-item-large': screenIsLarge,
            'nav-item-small': !screenIsLarge
            }"
-           [routerLink]="['/movies']"
+           [routerLink]="['/movies/all']"
            routerLinkActive="active"
            (click)="closeMenu()">
         <a class="nav-link">
@@ -75,13 +75,13 @@
            'nav-item-small': !screenIsLarge
            }"
           (click)="toggleDropdown()">
-            <a class="nav-link"
-               [ngClass]="{
+          <a class="nav-link"
+             [ngClass]="{
                  'nav-link-large': screenIsLarge,
                  'nav-link-small': !screenIsLarge
                  }">
-              {{ user?.name }} <span> > </span>
-            </a>
+            {{ user?.name }} <span> > </span>
+          </a>
         </div>
       </ng-container>
       <ng-template #loginBlock>
@@ -90,7 +90,7 @@
            'nav-item-large': screenIsLarge,
            'nav-item-small': !screenIsLarge
            }"
-             [routerLink]="['/login']"
+             [routerLink]="['/auth/login']"
              (click)="closeMenu()">
           <a class="nav-link"
              [ngClass]="{
@@ -109,10 +109,12 @@
       </ng-template>
 
 
-      <div class="dropdown-sign-out dropdown-sign-out-disabled"
+      <div class="dropdown-sign-out"
            [ngClass]="{
            'dropdown-sign-out-large': screenIsLarge,
-           'dropdown-sign-out-small': !screenIsLarge
+           'dropdown-sign-out-small': !screenIsLarge,
+           'dropdown-sign-out-disabled': !dropdownState,
+           'dropdown-sign-out-enabled': dropdownState
            }">
         <div class="dropdown-item"
              [ngClass]="{

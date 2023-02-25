@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { RequesthttpService } from "../../../shared/services/requesthttp.service";
-import { IMovie } from "../../../shared/interfaces/movie.interface";
-import { ISession } from "../../../shared/interfaces/session.interface";
-import { HttpErrorResponse } from "@angular/common/http";
-import { DomSanitizer } from "@angular/platform-browser";
-import { ToastrService } from "ngx-toastr";
+import { RequesthttpService } from "@project-services/requesthttp.service";
+import { IMovie } from "@project-interfaces/movie.interface";
+import { ISession } from "@project-interfaces/session.interface";
 
 @Component( {
   selector: 'app-movie-single',
@@ -32,9 +29,7 @@ export class MovieSingleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: RequesthttpService,
-    private _sanitizer: DomSanitizer,
-    private router: Router,
-    private toaster: ToastrService
+    private router: Router
   ) {
   }
 
@@ -51,16 +46,12 @@ export class MovieSingleComponent implements OnInit {
           this.selected_movie.trailerUrl += '?autoplay=1&amp;mute=1&amp;&amp;showinfo=0&amp;rel=0&amp;loop=0';
           this.sessions = this.selected_movie.sessions;
           this.filterDays( this.dayArr );
-          this.selectedDay = this.dayArr[ 0 ];
+          this.selectedDay = this.dayArr[0];
           this.filterSessionsByDay( this.selectedDay, this.sessionsArr );
         },
-        error: ( err: HttpErrorResponse ) => {
+        error: () => {
           this.router.navigate( [ '/movies' ] ).then();
-          this.toaster.error( err.statusText, "Error", {
-            timeOut: 1000,
-            closeButton: true,
-            extendedTimeOut: 1000,
-          } );
+          this.http.pageNotFoundError();
         }
       } )
 
@@ -88,13 +79,13 @@ export class MovieSingleComponent implements OnInit {
     this.selectedSession = null;
     this.sessionsArr = [];
     this.dateIsSelected = false;
-    this.selectedDay = this.dayArr[ dayIndex ];
+    this.selectedDay = this.dayArr[dayIndex];
     this.filterSessionsByDay( this.selectedDay, this.sessionsArr );
   }
 
   public pickSession( sessionIndex: number ): void {
     this.dateIsSelected = true;
-    this.selectedSession = this.sessionsArr[ sessionIndex ];
+    this.selectedSession = this.sessionsArr[sessionIndex];
   }
 
 }

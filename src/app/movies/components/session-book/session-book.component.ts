@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { IMovie } from "../../../shared/interfaces/movie.interface";
-import { ISession } from "../../../shared/interfaces/session.interface";
-import { UserService } from "../../../shared/services/user.service";
+import { IMovie } from "@project-interfaces/movie.interface";
+import { ISession } from "@project-interfaces/session.interface";
+import { UserService } from "@project-services/user.service";
+import { SendhttpService } from "@project-services/sendhttp.service";
+import { RequesthttpService } from "@project-services/requesthttp.service";
 import { ToastrService } from "ngx-toastr";
-import { SendhttpService } from "../../../shared/services/sendhttp.service";
-import { HttpErrorResponse } from "@angular/common/http";
-import { RequesthttpService } from "../../../shared/services/requesthttp.service";
 
 
 @Component( {
@@ -46,8 +45,9 @@ export class SessionBookComponent implements OnInit {
           this.selected_movie = movieData;
         },
 
-        error: ( err: HttpErrorResponse ) => {
-          console.log( err );
+        error: () => {
+          this.router.navigateByUrl('movies/all').then();
+          this.requestHttp.pageNotFoundError();
         }
       } );
     this.requestHttp.getSession( this.session_id )
@@ -60,8 +60,8 @@ export class SessionBookComponent implements OnInit {
           }
 
         },
-        error: ( err: HttpErrorResponse ) => {
-          console.log( err );
+        error: () => {
+          this.requestHttp.somethingWentWrong();
         }
       } )
 
@@ -97,13 +97,13 @@ export class SessionBookComponent implements OnInit {
   }
 
   public reserveSeats(): void {
-    if ( true ) {
+    if ( sessionStorage.getItem('signedIn') === 'false' ) {
       this.toaster.error( "You need to sign in.", "Error", {
         timeOut: 1000,
         closeButton: true,
         extendedTimeOut: 1000,
       } );
-      this.router.navigate( [ '/login' ] ).then();
+      this.router.navigate( [ '/auth/login' ] ).then();
     } else {
       this.toaster.success( "Reserved Successfully", "Done", {
         timeOut: 1000,
@@ -124,8 +124,8 @@ export class SessionBookComponent implements OnInit {
           next: ( data: ISession ) => {
             this.router.navigate( [ '/movies/all' ] ).then();
           },
-          error: ( err: HttpErrorResponse ) => {
-            console.log( err );
+          error: () => {
+            this.requestHttp.somethingWentWrong();
           }
         } )
     }

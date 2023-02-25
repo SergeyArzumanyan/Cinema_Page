@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { SendhttpService } from "../../../../shared/services/sendhttp.service";
-import { IRegisterForm, IUser } from "../../../../shared/interfaces/authorization.interface";
-import { RequesthttpService } from "../../../../shared/services/requesthttp.service";
+import { IRegisterForm, IUser } from "@project-interfaces/authorization.interface";
+import { SendhttpService } from "@project-services/sendhttp.service";
+import { RequesthttpService } from "@project-services//requesthttp.service";
+import { UserService } from "@project-services/user.service";
 import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { UserService } from "../../../../shared/services/user.service";
 
 @Component( {
   selector: 'app-register',
@@ -76,6 +76,7 @@ export class RegisterComponent implements OnInit {
   }
 
   private registerSuccess(): void {
+    this.userService.logUser( this.form.value );
     this.toaster.success( "Successfully registered", "Done", {
       timeOut: 1000,
       closeButton: true,
@@ -91,10 +92,7 @@ export class RegisterComponent implements OnInit {
     if ( this.form.valid ) {
       this.registerEmailMatch();
       if ( !this.userCheck ) {
-        setTimeout( () => {
-          // this.userService.logUser( this.form.value );
-          this.registerSuccess();
-        }, 1000 );
+        this.registerSuccess();
       }
     } else {
       this.form.markAllAsTouched();

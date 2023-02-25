@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ILoginForm, IUser } from "../../../../shared/interfaces/authorization.interface";
-import { RequesthttpService } from "../../../../shared/services/requesthttp.service";
+import { ILoginForm, IUser } from "@project-interfaces/authorization.interface";
+import { RequesthttpService } from "@project-services/requesthttp.service";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { UserService } from "../../../../shared/services/user.service";
+import { UserService } from "@project-services/user.service";
 
 @Component( {
   selector: 'app-login',

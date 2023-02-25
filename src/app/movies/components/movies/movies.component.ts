@@ -1,74 +1,60 @@
-import { Component, OnInit } from '@angular/core';
-import { RequesthttpService } from "../../../shared/services/requesthttp.service";
-import { IMovie } from "../../../shared/interfaces/movie.interface";
-import { HttpErrorResponse } from "@angular/common/http";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RequesthttpService } from "@project-services/requesthttp.service";
+import { IMovie } from "@project-interfaces/movie.interface";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Subscription } from "rxjs";
 
 @Component( {
   selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: [ './movies.component.scss' ]
 } )
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit, OnDestroy {
   public incomingMovies: IMovie[] = [];
   public isMobile: boolean = ( window.innerWidth <= 650 );
-  public cinemaId = this.route.snapshot.paramMap.get( 'cinema-id' );
+  public cinemaId!: string | null;
+  private sub: Subscription | null | undefined
 
   constructor(
     private http: RequesthttpService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) {
   }
 
   ngOnInit(): void {
-    this.http.getMovies(this.cinemaId!)
-      .subscribe( {
-        next: ( movies: IMovie[] ) => {
-          this.incomingMovies = movies;
-        },
-        error: ( err: HttpErrorResponse ) => {
-          console.log( err );
-        }
-      } )
+    this.sub = this.route.params.subscribe(
+      params => {
+        this.cinemaId = params['cinema-id'];
 
-
-    // if ( this.cinemaId === 'cinema-one' ) {
-    //   this.http.getMovies()
-    //     .subscribe( {
-    //       next: ( data: IMovie[] ) => {
-    //         this.incomingMovies = data;
-    //         this.incomingMovies = this.incomingMovies.filter( (item: any) => item.cinemaId[0] === true);
-    //       },
-    //       error: ( err: HttpErrorResponse ) => {
-    //         console.log( err );
-    //       }
-    //     } )
-    // } else if ( this.cinemaId === 'cinema-two' ) {
-    //   this.http.getMovies()
-    //     .subscribe( {
-    //       next: ( data: IMovie[] ) => {
-    //         this.incomingMovies = data;
-    //         this.incomingMovies = this.incomingMovies.filter( (item: any) => item.cinemaId[1] === true);
-    //       },
-    //       error: ( err: HttpErrorResponse ) => {
-    //         console.log( err );
-    //       }
-    //     } )
-    // } else {
-    //   this.router.navigateByUrl("movies").then();
-    // this.http.getMovies()
-    //   .subscribe( {
-    //     next: ( data: IMovie[] ) => {
-    //       this.incomingMovies = data;
-    //     },
-    //     error: ( err: HttpErrorResponse ) => {
-    //       console.log( err );
-    //     }
-    //   } )
+        this.http.getMovies( this.cinemaId! )
+          .subscribe( {
+            next: ( movies: IMovie[] ) => {
+              this.incomingMovies = movies;
+              if ( this.incomingMovies.length === 0 ) {
+                this.router.navigateByUrl( 'movies' ).then();
+              }
+            },
+            error: () => {
+              this.http.somethingWentWrong();
+            }
+          } )
+      }
+    )
 
   }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+  }
+
+  // public onScroll() {
+  //   console.log("scrolled")
+  //   this.spinner.show().then();
+  // }
 }
+
+
 
 
 
