@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { IRegisterForm, IUser } from "@project-interfaces/authorization.interface";
-import { SendhttpService } from "@project-services/sendhttp.service";
-import { RequesthttpService } from "@project-services//requesthttp.service";
-import { UserService } from "@project-services/user.service";
-import { HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { take } from "rxjs";
+
+import { RequesthttpService } from "@project-services//requesthttp.service";
+import { SendhttpService } from "@project-services/sendhttp.service";
+import { UserService } from "@project-services/user.service";
 import { ToastrService } from "ngx-toastr";
+import { IRegisterForm, IUser } from "@project-interfaces/authorization.interface";
 
 @Component( {
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: [ './register.component.scss' ]
 } )
+
 export class RegisterComponent implements OnInit {
-  private users: IUser[] | null = [];
+
+  private users: IUser[] = [];
   public userCheck: boolean = false;
 
   constructor(
@@ -27,6 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public form = new FormGroup<IRegisterForm>( {
+
     name: new FormControl( null, [
       Validators.required,
     ] ),
@@ -51,18 +55,40 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.requestUsers();
+  }
+
+  private requestUsers(): void {
+
     this.requestHttp.getUsers()
+      .pipe( take( 1 ) )
       .subscribe( {
         next: ( requestedUsers: IUser[] ) => {
           this.users = requestedUsers;
         },
-        error: ( err: HttpErrorResponse ) => {
-          console.log( err );
+        error: () => {
+          this.requestHttp.somethingWentWrong();
+          this.router.navigateByUrl( "movies" ).then();
         }
       } )
   }
 
+  public onSubmit(): void {
+
+    this.userCheck = false;
+
+    if ( this.form.valid ) {
+      this.registerEmailMatch();
+      if ( !this.userCheck ) {
+        this.registerSuccess();
+      }
+    } else {
+      this.form.markAllAsTouched();
+    }
+  }
+
   private registerEmailMatch(): void {
+
     this.users?.map( user => {
       if ( user.email === this.form.value.email ) {
         this.userCheck = true;
@@ -76,28 +102,16 @@ export class RegisterComponent implements OnInit {
   }
 
   private registerSuccess(): void {
+
     this.userService.logUser( this.form.value );
     this.toaster.success( "Successfully registered", "Done", {
       timeOut: 1000,
       closeButton: true,
       extendedTimeOut: 1000,
     } );
+
     this.sendHttp.sendUserData( this.form.value ).subscribe();
     this.form.reset()
-    this.router.navigateByUrl( '/movies/all' ).then();  //  navigate to ticket booking section
+    this.router.navigateByUrl( 'movies' ).then();
   }
-
-  public onSubmit(): void {
-    this.userCheck = false;
-    if ( this.form.valid ) {
-      this.registerEmailMatch();
-      if ( !this.userCheck ) {
-        this.registerSuccess();
-      }
-    } else {
-      this.form.markAllAsTouched();
-    }
-  }
-
-
 }

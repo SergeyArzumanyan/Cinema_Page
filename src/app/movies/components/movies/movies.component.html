@@ -1,15 +1,29 @@
 <h3 class="movies-title">Ongoing Movies</h3>
-<div class="movies-container">
-  <div class="card" *ngFor="let movie of incomingMovies">
+<div class="movies-container"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     [infiniteScrollDisabled]="infiniteScrollDisabled"
+     (scrolled)="onScroll()">
+  <div class="card"
+       *ngFor="let movie of allMovies">
     <img *ngIf="!isMobile"
          [src]="movie.imgUrl"
-         alt="movie-img" class="movie-img" [routerLink]="['/movies/' + cinemaId , movie.id]">
+         alt="movie-img"
+         class="movie-img"
+         [routerLink]="['/movies/' + cinemaId , movie.id]">
     <img *ngIf="isMobile"
          [src]="movie.imgUrl"
-         alt="movie-img" class="movie-img">
-    <p class="movie-title" *ngIf="!isMobile" [routerLink]="['/movies/' + cinemaId , movie.id]">{{movie.name}}</p>
-    <p class="movie-title" *ngIf="isMobile">{{movie.name}}</p>
-    <button class="movie-btn" [routerLink]="['/movies/' + cinemaId , movie.id]">See Tickets</button>
+         alt="movie-img"
+         class="movie-img">
+    <p class="movie-title"
+       *ngIf="!isMobile"
+       [routerLink]="['/movies/' + cinemaId , movie.id]">{{movie.name}}</p>
+    <p class="movie-title"
+       *ngIf="isMobile">{{movie.name}}</p>
+    <button class="movie-btn"
+            [routerLink]="['/movies/' + cinemaId , movie.id]">See Tickets
+    </button>
   </div>
 </div>
 

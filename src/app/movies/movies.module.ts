@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MoviesRoutingModule } from './movies-routing.module';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieSingleComponent } from './components/movie-single/movie-single.component';
 import { SessionBookComponent } from './components/session-book/session-book.component';
+
 import { RowPipe } from "../shared/pipes/row.pipe";
 import { SeatPipe } from "../shared/pipes/seat.pipe";
 import { SafePipe } from "../shared/pipes/safe.pipe";
-import { NgxSpinnerModule } from "ngx-spinner";
 
 
-
-@NgModule({
+@NgModule( {
   declarations: [
     MoviesComponent,
     MovieSingleComponent,
@@ -24,7 +25,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
   imports: [
     CommonModule,
     MoviesRoutingModule,
-    NgxSpinnerModule
+    InfiniteScrollModule
   ]
-})
-export class MoviesModule { }
+} )
+export class MoviesModule {
+}

@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from "@angular/core"
 
-@Pipe ({
+@Pipe( {
   name: 'seat'
-})
+} )
 
 export class SeatPipe implements PipeTransform {
   transform( seat: string ): string {
-    return seat.slice(6);
+    return seat.slice( 6 );
   }
 }

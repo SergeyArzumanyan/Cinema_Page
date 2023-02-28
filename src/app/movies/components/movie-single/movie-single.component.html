@@ -50,13 +50,12 @@
 
     <button *ngIf="!dateIsSelected"
             class="disabled">
-      Choose ticket
+      Choose tickets
     </button>
     <button *ngIf="dateIsSelected"
             class="date-select-btn"
-            [routerLink]="['/movies/' + cinema_id , selected_movie.id , selectedSession.id]"
-            [queryParams]="{}">
-      Choose ticket
+            [routerLink]="['/movies/' + cinema_id , selected_movie.id , selectedSession?.id]">
+      Choose tickets
     </button>
   </div>
 </div>

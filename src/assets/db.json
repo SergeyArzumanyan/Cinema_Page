@@ -62,12 +62,7 @@
       "seats": [
         "seat4-7",
         "seat1-7",
-        "seat6-7",
-        "seat7-7",
-        "seat0-9",
-        "seat0-8",
-        "seat5-0",
-        "seat5-1"
+        "seat6-7"
       ]
     },
     {
@@ -78,8 +73,7 @@
       "seats": [
         "seat1-6",
         "seat1-7",
-        "seat6-8",
-        "seat6-9"
+        "seat6-8"
       ]
     },
     {
@@ -91,7 +85,9 @@
         "seat1-1",
         "seat1-8",
         "seat4-3",
-        "seat4-2"
+        "seat4-2",
+        "seat5-8",
+        "seat5-9"
       ]
     },
     {
@@ -143,7 +139,9 @@
         "seat1-2",
         "seat1-3",
         "seat1-4",
-        "seat1-5"
+        "seat1-5",
+        "seat3-9",
+        "seat2-9"
       ]
     },
     {
@@ -290,7 +288,11 @@
         "seat1-4",
         "seat1-5",
         "seat4-6",
-        "seat4-7"
+        "seat4-7",
+        "seat0-9",
+        "seat0-0",
+        "seat5-9",
+        "seat5-0"
       ]
     },
     {
@@ -341,7 +343,9 @@
         "seat6-4",
         "seat5-7",
         "seat5-8",
-        "seat5-9"
+        "seat5-9",
+        "seat0-9",
+        "seat0-0"
       ]
     },
     {
@@ -835,7 +839,10 @@
         "seat1-1",
         "seat1-8",
         "seat4-3",
-        "seat4-2"
+        "seat4-2",
+        "seat4-6",
+        "seat4-7",
+        "seat5-7"
       ]
     },
     {
@@ -848,7 +855,13 @@
         "seat3-2",
         "seat5-2",
         "seat6-2",
-        "seat1-2"
+        "seat1-2",
+        "seat3-8",
+        "seat3-9",
+        "seat0-5",
+        "seat0-6",
+        "seat0-7",
+        "seat0-9"
       ]
     },
     {
@@ -1140,7 +1153,7 @@
     },
     {
       "cinemaId": [
-        "cinema-one"
+        "cinema-two"
       ],
       "description": "A couple's extravagant destination wedding is hijacked by criminals. In the process of saving their families, they rediscover why they fell in love in the first place.",
       "id": 12,
@@ -1150,7 +1163,7 @@
     },
     {
       "cinemaId": [
-        "cinema-two"
+        "cinema-one"
       ],
       "description": "This story follows Maurice, a goofy streetwise cat, who has the perfect money-making scam. He finds a dumb-looking kid who plays a pipe and has his very own horde of rats, who are strangely literate.",
       "id": 13,
@@ -1160,7 +1173,7 @@
     },
     {
       "cinemaId": [
-        "cinema-one"
+        "cinema-two"
       ],
       "description": "Two lifelong friends find themselves at an impasse when one abruptly ends their relationship, with alarming consequences for both of them.",
       "id": 14,
@@ -1170,7 +1183,7 @@
     },
     {
       "cinemaId": [
-        "cinema-two"
+        "cinema-one"
       ],
       "description": "Special agent Orson Fortune and his team of operatives recruit one of Hollywood's biggest movie stars to help them on an undercover mission when the sale of a deadly new weapons technology threatens to disrupt the world order.",
       "id": 15,
@@ -1180,7 +1193,7 @@
     },
     {
       "cinemaId": [
-        "cinema-one"
+        "cinema-two"
       ],
       "description": "Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
       "id": 16,
@@ -1190,7 +1203,7 @@
     },
     {
       "cinemaId": [
-        "cinema-two"
+        "cinema-one"
       ],
       "description": "Jake Sully lives with his newfound family formed on the planet of Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their planet.",
       "id": 17,
@@ -1200,7 +1213,7 @@
     },
     {
       "cinemaId": [
-        "cinema-one"
+        "cinema-two"
       ],
       "description": "Jess, a separated and nurse who moves with her daughter and young son Owen back into her old farmhouse. Shortly after settling in, Owen is bitten by the dog, resulting in a mysterious infection from the bite.",
       "id": 18,
@@ -1210,7 +1223,7 @@
     },
     {
       "cinemaId": [
-        "cinema-two"
+        "cinema-one"
       ],
       "description": "The only daughter of the Chinese emperor Han Xuandi, escapes from a strict prince and seeks help from the Gauls and the two brave warriors Asterix and Obelix.",
       "id": 19,
@@ -1220,7 +1233,7 @@
     },
     {
       "cinemaId": [
-        "cinema-one"
+        "cinema-two"
       ],
       "description": "An oddball group of cops, criminals, tourists, and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
       "id": 20,

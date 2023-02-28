@@ -1,23 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { ICinema } from "@project-interfaces/cinema.interface";
-import { HttpErrorResponse } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 @Component( {
   selector: 'app-cinema',
   templateUrl: './cinema.component.html',
   styleUrls: [ './cinema.component.scss' ]
 } )
+
 export class CinemaComponent implements OnInit {
+
   public requestedCinemas?: ICinema[] = [];
-  public cinemaInfo_1: ICinema | null = {}
-  public cinemaInfo_2: ICinema | null = {}
+  public cinemaInfo_1: ICinema = {}
+  public cinemaInfo_2: ICinema = {}
+
   constructor(
     private http: RequesthttpService,
+    private router: Router
   ) {
   }
 
   ngOnInit(): void {
+    this.getCinemasData();
+  }
+
+  private getCinemasData(): void {
     this.http.getCinemas()
       .subscribe( {
         next: ( data: ICinema[] ) => {
@@ -27,8 +36,9 @@ export class CinemaComponent implements OnInit {
             this.cinemaInfo_2 = this.requestedCinemas[1];
           }
         },
-        error: ( err: HttpErrorResponse ) => {
-          console.log( err );
+        error: () => {
+          this.http.somethingWentWrong();
+          this.router.navigateByUrl("movies").then();
         }
       } )
   }

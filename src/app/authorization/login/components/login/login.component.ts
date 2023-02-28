@@ -1,20 +1,23 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ILoginForm, IUser } from "@project-interfaces/authorization.interface";
-import { RequesthttpService } from "@project-services/requesthttp.service";
 import { Router } from "@angular/router";
-import { ToastrService } from "ngx-toastr";
+
+import { RequesthttpService } from "@project-services/requesthttp.service";
 import { UserService } from "@project-services/user.service";
+import { ILoginForm, IUser } from "@project-interfaces/authorization.interface";
+import { ToastrService } from "ngx-toastr";
+import { take } from "rxjs";
 
 @Component( {
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: [ './login.component.scss' ]
 } )
+
 export class LoginComponent {
 
   constructor(
-    private http: RequesthttpService,
+    private requestHttp: RequesthttpService,
     private router: Router,
     private toaster: ToastrService,
     private userService: UserService
@@ -32,6 +35,33 @@ export class LoginComponent {
       Validators.required,
     ] )
   } )
+
+  public onSubmit(): void {
+    this.form.markAllAsTouched();
+
+    if ( this.form.valid ) {
+      this.checkForUser();
+    }
+  }
+
+  private checkForUser(): void {
+    this.requestHttp.checkForUser( this.form.value.email, this.form.value.password )
+      .pipe( take( 1 ) )
+      .subscribe( {
+        next: ( userInfo: IUser[] | [] ) => {
+          if ( userInfo.length === 0 ) {
+            this.loginFail();
+            return;
+          }
+
+          this.loginSuccess( userInfo[0] );
+        },
+        error: () => {
+          this.requestHttp.somethingWentWrong();
+          this.router.navigateByUrl( "movies" ).then();
+        }
+      } )
+  }
 
   private loginSuccess( user: IUser ): void {
     this.userService.logUser( user );
@@ -51,25 +81,4 @@ export class LoginComponent {
       extendedTimeOut: 1000,
     } );
   }
-
-  public onSubmit(): void {
-    this.form.markAllAsTouched();
-
-    if ( this.form.valid ) {
-      this.http.checkForUser( this.form.value.email, this.form.value.password )
-        .subscribe( {
-          next: ( userInfo: IUser[] | [] ) => {
-            if ( userInfo.length === 0 ) {
-              this.loginFail();
-              return;
-            }
-            this.loginSuccess( userInfo[ 0 ] );
-          },
-          error: ( err ) => {
-            console.log( err );
-          }
-        } )
-    }
-  }
-
 }

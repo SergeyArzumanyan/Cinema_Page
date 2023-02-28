@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+
 import { ICinema } from "../interfaces/cinema.interface";
 import { IMovie } from "../interfaces/movie.interface";
 import { ISession } from "../interfaces/session.interface";
@@ -11,15 +12,17 @@ import { ToastrService } from "ngx-toastr";
   providedIn: 'root'
 } )
 export class RequesthttpService {
+
   private REQUEST_URL = ' http://localhost:3000'
 
   constructor(
     private http: HttpClient,
     private toaster: ToastrService
-    ) {}
+  ) {
+  }
 
   public pageNotFoundError(): void {
-    this.toaster.error( "Page not foundw", "Error.", {
+    this.toaster.error( "Page not found.", "Error", {
       timeOut: 1000,
       closeButton: true,
       extendedTimeOut: 1000,
@@ -27,7 +30,7 @@ export class RequesthttpService {
   }
 
   public somethingWentWrong(): void {
-    this.toaster.error( "Something went wrong...", "Error.", {
+    this.toaster.error( "Something went wrong.", "Error", {
       timeOut: 1000,
       closeButton: true,
       extendedTimeOut: 1000,
@@ -38,13 +41,14 @@ export class RequesthttpService {
     return this.http.get<ICinema[]>( this.REQUEST_URL + '/cinemas' );
   }
 
-  public getMovies( cinema: string ): Observable<IMovie[]> {
+  public getMovies( cinema: string, page: string ): Observable<IMovie[]> {
     if ( cinema === "all" ) {
-      return this.http.get<IMovie[]>( this.REQUEST_URL + "/movies" );
+      return this.http.get<IMovie[]>( this.REQUEST_URL + `/movies?_page=${ page }&_limit=6` );
     } else {
-      return this.http.get<IMovie[]>( this.REQUEST_URL + `/movies/?cinemaId=${ cinema }` );
+      return this.http.get<IMovie[]>( this.REQUEST_URL + `/movies/?cinemaId=${ cinema }&_page=${ page }&_limit=6` );
     }
   }
+
 
   public getMovie( query: string ): Observable<IMovie> {
     return this.http.get<IMovie>( this.REQUEST_URL + query );

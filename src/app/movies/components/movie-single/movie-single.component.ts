@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
+
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { IMovie } from "@project-interfaces/movie.interface";
 import { ISession } from "@project-interfaces/session.interface";
@@ -9,22 +10,20 @@ import { ISession } from "@project-interfaces/session.interface";
   templateUrl: './movie-single.component.html',
   styleUrls: [ './movie-single.component.scss' ]
 } )
+
 export class MovieSingleComponent implements OnInit {
+
   public cinema_id: string | null = "";
   public movie_id: string | null = "";
-  public sessions: ISession[] = [];
   public selected_movie!: IMovie;
-  public dayArr: any[] = [];
-  public sessionsArr: any[] = [];
-  public selectedDay: any;
-  public selectedSession: any;
+
+  public sessions: ISession[] = [];
+  public dayArr: string[] = [];
+  public sessionsArr: ISession[] = [];
+  public selectedDay: string = "";
+  public selectedSession: ISession | null = null;
   public dateIsSelected: boolean = false;
-
   public isClicked = false;
-
-  public toggleWithClick(): void {
-    this.isClicked = !this.isClicked;
-  }
 
   constructor(
     private route: ActivatedRoute,
@@ -34,27 +33,39 @@ export class MovieSingleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    window.scrollTo( 0, 0 );
+    this.getMovieData();
+  }
+
+  private getParamsData(): void {
     this.cinema_id = this.route.snapshot.paramMap.get( 'cinema-id' );
     this.movie_id = this.route.snapshot.paramMap.get( 'movie-id' );
+  }
 
-
+  private getMovieData(): void {
+    this.getParamsData();
     this.http.getMovie( '/movies/' + this.movie_id + '?_embed=sessions' )
       .subscribe( {
         next: ( movieData: IMovie ) => {
           this.selected_movie = movieData;
-          this.selected_movie.trailerUrl += '?autoplay=1&amp;mute=1&amp;&amp;showinfo=0&amp;rel=0&amp;loop=0';
+          this.addTrailerUrlParams();
           this.sessions = this.selected_movie.sessions;
-          this.filterDays( this.dayArr );
-          this.selectedDay = this.dayArr[0];
-          this.filterSessionsByDay( this.selectedDay, this.sessionsArr );
+          this.setStartingSessionStates();
         },
         error: () => {
-          this.router.navigate( [ '/movies' ] ).then();
+          this.router.navigateByUrl( "movies" ).then();
           this.http.pageNotFoundError();
         }
       } )
+  }
 
+  private addTrailerUrlParams(): void {
+    this.selected_movie.trailerUrl += '?autoplay=1&amp;mute=1&amp;&amp;showinfo=0&amp;rel=0&amp;loop=0';
+  }
+
+  private setStartingSessionStates(): void {
+    this.filterDays( this.dayArr );
+    this.selectedDay = this.dayArr[0];
+    this.filterSessionsByDay( this.selectedDay, this.sessionsArr );
   }
 
   private filterDays( arr: any ): void {
@@ -88,5 +99,8 @@ export class MovieSingleComponent implements OnInit {
     this.selectedSession = this.sessionsArr[sessionIndex];
   }
 
+  public toggleWithClick(): void {
+    this.isClicked = !this.isClicked;
+  }
 }
 

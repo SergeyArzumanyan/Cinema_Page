@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { MoviesComponent } from "./components/movies/movies.component";
 import { MovieSingleComponent } from "./components/movie-single/movie-single.component";
 import { SessionBookComponent } from "./components/session-book/session-book.component";

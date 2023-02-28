@@ -1,10 +1,11 @@
+import { ISession } from "@project-interfaces/session.interface";
+
 export interface IMovie {
-  "cinemaId": any,
+  "cinemaId": string,
   "description": string,
-  "halls": any,
   "id": number,
   "imgUrl": string,
   "name": string,
-  "sessions": any
-  trailerUrl: string,
+  "sessions": ISession[]
+  "trailerUrl": string,
 }

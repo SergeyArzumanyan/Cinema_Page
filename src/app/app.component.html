@@ -1,7 +1,13 @@
 <div class="layout-container">
   <app-header></app-header>
-  <div class="content">
-    <router-outlet></router-outlet>
+  <div #content
+       class="content">
+    <router-outlet
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      [infiniteScrollContainer]="content">
+    </router-outlet>
   </div>
   <app-footer></app-footer>
 </div>
