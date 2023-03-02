@@ -31,7 +31,6 @@ export class RequesthttpService {
     }
   }
 
-
   public getMovie( query: string ): Observable<IMovie> {
     return this.http.get<IMovie>( this.REQUEST_URL + query );
   }

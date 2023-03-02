@@ -113,7 +113,7 @@ export class MessageToastsService {
     this.messageService.add( {
       severity: 'success',
       summary: 'Successful',
-      detail: 'Movies updated',
+      detail: 'Movie updated',
       life: 1500
     } );
   }
@@ -123,7 +123,7 @@ export class MessageToastsService {
     this.messageService.add( {
       severity: 'success',
       summary: 'Successful',
-      detail: 'Product Created',
+      detail: 'Movie Created',
       life: 3000
     } );
   }

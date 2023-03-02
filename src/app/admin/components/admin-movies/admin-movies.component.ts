@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ConfirmationService } from 'primeng/api';
-import { MessageService } from 'primeng/api';
 import { IMovie } from "@project-interfaces/movie.interface";
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { MessageToastsService } from "@project-services/toast.service";
+import { filter, take } from "rxjs";
 
 @Component( {
   selector: 'app-admin-movies',
   templateUrl: './admin-movies.component.html',
   styleUrls: [ './admin-movies.component.scss' ],
   providers: [
-    MessageService,
     ConfirmationService
   ]
 
@@ -23,6 +22,7 @@ export class AdminMoviesComponent implements OnInit {
   public incomingMovies: IMovie[] = [];
   public movie: IMovie = {};
   public selectedMovies: IMovie[] | null = [];
+  public searchInput: any;
   public submitted: boolean = false;
   public rows: number = 10;
   private page: number = 1;
@@ -40,6 +40,7 @@ export class AdminMoviesComponent implements OnInit {
 
   private getMovies() {
     this.requestHttp.getMovies( "all", this.page.toString(), this.rows.toString() )
+      .pipe( take( 1 ) )
       .subscribe( {
         next: ( movies: IMovie[] ) => {
           this.incomingMovies = movies;
@@ -101,7 +102,6 @@ export class AdminMoviesComponent implements OnInit {
         this.toastMessage.updateMovie();
       } else {
         this.movie.id = this.createId();
-        // this.movie.image = 'product-placeholder.svg';
         this.incomingMovies.push( this.movie );
         this.toastMessage.createMovie();
       }
@@ -113,7 +113,6 @@ export class AdminMoviesComponent implements OnInit {
   }
 
   public findIndexById( id: string ): number {
-
     let index = -1;
     for ( let i = 0; i < this.incomingMovies.length; i++ ) {
       if ( this.incomingMovies[i].id?.toString() === id ) {
@@ -126,13 +125,7 @@ export class AdminMoviesComponent implements OnInit {
   }
 
   public createId(): number {
-
-    let id = 0;
-    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for ( let i = 0; i < 5; i++ ) {
-      id += +chars.charAt( Math.floor( Math.random() * chars.length ) );
-    }
-    return id;
+    return this.incomingMovies.length + 1;
   }
 }
 

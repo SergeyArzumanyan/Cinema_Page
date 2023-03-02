@@ -16,7 +16,7 @@
                 icon="pi pi-trash"
                 class="p-button-danger toolbar-buttons"
                 (click)="deleteSelectedMovies()"
-                [disabled]="!selectedMovies || !selectedMovies.length">
+                [disabled]="!selectedMovies?.length">
         </button>
       </ng-template>
     </p-toolbar>
@@ -27,7 +27,7 @@
              [breakpoint]="'960px'"
              [rows]="rows"
              [paginator]="true"
-             [globalFilterFields]="['name']"
+             [globalFilterFields]="['name' , 'id']"
              [tableStyle]="{'min-width': '75rem'}"
              [(selection)]="selectedMovies"
              [rowHover]="true"
@@ -35,11 +35,12 @@
       <ng-template pTemplate="caption">
         <div class="flex align-items-center justify-content-between">
           <h5 class="m-0">Manage Movies</h5>
-            <span class="p-input-icon-left">
+          <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText
                            type="text"
-                           (input)="dt.filterGlobal($event.target, 'contains')"
+                           [(ngModel)]="searchInput"
+                           (input)="dt.filterGlobal(searchInput, 'contains')"
                            placeholder="Search..." />
             </span>
         </div>
@@ -86,11 +87,16 @@
     </p-table>
   </div>
 
-  <p-dialog [(visible)]="movieDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
+  <p-dialog [(visible)]="movieDialog"
+            [style]="{width: '450px'}"
+            header="Product Details"
+            [modal]="true"
             styleClass="p-fluid">
     <ng-template pTemplate="content">
       <div class="field editDialogCols">
-        <label for="name">Name</label>
+        <label for="name">
+          Name
+        </label>
         <input class="editDialogColsInput"
                type="text"
                pInputText
@@ -101,7 +107,9 @@
         <small class="p-error" *ngIf="submitted && !movie.name">Name is required.</small>
       </div>
       <div class="field editDialogCols">
-        <label for="description">Description</label>
+        <label for="description">
+          Description
+        </label>
         <textarea class="editDialogColTextArea"
                   id="description"
                   pInputTextarea
@@ -129,6 +137,5 @@
   </p-dialog>
 
   <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
-
 
 </div>
