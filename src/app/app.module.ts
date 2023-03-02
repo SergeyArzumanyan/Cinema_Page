@@ -8,8 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app-routing.module";
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { ToastrModule } from "ngx-toastr";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { ToastModule } from "primeng/toast";
+import { MessageService } from "primeng/api";
 
 @NgModule( {
   declarations: [
@@ -24,12 +25,9 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
     AppRoutingModule,
     HttpClientModule,
     InfiniteScrollModule,
-    ToastrModule.forRoot( {
-      maxOpened: 1
-    } )
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [ AppComponent ]
 } )
-export class AppModule {
-}
+export class AppModule {}

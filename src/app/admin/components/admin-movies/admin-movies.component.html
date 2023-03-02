@@ -1,0 +1,134 @@
+<div class="table-container">
+
+  <div class="card">
+    <p-toolbar styleClass="mb-4 gap-2">
+      <ng-template pTemplate="left">
+        <button pButton
+                pRipple
+                label="New"
+                icon="pi pi-plus"
+                class="p-button-info mr-2 toolbar-buttons"
+                (click)="openNew()">
+        </button>
+        <button pButton
+                pRipple
+                label="Delete"
+                icon="pi pi-trash"
+                class="p-button-danger toolbar-buttons"
+                (click)="deleteSelectedMovies()"
+                [disabled]="!selectedMovies || !selectedMovies.length">
+        </button>
+      </ng-template>
+    </p-toolbar>
+
+    <p-table #dt
+             [value]="incomingMovies"
+             responsiveLayout="stack"
+             [breakpoint]="'960px'"
+             [rows]="rows"
+             [paginator]="true"
+             [globalFilterFields]="['name']"
+             [tableStyle]="{'min-width': '75rem'}"
+             [(selection)]="selectedMovies"
+             [rowHover]="true"
+             dataKey="id">
+      <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+          <h5 class="m-0">Manage Movies</h5>
+            <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText
+                           type="text"
+                           (input)="dt.filterGlobal($event.target, 'contains')"
+                           placeholder="Search..." />
+            </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header" class="headerMoviesMobile">
+        <tr>
+          <th style="width: 4rem">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          <th pSortableColumn="id" style="min-width:15rem">ID
+            <p-sortIcon field="id"></p-sortIcon>
+          </th>
+          <th pSortableColumn="name" style="min-width:15rem">Name
+            <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-movie>
+        <tr>
+          <td>
+            <p-tableCheckbox [value]="movie"></p-tableCheckbox>
+          </td>
+          <td>{{ movie.id }}</td>
+          <td>{{ movie.name }}</td>
+          <td>{{ movie.description | shortText }}</td>
+          <td class="editDialogColsButtons">
+            <button pButton
+                    pRipple
+                    icon="pi pi-pencil"
+                    class="p-button-rounded p-button-info mr-2 rounded-buttons-size buttons-distance"
+                    (click)="editMovie(movie)">
+            </button>
+            <button pButton
+                    pRipple
+                    icon="pi pi-trash"
+                    class="p-button-rounded p-button-danger rounded-buttons-size buttons-distance"
+                    (click)="deleteMovie(movie)">
+            </button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <p-dialog [(visible)]="movieDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true"
+            styleClass="p-fluid">
+    <ng-template pTemplate="content">
+      <div class="field editDialogCols">
+        <label for="name">Name</label>
+        <input class="editDialogColsInput"
+               type="text"
+               pInputText
+               id="name"
+               [(ngModel)]="movie.name"
+               required
+               autofocus />
+        <small class="p-error" *ngIf="submitted && !movie.name">Name is required.</small>
+      </div>
+      <div class="field editDialogCols">
+        <label for="description">Description</label>
+        <textarea class="editDialogColTextArea"
+                  id="description"
+                  pInputTextarea
+                  [(ngModel)]="movie.description"
+                  required
+                  rows="3"
+                  cols="20"></textarea>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+      <button pButton
+              pRipple
+              label="Cancel"
+              icon="pi pi-times"
+              class="p-button-text"
+              (click)="hideDialog()"></button>
+      <button pButton
+              pRipple
+              label="Save"
+              icon="pi pi-check"
+              class="p-button-text"
+              (click)="saveMovie()"></button>
+    </ng-template>
+  </p-dialog>
+
+  <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+
+
+</div>

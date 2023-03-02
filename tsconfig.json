@@ -26,7 +26,7 @@
     "paths": {
       "@project-services/*": ["app/shared/services/*"],
       "@project-interfaces/*": ["app/shared/interfaces/*"],
-      "@project-directives/*": ["app/shared/directives/*"]
+      "@project-directives/*": ["app/shared/directives/*"],
     }
   },
   "angularCompilerOptions": {

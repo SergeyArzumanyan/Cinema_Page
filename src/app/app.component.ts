@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageToastsService } from "@project-services/toast.service";
+
 
 @Component( {
   selector: 'app-root',
@@ -7,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 } )
 
 export class AppComponent implements OnInit {
+
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.checkAndSetSignInState();

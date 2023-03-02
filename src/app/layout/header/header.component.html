@@ -67,6 +67,27 @@
       </div>
 
 
+      <ng-container *ngIf="userService.user$.value?.role === 'admin'">
+        <div
+          class="nav-item"
+          [ngClass]="{
+           'nav-item-large': screenIsLarge,
+           'nav-item-small': !screenIsLarge
+           }"
+        [routerLink]="['admin']"
+        routerLinkActive="active"
+          (click)="closeMenu()">
+          <a class="nav-link"
+             [ngClass]="{
+                 'nav-link-large': screenIsLarge,
+                 'nav-link-small': !screenIsLarge
+                 }">
+            Admin panel
+          </a>
+        </div>
+      </ng-container>
+
+
       <ng-container *ngIf="userService.user$ | async as user; else loginBlock">
         <div
           class="nav-item sign-out-all"
@@ -82,6 +103,21 @@
                  }">
             {{ user?.name }} <span> > </span>
           </a>
+        </div>
+        <div class="dropdown-sign-out"
+             [ngClass]="{
+           'dropdown-sign-out-large': screenIsLarge,
+           'dropdown-sign-out-small': !screenIsLarge,
+           'dropdown-sign-out-disabled': !dropdownState,
+           'dropdown-sign-out-enabled': dropdownState
+           }">
+          <div class="dropdown-item"
+               [ngClass]="{
+             'dropdown-item-large': screenIsLarge,
+             'dropdown-item-small': !screenIsLarge
+             }"
+               (click)="logOutUser()">Log out
+          </div>
         </div>
       </ng-container>
       <ng-template #loginBlock>
@@ -109,21 +145,7 @@
       </ng-template>
 
 
-      <div class="dropdown-sign-out"
-           [ngClass]="{
-           'dropdown-sign-out-large': screenIsLarge,
-           'dropdown-sign-out-small': !screenIsLarge,
-           'dropdown-sign-out-disabled': !dropdownState,
-           'dropdown-sign-out-enabled': dropdownState
-           }">
-        <div class="dropdown-item"
-             [ngClass]="{
-             'dropdown-item-large': screenIsLarge,
-             'dropdown-item-small': !screenIsLarge
-             }"
-             (click)="logOutUser()">Log out
-        </div>
-      </div>
+
 
     </div>
 

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { IMovie } from "@project-interfaces/movie.interface";
+import { MessageToastsService } from "@project-services/toast.service";
 
 
 @Component( {
@@ -11,6 +12,7 @@ import { IMovie } from "@project-interfaces/movie.interface";
   templateUrl: './movies.component.html',
   styleUrls: [ './movies.component.scss' ]
 } )
+
 export class MoviesComponent implements OnInit {
 
   public allMovies: IMovie[] = [];
@@ -24,6 +26,7 @@ export class MoviesComponent implements OnInit {
     private http: RequesthttpService,
     private route: ActivatedRoute,
     private router: Router,
+    private toastMessage: MessageToastsService
   ) {
   }
 
@@ -45,7 +48,7 @@ export class MoviesComponent implements OnInit {
   }
 
   private getMovies() {
-    this.http.getMovies( this.cinemaId, this.page.toString() )
+    this.http.getMovies( this.cinemaId, this.page.toString(), "6" )
       .pipe( take( 1 ) )
       .subscribe( {
         next: ( movies: IMovie[] ) => {
@@ -58,13 +61,13 @@ export class MoviesComponent implements OnInit {
           this.allMovies = this.incomingMovies;
         },
         error: () => {
-          this.http.somethingWentWrong();
+          this.toastMessage.somethingWentWrongMessage();
         }
       } )
   }
 
   private requestMoreMovies(): void {
-    this.http.getMovies( this.cinemaId, this.page.toString() )
+    this.http.getMovies( this.cinemaId, this.page.toString() , "6" )
       .pipe( take( 1 ) )
       .subscribe( {
         next: ( movies: IMovie[] ) => {
@@ -72,7 +75,7 @@ export class MoviesComponent implements OnInit {
           this.allMovies = this.allMovies.concat( this.incomingMovies );
         },
         error: () => {
-          this.http.somethingWentWrong();
+          this.toastMessage.somethingWentWrongMessage();
         }
       } )
   }

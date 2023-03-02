@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { ICinema } from "@project-interfaces/cinema.interface";
 import { Router } from "@angular/router";
+import { MessageToastsService } from "@project-services/toast.service";
 
 @Component( {
   selector: 'app-cinema',
@@ -18,7 +19,8 @@ export class CinemaComponent implements OnInit {
 
   constructor(
     private http: RequesthttpService,
-    private router: Router
+    private router: Router,
+    private toastMessage: MessageToastsService
   ) {
   }
 
@@ -37,7 +39,7 @@ export class CinemaComponent implements OnInit {
           }
         },
         error: () => {
-          this.http.somethingWentWrong();
+          this.toastMessage.somethingWentWrongMessage();
           this.router.navigateByUrl("movies").then();
         }
       } )

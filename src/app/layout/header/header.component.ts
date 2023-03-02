@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log( this.userService.user$.value?.role );
     this.toggleScreenState();
   }
 

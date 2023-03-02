@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { IMovie } from "@project-interfaces/movie.interface";
 import { ISession } from "@project-interfaces/session.interface";
+import { MessageToastsService } from "@project-services/toast.service";
 
 @Component( {
   selector: 'app-movie-single',
@@ -17,7 +18,7 @@ export class MovieSingleComponent implements OnInit {
   public movie_id: string | null = "";
   public selected_movie!: IMovie;
 
-  public sessions: ISession[] = [];
+  public sessions: ISession[] | undefined = [];
   public dayArr: string[] = [];
   public sessionsArr: ISession[] = [];
   public selectedDay: string = "";
@@ -28,7 +29,8 @@ export class MovieSingleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: RequesthttpService,
-    private router: Router
+    private router: Router,
+    private toastMessage: MessageToastsService,
   ) {
   }
 
@@ -53,7 +55,7 @@ export class MovieSingleComponent implements OnInit {
         },
         error: () => {
           this.router.navigateByUrl( "movies" ).then();
-          this.http.pageNotFoundError();
+          this.toastMessage.pageNotFoundErrorMessage();
         }
       } )
   }
@@ -69,7 +71,7 @@ export class MovieSingleComponent implements OnInit {
   }
 
   private filterDays( arr: any ): void {
-    this.selected_movie?.sessions.map( ( session: any ) => {
+    this.selected_movie.sessions?.map( ( session: any ) => {
       if ( !arr.includes( new Date( session.date ).getDate() ) ) {
         arr.push( new Date( session.date ).getDate() );
         arr.sort( ( a: any, b: any ) => a - b );
@@ -78,7 +80,7 @@ export class MovieSingleComponent implements OnInit {
   }
 
   private filterSessionsByDay( day: any, arr: any ): void {
-    this.selected_movie.sessions.map( ( session: any ) => {
+    this.selected_movie.sessions?.map( ( session: any ) => {
       if ( new Date( session.date ).getDate() === day ) {
         arr.push( session );
         arr.sort( ( a: any, b: any ) => new Date( a.date ).getTime() - new Date( b.date ).getTime() );

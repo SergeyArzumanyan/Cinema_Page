@@ -6,7 +6,8 @@ export interface IUser {
   "email"?: string | null,
   "name"?: string | null,
   "password"?: string | null,
-  "surname"?: string | null
+  "surname"?: string | null,
+  "role"?: string | null
 }
 
 export interface IRegisterForm {

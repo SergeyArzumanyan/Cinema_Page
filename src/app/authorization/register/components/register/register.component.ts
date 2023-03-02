@@ -3,10 +3,10 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { take } from "rxjs";
 
+import { UserService } from "@project-services/user.service";
 import { RequesthttpService } from "@project-services//requesthttp.service";
 import { SendhttpService } from "@project-services/sendhttp.service";
-import { UserService } from "@project-services/user.service";
-import { ToastrService } from "ngx-toastr";
+import { MessageToastsService } from "@project-services/toast.service";
 import { IRegisterForm, IUser } from "@project-interfaces/authorization.interface";
 
 @Component( {
@@ -24,17 +24,17 @@ export class RegisterComponent implements OnInit {
     private sendHttp: SendhttpService,
     private requestHttp: RequesthttpService,
     private router: Router,
-    private toaster: ToastrService,
+    private toastMessage: MessageToastsService,
     private userService: UserService
   ) {
   }
 
   public form = new FormGroup<IRegisterForm>( {
 
-    name: new FormControl( null, [
+    name: new FormControl( "", [
       Validators.required,
     ] ),
-    surname: new FormControl( null, [
+    surname: new FormControl( "", [
       Validators.required,
     ] ),
     email: new FormControl( null, [
@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
           this.users = requestedUsers;
         },
         error: () => {
-          this.requestHttp.somethingWentWrong();
+          this.toastMessage.somethingWentWrongMessage();
           this.router.navigateByUrl( "movies" ).then();
         }
       } )
@@ -92,23 +92,15 @@ export class RegisterComponent implements OnInit {
     this.users?.map( user => {
       if ( user.email === this.form.value.email ) {
         this.userCheck = true;
-        this.toaster.error( "Account with that email already exists", "Error", {
-          timeOut: 1000,
-          closeButton: true,
-          extendedTimeOut: 1000,
-        } );
+        this.toastMessage.registerErrorMessage();
       }
+
     } )
   }
 
   private registerSuccess(): void {
-
     this.userService.logUser( this.form.value );
-    this.toaster.success( "Successfully registered", "Done", {
-      timeOut: 1000,
-      closeButton: true,
-      extendedTimeOut: 1000,
-    } );
+    this.toastMessage.registerSuccesMessage();
 
     this.sendHttp.sendUserData( this.form.value ).subscribe();
     this.form.reset()

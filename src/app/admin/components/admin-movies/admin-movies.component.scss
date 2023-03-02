@@ -1,0 +1,44 @@
+.table-container {
+  margin: 1rem 0;
+  padding: 3rem 4rem;
+}
+
+.rounded-buttons-size {
+  width: 2.5rem;
+  height: 2.5rem !important;
+}
+
+.editDialogCols {
+  margin: 1rem 0;
+}
+
+.editDialogColTextArea {
+  margin: 1rem 0;
+  height: 175px;
+  resize: none;
+}
+
+.editDialogColsInput {
+  margin: 1rem 0;
+}
+
+.buttons-distance , .toolbar-buttons {
+  margin: 0.5rem;
+}
+
+@media (max-width: 950px) {
+
+  .table-container {
+    padding: 1rem;
+  }
+
+  .editDialogColsButtons {
+    justify-content: flex-end !important;
+  }
+
+  .headerMoviesMobile {
+    padding: 1rem 0.5rem !important;
+  }
+
+}
+

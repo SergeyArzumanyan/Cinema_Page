@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-
-import { RequesthttpService } from "@project-services/requesthttp.service";
-import { UserService } from "@project-services/user.service";
-import { ILoginForm, IUser } from "@project-interfaces/authorization.interface";
-import { ToastrService } from "ngx-toastr";
 import { take } from "rxjs";
+
+import { UserService } from "@project-services/user.service";
+import { RequesthttpService } from "@project-services/requesthttp.service";
+import { MessageToastsService } from "@project-services/toast.service";
+import { ILoginForm, IUser } from "@project-interfaces/authorization.interface";
 
 @Component( {
   selector: 'app-login',
@@ -19,7 +19,7 @@ export class LoginComponent {
   constructor(
     private requestHttp: RequesthttpService,
     private router: Router,
-    private toaster: ToastrService,
+    private toastMessage: MessageToastsService,
     private userService: UserService
   ) {
   }
@@ -57,28 +57,22 @@ export class LoginComponent {
           this.loginSuccess( userInfo[0] );
         },
         error: () => {
-          this.requestHttp.somethingWentWrong();
+          this.toastMessage.somethingWentWrongMessage();
           this.router.navigateByUrl( "movies" ).then();
         }
       } )
   }
 
   private loginSuccess( user: IUser ): void {
+
     this.userService.logUser( user );
-    this.toaster.success( "Logged as " + user.name, "Logged successfully.", {
-      timeOut: 1000,
-      closeButton: true,
-      extendedTimeOut: 1000,
-    } );
+    this.toastMessage.loginSuccessMessage( user.name! );
     this.router.navigateByUrl( "/movies/all" ).then();
   }
 
   private loginFail(): void {
+
     this.userService.logOutUser();
-    this.toaster.error( "Email or password is incorrect", "Error.", {
-      timeOut: 1000,
-      closeButton: true,
-      extendedTimeOut: 1000,
-    } );
+    this.toastMessage.loginErrorMessage();
   }
 }

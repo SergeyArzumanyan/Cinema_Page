@@ -27,7 +27,10 @@
         "seat6-7",
         "seat6-1",
         "seat5-4",
-        "seat5-5"
+        "seat5-5",
+        "seat0-8",
+        "seat0-9",
+        "seat0-4"
       ]
     },
     {
@@ -73,7 +76,12 @@
       "seats": [
         "seat1-6",
         "seat1-7",
-        "seat6-8"
+        "seat6-8",
+        "seat2-9",
+        "seat0-0",
+        "seat0-1",
+        "seat4-4",
+        "seat5-4"
       ]
     },
     {
@@ -127,7 +135,10 @@
         "seat1-6",
         "seat1-7",
         "seat6-8",
-        "seat6-9"
+        "seat6-9",
+        "seat1-9",
+        "seat3-8",
+        "seat4-2"
       ]
     },
     {
@@ -842,7 +853,9 @@
         "seat4-2",
         "seat4-6",
         "seat4-7",
-        "seat5-7"
+        "seat5-7",
+        "seat1-4",
+        "seat1-5"
       ]
     },
     {
@@ -1024,20 +1037,31 @@
   ],
   "users": [
     {
-      "name": "Poxos",
-      "surname": "Petrosyan",
-      "email": "poxos.petrosyan@gmail.com",
       "age": 39,
+      "email": "poxos.petrosyan@gmail.com",
+      "id": 1,
+      "name": "Poxos",
       "password": "user1234",
-      "id": 1
+      "role": "user",
+      "surname": "Petrosyan"
     },
     {
-      "name": "Petros",
-      "surname": "Poxosyan",
-      "email": "petros.poxosyan@gmail.com",
       "age": 50,
+      "email": "petros.poxosyan@gmail.com",
+      "id": 2,
+      "name": "Petros",
       "password": "user1234",
-      "id": 2
+      "role": "user",
+      "surname": "Poxosyan"
+    },
+    {
+      "age": 39,
+      "email": "admin@acc.com",
+      "id": 2,
+      "name": "ADMIN",
+      "password": "admin1234",
+      "role": "admin",
+      "surname": " "
     }
   ],
   "movies": [

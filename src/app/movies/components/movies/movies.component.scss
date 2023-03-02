@@ -1,8 +1,8 @@
-@import "../../../data";
+@import "../../../../data";
 
 .movies-title {
   width: 35%;
-  margin: 2rem auto;
+  margin: 4rem auto 2rem auto;
   color: $white;
   text-align: center;
   font-size: 3rem;
@@ -92,6 +92,7 @@
 @media (max-width: 650px) {
   .movies-title {
     width: 50%;
+    margin: 2rem auto;
     font-size: 1.5rem;
   }
 

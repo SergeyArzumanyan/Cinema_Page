@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
+import { take } from "rxjs";
 
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { IMovie } from "@project-interfaces/movie.interface";
 import { ISession } from "@project-interfaces/session.interface";
 import { UserService } from "@project-services/user.service";
 import { SendhttpService } from "@project-services/sendhttp.service";
-import { ToastrService } from "ngx-toastr";
-import { take } from "rxjs";
+import { MessageToastsService } from "@project-services/toast.service";
 
 
 @Component( {
@@ -35,7 +35,7 @@ export class SessionBookComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
-    private toaster: ToastrService
+    private toastMessage: MessageToastsService,
   ) {
   }
 
@@ -60,7 +60,7 @@ export class SessionBookComponent implements OnInit {
 
         error: () => {
           this.router.navigateByUrl( 'movies/all' ).then();
-          this.requestHttp.pageNotFoundError();
+          this.toastMessage.pageNotFoundErrorMessage();
         }
       } );
   }
@@ -78,7 +78,7 @@ export class SessionBookComponent implements OnInit {
 
         },
         error: () => {
-          this.requestHttp.somethingWentWrong();
+          this.toastMessage.somethingWentWrongMessage();
         }
       } )
   }
@@ -116,37 +116,23 @@ export class SessionBookComponent implements OnInit {
 
   public reserveSeats(): void {
 
-    this.checkSignInState();
-    this.reserveSeatsSuccessfullyVisual();
-    this.modifySelectedSeats();
-    this.sendReservedSeatsToDB();
+    this.checkSignInStateAndSendData();
   }
 
 
-  private checkSignInState(): void {
+  private checkSignInStateAndSendData(): void {
 
     if ( localStorage.getItem( 'signedIn' ) === 'false' ) {
-      this.toaster.error( "You need to sign in.", "Error", {
-        timeOut: 1000,
-        closeButton: true,
-        extendedTimeOut: 1000,
-      } );
-
+      this.toastMessage.notSignedInErrorMessage();
       this.router.navigate( [ '/auth/login' ] ).then();
+      return;
+    } else {
+      this.toastMessage.reserveTicketsSuccessfullyMessage();
+      this.modifySelectedSeats();
+      this.sendReservedSeatsToDB();
       return;
     }
   }
-
-
-  private reserveSeatsSuccessfullyVisual(): void {
-
-    this.toaster.success( "Reserved Successfully", "Done", {
-      timeOut: 1000,
-      closeButton: true,
-      extendedTimeOut: 1000,
-    } );
-  }
-
 
   private modifySelectedSeats(): void {
 
@@ -170,7 +156,7 @@ export class SessionBookComponent implements OnInit {
           this.router.navigate( [ '/movies/all' ] ).then();
         },
         error: () => {
-          this.requestHttp.somethingWentWrong();
+          this.toastMessage.somethingWentWrongMessage();
         }
       } )
   }
