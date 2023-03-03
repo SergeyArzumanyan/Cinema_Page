@@ -1,0 +1,106 @@
+@import "../../data.scss";
+
+.table-container {
+  margin: 1rem 0;
+  padding: 3rem 4rem;
+}
+
+.table-header {
+  width: 400px;
+  color: $white;
+  text-align: center;
+  margin: 2rem auto;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid $white;
+}
+
+.rounded-buttons-size {
+  width: 2.5rem;
+  height: 2.5rem !important;
+}
+
+.editDialogCols {
+  margin: 1rem 0;
+}
+
+.th-group {
+  min-width: 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+td {
+  padding: 0 1rem !important;
+}
+
+.filter-margin {
+  margin-left: 150px;
+}
+
+.editDialogColTextArea {
+  margin: 1rem 0;
+  height: 175px;
+  resize: none;
+}
+
+.editDialogColsInput {
+  margin: 1rem 0;
+}
+
+.buttons-distance , .toolbar-buttons {
+  margin: 0.5rem;
+}
+
+@media (max-width: 950px) {
+
+  .table-container {
+    padding: 1rem;
+  }
+
+  .table-header {
+    font-size: 1.5rem;
+    width: 200px;
+    margin: 1rem auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .editDialogColsButtons {
+    justify-content: flex-end !important;
+  }
+
+  .headerMoviesMobile {
+    padding: 1rem 0.5rem !important;
+  }
+
+  :host ::ng-deep .p-element.p-ripple {
+    font-size: 0.7rem
+  }
+
+  :host ::ng-deep .p-toolbar {
+    justify-content: center;
+  }
+
+  :host ::ng-deep .p-checkbox-box.p-component {
+    margin: 1rem 0;
+  }
+
+  .table-checkbox {
+    margin: 0 0 2rem 0;
+  }
+
+}
+
+:host ::ng-deep .p-datatable.p-component {
+  margin-top: 0.7rem;
+}
+
+:host ::ng-deep .p-datatable-wrapper {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+:host ::ng-deep .p-paginator.p-component {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+

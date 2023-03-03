@@ -1,5 +1,5 @@
 <div class="table-container">
-  <h1 class="table-header">Manage Movies</h1>
+  <h1 class="table-header">Manage Cinemas</h1>
   <div class="card">
     <p-toolbar styleClass="mb-4 gap-2">
       <ng-template pTemplate="left">
@@ -15,23 +15,23 @@
                 label="Delete"
                 icon="pi pi-trash"
                 class="p-button-danger toolbar-buttons"
-                (click)="deleteSelectedMovies()"
-                [disabled]="!selectedMovies?.length">
+                (click)="deleteSelectedCinemas()"
+                [disabled]="!selectedCinemas?.length">
         </button>
       </ng-template>
     </p-toolbar>
     <p-table #dt
-             [value]="incomingMovies"
+             [value]="incomingCinemas"
              responsiveLayout="stack"
              [breakpoint]="'960px'"
              [rows]="rows"
              [paginator]="true"
-             [globalFilterFields]="['name' , 'id']"
+             [globalFilterFields]="['cinemaName' , 'cinemaId']"
              [tableStyle]="{'min-width': '75rem'}"
-             [(selection)]="selectedMovies"
+             [(selection)]="selectedCinemas"
              [rowHover]="true"
              [contextMenu]="cm"
-             [(contextMenuSelection)]="movie"
+             [(contextMenuSelection)]="cinema"
              dataKey="id">
       <ng-template pTemplate="header" class="headerMoviesMobile">
         <tr>
@@ -40,51 +40,53 @@
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
 
-          <th pSortableColumn="id" style="min-width:15rem">
+          <th pSortableColumn="cinemaId" style="min-width:15rem">
             <div class="flex justify-content-between align-items-center">
               ID
-              <p-sortIcon field="id"></p-sortIcon>
-              <p-columnFilter class="filter-margin" type="numeric" field="id" display="menu" ></p-columnFilter>
+              <p-sortIcon field="cinemaId"></p-sortIcon>
+              <p-columnFilter class="filter-margin" type="numeric" field="cinemaId" display="menu"></p-columnFilter>
             </div>
           </th>
 
-          <th pSortableColumn="name" style="min-width:15rem">
+          <th pSortableColumn="cinemaName" style="min-width:15rem">
             <div class="flex justify-content-between align-items-center">
               Name
-              <p-sortIcon field="name"></p-sortIcon>
-              <p-columnFilter class="filter-margin" type="text" field="name" display="menu"></p-columnFilter>
+              <p-sortIcon field="cinemaName"></p-sortIcon>
+              <p-columnFilter class="filter-margin" type="text" field="cinemaName" display="menu"></p-columnFilter>
             </div>
           </th>
 
           <th>Description</th>
+          <th>Address</th>
           <th></th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-movie>
-        <tr [pContextMenuRow]="movie">
+      <ng-template pTemplate="body" let-cinema>
+        <tr [pContextMenuRow]="cinema">
           <td class="table-checkbox">
-            <p-tableCheckbox [value]="movie"></p-tableCheckbox>
+            <p-tableCheckbox [value]="cinema"></p-tableCheckbox>
           </td>
-          <td>{{ movie.id }}</td>
-          <td>{{ movie.name }}</td>
-          <td [pTooltip]="movie.description"
+          <td>{{ cinema['cinemaId'] }}</td>
+          <td>{{ cinema['cinemaName'] }}</td>
+          <td [pTooltip]="cinema['cinemaDescription']"
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
-            {{ movie.description | shortText }}
+            {{ cinema['cinemaDescription'] | shortText }}
           </td>
+          <td>{{ cinema['cinemaAddress'] | shortText }}</td>
           <td class="editDialogColsButtons">
             <button pButton
                     pRipple
                     icon="pi pi-pencil"
                     class="p-button-rounded p-button-info mr-2 rounded-buttons-size buttons-distance"
-                    (click)="editMovie(movie)">
+                    (click)="editCinema(cinema)">
             </button>
             <button pButton
                     pRipple
                     icon="pi pi-trash"
                     class="p-button-rounded p-button-danger rounded-buttons-size buttons-distance"
-                    (click)="deleteMovie(movie)">
+                    (click)="deleteCinema(cinema)">
             </button>
           </td>
         </tr>
@@ -92,7 +94,7 @@
     </p-table>
   </div>
 
-  <p-dialog [(visible)]="movieDialog"
+  <p-dialog [(visible)]="cinemaDialog"
             [style]="{width: '450px'}"
             header="Product Details"
             [modal]="true"
@@ -106,10 +108,10 @@
                type="text"
                pInputText
                id="name"
-               [(ngModel)]="movie.name"
+               [(ngModel)]="cinema.cinemaName"
                required
                autofocus />
-        <small class="p-error" *ngIf="submitted && !movie.name">Name is required.</small>
+        <small class="p-error" *ngIf="submitted && !cinema.cinemaName">Name is required.</small>
       </div>
       <div class="field editDialogCols">
         <label for="description">
@@ -118,12 +120,23 @@
         <textarea class="editDialogColTextArea"
                   id="description"
                   pInputTextarea
-                  [(ngModel)]="movie.description"
+                  [(ngModel)]="cinema.cinemaDescription"
                   required
                   rows="3"
-                  cols="20">
-        </textarea>
-        <small class="p-error" *ngIf="submitted && !movie.description">Description is required.</small>
+                  cols="20"></textarea>
+        <small class="p-error" *ngIf="submitted && !cinema.cinemaDescription">Description is required.</small>
+      </div>
+      <div class="field editDialogCols">
+        <label for="address">
+          Address
+        </label>
+        <input class="editDialogColsInput"
+               type="text"
+               id="address"
+               pInputText
+               [(ngModel)]="cinema.cinemaAddress"
+               required />
+        <small class="p-error" *ngIf="submitted && !cinema.cinemaAddress">Address is required.</small>
       </div>
     </ng-template>
 
@@ -139,10 +152,11 @@
               label="Save"
               icon="pi pi-check"
               class="p-button-text"
-              (click)="saveMovie()"></button>
+              (click)="saveCinema()"></button>
     </ng-template>
   </p-dialog>
 
   <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
   <p-contextMenu #cm [model]="items"></p-contextMenu>
+
 </div>

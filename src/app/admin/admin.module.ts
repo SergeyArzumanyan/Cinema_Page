@@ -22,12 +22,16 @@ import { RadioButtonModule } from "primeng/radiobutton";
 import { InputNumberModule } from "primeng/inputnumber";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
 import { AdminComponent } from './components/admin/admin.component';
+import { TooltipModule } from 'primeng/tooltip';
+import { StyleClassModule } from "primeng/styleclass";
+import { AdminCinemasComponent } from './components/admin-cinemas/admin-cinemas.component';
 
 @NgModule( {
   declarations: [
     AdminMoviesComponent,
     AdminSessionsComponent,
-    AdminComponent
+    AdminComponent,
+    AdminCinemasComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +51,9 @@ import { AdminComponent } from './components/admin/admin.component';
     RatingModule,
     RadioButtonModule,
     InputNumberModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TooltipModule,
+    StyleClassModule
   ]
 } )
 export class AdminModule {

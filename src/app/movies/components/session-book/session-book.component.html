@@ -36,8 +36,8 @@
 
     <div class="tickets-block">
       <h3 class="tickets-heading">Tickets</h3>
-
-      <div class="tickets-wrapper" *ngIf="ticketsArr.length">
+      <p-scrollPanel *ngIf="ticketsArr.length" [style]="{width: '100%', height: '200px'}" styleClass="customScrollBar">
+      <div class="tickets-wrapper">
         <div class="ticket" *ngFor="let ticket of ticketsArr">
           <div class="cancel-btn" (click)="deleteTicket(ticket)">x</div>
           <span class="ticket-date">{{ sessionInfo.date | date: "HH:mm" }}</span>
@@ -48,7 +48,7 @@
           <span class="ticket-price">{{ sessionInfo?.price }} AMD</span>
         </div>
       </div>
-
+      </p-scrollPanel>
       <div class="purchase-block">
 
         <div class="purchase-info-block">

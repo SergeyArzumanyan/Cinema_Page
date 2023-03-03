@@ -1,7 +1,11 @@
 @import "../../../../data";
 
+:host ::ng-deep  .p-scrollpanel-bar  {
+  background-color: $orange;
+}
+
 .session-wrapper {
-  margin: 2.5rem auto;
+  margin: 6rem auto;
   padding: 2rem;
   width: 60%;
   min-height: 50vh;
@@ -131,7 +135,6 @@
 .tickets-wrapper {
   height: 350px;
   width: 100%;
-  overflow-y: scroll;
 }
 
 .ticket {

@@ -98,32 +98,32 @@ export class MessageToastsService {
     } );
   }
 
-  public deleteMovies(): void {
+  public deleteItems( items: string ): void {
 
     this.messageService.add( {
       severity: 'success',
       summary: 'Successful',
-      detail: 'Movies Deleted',
+      detail: `${ items } Deleted`,
       life: 1500
     } );
   }
 
-  public updateMovie(): void {
+  public updateItem( item: string ): void {
 
     this.messageService.add( {
       severity: 'success',
       summary: 'Successful',
-      detail: 'Movie updated',
+      detail: `${ item } updated`,
       life: 1500
     } );
   }
 
-  public createMovie(): void {
+  public createItem( item: string ): void {
 
     this.messageService.add( {
       severity: 'success',
       summary: 'Successful',
-      detail: 'Movie Created',
+      detail: `${ item } Created`,
       life: 3000
     } );
   }

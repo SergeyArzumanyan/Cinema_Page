@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from "rxjs";
 
-import { ConfirmationService } from 'primeng/api';
-import { IMovie } from "@project-interfaces/movie.interface";
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { MessageToastsService } from "@project-services/toast.service";
-import { filter, take } from "rxjs";
+import { IMovie } from "@project-interfaces/movie.interface";
+
+import { ConfirmationService, MenuItem } from 'primeng/api';
 
 @Component( {
   selector: 'app-admin-movies',
@@ -22,10 +23,14 @@ export class AdminMoviesComponent implements OnInit {
   public incomingMovies: IMovie[] = [];
   public movie: IMovie = {};
   public selectedMovies: IMovie[] | null = [];
-  public searchInput: any;
   public submitted: boolean = false;
   public rows: number = 10;
-  private page: number = 1;
+  public page: number = 1;
+
+  public items: MenuItem[] = [
+    { label: 'Edit', icon: 'pi pi-fw pi-pencil', command: () => this.editMovie( this.movie ) },
+    { label: 'Delete', icon: 'pi pi-fw pi-times', command: () => this.deleteMovie( this.movie ) }
+  ];
 
   constructor(
     private requestHttp: RequesthttpService,
@@ -65,7 +70,7 @@ export class AdminMoviesComponent implements OnInit {
       accept: () => {
         this.incomingMovies = this.incomingMovies.filter( val => !this.selectedMovies?.includes( val ) );
         this.selectedMovies = null;
-        this.toastMessage.deleteMovies();
+        this.toastMessage.deleteItems( "Movies" );
       }
     } );
   }
@@ -83,7 +88,7 @@ export class AdminMoviesComponent implements OnInit {
       accept: () => {
         this.incomingMovies = this.incomingMovies.filter( val => val.id !== movie.id );
         this.movie = {};
-        this.toastMessage.deleteMovies();
+        this.toastMessage.deleteItems( "Movies" );
       }
     } );
   }
@@ -96,14 +101,14 @@ export class AdminMoviesComponent implements OnInit {
   public saveMovie() {
     this.submitted = true;
 
-    if ( this.movie.name?.trim() ) {
+    if ( this.movie.name?.trim() && this.movie.description?.trim() ) {
       if ( this.movie.id ) {
         this.incomingMovies[this.findIndexById( this.movie.id.toString() )] = this.movie;
-        this.toastMessage.updateMovie();
+        this.toastMessage.updateItem( "Movie" );
       } else {
         this.movie.id = this.createId();
         this.incomingMovies.push( this.movie );
-        this.toastMessage.createMovie();
+        this.toastMessage.createItem( "Movie" );
       }
 
       this.incomingMovies = [ ...this.incomingMovies ];
@@ -125,7 +130,7 @@ export class AdminMoviesComponent implements OnInit {
   }
 
   public createId(): number {
-    return this.incomingMovies.length + 1;
+    return +new Date();
   }
 }
 

@@ -12,6 +12,8 @@ import { RowPipe } from "../shared/pipes/row.pipe";
 import { SeatPipe } from "../shared/pipes/seat.pipe";
 import { SafePipe } from "../shared/pipes/safe.pipe";
 
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+
 
 @NgModule( {
   declarations: [
@@ -25,7 +27,8 @@ import { SafePipe } from "../shared/pipes/safe.pipe";
   imports: [
     CommonModule,
     MoviesRoutingModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    ScrollPanelModule
   ]
 } )
 export class MoviesModule {

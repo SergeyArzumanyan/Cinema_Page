@@ -25,9 +25,10 @@ import { MessageService } from "primeng/api";
     AppRoutingModule,
     HttpClientModule,
     InfiniteScrollModule,
-    ToastModule
+    ToastModule,
   ],
-  providers: [MessageService],
+  providers: [ MessageService ],
   bootstrap: [ AppComponent ]
 } )
-export class AppModule {}
+export class AppModule {
+}
