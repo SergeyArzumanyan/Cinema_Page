@@ -22,6 +22,7 @@
     </p-toolbar>
     <p-table #dt
              [value]="incomingMovies"
+             styleClass="p-datatable-gridlines"
              responsiveLayout="stack"
              [breakpoint]="'960px'"
              [rows]="rows"
@@ -44,7 +45,7 @@
             <div class="flex justify-content-between align-items-center">
               ID
               <p-sortIcon field="id"></p-sortIcon>
-              <p-columnFilter class="filter-margin" type="numeric" field="id" display="menu" ></p-columnFilter>
+              <p-columnFilter class="filter-margin" type="numeric" field="id" display="menu"></p-columnFilter>
             </div>
           </th>
 
@@ -57,7 +58,15 @@
           </th>
 
           <th>Description</th>
-          <th></th>
+          <th>
+            <div class="flex">
+              <button pButton
+                      (click)="clearFilters(dt)"
+                      label="Clear"
+                      class="p-button-outlined"
+                      icon="pi pi-filter-slash"></button>
+            </div>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-movie>
@@ -66,12 +75,15 @@
             <p-tableCheckbox [value]="movie"></p-tableCheckbox>
           </td>
           <td>{{ movie.id }}</td>
-          <td>{{ movie.name }}</td>
+          <td [pTooltip]="movie.name"
+              tooltipPosition="bottom"
+              [showDelay]="400"
+              [hideDelay]="100">{{ movie.name | shortText: 20 }}</td>
           <td [pTooltip]="movie.description"
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
-            {{ movie.description | shortText }}
+            {{ movie.description | shortText: 50 }}
           </td>
           <td class="editDialogColsButtons">
             <button pButton
@@ -94,37 +106,67 @@
 
   <p-dialog [(visible)]="movieDialog"
             [style]="{width: '450px'}"
-            header="Product Details"
+            header="Movie Details"
             [modal]="true"
+            (onHide)="hideDialog()"
             styleClass="p-fluid">
     <ng-template pTemplate="content">
-      <div class="field editDialogCols">
-        <label for="name">
-          Name
-        </label>
-        <input class="editDialogColsInput"
-               type="text"
-               pInputText
-               id="name"
-               [(ngModel)]="movie.name"
-               required
-               autofocus />
-        <small class="p-error" *ngIf="submitted && !movie.name">Name is required.</small>
-      </div>
-      <div class="field editDialogCols">
-        <label for="description">
-          Description
-        </label>
-        <textarea class="editDialogColTextArea"
-                  id="description"
-                  pInputTextarea
-                  [(ngModel)]="movie.description"
-                  required
-                  rows="3"
-                  cols="20">
+      <form [formGroup]="form" (ngSubmit)="saveMovie()">
+        <div class="field editDialogCols">
+          <label for="name">
+            Name
+          </label>
+          <input class="editDialogColsInput"
+                 [ngClass]="{
+                    'ng-invalid':
+                    form.get('name')?.hasError('required') && submitted
+                    ||
+                    !form.value.name?.trim() && submitted,
+                    'ng-dirty':
+                    form.get('name')?.hasError('required')  && submitted
+                    || !form.value.name?.trim() && submitted
+                    }"
+                 type="text"
+                 formControlName="name"
+                 pInputText
+                 [(ngModel)]="movie.name"
+                 id="name"
+                 autofocus />
+          <small *ngIf="form.get('name')?.hasError('required')  && submitted
+                        || !form.value.name?.trim() && submitted"
+                 class="p-error">
+            Name is required.
+          </small>
+        </div>
+        <div class="field editDialogCols">
+          <label for="description">
+            Description
+          </label>
+          <textarea class="editDialogColTextArea"
+                    [ngClass]="{
+                    'ng-invalid':
+                    form.get('description')?.hasError('required')  && submitted
+                    ||
+                    !form.value.description?.trim() && submitted,
+                    'ng-dirty':
+                    form.get('description')?.hasError('required')  && submitted
+                    ||
+                    !form.value.description?.trim() && submitted
+                    }"
+                    formControlName="description"
+                    pInputTextarea
+                    [(ngModel)]="movie.description"
+                    id="description"
+                    rows="3"
+                    cols="20">
         </textarea>
-        <small class="p-error" *ngIf="submitted && !movie.description">Description is required.</small>
-      </div>
+          <small *ngIf="form.get('description')?.hasError('required')  && submitted
+                        || !form.value.description?.trim() && submitted"
+                 class="p-error">
+            Description is required.
+          </small>
+        </div>
+      </form>
     </ng-template>
 
     <ng-template pTemplate="footer">

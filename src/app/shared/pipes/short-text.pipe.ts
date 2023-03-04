@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 } )
 export class ShortTextPipe implements PipeTransform {
 
-  transform( text: string ): string {
-    if ( text.length > 50 ) {
-      return text.slice( 0, 50 ) + "..."
+  transform( text: string , count: number ): string {
+    if ( text.length > count ) {
+      return text.slice( 0, count ) + "..."
     } else {
       return text;
     }

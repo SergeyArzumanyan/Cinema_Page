@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from "rxjs";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { MessageToastsService } from "@project-services/toast.service";
 import { IMovie } from "@project-interfaces/movie.interface";
+import { IMovieForm } from "@project-interfaces/movie-form.interface";
 
 import { ConfirmationService, MenuItem } from 'primeng/api';
+import { Table } from "primeng/table";
 
 @Component( {
   selector: 'app-admin-movies',
@@ -32,6 +35,15 @@ export class AdminMoviesComponent implements OnInit {
     { label: 'Delete', icon: 'pi pi-fw pi-times', command: () => this.deleteMovie( this.movie ) }
   ];
 
+  public form = new FormGroup<IMovieForm>( {
+    name: new FormControl( null, [
+      Validators.required,
+    ] ),
+    description: new FormControl( null, [
+      Validators.required,
+    ] )
+  } )
+
   constructor(
     private requestHttp: RequesthttpService,
     private toastMessage: MessageToastsService,
@@ -57,12 +69,14 @@ export class AdminMoviesComponent implements OnInit {
   }
 
   public openNew(): void {
+
     this.movie = {};
     this.submitted = false;
     this.movieDialog = true;
   }
 
   public deleteSelectedMovies(): void {
+
     this.confirmationService.confirm( {
       message: 'Are you sure you want to delete the selected products?',
       header: 'Confirm',
@@ -76,11 +90,13 @@ export class AdminMoviesComponent implements OnInit {
   }
 
   public editMovie( movie: IMovie ) {
+
     this.movie = { ...movie };
     this.movieDialog = true;
   }
 
   public deleteMovie( movie: IMovie ) {
+
     this.confirmationService.confirm( {
       message: 'Are you sure you want to delete ' + movie.name + '?',
       header: 'Confirm',
@@ -94,18 +110,27 @@ export class AdminMoviesComponent implements OnInit {
   }
 
   public hideDialog() {
+
+    this.form.reset();
     this.movieDialog = false;
     this.submitted = false;
   }
 
   public saveMovie() {
-    this.submitted = true;
 
-    if ( this.movie.name?.trim() && this.movie.description?.trim() ) {
+    this.submitted = true;
+    if (
+      this.form.valid
+      &&
+      this.form.value.name?.trim()
+      &&
+      this.form.value.description?.trim()
+    ) {
       if ( this.movie.id ) {
         this.incomingMovies[this.findIndexById( this.movie.id.toString() )] = this.movie;
         this.toastMessage.updateItem( "Movie" );
       } else {
+        this.movie = { ...this.form.value };
         this.movie.id = this.createId();
         this.incomingMovies.push( this.movie );
         this.toastMessage.createItem( "Movie" );
@@ -114,10 +139,13 @@ export class AdminMoviesComponent implements OnInit {
       this.incomingMovies = [ ...this.incomingMovies ];
       this.movieDialog = false;
       this.movie = {};
+      this.submitted = false;
+      this.form.reset();
     }
   }
 
   public findIndexById( id: string ): number {
+
     let index = -1;
     for ( let i = 0; i < this.incomingMovies.length; i++ ) {
       if ( this.incomingMovies[i].id?.toString() === id ) {
@@ -130,7 +158,14 @@ export class AdminMoviesComponent implements OnInit {
   }
 
   public createId(): number {
+
     return +new Date();
   }
+
+  public clearFilters(table: Table): void {
+
+    table.clear();
+  }
+
 }
 

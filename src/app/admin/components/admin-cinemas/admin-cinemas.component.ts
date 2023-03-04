@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from "rxjs";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { MessageToastsService } from "@project-services/toast.service";
 import { ICinema } from "@project-interfaces/cinema.interface";
+import { ICinemaForm } from "@project-interfaces/cinema-form.interface";
 
 import { ConfirmationService, MenuItem } from "primeng/api";
+import { Table } from "primeng/table";
 
 @Component( {
   selector: 'app-admin-cinemas',
@@ -32,6 +35,19 @@ export class AdminCinemasComponent implements OnInit {
   ];
 
 
+  public form = new FormGroup<ICinemaForm>( {
+    cinemaName: new FormControl( null, [
+      Validators.required,
+
+    ] ),
+    cinemaDescription: new FormControl( null, [
+      Validators.required,
+    ] ),
+    cinemaAddress: new FormControl( null, [
+      Validators.required,
+    ] )
+  } )
+
   constructor(
     private requestHttp: RequesthttpService,
     private confirmationService: ConfirmationService,
@@ -44,8 +60,9 @@ export class AdminCinemasComponent implements OnInit {
   }
 
   private getCinemas(): void {
+
     this.requestHttp.getCinemas()
-      .pipe(take(1))
+      .pipe( take( 1 ) )
       .subscribe( {
         next: ( cinemas: ICinema[] ) => {
           this.incomingCinemas = cinemas;
@@ -53,16 +70,18 @@ export class AdminCinemasComponent implements OnInit {
         error: () => {
           this.toastMessage.somethingWentWrongMessage();
         }
-      });
+      } );
   }
 
   public openNew(): void {
+
     this.cinema = {};
     this.submitted = false;
     this.cinemaDialog = true;
   }
 
   public deleteSelectedCinemas(): void {
+
     this.confirmationService.confirm( {
       message: 'Are you sure you want to delete the selected products?',
       header: 'Confirm',
@@ -70,17 +89,19 @@ export class AdminCinemasComponent implements OnInit {
       accept: () => {
         this.incomingCinemas = this.incomingCinemas.filter( val => !this.selectedCinemas?.includes( val ) );
         this.selectedCinemas = null;
-        this.toastMessage.deleteItems("Cinemas");
+        this.toastMessage.deleteItems( "Cinemas" );
       }
     } );
   }
 
   public editCinema( cinema: ICinema ) {
+
     this.cinema = { ...cinema };
     this.cinemaDialog = true;
   }
 
   public deleteCinema( cinema: ICinema ) {
+
     this.confirmationService.confirm( {
       message: 'Are you sure you want to delete ' + cinema.cinemaName + '?',
       header: 'Confirm',
@@ -88,42 +109,50 @@ export class AdminCinemasComponent implements OnInit {
       accept: () => {
         this.incomingCinemas = this.incomingCinemas.filter( val => val.cinemaId !== cinema.cinemaId );
         this.cinema = {};
-        this.toastMessage.deleteItems("Cinemas");
+        this.toastMessage.deleteItems( "Cinemas" );
       }
     } );
   }
 
   public hideDialog() {
+
+    this.form.reset();
     this.cinemaDialog = false;
     this.submitted = false;
   }
 
   public saveCinema() {
-    this.submitted = true;
 
+    this.submitted = true;
     if (
-      this.cinema.cinemaName?.trim()
+      this.form.valid
       &&
-      this.cinema.cinemaDescription?.trim()
+      this.form.value.cinemaName?.trim()
       &&
-      this.cinema.cinemaAddress?.trim()
+      this.form.value.cinemaDescription?.trim()
+      &&
+      this.form.value.cinemaAddress?.trim()
     ) {
       if ( this.cinema.cinemaId ) {
         this.incomingCinemas[this.findIndexById( this.cinema.cinemaId.toString() )] = this.cinema;
-        this.toastMessage.updateItem("Cinema");
+        this.toastMessage.updateItem( "Cinema" );
       } else {
+        this.cinema = { ...this.form.value };
         this.cinema.cinemaId = this.createId();
         this.incomingCinemas.push( this.cinema );
-        this.toastMessage.createItem("Cinema");
+        this.toastMessage.createItem( "Cinema" );
       }
 
       this.incomingCinemas = [ ...this.incomingCinemas ];
       this.cinemaDialog = false;
       this.cinema = {};
+      this.submitted = false;
+      this.form.reset();
     }
   }
 
   public findIndexById( cinemaId: string ): number {
+
     let index = -1;
     for ( let i = 0; i < this.incomingCinemas.length; i++ ) {
       if ( this.incomingCinemas[i].cinemaId?.toString() === cinemaId ) {
@@ -136,6 +165,13 @@ export class AdminCinemasComponent implements OnInit {
   }
 
   public createId(): number {
+
     return +new Date();
   }
+
+  public clearFilters(table: Table): void {
+
+    table.clear();
+  }
+
 }

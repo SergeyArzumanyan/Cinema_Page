@@ -22,17 +22,18 @@
     </p-toolbar>
     <p-table #dt
              [value]="incomingCinemas"
+             styleClass="p-datatable-gridlines"
              responsiveLayout="stack"
              [breakpoint]="'960px'"
              [rows]="rows"
              [paginator]="true"
-             [globalFilterFields]="['cinemaName' , 'cinemaId']"
+             [globalFilterFields]="['cinemaName' , 'id']"
              [tableStyle]="{'min-width': '75rem'}"
              [(selection)]="selectedCinemas"
              [rowHover]="true"
              [contextMenu]="cm"
              [(contextMenuSelection)]="cinema"
-             dataKey="id">
+             dataKey="cinemaId">
       <ng-template pTemplate="header" class="headerMoviesMobile">
         <tr>
 
@@ -58,7 +59,15 @@
 
           <th>Description</th>
           <th>Address</th>
-          <th></th>
+          <th>
+            <div class="flex">
+              <button pButton
+                      (click)="clearFilters(dt)"
+                      label="Clear"
+                      class="p-button-outlined"
+                      icon="pi pi-filter-slash"></button>
+            </div>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-cinema>
@@ -72,9 +81,12 @@
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
-            {{ cinema['cinemaDescription'] | shortText }}
+            {{ cinema['cinemaDescription'] | shortText: 50 }}
           </td>
-          <td>{{ cinema['cinemaAddress'] | shortText }}</td>
+          <td [pTooltip]="cinema['cinemaAddress']"
+              tooltipPosition="bottom"
+              [showDelay]="400"
+              [hideDelay]="100">{{ cinema['cinemaAddress'] | shortText: 20 }}</td>
           <td class="editDialogColsButtons">
             <button pButton
                     pRipple
@@ -96,48 +108,83 @@
 
   <p-dialog [(visible)]="cinemaDialog"
             [style]="{width: '450px'}"
-            header="Product Details"
+            header="Cinema Details"
             [modal]="true"
+            (onHide)="hideDialog()"
             styleClass="p-fluid">
     <ng-template pTemplate="content">
-      <div class="field editDialogCols">
-        <label for="name">
-          Name
-        </label>
-        <input class="editDialogColsInput"
-               type="text"
-               pInputText
-               id="name"
-               [(ngModel)]="cinema.cinemaName"
-               required
-               autofocus />
-        <small class="p-error" *ngIf="submitted && !cinema.cinemaName">Name is required.</small>
-      </div>
-      <div class="field editDialogCols">
-        <label for="description">
-          Description
-        </label>
-        <textarea class="editDialogColTextArea"
-                  id="description"
-                  pInputTextarea
-                  [(ngModel)]="cinema.cinemaDescription"
-                  required
-                  rows="3"
-                  cols="20"></textarea>
-        <small class="p-error" *ngIf="submitted && !cinema.cinemaDescription">Description is required.</small>
-      </div>
-      <div class="field editDialogCols">
-        <label for="address">
-          Address
-        </label>
-        <input class="editDialogColsInput"
-               type="text"
-               id="address"
-               pInputText
-               [(ngModel)]="cinema.cinemaAddress"
-               required />
-        <small class="p-error" *ngIf="submitted && !cinema.cinemaAddress">Address is required.</small>
-      </div>
+      <form [formGroup]="form" (ngSubmit)="saveCinema()">
+
+        <div class="field editDialogCols">
+          <label for="name">
+            Name
+          </label>
+          <input class="editDialogColsInput"
+                 [ngClass]="{
+                    'ng-invalid': submitted || !form.value.cinemaName?.trim() && submitted,
+                    'ng-dirty': submitted || !form.value.cinemaName?.trim() && submitted
+                    }"
+                 type="text"
+                 formControlName="cinemaName"
+                 pInputText
+                 [(ngModel)]="cinema.cinemaName"
+                 id="name"
+                 autofocus />
+          <small *ngIf="form.get('cinemaName')?.hasError('required')  && submitted
+                         ||
+                         !cinema.cinemaName?.trim() && submitted"
+                 class="p-error">
+            Name is required.
+          </small>
+        </div>
+
+        <div class="field editDialogCols">
+          <label for="description">
+            Description
+          </label>
+          <textarea class="editDialogColTextArea"
+                    [ngClass]="{
+                    'ng-invalid': submitted || !form.value.cinemaName?.trim() && submitted,
+                    'ng-dirty': submitted || !form.value.cinemaName?.trim() && submitted
+                    }"
+                    id="description"
+                    formControlName="cinemaDescription"
+                    pInputTextarea
+                    [(ngModel)]="cinema.cinemaDescription"
+                    rows="3"
+                    cols="20">
+          </textarea>
+          <small *ngIf="form.get('cinemaDescription')?.hasError('required')  && submitted
+                         ||
+                         !cinema.cinemaDescription?.trim() && submitted"
+                 class="p-error">
+            Description is required.
+          </small>
+        </div>
+
+        <div class="field editDialogCols">
+          <label for="address">
+            Address
+          </label>
+          <input class="editDialogColsInput"
+                 [ngClass]="{
+                    'ng-invalid': submitted || !form.value.cinemaName?.trim() && submitted,
+                    'ng-dirty': submitted || !form.value.cinemaName?.trim() && submitted
+                    }"
+                 type="text"
+                 id="address"
+                 formControlName="cinemaAddress"
+                 [(ngModel)]="cinema.cinemaAddress"
+                 pInputText />
+          <small *ngIf="form.get('cinemaAddress')?.hasError('required')  && submitted
+                         ||
+                         !cinema.cinemaAddress?.trim() && submitted"
+                 class="p-error">
+            Address is required.
+          </small>
+        </div>
+
+      </form>
     </ng-template>
 
     <ng-template pTemplate="footer">

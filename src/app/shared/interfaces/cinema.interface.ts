@@ -1,7 +1,7 @@
 export interface ICinema {
   "cinemaId"?: number,
-  "cinemaName"?: string,
+  "cinemaName"?: string | null,
   "cinemaImg"?: string,
-  "cinemaDescription"?: string,
-  "cinemaAddress"?: string
+  "cinemaDescription"?: string | null,
+  "cinemaAddress"?: string | null
 }

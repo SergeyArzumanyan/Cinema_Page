@@ -9,7 +9,7 @@ import { TableModule } from 'primeng/table';
 import { ContextMenuModule } from "primeng/contextmenu";
 import { SharedModule } from "../shared/shared.module";
 import { ButtonModule } from "primeng/button";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { InputTextModule } from "primeng/inputtext";
 import { ToolbarModule } from "primeng/toolbar";
 import { RippleModule } from "primeng/ripple";
@@ -36,6 +36,7 @@ import { AdminCinemasComponent } from './components/admin-cinemas/admin-cinemas.
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     AdminRoutingModule,
     TableModule,
     ContextMenuModule,
