@@ -10,6 +10,7 @@ import { IUser } from "../interfaces/authorization.interface";
 export class UserService {
 
   private loggedUser: IUser | null = localStorage.getItem( 'loggedUser' ) ? JSON.parse( localStorage.getItem( 'loggedUser' )! ) : null;
+
   public user$: BehaviorSubject<IUser | null> = new BehaviorSubject<IUser | null>( this.loggedUser );
 
   public logUser( user: IUser ): void {
@@ -20,6 +21,7 @@ export class UserService {
   }
 
   public logOutUser(): void {
+
     localStorage.removeItem( "loggedUser" );
     localStorage.setItem( 'signedIn', 'false' );
 

@@ -4,6 +4,7 @@ import { MessageService } from "primeng/api";
 @Injectable( {
   providedIn: 'root'
 } )
+
 export class MessageToastsService {
 
   constructor( private messageService: MessageService ) {
@@ -19,113 +20,109 @@ export class MessageToastsService {
   }
 
   public somethingWentWrongMessage(): void {
-    this.messageService.add( {
-      severity: 'error',
-      summary: 'Error.',
-      detail: 'Something went wrong.',
-      life: 1500
-    } );
+
+    this.toastMessage( 'error',
+      'Error.',
+      'Something went wrong.',
+      1500 );
   }
 
   public pageNotFoundErrorMessage(): void {
 
-    this.messageService.add( {
-      severity: 'error',
-      summary: 'Error.',
-      detail: 'Page not found.',
-      life: 2000
-    } );
+    this.toastMessage( 'error',
+      'Error.',
+      'Page not found.',
+      2000 );
   }
 
   public notSignedInErrorMessage(): void {
 
-    this.messageService.add( {
-      severity: 'error',
-      summary: 'Error.',
-      detail: 'You need to sign in for first.',
-      life: 2000
-    } );
+    this.toastMessage( 'error',
+      'Error.',
+      'You need to sign in for first.',
+      2000 );
   }
 
 
   public reserveTicketsSuccessfullyMessage(): void {
 
-    this.messageService.add( {
-      severity: 'success',
-      summary: 'Done.',
-      detail: 'Reserved Successfully.',
-      life: 2000
-    } );
+    this.toastMessage( 'success',
+      'Done.',
+      'Reserved Successfully.',
+      2000 );
   }
 
 
   public loginSuccessMessage( userName: string ): void {
 
-    this.messageService.add( {
-      severity: 'success',
-      summary: 'Done.',
-      detail: `Logged Successfully as ${ userName }.`,
-      life: 1500
-    } );
+    this.toastMessage( 'success',
+      'Done.',
+      `Logged Successfully as ${ userName }.`,
+      1500 );
   }
 
   public loginErrorMessage(): void {
-    this.messageService.add( {
-      severity: 'error',
-      summary: 'Error.',
-      detail: "Email or password is incorrect.",
-      life: 2000
-    } );
+
+    this.toastMessage( 'error',
+      'Error.',
+      'Email or password is incorrect.',
+      2000 );
   }
 
-  public registerSuccesMessage(): void {
+  public registerSuccessMessage(): void {
 
-    this.messageService.add( {
-      severity: 'success',
-      summary: 'Done.',
-      detail: 'Account successfully registered.',
-      life: 1500
-    } );
+    this.toastMessage( 'success',
+      'Done.',
+      'Account successfully registered.',
+      1500 );
   }
 
   public registerErrorMessage(): void {
 
-    this.messageService.add( {
-      severity: 'error',
-      summary: 'Error.',
-      detail: 'Account with that email already exists.',
-      life: 2000
-    } );
+    this.toastMessage( 'error',
+      'Error.',
+      'Account with that email already exists.',
+      2000 );
   }
 
   public deleteItems( items: string ): void {
 
-    this.messageService.add( {
-      severity: 'success',
-      summary: 'Successful',
-      detail: `${ items } Deleted`,
-      life: 1500
-    } );
+    this.toastMessage( 'success',
+      'Successful',
+      `${ items } Deleted`,
+      1500 );
   }
 
   public updateItem( item: string ): void {
 
-    this.messageService.add( {
-      severity: 'success',
-      summary: 'Successful',
-      detail: `${ item } updated`,
-      life: 1500
-    } );
+    this.toastMessage( 'success',
+      'Successful',
+      `${ item } updated`,
+      1500 );
   }
 
   public createItem( item: string ): void {
 
-    this.messageService.add( {
-      severity: 'success',
-      summary: 'Successful',
-      detail: `${ item } Created`,
-      life: 3000
-    } );
+    this.toastMessage( 'success',
+      'Successful',
+      `${ item } Created`,
+      1500 );
+  }
+
+  public notEnoughPermission(): void {
+
+    this.toastMessage( 'error',
+      'Error.',
+      'Sorry, but you don\'t have permission to do that.',
+      2000 );
+  }
+
+  public alreadyLogged(): void {
+
+    this.toastMessage( 'error',
+      'Error.',
+      'You already logged, log out from your account to do that.',
+      2000 );
   }
 
 }

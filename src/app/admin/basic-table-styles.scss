@@ -14,6 +14,13 @@
   border-bottom: 1px solid $white;
 }
 
+.toolbars {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .rounded-buttons-size {
   width: 2.5rem;
   height: 2.5rem !important;
@@ -27,6 +34,17 @@
   min-width: 15rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.th-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-th {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -102,5 +120,3 @@ td {
 :host ::ng-deep .p-paginator.p-component {
   border-radius: 0 0 0.5rem 0.5rem;
 }
-
-

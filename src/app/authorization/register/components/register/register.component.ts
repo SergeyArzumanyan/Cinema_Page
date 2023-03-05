@@ -99,8 +99,9 @@ export class RegisterComponent implements OnInit {
   }
 
   private registerSuccess(): void {
+
     this.userService.logUser( this.form.value );
-    this.toastMessage.registerSuccesMessage();
+    this.toastMessage.registerSuccessMessage();
 
     this.sendHttp.sendUserData( this.form.value ).subscribe();
     this.form.reset()
