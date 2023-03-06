@@ -16,6 +16,8 @@ import { ILoginForm, IUser } from "@project-interfaces/authorization.interface";
 
 export class LoginComponent {
 
+  public submitted: boolean = false;
+
   constructor(
     private requestHttp: RequesthttpService,
     private router: Router,
@@ -37,6 +39,9 @@ export class LoginComponent {
   } )
 
   public onSubmit(): void {
+
+    console.log( this.form );
+    this.submitted = true;
     this.form.markAllAsTouched();
 
     if ( this.form.valid ) {
@@ -45,6 +50,7 @@ export class LoginComponent {
   }
 
   private checkForUser(): void {
+
     this.requestHttp.checkForUser( this.form.value.email, this.form.value.password )
       .pipe( take( 1 ) )
       .subscribe( {

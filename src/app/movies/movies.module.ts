@@ -28,7 +28,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     CommonModule,
     MoviesRoutingModule,
     InfiniteScrollModule,
-    ScrollPanelModule
+    ScrollPanelModule,
   ]
 } )
 export class MoviesModule {

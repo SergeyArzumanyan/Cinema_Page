@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+  CanMatch,
+  Route,
+  Router,
+  UrlSegment,
+  UrlTree
+} from '@angular/router';
+
 import { Observable } from 'rxjs';
 import { UserService } from "@project-services/user.service";
 import { MessageToastsService } from "@project-services/toast.service";
@@ -8,25 +15,22 @@ import { MessageToastsService } from "@project-services/toast.service";
   providedIn: 'root'
 } )
 
-export class AdminGuard implements CanActivate {
+export class AdminGuard implements CanMatch {
 
   constructor(
     private userService: UserService,
     private toastMessage: MessageToastsService,
     private router: Router
-    ) {}
+  ) {}
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canMatch( route: Route, segments: UrlSegment[] ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if ( this.userService.user$.value?.role === "admin" ) {
       return true;
     } else {
       this.toastMessage.notEnoughPermission();
-      this.router.navigateByUrl("movies").then();
+      this.router.navigateByUrl( "movies" ).then();
       return false;
     }
-
   }
 
 }

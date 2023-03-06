@@ -27,8 +27,8 @@
                     label="Add to Cinema"
                     icon="pi pi-plus"
                     class="p-button-success toolbar-buttons"
-                    (click)="deleteSelectedMovies()"
-                    [disabled]="!selectedMovies?.length">
+                    (click)="addToCinema()"
+                    [disabled]="!selectedMovies?.length || selectedMovies!.length > 1">
             </button>
           </div>
         </div>
@@ -57,7 +57,7 @@
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
 
-          <th pSortableColumn="id" style="min-width:15rem">
+          <th pSortableColumn="id" style="min-width: 15rem">
             <div class="th-items">
               <div class="left-th">
                 ID
@@ -66,6 +66,8 @@
               <p-columnFilter class="filter-margin" type="numeric" field="id" display="menu"></p-columnFilter>
             </div>
           </th>
+
+          <th>Img</th>
 
           <th pSortableColumn="name" style="min-width:15rem">
             <div class="th-items">
@@ -78,6 +80,7 @@
           </th>
 
           <th>Description</th>
+          <th>TrailerURL</th>
           <th>
             <div class="flex">
               <button pButton
@@ -91,20 +94,40 @@
       </ng-template>
       <ng-template pTemplate="body" let-movie>
         <tr [pContextMenuRow]="movie">
+
           <td class="table-checkbox">
             <p-tableCheckbox [value]="movie"></p-tableCheckbox>
           </td>
-          <td>{{ movie.id }}</td>
+
+          <td>
+            {{ movie.id }}
+          </td>
+
+          <td>
+            <img [src]="movie['imgUrl']" alt="movie-img" class="table-img">
+          </td>
+
           <td [pTooltip]="movie.name"
               tooltipPosition="bottom"
               [showDelay]="400"
-              [hideDelay]="100">{{ movie.name | shortText: 20 }}</td>
+              [hideDelay]="100">
+            {{ movie.name | shortText: 20 }}
+          </td>
+
           <td [pTooltip]="movie.description"
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
             {{ movie.description | shortText: 50 }}
           </td>
+
+          <td [pTooltip]="movie['trailerUrl']"
+              tooltipPosition="bottom"
+              [showDelay]="400"
+              [hideDelay]="100">
+            {{ movie['trailerUrl'] | shortText: 20 }}
+          </td>
+
           <td class="editDialogColsButtons">
             <button pButton
                     pRipple
@@ -119,19 +142,21 @@
                     (click)="deleteMovie(movie)">
             </button>
           </td>
+
         </tr>
       </ng-template>
     </p-table>
   </div>
 
   <p-dialog [(visible)]="movieDialog"
+            [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '75vw'}"
             [style]="{width: '450px'}"
             header="Movie Details"
             [modal]="true"
-            (onHide)="hideDialog()"
+            (onHide)="hideMovieDialog()"
             styleClass="p-fluid">
     <ng-template pTemplate="content">
-      <form [formGroup]="form" (ngSubmit)="saveMovie()">
+      <form [formGroup]="movieForm" (ngSubmit)="saveMovie()">
         <div class="field editDialogCols">
           <label for="name">
             Name
@@ -139,12 +164,12 @@
           <input class="editDialogColsInput"
                  [ngClass]="{
                     'ng-invalid':
-                    form.get('name')?.hasError('required') && submitted
+                    movieForm.get('name')?.hasError('required') && submitted
                     ||
-                    !form.value.name?.trim() && submitted,
+                    !movieForm.value.name?.trim() && submitted,
                     'ng-dirty':
-                    form.get('name')?.hasError('required')  && submitted
-                    || !form.value.name?.trim() && submitted
+                    movieForm.get('name')?.hasError('required')  && submitted
+                    || !movieForm.value.name?.trim() && submitted
                     }"
                  type="text"
                  formControlName="name"
@@ -152,8 +177,8 @@
                  [(ngModel)]="movie.name"
                  id="name"
                  autofocus />
-          <small *ngIf="form.get('name')?.hasError('required')  && submitted
-                        || !form.value.name?.trim() && submitted"
+          <small *ngIf="movieForm.get('name')?.hasError('required')  && submitted
+                        || !movieForm.value.name?.trim() && submitted"
                  class="p-error">
             Name is required.
           </small>
@@ -165,13 +190,13 @@
           <textarea class="editDialogColTextArea"
                     [ngClass]="{
                     'ng-invalid':
-                    form.get('description')?.hasError('required')  && submitted
+                    movieForm.get('description')?.hasError('required')  && submitted
                     ||
-                    !form.value.description?.trim() && submitted,
+                    !movieForm.value.description?.trim() && submitted,
                     'ng-dirty':
-                    form.get('description')?.hasError('required')  && submitted
+                    movieForm.get('description')?.hasError('required')  && submitted
                     ||
-                    !form.value.description?.trim() && submitted
+                    !movieForm.value.description?.trim() && submitted
                     }"
                     formControlName="description"
                     pInputTextarea
@@ -180,12 +205,54 @@
                     rows="3"
                     cols="20">
         </textarea>
-          <small *ngIf="form.get('description')?.hasError('required')  && submitted
-                        || !form.value.description?.trim() && submitted"
+          <small *ngIf="movieForm.get('description')?.hasError('required')  && submitted
+                        || !movieForm.value.description?.trim() && submitted"
                  class="p-error">
             Description is required.
           </small>
         </div>
+
+
+        <div class="field editDialogCols">
+          <label for="trailerUrl">
+            TrailerUrl
+          </label>
+          <input class="editDialogColsInput"
+                 [ngClass]="{
+                    'ng-invalid':
+                    movieForm.get('trailerUrl')?.hasError('required') && submitted
+                    ||
+                    !movieForm.value.trailerUrl?.trim() && submitted,
+                    'ng-dirty':
+                    movieForm.get('trailerUrl')?.hasError('required')  && submitted
+                    || !movieForm.value.trailerUrl?.trim() && submitted
+                    }"
+                 type="text"
+                 formControlName="trailerUrl"
+                 pInputText
+                 [(ngModel)]="movie.trailerUrl"
+                 id="trailerUrl" />
+          <small *ngIf="movieForm.get('trailerUrl')?.hasError('required')  && submitted
+                        || !movieForm.value.trailerUrl?.trim() && submitted"
+                 class="p-error">
+            TrailerUrl is required.
+          </small>
+        </div>
+
+<!--        [url]="'http://localhost:3000/movies/' + movie.id"-->
+        <p-fileUpload name="imgUrl"
+                      [auto]="true"
+                      [multiple]="false"
+                      accept="image/*"
+                      (onSelect)="imageSelected($event)"
+                      (onRemove)="imageUnSelected()"
+                      [maxFileSize]="1000000">
+        </p-fileUpload>
+
+        <small *ngIf="!imageState && submitted" class="p-error">
+          Image is required.
+        </small>
+
       </form>
     </ng-template>
 
@@ -195,7 +262,7 @@
               label="Cancel"
               icon="pi pi-times"
               class="p-button-text"
-              (click)="hideDialog()"></button>
+              (click)="hideMovieDialog()"></button>
       <button pButton
               pRipple
               label="Save"
@@ -205,6 +272,44 @@
     </ng-template>
   </p-dialog>
 
-  <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+  <p-dialog [(visible)]="cinemaDialog"
+            [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '75vw'}"
+            [style]="{width: '450px'}"
+            header="Add to cinema"
+            [modal]="true"
+            (onHide)="hideCinemaDialog()"
+            styleClass="p-fluid">
+
+    <div class="dialog-checkbox-wrapper">
+      <p-checkbox name="cinemas"
+                  [(ngModel)]="selectedCinemas"
+                  [value]="'cinema-one'"
+                  [label]="'cinema-one'">
+      </p-checkbox>
+      <p-checkbox name="cinemas"
+                  [(ngModel)]="selectedCinemas"
+                  [value]="'cinema-two'"
+                  [label]="'cinema-two'">
+      </p-checkbox>
+    </div>
+
+    <ng-template pTemplate="footer">
+      <button pButton
+              pRipple
+              label="Cancel"
+              icon="pi pi-times"
+              class="p-button-text"
+              (click)="hideCinemaDialog()"></button>
+      <button pButton
+              pRipple
+              label="Add"
+              icon="pi pi-check"
+              class="p-button-text"
+              (click)="addMovieToCinema()"></button>
+    </ng-template>
+  </p-dialog>
+
+  <p-confirmDialog [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '75vw'}"
+                   [style]="{width: '450px'}"></p-confirmDialog>
   <p-contextMenu #cm [model]="items"></p-contextMenu>
 </div>

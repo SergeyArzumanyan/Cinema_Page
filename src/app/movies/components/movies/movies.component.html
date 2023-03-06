@@ -26,4 +26,9 @@
     </button>
   </div>
 </div>
-
+<div class="loading-wrapper">
+  <div class="loader" *ngIf="incomingMovies.length !== 0">
+    <i class="pi pi-spin pi-spinner loader-spinner"></i>
+  Loading...
+  </div>
+</div>

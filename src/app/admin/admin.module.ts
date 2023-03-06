@@ -25,6 +25,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { StyleClassModule } from "primeng/styleclass";
 import { AdminCinemasComponent } from './components/admin-cinemas/admin-cinemas.component';
+import { CheckboxModule } from "primeng/checkbox";
 
 @NgModule( {
   declarations: [
@@ -33,29 +34,30 @@ import { AdminCinemasComponent } from './components/admin-cinemas/admin-cinemas.
     AdminComponent,
     AdminCinemasComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AdminRoutingModule,
-    TableModule,
-    ContextMenuModule,
-    SharedModule,
-    ButtonModule,
-    InputTextModule,
-    ToolbarModule,
-    RippleModule,
-    FileUploadModule,
-    DialogModule,
-    InputTextareaModule,
-    DropdownModule,
-    RatingModule,
-    RadioButtonModule,
-    InputNumberModule,
-    ConfirmDialogModule,
-    TooltipModule,
-    StyleClassModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AdminRoutingModule,
+        TableModule,
+        ContextMenuModule,
+        SharedModule,
+        ButtonModule,
+        InputTextModule,
+        ToolbarModule,
+        RippleModule,
+        FileUploadModule,
+        DialogModule,
+        InputTextareaModule,
+        DropdownModule,
+        RatingModule,
+        RadioButtonModule,
+        InputNumberModule,
+        ConfirmDialogModule,
+        TooltipModule,
+        StyleClassModule,
+        CheckboxModule
+    ]
 } )
 export class AdminModule {
 }

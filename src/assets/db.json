@@ -705,7 +705,14 @@
         "seat1-4",
         "seat1-5",
         "seat4-6",
-        "seat4-7"
+        "seat4-7",
+        "seat2-4",
+        "seat2-3",
+        "seat2-2",
+        "seat2-1",
+        "seat2-5",
+        "seat2-6",
+        "seat2-7"
       ]
     },
     {
@@ -1058,7 +1065,7 @@
     {
       "age": 39,
       "email": "admin@acc.com",
-      "id": 2,
+      "id": 3,
       "name": "ADMIN",
       "password": "admin1234",
       "role": "admin",

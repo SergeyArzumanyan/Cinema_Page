@@ -133,7 +133,6 @@
 }
 
 .tickets-wrapper {
-  height: 300px;
   width: 100%;
 }
 
@@ -151,7 +150,6 @@
   box-shadow: $shadow;
   color: $white;
 }
-
 
 .ticket-price {
   color: $lightGreen;
@@ -260,10 +258,6 @@
     font-size: 0.9rem;
   }
 
-  .tickets-wrapper {
-    height: 200px;
-  }
-
   .ticket-date, .ticket-price , .seat-row , .seat-seat {
     font-size: 0.8rem;
   }
@@ -280,7 +274,7 @@
   }
 
   .buy-btn:hover {
-    background-color: $green;
+    background-color: $dark-green;
   }
 
   .purchase-block {

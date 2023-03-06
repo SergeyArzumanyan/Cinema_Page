@@ -1,140 +1,107 @@
 @import "../../../../../data";
 
 .form-wrapper {
-  margin: 2rem 0;
-  padding: 0;
   width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-section {
+  width: 50%;
+}
+
+.text-block {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background-image: linear-gradient( 90deg,  rgb(21, 20, 20) 11.2%, rgb(42, 43, 45) 91.1% );
 }
 
-.form-container {
-  margin: 0;
-  padding: 2.5rem;
-  width: 25%;
-  border-radius: 1rem;
-  background-color: $dark-gray;
-  opacity: 0.9;
-  box-shadow: 0 0 2px 0 $lightGray;
-}
-
-.form-title {
-  margin: 0;
-  padding: 0;
-  height: 10%;
-  text-align: center;
+.login-title {
+  color: $orange;
   font-weight: 900;
-  color: $white;
+  font-size: 40px;
 }
 
-.form-content {
-  margin: 1rem auto;
-  padding: 0;
+.login-info {
+  width: 75%;
+  color: $white;
+  font-size: 16px;
+}
+
+.form-inner-container {
+  margin: 15% 0 0 0;
   width: 100%;
+  padding: 0 20.5px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1rem
-}
-
-.form-label {
-  width: 100%;
-  color: $white;
-  label {
-    margin-left: 0.5rem;
-  }
-}
-
-form {
-  &.ng-submitted {
-    .form-input {
-      &.ng-invalid.ng-touched {
-        box-shadow: 0 0 0 1px $red;
-      }
-
-      &.ng-valid.ng-touched {
-        box-shadow: 0 0 0 1px $lightGreen;
-      }
-    }
-  }
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
 }
 
 .form-input {
-  width: 100%;
-  height: 35px;
-  margin: 0;
-  padding: 1rem;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  box-shadow: 0 0 2px $gray;
-  transition: $animationTime;
+  width: 65%;
 }
 
-.warning {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0.2rem 1rem;
-  font-size: 0.7rem;
-  border-radius: 5px;
-  background-color: $lightRed;
-  color: $red;
-  box-shadow: 0 0 2px 0 $darkRed;
-  opacity: 0.9;
+:host ::ng-deep .p-button-warning {
+  width: 65%;
+  margin: 20px 0;
 }
 
-.form-input:focus {
-  background-color: $lightGray;
-}
-
-.form-btn {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: 40%;
-  height: 35px;
-  border: none;
-  outline:none;
-  border-radius: 8px;
-  background-color: $green;
+.signUp {
   color: $white;
-  transition: $animationTime;
-  cursor: pointer;
+  font-size: 16px;
 }
 
-.form-btn:hover {
-  background-color: $dark-green;
+.signUp > a {
+  color: $orange;
+  text-decoration: none;
 }
 
-.register-text {
-  text-align: center;
-  margin: 1rem 0;
-  color: $white;
-  font-weight: 300;
+.signUp > a:hover {
+  color: $lightOrange;
+}
 
-  a {
-    color: $lightOrange;
-    text-decoration: none;
+
+@media (max-width: 750px) {
+  .form-container {
+    width: 100%;
+    padding: 100px 18.5px;
+    flex-direction: column;
+    justify-content: flex-start;
   }
-  a:hover {
-    color: $orange;
-  }
-}
 
-@media (max-width: 650px) {
-  .form-wrapper {
+  .container-section {
+    width: 100%;
+  }
+
+  .login-title {
+    text-align: center;
+  }
+
+  .login-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-inner-container {
     margin: 0;
-    .form-container {
-      width: 90%;
-    }
   }
 
-  .form-label {
-    font-size: 0.8rem;
+  .form-input {
+    width: 100%;
   }
 }

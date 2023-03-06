@@ -1,49 +1,70 @@
 <div class="form-wrapper">
   <div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h2 class="form-title">Log in</h2>
-      <div class="form-content">
-        <div class="form-label">
-          <label for="email">Email</label>
+    <div class="text-block container-section">
+      <h2 class="login-title">Login</h2>
+      <p class="login-info">Welcome back! Please enter your credentials to access your account.
+      </p>
+    </div>
+    <div class="form-block container-section">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-inner-container">
+
+          <input type="email"
+                 id="email"
+                 class="form-input"
+                 [ngClass]="{
+                    'ng-invalid': form.controls.email.errors && submitted,
+                    'ng-dirty': form.controls.email.errors && submitted
+                    }"
+                 placeholder="Your email..."
+                 formControlName="email"
+                 pInputText />
+
+          <small *ngIf="form.get('email')?.hasError('required') &&
+            form.controls.email.touched && submitted"
+                 class="p-error">
+            Email field is required.
+          </small>
+
+          <small *ngIf="form.get('email')?.hasError('email') &&
+            form.controls.email.touched && submitted"
+                 class="p-error">
+            Email format iss incorrect.
+          </small>
+
+
+          <input type="password"
+                 id="password"
+                 class="form-input"
+                 [ngClass]="{
+                    'ng-invalid': form.controls.password.errors && submitted,
+                    'ng-dirty': form.controls.password.errors && submitted
+                    }"
+                 placeholder="Your password..."
+                 formControlName="password"
+                 pInputText />
+          <small *ngIf="form.get('password')?.hasError('required') &&
+            form.controls.password.touched && submitted"
+                 class="p-error">
+            Password field is required.
+          </small>
+          <small *ngIf="form.get('password')?.hasError('maxlength') && form.controls.password.touched && submitted ||
+        form.get('password')?.hasError('minlength') && form.controls.password.touched && submitted"
+                 class="p-error">
+            Password is incorrect.
+          </small>
+
+          <button class="p-button-warning" pButton pRipple type="submit" label="Log in"></button>
+
+          <small class="signUp">
+            If you don't have an account
+            <a [routerLink]="['/auth/register']">
+              sign up
+            </a>.
+          </small>
+
         </div>
-
-        <input type="email" id="email" class="form-input" placeholder="Your email..." formControlName="email">
-        <small *ngIf="form.get('email')?.hasError('required') &&
-            form.controls.email.touched"
-               class="warning">
-          Email field is required.
-        </small>
-
-        <small *ngIf="form.get('email')?.hasError('email') &&
-            form.controls.email.touched"
-               class="warning">
-          Email format iss incorrect.
-        </small>
-
-      </div>
-      <div class="form-content">
-        <div class="form-label">
-          <label for="password" class="form-label">Password</label>
-        </div>
-
-        <input type="password" id="password" class="form-input" placeholder="Your password..." formControlName="password">
-        <small *ngIf="form.get('password')?.hasError('required') &&
-            form.controls.password.touched"
-            class="warning">
-          Password field is required.
-        </small>
-
-        <small *ngIf="form.get('password')?.hasError('maxlength') && form.controls.password.touched ||
-        form.get('password')?.hasError('minlength') && form.controls.password.touched"
-               class="warning">
-          Password is incorrect.
-        </small>
-
-      </div>
-      <button class="form-btn">Log in</button>
-    </form>
-  </div>
-  <div class="register-text">
-    <small>If you don't have an account <a [routerLink]="['/auth/register']">sign up</a>.</small>
+      </form>
+    </div>
   </div>
 </div>

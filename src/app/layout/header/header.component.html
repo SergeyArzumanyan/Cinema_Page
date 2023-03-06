@@ -12,7 +12,7 @@
            'nav-logo-large': screenIsLarge,
            'nav-logo-small': !screenIsLarge
            }"
-           [routerLink]="['/cinemas']">
+           [routerLink]="['/movies']">
         <img src="../../../assets/images/logo.png" alt="logo-img">
       </div>
       <div class="nav-item"
@@ -20,7 +20,7 @@
            'nav-item-large': screenIsLarge,
            'nav-item-small': !screenIsLarge
            }"
-           [routerLink]="['/cinemas']">
+           [routerLink]="['/movies']">
         <a class="nav-link">
           <span class="brand-name"
                 [ngClass]="{
@@ -58,7 +58,7 @@
            'nav-item-large': screenIsLarge,
            'nav-item-small': !screenIsLarge
            }"
-           [routerLink]="['movies' , 'all']"
+           [routerLink]="['movies']"
            routerLinkActive="active"
            (click)="closeMenu()">
         <a class="nav-link">

@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
   public logOutUser(): void {
     this.userService.logOutUser();
     this.toggleDropdown();
+    window.location.reload();
   }
 
   public toggleMenu(): void {

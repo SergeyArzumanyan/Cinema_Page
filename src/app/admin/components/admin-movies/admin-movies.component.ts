@@ -17,15 +17,17 @@ import { Table } from "primeng/table";
   providers: [
     ConfirmationService
   ]
-
 } )
 
 export class AdminMoviesComponent implements OnInit {
 
-  public movieDialog!: boolean;
+  public movieDialog: boolean = false;
+  public cinemaDialog: boolean = false;
   public incomingMovies: IMovie[] = [];
   public movie: IMovie = {};
   public selectedMovies: IMovie[] | null = [];
+  public uploadedImg: any;
+  public imageState = false;
   public submitted: boolean = false;
   public rows: number = 10;
   public page: number = 1;
@@ -35,12 +37,20 @@ export class AdminMoviesComponent implements OnInit {
     { label: 'Delete', icon: 'pi pi-fw pi-times', command: () => this.deleteMovie( this.movie ) }
   ];
 
-  public form = new FormGroup<IMovieForm>( {
+  public selectedCinemas: string[] | undefined = [];
+
+  public movieForm = new FormGroup<IMovieForm>( {
     name: new FormControl( null, [
       Validators.required,
     ] ),
     description: new FormControl( null, [
       Validators.required,
+    ] ),
+    trailerUrl: new FormControl( null, [
+      Validators.required
+    ] ),
+    imgUrl: new FormControl( null, [
+      Validators.required
     ] )
   } )
 
@@ -51,11 +61,14 @@ export class AdminMoviesComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+
+  ngOnInit(): void {
+
     this.getMovies();
   }
 
-  private getMovies() {
+
+  private getMovies(): void {
     this.requestHttp.getMovies( "all", this.page.toString(), this.rows.toString() )
       .pipe( take( 1 ) )
       .subscribe( {
@@ -68,6 +81,7 @@ export class AdminMoviesComponent implements OnInit {
       } )
   }
 
+
   public openNew(): void {
 
     this.movie = {};
@@ -75,10 +89,11 @@ export class AdminMoviesComponent implements OnInit {
     this.movieDialog = true;
   }
 
+
   public deleteSelectedMovies(): void {
 
     this.confirmationService.confirm( {
-      message: 'Are you sure you want to delete the selected products?',
+      message: 'Are you sure you want to delete the selected movies?',
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
@@ -89,11 +104,13 @@ export class AdminMoviesComponent implements OnInit {
     } );
   }
 
+
   public editMovie( movie: IMovie ) {
 
     this.movie = { ...movie };
     this.movieDialog = true;
   }
+
 
   public deleteMovie( movie: IMovie ) {
 
@@ -109,28 +126,57 @@ export class AdminMoviesComponent implements OnInit {
     } );
   }
 
-  public hideDialog() {
 
-    this.form.reset();
+  public hideMovieDialog(): void {
+
+    this.movieForm.reset();
     this.movieDialog = false;
     this.submitted = false;
   }
 
-  public saveMovie() {
+
+  public addToCinema(): void {
+
+    if ( this.selectedMovies ) {
+      this.selectedCinemas = this.selectedMovies[0].cinemaId;
+      this.cinemaDialog = true;
+    }
+  }
+
+
+  public hideCinemaDialog(): void {
+
+    this.selectedCinemas = [];
+    this.cinemaDialog = false;
+  }
+
+  public addMovieToCinema(): void {
+
+    this.cinemaDialog = false;
+    if ( this.selectedMovies ) {
+      this.selectedMovies[0].cinemaId = this.selectedCinemas;
+    }
+    this.selectedCinemas = [];
+  }
+
+
+  public saveMovie(): void {
 
     this.submitted = true;
     if (
-      this.form.valid
+      this.movieForm.valid
       &&
-      this.form.value.name?.trim()
+      this.movieForm.value.name?.trim()
       &&
-      this.form.value.description?.trim()
+      this.movieForm.value.description?.trim()
+      &&
+      this.imageState
     ) {
       if ( this.movie.id ) {
         this.incomingMovies[this.findIndexById( this.movie.id.toString() )] = this.movie;
         this.toastMessage.updateItem( "Movie" );
       } else {
-        this.movie = { ...this.form.value };
+        this.movie = { ...this.movieForm.value };
         this.movie.id = this.createId();
         this.incomingMovies.push( this.movie );
         this.toastMessage.createItem( "Movie" );
@@ -140,9 +186,10 @@ export class AdminMoviesComponent implements OnInit {
       this.movieDialog = false;
       this.movie = {};
       this.submitted = false;
-      this.form.reset();
+      this.movieForm.reset();
     }
   }
+
 
   public findIndexById( id: string ): number {
 
@@ -157,14 +204,28 @@ export class AdminMoviesComponent implements OnInit {
     return index;
   }
 
+
   public createId(): number {
 
     return +new Date();
   }
 
-  public clearFilters(table: Table): void {
+
+  public clearFilters( table: Table ): void {
 
     table.clear();
+  }
+
+
+  public imageSelected( event: any ): void {
+    this.movieForm.controls.imgUrl.setValue( event.currentFiles[0] );
+    console.log( this.movieForm );
+    this.imageState = true;
+    // console.log( event.currentFiles[0].name ); // file name to insert into db.
+  }
+
+  public imageUnSelected(): void {
+    this.imageState = false;
   }
 
 }

@@ -70,6 +70,12 @@ td {
   margin: 0.5rem;
 }
 
+.table-img {
+  width: 55px;
+  height: 75px;
+  margin: 2px auto;
+}
+
 @media (max-width: 950px) {
 
   .table-container {
@@ -119,4 +125,13 @@ td {
 
 :host ::ng-deep .p-paginator.p-component {
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+:host ::ng-deep .p-dialog-mask.p-component-overlay {
+  overflow-y: scroll;
+}
+
+:host ::ng-deep .p-element.p-button.p-component.p-button-icon-only {
+  width: 35px;
+  height: 35px;
 }

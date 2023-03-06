@@ -6,6 +6,10 @@ import { LoginComponent } from "./login/components/login/login.component";
 import { RegisterComponent } from "./register/components/register/register.component";
 import { AuthRoutingModule } from "./auth-routing.module";
 
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from "primeng/button";
+import { RippleModule } from "primeng/ripple";
+
 @NgModule( {
   declarations: [
     LoginComponent,
@@ -15,7 +19,11 @@ import { AuthRoutingModule } from "./auth-routing.module";
     CommonModule,
     FormsModule,
     AuthRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputTextModule,
+    ButtonModule,
+    RippleModule,
+
   ]
 } )
 export class AuthModule {

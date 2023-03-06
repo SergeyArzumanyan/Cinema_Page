@@ -20,6 +20,7 @@ export class MoviesComponent implements OnInit {
   public isMobile: boolean = ( window.innerWidth <= 650 );
   public cinemaId: string = '';
   private page: number = 1;
+  private moviesLimit: number = 6;
   public infiniteScrollDisabled: boolean = true
 
   constructor(
@@ -35,6 +36,7 @@ export class MoviesComponent implements OnInit {
   }
 
   private followRouteParamsChanges() {
+
     this.route.params.subscribe(
       params => {
 
@@ -48,7 +50,8 @@ export class MoviesComponent implements OnInit {
   }
 
   private getMovies() {
-    this.http.getMovies( this.cinemaId, this.page.toString(), "6" )
+
+    this.http.getMovies( this.cinemaId, this.page.toString(), this.moviesLimit.toString() )
       .pipe( take( 1 ) )
       .subscribe( {
         next: ( movies: IMovie[] ) => {
@@ -56,6 +59,7 @@ export class MoviesComponent implements OnInit {
           this.incomingMovies = movies;
           if ( this.incomingMovies.length === 0 ) {
             this.router.navigateByUrl( 'movies' ).then();
+            this.toastMessage.somethingWentWrongMessage();
             return;
           }
           this.allMovies = this.incomingMovies;
@@ -67,7 +71,8 @@ export class MoviesComponent implements OnInit {
   }
 
   private requestMoreMovies(): void {
-    this.http.getMovies( this.cinemaId, this.page.toString() , "6" )
+
+    this.http.getMovies( this.cinemaId, this.page.toString(), this.moviesLimit.toString() )
       .pipe( take( 1 ) )
       .subscribe( {
         next: ( movies: IMovie[] ) => {
@@ -81,8 +86,10 @@ export class MoviesComponent implements OnInit {
   }
 
   public onScroll() {
+
     this.page++;
     this.requestMoreMovies();
+    this.incomingMovies = [];
   }
 }
 

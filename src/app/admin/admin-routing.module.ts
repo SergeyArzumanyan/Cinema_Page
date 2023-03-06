@@ -5,20 +5,17 @@ import { AdminMoviesComponent } from "./components/admin-movies/admin-movies.com
 import { AdminSessionsComponent } from "./components/admin-sessions/admin-sessions.component";
 import { AdminComponent } from "./components/admin/admin.component";
 import { AdminCinemasComponent } from "./components/admin-cinemas/admin-cinemas.component";
-import { AdminGuard } from "../shared/guards/admin.guard";
 
 const routes: Routes = [
-  { path: "", component: AdminComponent, canActivate: [ AdminGuard ] },
-  { path: "movies", component: AdminMoviesComponent, canActivate: [ AdminGuard ] },
-  { path: "cinemas", component: AdminCinemasComponent, canActivate: [ AdminGuard ] },
-  { path: "sessions", component: AdminSessionsComponent, canActivate: [ AdminGuard ] }
-
-
+  { path: "", component: AdminComponent },
+  { path: "movies", component: AdminMoviesComponent },
+  { path: "cinemas", component: AdminCinemasComponent },
+  { path: "sessions", component: AdminSessionsComponent }
 ];
 
 @NgModule( {
   imports: [ RouterModule.forChild( routes ) ],
   exports: [ RouterModule ]
 } )
-export class AdminRoutingModule {
-}
+
+export class AdminRoutingModule {}
