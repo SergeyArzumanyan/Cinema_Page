@@ -1070,6 +1070,24 @@
       "password": "admin1234",
       "role": "admin",
       "surname": " "
+    },
+    {
+      "name": "asdas",
+      "surname": "dasdas",
+      "email": "ad@ad",
+      "age": 16,
+      "password": "1234567",
+      "repeatPassword": "1234567",
+      "id": 4
+    },
+    {
+      "name": "asdasd",
+      "surname": "dasdas",
+      "email": "dasda@adasf",
+      "age": 44,
+      "password": "1234567",
+      "repeatPassword": "123456",
+      "id": 5
     }
   ],
   "movies": [

@@ -1,124 +1,315 @@
+<!--          <small-->
+<!--            *ngIf="form.get('name')?.hasError('required') &&-->
+<!--            form.controls.name.touched"-->
+<!--            class="warning">-->
+<!--            Name is required.-->
+<!--          </small>-->
+
+<!--        </div>-->
+<!--        <div class="form-content">-->
+<!--          <div class="form-label">-->
+<!--            <label for="surname">Surname</label>-->
+<!--          </div>-->
+
+<!--          <input type="text" id="surname" class="form-input" placeholder="Your surname..." formControlName="surname">-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('surname')?.hasError('required') &&-->
+<!--            form.controls.surname.touched"-->
+<!--            class="warning">-->
+<!--            Surname is required.-->
+<!--          </small>-->
+
+<!--        </div>-->
+<!--        <div class="form-content">-->
+<!--          <div class="form-label">-->
+<!--            <label for="email">Email</label>-->
+<!--          </div>-->
+
+<!--          <input type="email" id="email" class="form-input"  placeholder="Your email..." formControlName="email">-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('email')?.hasError('required') &&-->
+<!--            form.controls.email.touched"-->
+<!--            class="warning">-->
+<!--            Email is required.-->
+<!--          </small>-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('email')?.hasError('email') &&-->
+<!--            form.controls.email.touched "-->
+<!--            class="warning">-->
+<!--            Email format is incorrect.-->
+<!--          </small>-->
+
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="form-section form-section-two">-->
+<!--        <div class="form-content">-->
+<!--          <div class="form-label">-->
+<!--            <label for="age">Age</label>-->
+<!--          </div>-->
+
+<!--          <input type="number" id="age" class="form-input" placeholder="Your age..." formControlName="age" min="16" max="100">-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('age')?.hasError('required') &&-->
+<!--            form.controls.age.touched"-->
+<!--            class="warning">-->
+<!--            Age is required.-->
+<!--          </small>-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('age')?.hasError('max') &&-->
+<!--            form.controls.age.touched"-->
+<!--            class="warning">-->
+<!--            Your age can't be more than 100.-->
+<!--          </small>-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('age')?.hasError('min') &&-->
+<!--            form.controls.age.touched"-->
+<!--            class="warning">-->
+<!--            Your age must be at least 16.-->
+<!--          </small>-->
+
+<!--        </div>-->
+<!--        <div class="form-content">-->
+<!--          <div class="form-label">-->
+<!--            <label for="password" class="form-label">Password</label>-->
+<!--          </div>-->
+
+<!--          <input type="password" id="password" class="form-input" placeholder="Your password..." formControlName="password">-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('password')?.hasError('required') &&-->
+<!--            form.controls.password.touched"-->
+<!--            class="warning">-->
+<!--            Password is required.-->
+<!--          </small>-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('password')?.hasError('maxlength') &&-->
+<!--            form.controls.password.touched"-->
+<!--            class="warning">-->
+<!--            Password is too long.-->
+<!--          </small>-->
+
+<!--          <small-->
+<!--            *ngIf="form.get('password')?.hasError('minlength') &&-->
+<!--            form.controls.password.touched"-->
+<!--            class="warning">-->
+<!--            Password is too short.-->
+<!--          </small>-->
+
+<!--        </div>-->
+<!--        <button class="form-btn">Register</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </form>-->
+
+<!--</div>-->
+
+
 <div class="form-wrapper">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-container">
-      <h2 class="form-title">Register</h2>
-      <div class="form-section form-section-one">
-        <div class="form-content">
-          <div class="form-label">
-            <label for="name">Name</label>
+  <div class="form-container">
+    <h1 class="sign-up-title">Sign Up</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-inner-container">
+        <div class="form-block">
+
+          <div class="form-group">
+            <label class="form-label" for="name">
+              Name
+            </label>
+            <input id="name"
+                   type="text"
+                   class="form-input"
+                   [ngClass]="{
+                    'ng-invalid': form.controls.name.errors && submitted,
+                    'ng-dirty': form.controls.name.errors && submitted
+                    }"
+                   placeholder="Your name..."
+                   formControlName="name"
+                   pInputText>
+
+            <small
+              *ngIf="form.get('name')?.hasError('required') && submitted"
+              class="p-error">
+              Name is required.
+            </small>
           </div>
 
-          <input type="text" id="name" class="form-input" placeholder="Your name..." formControlName="name">
+          <div class="form-group">
+            <label class="form-label">
+              Surname
+            </label>
+            <input type="text"
+                   class="form-input"
+                   [ngClass]="{
+                    'ng-invalid': form.controls.surname.errors && submitted,
+                    'ng-dirty': form.controls.surname.errors && submitted
+                    }"
+                   placeholder="Your surname..."
+                   formControlName="surname"
+                   pInputText>
 
-          <small
-            *ngIf="form.get('name')?.hasError('required') &&
-            form.controls.name.touched"
-            class="warning">
-            Name is required.
-          </small>
+            <small
+              *ngIf="form.get('surname')?.hasError('required') && submitted"
+              class="p-error">
+              Surname is required.
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Email
+            </label>
+            <input type="email"
+                   class="form-input"
+                   [ngClass]="{
+                    'ng-invalid': form.controls.email.errors && submitted,
+                    'ng-dirty': form.controls.email.errors && submitted
+                    }"
+                   placeholder="Your email..."
+                   formControlName="email"
+                   pInputText>
+
+            <small
+              *ngIf="form.get('email')?.hasError('required') && submitted"
+              class="p-error">
+              Email is required.
+            </small>
+            <small
+              *ngIf="form.get('email')?.hasError('email') && submitted"
+              class="p-error">
+              Email format is incorrect
+            </small>
+          </div>
+
+          <button id="btn-back-large"
+                  pButton
+                  pRipple
+                  type="button"
+                  label="Back"
+                  [routerLink]="['/auth/login']"
+                  class="p-button-outlined p-button-warning back-btn btn"></button>
 
         </div>
-        <div class="form-content">
-          <div class="form-label">
-            <label for="surname">Surname</label>
+        <div class="form-block">
+          <div class="form-group">
+            <label class="form-label">
+              Age
+            </label>
+            <input type="number"
+                   class="form-input"
+                   [ngClass]="{
+                    'ng-invalid': form.controls.age.errors && submitted,
+                    'ng-dirty': form.controls.age.errors && submitted
+                    }"
+                   placeholder="Your age..."
+                   formControlName="age"
+                   max="100"
+                   min="1"
+                   pInputText>
+
+            <small
+              *ngIf="form.get('age')?.hasError('required') && submitted"
+              class="p-error">
+              Age is required.
+            </small>
+            <small
+              *ngIf="form.get('age')?.hasError('min') && submitted"
+              class="p-error">
+              You need to be at least 16 years old.
+            </small>
           </div>
 
-          <input type="text" id="surname" class="form-input" placeholder="Your surname..." formControlName="surname">
+          <div class="form-group">
+            <label class="form-label">
+              Password
+            </label>
+            <input type="password"
+                   class="form-input"
+                   [ngClass]="{
+                    'ng-invalid': form.controls.password.errors && submitted,
+                    'ng-dirty': form.controls.password.errors && submitted
+                    }"
+                   placeholder="Your password..."
+                   formControlName="password"
+                   pInputText>
 
-          <small
-            *ngIf="form.get('surname')?.hasError('required') &&
-            form.controls.surname.touched"
-            class="warning">
-            Surname is required.
-          </small>
-
-        </div>
-        <div class="form-content">
-          <div class="form-label">
-            <label for="email">Email</label>
+            <small
+              *ngIf="form.get('password')?.hasError('required') && submitted"
+              class="p-error">
+              Password is required.
+            </small>
+            <small
+              *ngIf="form.get('password')?.hasError('minlength') && submitted"
+              class="p-error">
+              Password is too short.
+            </small>
+            <small
+              *ngIf="form.get('password')?.hasError('maxlength') && submitted"
+              class="p-error">
+              Password is too long.
+            </small>
           </div>
 
-          <input type="email" id="email" class="form-input"  placeholder="Your email..." formControlName="email">
+          <div class="form-group">
+            <label class="form-label">
+              Repeat-password
+            </label>
+            <input type="password"
+                   class="form-input"
+                   [ngClass]="{
+                    'ng-invalid': form.controls.password.errors && submitted || didntMatch,
+                    'ng-dirty': form.controls.password.errors && submitted || didntMatch
+                    }"
+                   placeholder="Repeat Your password"
+                   formControlName="repeatPassword"
+                   pInputText>
 
-          <small
-            *ngIf="form.get('email')?.hasError('required') &&
-            form.controls.email.touched"
-            class="warning">
-            Email is required.
-          </small>
+            <small
+              *ngIf="form.get('repeatPassword')?.hasError('required') &&  submitted"
+              class="p-error">
+              Repeat Your password.
+            </small>
+            <small
+              *ngIf="submitted && didntMatch && !form.get('repeatPassword')?.hasError('required')"
+              class="p-error">
+              Passwords didn't match
+            </small>
+          </div>
 
-          <small
-            *ngIf="form.get('email')?.hasError('email') &&
-            form.controls.email.touched "
-            class="warning">
-            Email format is incorrect.
-          </small>
+          <button id="btn-signup-large"
+                  type="submit"
+                  pButton
+                  pRipple
+                  label="Sign up"
+                  class="p-button-warning sign-up-btn btn">
+          </button>
+
+          <div class="btn-container">
+            <button pButton
+                    pRipple
+                    type="button"
+                    label="Back"
+                    [routerLink]="['/auth/login']"
+                    class="p-button-outlined p-button-warning back-btn btn">
+            </button>
+            <button type="submit"
+                    pButton
+                    pRipple
+                    label="Sign up"
+                    class="p-button-warning sign-up-btn btn">
+            </button>
+          </div>
 
         </div>
       </div>
 
-      <div class="form-section form-section-two">
-        <div class="form-content">
-          <div class="form-label">
-            <label for="age">Age</label>
-          </div>
-
-          <input type="number" id="age" class="form-input" placeholder="Your age..." formControlName="age" min="16" max="100">
-
-          <small
-            *ngIf="form.get('age')?.hasError('required') &&
-            form.controls.age.touched"
-            class="warning">
-            Age is required.
-          </small>
-
-          <small
-            *ngIf="form.get('age')?.hasError('max') &&
-            form.controls.age.touched"
-            class="warning">
-            Your age can't be more than 100.
-          </small>
-
-          <small
-            *ngIf="form.get('age')?.hasError('min') &&
-            form.controls.age.touched"
-            class="warning">
-            Your age must be at least 16.
-          </small>
-
-        </div>
-        <div class="form-content">
-          <div class="form-label">
-            <label for="password" class="form-label">Password</label>
-          </div>
-
-          <input type="password" id="password" class="form-input" placeholder="Your password..." formControlName="password">
-
-          <small
-            *ngIf="form.get('password')?.hasError('required') &&
-            form.controls.password.touched"
-            class="warning">
-            Password is required.
-          </small>
-
-          <small
-            *ngIf="form.get('password')?.hasError('maxlength') &&
-            form.controls.password.touched"
-            class="warning">
-            Password is too long.
-          </small>
-
-          <small
-            *ngIf="form.get('password')?.hasError('minlength') &&
-            form.controls.password.touched"
-            class="warning">
-            Password is too short.
-          </small>
-
-        </div>
-        <button class="form-btn">Register</button>
-      </div>
-    </div>
-  </form>
-
+    </form>
+  </div>
 </div>

@@ -1,165 +1,265 @@
 @import "../../../../../data";
+//
+//.form-wrapper {
+//  margin: 0;
+//  padding: 0;
+//  width: 100%;
+//  height: 100%;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  align-items: center;
+//  //background-color: $black;
+//  background-image: linear-gradient( 90deg,  rgb(21, 20, 20) 11.2%, rgb(42, 43, 45) 91.1% );
+//}
+//
+//.form-container {
+//  display: flex;
+//  gap: 1.5rem;
+//  flex-direction: row;
+//  justify-content: center;
+//  position: relative;
+//  margin: 0;
+//  padding: 2.5rem;
+//  width: 700px;
+//  height: 400px;
+//  border-radius: 1rem;
+//  background-color: $dark-gray;
+//  opacity: 0.9;
+//  box-shadow: 0 0 2px 0 $lightGray;
+//}
+//
+//.form-section {
+//  margin: 0;
+//  padding: 0;
+//  width: 50%;
+//  height: 100%;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  align-items: center;
+//}
+//
+//.form-title {
+//  position: absolute;
+//  top: 1.5rem;
+//  margin: 0;
+//  padding: 0;
+//  text-align: center;
+//  font-weight: 900;
+//  color: $white;
+//}
+//
+//.form-content {
+//  width: 100%;
+//  height: 30%;
+//  margin: 0 auto;
+//}
+//
+//.form-label {
+//  margin-left: 0.5rem;
+//  width: 100%;
+//  color: $white;
+//}
+//
+//form.ng-submitted {
+//    .form-input {
+//      &.ng-invalid.ng-touched {
+//        box-shadow: 0 0 0 1px $red;
+//      }
+//
+//      &.ng-valid.ng-touched {
+//        box-shadow: 0 0 0 1px $lightGreen;
+//      }
+//    }
+//  }
+//
+//
+//.form-input {
+//  width: 100%;
+//  height: 35px;
+//  margin:  0.5rem 0;
+//  padding: 1rem;
+//  border: none;
+//  border-radius: 8px;
+//  outline: none;
+//  box-shadow: 0 0 2px $gray;
+//  transition: $animationTime;
+//}
+//
+//.redBorder {
+//  box-shadow: 0 0 0 1px $red;
+//}
+//
+//.form-input:focus {
+//  background-color: $lightGray;
+//}
+//
+//.warning {
+//  display: block;
+//  width: 100%;
+//  margin: 0;
+//  padding: 0.2rem 1rem;
+//  font-size: 0.7rem;
+//  border-radius: 5px;
+//  background-color: $lightRed;
+//  color: $red;
+//  box-shadow: 0 0 2px 0 $darkRed;
+//  opacity: 0.9;
+//}
+//
+//.form-btn {
+//  display: block;
+//  margin: 0 auto;
+//  padding: 0;
+//  width: 40%;
+//  height: 35px;
+//  border: none;
+//  outline:none;
+//  border-radius: 8px;
+//  background-color: $green;
+//  color: $white;
+//  transition: $animationTime;
+//  cursor: pointer;
+//}
+//
+//.form-btn:hover {
+//  background-color: $dark-green;
+//}
+//
+//@media (max-width: 650px) {
+//  .form-container {
+//    flex-direction: column;
+//    align-items: center;
+//    width: 300px;
+//    height: 100%;
+//    margin: 0 auto;
+//    gap: 0;
+//  }
+//
+//  .form-section {
+//    width: 100%;
+//    justify-content: space-around;;
+//  }
+//
+//  .form-content {
+//    margin: 0.5rem auto
+//  }
+//
+//  .form-title {
+//    position: static;
+//  }
+//
+//  .form-label {
+//    font-size: 0.8rem;
+//  }
+//
+//  .form-input {
+//    height: 30px;
+//  }
+//
+//  .form-btn {
+//    height: 30px;
+//    margin-top: 0.5rem;
+//  }
+//}
+
 
 .form-wrapper {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  //background-color: $black;
-  background-image: linear-gradient( 90deg,  rgb(21, 20, 20) 11.2%, rgb(42, 43, 45) 91.1% );
 }
 
 .form-container {
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: row;
-  justify-content: center;
-  position: relative;
-  margin: 0;
-  padding: 2.5rem;
-  width: 700px;
-  height: 400px;
-  border-radius: 1rem;
-  background-color: $dark-gray;
-  opacity: 0.9;
-  box-shadow: 0 0 2px 0 $lightGray;
+  width: 60%;
+  margin: 0 auto;
+  padding: 5% 7% 7% 7%;
 }
 
-.form-section {
-  margin: 0;
-  padding: 0;
+.sign-up-title {
+  font-size: 24px;
+  text-align: center;
+  color: $lightOrange;
+}
+
+.form-inner-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px 15px;
+}
+
+.form-group {
+  width: 100%;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  font-size: 16px;
+  color: $white;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.form-block  {
   width: 50%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.form-title {
-  position: absolute;
-  top: 1.5rem;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-weight: 900;
-  color: $white;
+.back-btn {
+  align-self: flex-start;
 }
 
-.form-content {
+.sign-up-btn {
+  align-self: flex-end;
+}
+
+:host ::ng-deep span.p-button-label {
+  font-size: 16px;
+}
+
+.btn-container {
   width: 100%;
-  height: 30%;
-  margin: 0 auto;
-}
-
-.form-label {
-  margin-left: 0.5rem;
-  width: 100%;
-  color: $white;
-}
-
-form.ng-submitted {
-    .form-input {
-      &.ng-invalid.ng-touched {
-        box-shadow: 0 0 0 1px $red;
-      }
-
-      &.ng-valid.ng-touched {
-        box-shadow: 0 0 0 1px $lightGreen;
-      }
-    }
-  }
-
-
-.form-input {
-  width: 100%;
-  height: 35px;
-  margin:  0.5rem 0;
-  padding: 1rem;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  box-shadow: 0 0 2px $gray;
-  transition: $animationTime;
-}
-
-.redBorder {
-  box-shadow: 0 0 0 1px $red;
-}
-
-.form-input:focus {
-  background-color: $lightGray;
-}
-
-.warning {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0.2rem 1rem;
-  font-size: 0.7rem;
-  border-radius: 5px;
-  background-color: $lightRed;
-  color: $red;
-  box-shadow: 0 0 2px 0 $darkRed;
-  opacity: 0.9;
-}
-
-.form-btn {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: 40%;
-  height: 35px;
-  border: none;
-  outline:none;
-  border-radius: 8px;
-  background-color: $green;
-  color: $white;
-  transition: $animationTime;
-  cursor: pointer;
-}
-
-.form-btn:hover {
-  background-color: $dark-green;
+  margin: 40px 0;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 650px) {
   .form-container {
+    padding: 0;
+  }
+
+
+  .form-inner-container {
     flex-direction: column;
-    align-items: center;
-    width: 300px;
-    height: 100%;
-    margin: 0 auto;
     gap: 0;
   }
 
-  .form-section {
+  .form-block {
     width: 100%;
-    justify-content: space-around;;
   }
 
-  .form-content {
-    margin: 0.5rem auto
+  .btn-container {
+    display: flex;
   }
 
-  .form-title {
-    position: static;
+  #btn-back-large , #btn-signup-large {
+    display: none;
   }
 
-  .form-label {
-    font-size: 0.8rem;
-  }
-
-  .form-input {
-    height: 30px;
-  }
-
-  .form-btn {
-    height: 30px;
-    margin-top: 0.5rem;
-  }
 }

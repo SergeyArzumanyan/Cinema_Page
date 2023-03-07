@@ -15,7 +15,8 @@ export interface IRegisterForm {
   "email": FormControl<string | null>,
   "name": FormControl<string | null>,
   "password": FormControl<string | null>,
-  "surname": FormControl<string | null>
+  "surname": FormControl<string | null>,
+  "repeatPassword": FormControl<string | null>
 }
 
 export interface ILoginForm {

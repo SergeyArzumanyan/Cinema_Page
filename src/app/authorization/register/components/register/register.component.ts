@@ -19,6 +19,8 @@ export class RegisterComponent implements OnInit {
 
   private users: IUser[] = [];
   public userCheck: boolean = false;
+  public submitted: boolean = false;
+  public didntMatch: boolean = false;
 
   constructor(
     private sendHttp: SendhttpService,
@@ -51,6 +53,9 @@ export class RegisterComponent implements OnInit {
       Validators.minLength( 7 ),
       Validators.required,
     ] ),
+    repeatPassword: new FormControl( null, [
+      Validators.required,
+    ] ),
   } );
 
 
@@ -75,7 +80,10 @@ export class RegisterComponent implements OnInit {
 
   public onSubmit(): void {
 
+    this.submitted = true;
     this.userCheck = false;
+    this.didntMatch = this.form.value.password !== this.form.value.repeatPassword;
+
 
     if (
       this.form.valid
