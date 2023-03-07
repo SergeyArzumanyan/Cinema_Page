@@ -232,7 +232,6 @@ export class AdminMoviesComponent implements OnInit {
 
       reader.onload = () => {
 
-        // this.movieForm.value.imgUrl = reader.result as string;
         this.movieForm.controls.imgUrl.setValue( reader.result as string );
       };
 

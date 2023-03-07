@@ -18,17 +18,21 @@
          class="movie-img">
     <p class="movie-title"
        *ngIf="!isMobile"
-       [routerLink]="['/movies/' + cinemaId , movie.id]">{{movie.name}}</p>
+       [routerLink]="['/movies/' + cinemaId , movie.id]">
+      {{movie.name}}
+    </p>
     <p class="movie-title"
-       *ngIf="isMobile">{{movie.name}}</p>
+       *ngIf="isMobile">
+      {{movie.name}}
+    </p>
     <button class="movie-btn"
             [routerLink]="['/movies/' + cinemaId , movie.id]">See Tickets
     </button>
   </div>
 </div>
-<div class="loading-wrapper">
-  <div class="loader" *ngIf="incomingMovies.length !== 0">
+<div class="loading-wrapper" *ngIf="incomingMovies.length !== 0">
+  <div class="loader">
     <i class="pi pi-spin pi-spinner loader-spinner"></i>
-  Loading...
+    Loading...
   </div>
 </div>

@@ -38,6 +38,7 @@
 
 .logo-link {
   cursor: pointer;
+  transition: $animationTime;
 }
 
 .links-block {
@@ -63,8 +64,9 @@
 .link {
   cursor: pointer;
   font-size: 16px;
+  text-decoration: none;
+  color: $white;
 }
-
 
 .footer-container-small {
   background-color: rgba($gray, 0.5);

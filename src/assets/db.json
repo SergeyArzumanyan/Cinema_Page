@@ -395,7 +395,11 @@
         "seat2-5",
         "seat3-5",
         "seat5-5",
-        "seat6-5"
+        "seat6-5",
+        "seat5-8",
+        "seat5-9",
+        "seat6-9",
+        "seat6-8"
       ]
     },
     {
@@ -1005,7 +1009,13 @@
         "seat2-5",
         "seat2-6",
         "sea3-5",
-        "seat6-4"
+        "seat6-4",
+        "seat5-7",
+        "seat6-7",
+        "seat6-8",
+        "seat6-9",
+        "seat5-9",
+        "seat5-8"
       ]
     },
     {
@@ -1090,6 +1100,15 @@
       "password": "1234567",
       "repeatPassword": "123456",
       "id": 5
+    },
+    {
+      "name": "jkasfhqj",
+      "surname": "fkjfjkqk",
+      "email": "wfnwejk@dwd",
+      "age": 77,
+      "password": "789789789",
+      "repeatPassword": "789789789",
+      "id": 6
     }
   ],
   "movies": [

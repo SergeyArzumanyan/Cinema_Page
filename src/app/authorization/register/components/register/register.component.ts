@@ -91,6 +91,8 @@ export class RegisterComponent implements OnInit {
       this.form.value.name?.trim() !== ""
       &&
       this.form.value.surname?.trim() !== ""
+      &&
+      !this.didntMatch
     ) {
       this.registerEmailMatch();
       if ( !this.userCheck ) {
