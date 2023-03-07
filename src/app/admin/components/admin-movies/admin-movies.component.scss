@@ -13,7 +13,10 @@
   gap: 1rem;
 }
 
-
+.img-td {
+  display: flex;
+  justify-content: center;
+}
 
 @media (max-width: 650px) {
   .toolbars {

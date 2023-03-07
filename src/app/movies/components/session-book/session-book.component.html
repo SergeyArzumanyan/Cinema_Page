@@ -42,8 +42,8 @@
           <div class="cancel-btn" (click)="deleteTicket(ticket)">x</div>
           <span class="ticket-date">{{ sessionInfo.date | date: "HH:mm" }}</span>
           <div class="seat-number">
-            <span class="seat-row"> Row {{ ticket.id | seatRow }} </span>
-            <span class="seat-seat"> Seat {{ ticket.id | seat }} </span>
+            <span class="seat-row"> Row {{ ticket.id | Ticket: 'row' }} </span>
+            <span class="seat-seat"> Seat {{ ticket.id | Ticket: 'seat' }} </span>
           </div>
           <span class="ticket-price">{{ sessionInfo?.price }} AMD</span>
         </div>

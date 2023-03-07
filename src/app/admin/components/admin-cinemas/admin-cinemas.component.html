@@ -85,12 +85,18 @@
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
-            {{ cinema['cinemaDescription'] | shortText: 50 }}
+            <div class="shorter-text">
+              {{ cinema['cinemaDescription'] }}
+            </div>
           </td>
           <td [pTooltip]="cinema['cinemaAddress']"
               tooltipPosition="bottom"
               [showDelay]="400"
-              [hideDelay]="100">{{ cinema['cinemaAddress'] | shortText: 20 }}</td>
+              [hideDelay]="100">
+            <div class="shorter-text">
+              {{ cinema['cinemaAddress'] }}
+            </div>
+          </td>
           <td class="editDialogColsButtons">
             <button pButton
                     pRipple

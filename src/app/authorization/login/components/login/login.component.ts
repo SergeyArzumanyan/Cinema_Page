@@ -40,11 +40,16 @@ export class LoginComponent {
 
   public onSubmit(): void {
 
-    console.log( this.form );
     this.submitted = true;
     this.form.markAllAsTouched();
 
-    if ( this.form.valid ) {
+    if (
+      this.form.valid
+      &&
+      this.form.value.email?.trim() !== ""
+      &&
+      this.form.value.password?.trim() !== ""
+    ) {
       this.checkForUser();
     }
   }

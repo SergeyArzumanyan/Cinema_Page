@@ -52,6 +52,13 @@ td {
   padding: 0 1rem !important;
 }
 
+.shorter-text {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .filter-margin {
   margin-left: 150px;
 }

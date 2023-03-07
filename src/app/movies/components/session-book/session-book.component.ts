@@ -85,7 +85,7 @@ export class SessionBookComponent implements OnInit {
 
   public generateTimes( n: number ): any {
     let arr = [];
-    for ( let i = 0; i < n; i++ ) {
+    for ( let i = 1; i <= n; i++ ) {
       arr.push( i );
     }
 

@@ -48,7 +48,11 @@
            [routerLink]="['/cinemas']"
            routerLinkActive="active"
            (click)="closeMenu()">
-        <a class="nav-link">
+        <a class="nav-link"
+           [ngClass]="{
+           'nav-link-large': screenIsLarge,
+           'nav-link-small': !screenIsLarge
+           }">
           Cinemas
         </a>
       </div>
@@ -61,7 +65,11 @@
            [routerLink]="['movies']"
            routerLinkActive="active"
            (click)="closeMenu()">
-        <a class="nav-link">
+        <a class="nav-link"
+           [ngClass]="{
+           'nav-link-large': screenIsLarge,
+           'nav-link-small': !screenIsLarge
+           }">
           Movies
         </a>
       </div>

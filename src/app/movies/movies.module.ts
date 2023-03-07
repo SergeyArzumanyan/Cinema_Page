@@ -8,8 +8,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieSingleComponent } from './components/movie-single/movie-single.component';
 import { SessionBookComponent } from './components/session-book/session-book.component';
 
-import { RowPipe } from "../shared/pipes/row.pipe";
-import { SeatPipe } from "../shared/pipes/seat.pipe";
+import { TicketPipe } from "../shared/pipes/ticket.pipe";
 import { SafePipe } from "../shared/pipes/safe.pipe";
 
 import { ScrollPanelModule } from 'primeng/scrollpanel';
@@ -20,8 +19,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     MoviesComponent,
     MovieSingleComponent,
     SessionBookComponent,
-    RowPipe,
-    SeatPipe,
+    TicketPipe,
     SafePipe
   ],
   imports: [

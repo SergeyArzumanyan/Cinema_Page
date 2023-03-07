@@ -103,7 +103,7 @@
             {{ movie.id }}
           </td>
 
-          <td>
+          <td class="img-td">
             <img [src]="movie['imgUrl']" alt="movie-img" class="table-img">
           </td>
 
@@ -111,21 +111,27 @@
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
-            {{ movie.name | shortText: 20 }}
+            <div class="shorter-text">
+              {{ movie.name }}
+            </div>
           </td>
 
           <td [pTooltip]="movie.description"
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
-            {{ movie.description | shortText: 50 }}
+            <div class="shorter-text">
+              {{ movie.description }}
+            </div>
           </td>
 
           <td [pTooltip]="movie['trailerUrl']"
               tooltipPosition="bottom"
               [showDelay]="400"
               [hideDelay]="100">
-            {{ movie['trailerUrl'] | shortText: 20 }}
+            <div class="shorter-text">
+              {{ movie['trailerUrl'] }}
+            </div>
           </td>
 
           <td class="editDialogColsButtons">
@@ -174,7 +180,6 @@
                  type="text"
                  formControlName="name"
                  pInputText
-                 [(ngModel)]="movie.name"
                  id="name"
                  autofocus />
           <small *ngIf="movieForm.get('name')?.hasError('required')  && submitted
@@ -200,7 +205,6 @@
                     }"
                     formControlName="description"
                     pInputTextarea
-                    [(ngModel)]="movie.description"
                     id="description"
                     rows="3"
                     cols="20">
@@ -230,7 +234,6 @@
                  type="text"
                  formControlName="trailerUrl"
                  pInputText
-                 [(ngModel)]="movie.trailerUrl"
                  id="trailerUrl" />
           <small *ngIf="movieForm.get('trailerUrl')?.hasError('required')  && submitted
                         || !movieForm.value.trailerUrl?.trim() && submitted"
@@ -239,19 +242,33 @@
           </small>
         </div>
 
-<!--        [url]="'http://localhost:3000/movies/' + movie.id"-->
-        <p-fileUpload name="imgUrl"
-                      [auto]="true"
-                      [multiple]="false"
-                      accept="image/*"
-                      (onSelect)="imageSelected($event)"
-                      (onRemove)="imageUnSelected()"
-                      [maxFileSize]="1000000">
-        </p-fileUpload>
+        <div class="field editDialogCols">
+          <label for="imgUrl">
+            Image
+          </label><br>
+          <input class="editDialogColsFile"
+                 [ngClass]="{
+                    'ng-invalid':
+                    movieForm.get('imgUrl')?.hasError('required') && submitted,
+                    'ng-dirty':
+                    movieForm.get('imgUrl')?.hasError('required')  && submitted
+                    }"
+                 type="file"
+                 accept="image/*"
+                 (change)="onFileChange($event)"
+                 id="imgUrl" />
 
-        <small *ngIf="!imageState && submitted" class="p-error">
-          Image is required.
-        </small>
+          <div class="img-preview">
+            <img [src]="(movieForm.controls.imgUrl.value) || (movie.imgUrl)"
+                 *ngIf="(movieForm.controls.imgUrl.value) || (movie.imgUrl)"
+                 style="height: 75px; width: 55px">
+          </div>
+
+          <small *ngIf="movieForm.get('imgUrl')?.hasError('required')  && submitted"
+                 class="p-error">
+            Image is required.
+          </small>
+        </div>
 
       </form>
     </ng-template>

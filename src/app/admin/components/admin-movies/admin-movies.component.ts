@@ -26,8 +26,6 @@ export class AdminMoviesComponent implements OnInit {
   public incomingMovies: IMovie[] = [];
   public movie: IMovie = {};
   public selectedMovies: IMovie[] | null = [];
-  public uploadedImg: any;
-  public imageState = false;
   public submitted: boolean = false;
   public rows: number = 10;
   public page: number = 1;
@@ -40,6 +38,7 @@ export class AdminMoviesComponent implements OnInit {
   public selectedCinemas: string[] | undefined = [];
 
   public movieForm = new FormGroup<IMovieForm>( {
+
     name: new FormControl( null, [
       Validators.required,
     ] ),
@@ -108,6 +107,10 @@ export class AdminMoviesComponent implements OnInit {
   public editMovie( movie: IMovie ) {
 
     this.movie = { ...movie };
+    console.log( "MOVIE =>    ", this.movie );
+    this.movieForm.patchValue( this.movie );
+
+    console.log( this.movieForm );
     this.movieDialog = true;
   }
 
@@ -162,18 +165,21 @@ export class AdminMoviesComponent implements OnInit {
 
   public saveMovie(): void {
 
+    console.log( this.movieForm.value );
     this.submitted = true;
     if (
       this.movieForm.valid
       &&
-      this.movieForm.value.name?.trim()
+      this.movieForm.value.name?.trim() !== ""
       &&
-      this.movieForm.value.description?.trim()
-      &&
-      this.imageState
+      this.movieForm.value.description?.trim() !== ""
     ) {
+
       if ( this.movie.id ) {
-        this.incomingMovies[this.findIndexById( this.movie.id.toString() )] = this.movie;
+        this.movie = {...this.movie, ...this.movieForm.value};
+        console.log( this.movie );
+
+        this.incomingMovies[this.findIndexById( (this.movie.id)!.toString() )] = this.movie;
         this.toastMessage.updateItem( "Movie" );
       } else {
         this.movie = { ...this.movieForm.value };
@@ -217,16 +223,22 @@ export class AdminMoviesComponent implements OnInit {
   }
 
 
-  public imageSelected( event: any ): void {
-    this.movieForm.controls.imgUrl.setValue( event.currentFiles[0] );
-    console.log( this.movieForm );
-    this.imageState = true;
-    // console.log( event.currentFiles[0].name ); // file name to insert into db.
+  public onFileChange( event: any ) {
+    const reader = new FileReader();
+
+    if ( event.target.files && event.target.files.length ) {
+      const [ file ] = event.target.files;
+      reader.readAsDataURL( file );
+
+      reader.onload = () => {
+
+        // this.movieForm.value.imgUrl = reader.result as string;
+        this.movieForm.controls.imgUrl.setValue( reader.result as string );
+      };
+
+    }
   }
 
-  public imageUnSelected(): void {
-    this.imageState = false;
-  }
 
 }
 
