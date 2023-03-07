@@ -60,10 +60,15 @@
         </div>
 
         <div class="buy-btn-block">
-          <button class="buy-btn buy-btn-enabled" *ngIf="ticketsArr.length" (click)="reserveSeats()">Buy</button>
-          <button class="buy-btn buy-btn-disabled" *ngIf="!ticketsArr.length">Buy</button>
-        </div>
+          <button pButton
+                  pRipple
+                  type="button"
+                  label="Buy"
+                  [disabled]="!ticketsArr.length"
+                  (click)="reserveSeats()"
+                  class="p-button-success"></button>
 
+        </div>
       </div>
     </div>
 

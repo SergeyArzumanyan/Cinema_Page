@@ -195,28 +195,6 @@
   width: 100px;
 }
 
-.buy-btn {
-  width: 120px;
-  height: 50px;
-  border-radius: 1rem;
-  outline: none;
-  color: $white;
-  border: 1px solid $dark-gray;
-  cursor: pointer;
-  transition: $animationTime;
-}
-
-.buy-btn-disabled {
-  cursor: default;
-  background-color: $dark-green;
-}
-
-.buy-btn-enabled {
-  background-color: $green;
-}  .buy-btn-enabled:hover {
-     background-color: $dark-green;
-   }
-
 @media (max-width: 650px) {
   .session-wrapper {
     width: 90%;
@@ -266,19 +244,9 @@
     background-color: $red;
   }
 
-  .buy-btn {
-    width: 85px;
-    height: 40px;
-    border-radius: 0.6rem;
-    font-size: $mobileFontSize;
-  }
-
-  .buy-btn:hover {
-    background-color: $dark-green;
-  }
-
   .purchase-block {
     gap: 1.5rem;
     font-size: $mobileFontSize;
   }
 }
+
