@@ -1,16 +1,102 @@
-<footer>
-  <div class="footer-container">
-    <div class="footer-info">
-      <p><a>About us</a></p>
-      <p><a>Temporary</a></p>
-      <p><a>Incoming</a></p>
-      <p><a>Contact</a></p>
+<div class="footer-wrapper" *ngIf="screenIsLarge">
+  <footer>
+    <div class="footer-container-large">
+
+      <div class="brand-block">
+        <div class="brand-name">Brand<span>Name</span></div>
+        <div class="logo-block">
+          <div><i class="pi pi-twitter logo-link" style="font-size: 24px"></i></div>
+          <div><i class="pi pi-facebook logo-link" style="font-size: 24px"></i></div>
+          <div><i class="pi pi-linkedin logo-link" style="font-size: 24px"></i></div>
+        </div>
+      </div>
+
+      <div class="links-block">
+
+        <div class="links-col">
+          <h4 class="col-header">Pages</h4>
+          <div class="col-inner-links-large">
+            <a class="link">Cinemas</a>
+            <a class="link">Movies</a>
+          </div>
+        </div>
+
+        <div class="links-col">
+          <h4 class="col-header">Tomothy</h4>
+          <div class="col-inner-links-large">
+            <a class="link">Eleanor Edwards</a>
+            <a class="link">Ted Robertson</a>
+            <a class="link">Annette Russell</a>
+            <a class="link">Jennie Mckinney</a>
+            <a class="link">Gloria Richards</a>
+          </div>
+        </div>
+
+        <div class="links-col">
+          <h4 class="col-header">Jane Black</h4>
+          <div class="col-inner-links-large">
+            <a class="link">Philip Jones</a>
+            <a class="link">Product</a>
+            <a class="link">Colleen Russell</a>
+            <a class="link">Marvin Hawkins</a>
+            <a class="link">Bruce Simmons</a>
+          </div>
+        </div>
+
+        <div class="links-col">
+          <h4 class="col-header">Annette Stewa</h4>
+          <div class="col-inner-links-large">
+            <a class="link">Jennie Cooper</a>
+            <a class="link">Julie Henry</a>
+            <a class="link">Johnny Murphy</a>
+            <a class="link">Gregory Mccoy</a>
+            <a class="link">Marvin Mckinney</a>
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    <div class="footer-contact">
-      <p><a>Call</a></p>
-      <p><a>Email</a></p>
-      <p><a>Facebook</a></p>
-      <p><a>Instagram</a></p>
+  </footer>
+</div>
+
+
+
+
+
+<div class="footer-wrapper" *ngIf="!screenIsLarge">
+  <footer>
+    <div class="footer-container-small">
+      <div class="brand-name-small">Brand<span>Name</span></div>
+
+      <div class="links-col-small">
+        <h4 class="col-header-small">Pages</h4>
+        <div class="col-inner-links-small">
+          <a class="link">page</a>
+          <a class="link">page</a>
+          <a class="link">page</a>
+          <a class="link">page</a>
+          <a class="link">page</a>
+        </div>
+      </div>
+
+      <div class="links-col-small">
+        <h4 class="col-header-small">Pages</h4>
+        <div class="col-inner-links-small">
+          <a class="link">page</a>
+          <a class="link">page</a>
+          <a class="link">page</a>
+          <a class="link">page</a>
+          <a class="link">page</a>
+        </div>
+      </div>
+
+      <div class="logo-block-small">
+        <div><i class="pi pi-twitter logo-link" style="font-size: 24px"></i></div>
+        <div><i class="pi pi-facebook logo-link" style="font-size: 24px"></i></div>
+        <div><i class="pi pi-linkedin logo-link" style="font-size: 24px"></i></div>
+      </div>
+
     </div>
-  </div>
-</footer>
+  </footer>
+</div>
