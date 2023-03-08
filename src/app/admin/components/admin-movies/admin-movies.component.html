@@ -57,25 +57,25 @@
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
 
-          <th pSortableColumn="id" style="min-width: 15rem">
+          <th pSortableColumn="id" style="max-width: 100px;">
             <div class="th-items">
               <div class="left-th">
                 ID
                 <p-sortIcon field="id"></p-sortIcon>
               </div>
-              <p-columnFilter class="filter-margin" type="numeric" field="id" display="menu"></p-columnFilter>
+              <p-columnFilter type="numeric" field="id" display="menu"></p-columnFilter>
             </div>
           </th>
 
           <th>Img</th>
 
-          <th pSortableColumn="name" style="min-width:15rem">
+          <th pSortableColumn="name" style="min-width: 15rem">
             <div class="th-items">
               <div class="left-th">
                 Name
                 <p-sortIcon field="name"></p-sortIcon>
               </div>
-              <p-columnFilter class="filter-margin" type="text" field="name" display="menu"></p-columnFilter>
+              <p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
             </div>
           </th>
 
@@ -99,7 +99,7 @@
             <p-tableCheckbox [value]="movie"></p-tableCheckbox>
           </td>
 
-          <td>
+          <td class="id-td">
             {{ movie.id }}
           </td>
 
@@ -243,31 +243,42 @@
         </div>
 
         <div class="field editDialogCols">
-          <label for="imgUrl">
+
+          <label>
             Image
-          </label><br>
+          </label>
+
+
+          <div class="img-dropzone"
+               imgDrag
+               (file)="imageDropped($event)">
+            <div class="drag-message">
+              Drag your image here or
+              <a class="img-browse"
+                 (click)="imgInput.click()">browse</a>
+            </div>
+          </div>
+
           <input class="editDialogColsFile"
-                 [ngClass]="{
-                    'ng-invalid':
-                    movieForm.get('imgUrl')?.hasError('required') && submitted,
-                    'ng-dirty':
-                    movieForm.get('imgUrl')?.hasError('required')  && submitted
-                    }"
+                 style="display: none;"
+                 #imgInput
                  type="file"
                  accept="image/*"
-                 (change)="onFileChange($event)"
-                 id="imgUrl" />
+                 (change)="onFileChange($event)" />
 
           <div class="img-preview">
+
             <img [src]="(movieForm.controls.imgUrl.value) || (movie.imgUrl)"
                  *ngIf="(movieForm.controls.imgUrl.value) || (movie.imgUrl)"
-                 style="height: 75px; width: 55px">
+                 class="selected-movie-image" alt="movie-img">
+
           </div>
 
           <small *ngIf="movieForm.get('imgUrl')?.hasError('required')  && submitted"
                  class="p-error">
             Image is required.
           </small>
+
         </div>
 
       </form>

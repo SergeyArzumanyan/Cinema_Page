@@ -68,6 +68,7 @@ export class AdminMoviesComponent implements OnInit {
 
 
   private getMovies(): void {
+
     this.requestHttp.getMovies( "all", this.page.toString(), this.rows.toString() )
       .pipe( take( 1 ) )
       .subscribe( {
@@ -176,10 +177,10 @@ export class AdminMoviesComponent implements OnInit {
     ) {
 
       if ( this.movie.id ) {
-        this.movie = {...this.movie, ...this.movieForm.value};
+        this.movie = { ...this.movie, ...this.movieForm.value };
         console.log( this.movie );
 
-        this.incomingMovies[this.findIndexById( (this.movie.id)!.toString() )] = this.movie;
+        this.incomingMovies[this.findIndexById( ( this.movie.id )!.toString() )] = this.movie;
         this.toastMessage.updateItem( "Movie" );
       } else {
         this.movie = { ...this.movieForm.value };
@@ -231,13 +232,16 @@ export class AdminMoviesComponent implements OnInit {
       reader.readAsDataURL( file );
 
       reader.onload = () => {
-
         this.movieForm.controls.imgUrl.setValue( reader.result as string );
       };
 
     }
   }
 
+
+  public imageDropped( imgUrl: any ): void {
+    this.movieForm.controls.imgUrl.setValue( imgUrl );
+  }
 
 }
 
