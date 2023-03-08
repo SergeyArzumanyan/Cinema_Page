@@ -4,6 +4,7 @@
   margin: 0 auto 2rem auto;
   padding: 1rem;
   width: 60%;
+  max-width: 850px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,42 +113,6 @@
   color: $lightGreen;
 }
 
-.disabled {
-  width: 50%;
-  margin: 1rem auto;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  color: $white;
-  background-color: transparent;
-  box-shadow: 0 0 2px 0 $white;
-  padding: 0.5rem 0;
-  border-radius: 8px;
-  cursor: default;
-  transition: $animationTime;
-}
-
-.date-select-btn {
-  width: 50%;
-  margin: 1rem auto;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  color: $white;
-  background-color: $orange;
-  box-shadow: 0 0 2px 0 $white;
-  padding: 0.5rem 0;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: $animationTime;
-}
-
-.date-select-btn:hover {
-  background-color: $dark-orange;
-} .date-select-btn:active {
-    background-color: black;
-  }
-
 @media (max-width: 1000px) {
   .single-wrapper {
     width: 90%;
@@ -193,10 +158,6 @@
 
   .border {
     padding: 0.25rem 0.5rem;
-  }
-
-  .disabled , .date-select-btn {
-    font-size: 0.8rem;
   }
 
   .date-block {

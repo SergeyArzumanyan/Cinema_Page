@@ -48,14 +48,15 @@
       </div>
     </div>
 
-    <button *ngIf="!dateIsSelected"
-            class="disabled">
-      Choose tickets
+    <button pButton
+            pRipple
+            type="button"
+            label="Choose tickets"
+            [disabled]="!dateIsSelected"
+            [routerLink]="['/movies/' + cinema_id , selected_movie.id , selectedSession?.id]"
+            class="p-button-warning">
     </button>
-    <button *ngIf="dateIsSelected"
-            class="date-select-btn"
-            [routerLink]="['/movies/' + cinema_id , selected_movie.id , selectedSession?.id]">
-      Choose tickets
-    </button>
+
+
   </div>
 </div>

@@ -17,6 +17,7 @@
 .movie-name {
   color: $white;
   text-align: center;
+  font-size: 24px;
 }
 
 .session-info {
@@ -85,6 +86,11 @@
   background-color: $dark-gray;
   box-shadow: $shadow;
   color: white;
+}
+
+.session-date {
+  font-size: 16px;
+  text-align: center;
 }
 
 .seat-states, .state-descriptions {
@@ -190,7 +196,7 @@
 }
 
 .cost {
-  font-size: 0.8rem;
+  font-size: 14px;
   display: block;
   width: 100px;
 }
@@ -199,10 +205,6 @@
   .session-wrapper {
     width: 90%;
     margin: 10% auto;
-  }
-
-  .session-date {
-    font-size: $mobileFontSize;
   }
 
   .seats-block {
@@ -214,30 +216,34 @@
     width: 80%;
   }
 
-  .seat {
-    width: 1rem;
-    height: 0.8rem;
+  .seat , .seat-state {
+    width: 20px;
+    height: 18px;
   }
 
   .seat-info {
     width: 100%;
   }
 
-  .seat-state {
-    width: 1rem;
-    height: 0.8rem;
+  .state-description {
+    font-size: 16px;
+    height: auto;
   }
 
-  .state-description {
-    font-size: $mobileFontSize;
+  .ticket {
+    width: 90%;
   }
 
   .tickets-heading {
-    font-size: 0.9rem;
+    font-size: 16px;
   }
 
-  .ticket-date, .ticket-price , .seat-row , .seat-seat {
-    font-size: 0.8rem;
+  .ticket-date , .ticket-price {
+    font-size: 14px;
+  }
+
+  .seat-row , .seat-seat {
+    font-size: 12px;
   }
 
   .cancel-btn:hover {

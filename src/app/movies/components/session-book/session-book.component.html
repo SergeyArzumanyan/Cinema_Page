@@ -2,7 +2,9 @@
   <div class="info-block">
     <h2 class="movie-name">{{ selected_movie?.name }}</h2>
     <div class="session-info">
-      <p class="session-date">{{ sessionInfo?.date | date }}  {{ sessionInfo?.date | date: 'HH:mm' }}</p>
+      <p class="session-date">
+        {{ sessionInfo?.date | date }}  {{ sessionInfo?.date | date: 'HH:mm' }}
+      </p>
     </div>
   </div>
 
