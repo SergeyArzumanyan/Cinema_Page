@@ -17,60 +17,6 @@
   ],
   "sessions": [
     {
-      "date": "2023-02-01T13:30:00.000Z",
-      "id": 1000,
-      "movieId": 1,
-      "price": 2000,
-      "seats": [
-        "seat1-1",
-        "seat6-10",
-        "seat6-7",
-        "seat6-1",
-        "seat5-4",
-        "seat5-5",
-        "seat0-8",
-        "seat0-9",
-        "seat0-4",
-        "seat3-7",
-        "seat2-8"
-      ]
-    },
-    {
-      "date": "2023-02-02T14:45:00.000Z",
-      "id": 2000,
-      "movieId": 1,
-      "price": 6000,
-      "seats": [
-        "seat1-10",
-        "seat1-9",
-        "seat4-3",
-        "seat4-1"
-      ]
-    },
-    {
-      "date": "2023-02-03T12:00:00.000Z",
-      "id": 3000,
-      "movieId": 1,
-      "price": 1500,
-      "seats": [
-        "seat2-1",
-        "seat3-7",
-        "seat5-2",
-        "seat6-8"
-      ]
-    },
-    {
-      "date": "2023-02-04T16:00:00.000Z",
-      "id": 4000,
-      "movieId": 1,
-      "price": 4500,
-      "seats": [
-        "seat4-7",
-        "seat1-7",
-        "seat6-7"
-      ]
-    },
-    {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 5000,
       "movieId": 2,
@@ -495,56 +441,6 @@
     },
     {
       "date": "2023-02-01T11:30:00.000Z",
-      "id": 37000,
-      "movieId": 10,
-      "price": 2500,
-      "seats": [
-        "seat1-6",
-        "seat1-7",
-        "seat6-8",
-        "seat6-9",
-        "seat1-1",
-        "seat1-2"
-      ]
-    },
-    {
-      "date": "2023-02-02T15:00:00.000Z",
-      "id": 38000,
-      "movieId": 10,
-      "price": 4500,
-      "seats": [
-        "seat1-1",
-        "seat1-8",
-        "seat4-3",
-        "seat4-2"
-      ]
-    },
-    {
-      "date": "2023-02-03T12:10:00.000Z",
-      "id": 39000,
-      "movieId": 10,
-      "price": 3500,
-      "seats": [
-        "seat2-2",
-        "seat3-3",
-        "seat5-5",
-        "seat6-6"
-      ]
-    },
-    {
-      "date": "2023-02-04T12:50:00.000Z",
-      "id": 40000,
-      "movieId": 10,
-      "price": 3000,
-      "seats": [
-        "seat4-7",
-        "seat5-5",
-        "seat6-7",
-        "seat7-7"
-      ]
-    },
-    {
-      "date": "2023-02-01T11:30:00.000Z",
       "id": 41000,
       "movieId": 11,
       "price": 1000,
@@ -852,7 +748,8 @@
         "seat6-8",
         "seat6-9",
         "seat4-3",
-        "seat4-2"
+        "seat4-2",
+        "seat6-10"
       ]
     },
     {
@@ -1063,56 +960,20 @@
     {
       "age": 39,
       "email": "poxos.petrosyan@gmail.com",
-      "id": 1,
+      "id": 1056456456405,
       "name": "Poxos",
       "password": "user1234",
       "role": "user",
       "surname": "Petrosyan"
     },
     {
-      "age": 50,
-      "email": "petros.poxosyan@gmail.com",
-      "id": 2,
-      "name": "Petros",
-      "password": "user1234",
-      "role": "user",
-      "surname": "Poxosyan"
-    },
-    {
       "age": 39,
       "email": "admin@acc.com",
-      "id": 3,
+      "id": 365456456456,
       "name": "ADMIN",
       "password": "admin1234",
       "role": "admin",
       "surname": " "
-    },
-    {
-      "name": "asdas",
-      "surname": "dasdas",
-      "email": "ad@ad",
-      "age": 16,
-      "password": "1234567",
-      "repeatPassword": "1234567",
-      "id": 4
-    },
-    {
-      "name": "asdasd",
-      "surname": "dasdas",
-      "email": "dasda@adasf",
-      "age": 44,
-      "password": "1234567",
-      "repeatPassword": "123456",
-      "id": 5
-    },
-    {
-      "name": "jkasfhqj",
-      "surname": "fkjfjkqk",
-      "email": "wfnwejk@dwd",
-      "age": 77,
-      "password": "789789789",
-      "repeatPassword": "789789789",
-      "id": 6
     }
   ],
   "movies": [

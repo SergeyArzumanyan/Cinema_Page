@@ -125,4 +125,11 @@ export class MessageToastsService {
       2000 );
   }
 
+  public fileSizeError(): void {
+    this.toastMessage( 'error',
+      'Error.',
+      'Image size is too large, try another one.',
+      2000 );
+  }
+
 }

@@ -9,6 +9,7 @@ import { IMovieForm } from "@project-interfaces/movie-form.interface";
 
 import { ConfirmationService, MenuItem } from 'primeng/api';
 import { Table } from "primeng/table";
+import { SendhttpService } from "@project-services/sendhttp.service";
 
 @Component( {
   selector: 'app-admin-movies',
@@ -27,7 +28,7 @@ export class AdminMoviesComponent implements OnInit {
   public movie: IMovie = {};
   public selectedMovies: IMovie[] | null = [];
   public submitted: boolean = false;
-  public rows: number = 10;
+  public rows: number = 100;
   public page: number = 1;
 
   public items: MenuItem[] = [
@@ -55,6 +56,7 @@ export class AdminMoviesComponent implements OnInit {
 
   constructor(
     private requestHttp: RequesthttpService,
+    private sendHttp: SendhttpService,
     private toastMessage: MessageToastsService,
     private confirmationService: ConfirmationService
   ) {
@@ -98,6 +100,13 @@ export class AdminMoviesComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.incomingMovies = this.incomingMovies.filter( val => !this.selectedMovies?.includes( val ) );
+
+        // delete movies from the server
+
+        // this.selectedMovies?.map( movie => {
+        //   this.sendHttp.deleteMovie( movie.id );
+        // } )
+
         this.selectedMovies = null;
         this.toastMessage.deleteItems( "Movies" );
       }
@@ -108,10 +117,8 @@ export class AdminMoviesComponent implements OnInit {
   public editMovie( movie: IMovie ) {
 
     this.movie = { ...movie };
-    console.log( "MOVIE =>    ", this.movie );
     this.movieForm.patchValue( this.movie );
 
-    console.log( this.movieForm );
     this.movieDialog = true;
   }
 
@@ -123,9 +130,20 @@ export class AdminMoviesComponent implements OnInit {
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.incomingMovies = this.incomingMovies.filter( val => val.id !== movie.id );
-        this.movie = {};
-        this.toastMessage.deleteItems( "Movies" );
+
+        // delete movie from server
+
+        // this.sendHttp.deleteMovie( movie.id ).subscribe( {
+        //   next: () => {
+        //     this.incomingMovies = this.incomingMovies.filter( val => val.id !== movie.id );
+        //     this.movie = {};
+        //     this.toastMessage.deleteItems( "Movie" );
+        //   },
+        //   error: () => {
+        //     this.toastMessage.somethingWentWrongMessage();
+        //   }
+        // } )
+
       }
     } );
   }
@@ -143,6 +161,8 @@ export class AdminMoviesComponent implements OnInit {
 
     if ( this.selectedMovies ) {
       this.selectedCinemas = this.selectedMovies[0].cinemaId;
+
+
       this.cinemaDialog = true;
     }
   }
@@ -159,6 +179,12 @@ export class AdminMoviesComponent implements OnInit {
     this.cinemaDialog = false;
     if ( this.selectedMovies ) {
       this.selectedMovies[0].cinemaId = this.selectedCinemas;
+
+      // PUT here cinemaId arr
+
+      this.sendHttp.sendEditedMovie( this.selectedMovies[0] )
+        .pipe( take( 1 ) ).subscribe();
+
     }
     this.selectedCinemas = [];
   }
@@ -166,7 +192,6 @@ export class AdminMoviesComponent implements OnInit {
 
   public saveMovie(): void {
 
-    console.log( this.movieForm.value );
     this.submitted = true;
     if (
       this.movieForm.valid
@@ -174,11 +199,15 @@ export class AdminMoviesComponent implements OnInit {
       this.movieForm.value.name?.trim() !== ""
       &&
       this.movieForm.value.description?.trim() !== ""
+      &&
+      this.movieForm.value.imgUrl
     ) {
 
       if ( this.movie.id ) {
         this.movie = { ...this.movie, ...this.movieForm.value };
-        console.log( this.movie );
+
+        this.sendHttp.sendEditedMovie( this.movie )
+          .pipe( take( 1 ) ).subscribe();
 
         this.incomingMovies[this.findIndexById( ( this.movie.id )!.toString() )] = this.movie;
         this.toastMessage.updateItem( "Movie" );
@@ -186,7 +215,19 @@ export class AdminMoviesComponent implements OnInit {
         this.movie = { ...this.movieForm.value };
         this.movie.id = this.createId();
         this.incomingMovies.push( this.movie );
-        this.toastMessage.createItem( "Movie" );
+
+
+        this.sendHttp.sendNewCreatedMovie( this.movie )
+          .pipe( take( 1 ) )
+          .subscribe( {
+            next: () => {
+              this.toastMessage.createItem( "Movie" );
+            },
+            error: () => {
+              this.toastMessage.fileSizeError();
+              return;
+            }
+          } )
       }
 
       this.incomingMovies = [ ...this.incomingMovies ];
@@ -225,6 +266,7 @@ export class AdminMoviesComponent implements OnInit {
 
 
   public onFileChange( event: any ) {
+
     const reader = new FileReader();
 
     if ( event.target.files && event.target.files.length ) {
@@ -240,7 +282,14 @@ export class AdminMoviesComponent implements OnInit {
 
 
   public imageDropped( imgUrl: any ): void {
+
     this.movieForm.controls.imgUrl.setValue( imgUrl );
+  }
+
+  public imageClear(movie: IMovie): void {
+
+    movie.imgUrl = null
+    this.movieForm.patchValue( movie );
   }
 
 }

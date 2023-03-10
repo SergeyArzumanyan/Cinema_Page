@@ -13,8 +13,8 @@
                  id="email"
                  class="form-input"
                  [ngClass]="{
-                    'ng-invalid': form.controls.email.errors && submitted,
-                    'ng-dirty': form.controls.email.errors && submitted
+                    'ng-invalid': (form.controls.email.errors && submitted),
+                    'ng-dirty': (form.controls.email.errors && submitted)
                     }"
                  placeholder="Your email..."
                  formControlName="email"

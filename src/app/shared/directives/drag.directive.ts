@@ -37,8 +37,19 @@ export class DragDirective {
     if ( event.dataTransfer?.files && event.dataTransfer?.files.length ) {
       const file = event.dataTransfer?.files[0];
       reader.readAsDataURL( file );
-      reader.onload = () => {
-        this.file.emit( reader.result );
+
+      if (
+        file.type === "image/jpeg"
+        ||
+        file.type === "image/png"
+        ||
+        file.type === "image/jpg"
+      ) {
+        reader.onload = () => {
+          this.file.emit( reader.result );
+        }
+      } else {
+        return;
       }
 
     }

@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { IMovie } from "@project-interfaces/movie.interface";
 import { MessageToastsService } from "@project-services/toast.service";
+import { LazyLoadEvent } from "primeng/api";
 
 
 @Component( {
@@ -17,6 +18,7 @@ export class MoviesComponent implements OnInit {
 
   public allMovies: IMovie[] = [];
   public incomingMovies: IMovie[] = [];
+  public virtualMovies: IMovie[] = [];
   public isMobile: boolean = ( window.innerWidth <= 650 );
   public cinemaId: string = '';
   private page: number = 1;
@@ -91,6 +93,9 @@ export class MoviesComponent implements OnInit {
     this.requestMoreMovies();
     this.incomingMovies = [];
   }
+
+
+
 }
 
 

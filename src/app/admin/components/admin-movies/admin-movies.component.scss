@@ -47,6 +47,35 @@
   text-align: center;
 }
 
+.img-container {
+  display: block;
+  width: 130px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.img-cancel {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 0.8rem;
+  padding: 0;
+  border-radius: 0.2rem;
+  background-color: $red;
+  color: $white;
+  cursor: pointer;
+  transition: $animationTime;
+}
+
+.img-cancel:hover {
+    background-color: $darkRed;
+}
+
 .img-preview {
   width: 100%;
 }

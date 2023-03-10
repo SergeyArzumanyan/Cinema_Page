@@ -155,6 +155,8 @@
   </div>
 
   <p-dialog [(visible)]="movieDialog"
+            [resizable]="false"
+            [draggable]="false"
             [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '75vw'}"
             [style]="{width: '450px'}"
             header="Movie Details"
@@ -263,15 +265,15 @@
                  style="display: none;"
                  #imgInput
                  type="file"
-                 accept="image/*"
+                 accept="image/png,image/jpg,image/jpeg"
                  (change)="onFileChange($event)" />
 
           <div class="img-preview">
-
-            <img [src]="(movieForm.controls.imgUrl.value) || (movie.imgUrl)"
-                 *ngIf="(movieForm.controls.imgUrl.value) || (movie.imgUrl)"
-                 class="selected-movie-image" alt="movie-img">
-
+            <div class="img-container" *ngIf="(movieForm.controls.imgUrl.value) || (movie.imgUrl)">
+              <div class="img-cancel" (click)="imageClear(movie)">X</div>
+              <img [src]="(movieForm.controls.imgUrl.value) || (movie.imgUrl)"
+                   class="selected-movie-image" alt="movie-img">
+            </div>
           </div>
 
           <small *ngIf="movieForm.get('imgUrl')?.hasError('required')  && submitted"
@@ -305,6 +307,8 @@
             [style]="{width: '450px'}"
             header="Add to cinema"
             [modal]="true"
+            [resizable]="false"
+            [draggable]="false"
             (onHide)="hideCinemaDialog()"
             styleClass="p-fluid">
 
