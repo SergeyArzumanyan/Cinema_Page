@@ -1,14 +1,26 @@
 <div class="wrapper">
   <h1 class="admin-title">Admin panel</h1>
   <div class="container">
-    <div class="section"
-         [routerLink]="['movies']">Movies
-    </div>
-    <div class="section"
-         [routerLink]="['cinemas']">Cinemas
-    </div>
-    <div class="section"
-         [routerLink]="['sessions']">Sessions
-    </div>
+    <button pButton
+            pRipple
+            type="button"
+            label="Movies"
+            class="btn p-button-warning"
+            [routerLink]="['movies']">
+    </button>
+    <button pButton
+            pRipple
+            type="button"
+            label="Sessions"
+            class="btn p-button-warning"
+            [routerLink]="['sessions']">
+    </button>
+    <button pButton
+            pRipple
+            type="button"
+            label="Cinemas"
+            class="btn p-button-warning"
+            [routerLink]="['cinemas']">
+    </button>
   </div>
 </div>

@@ -16,14 +16,15 @@ export class RequesthttpService {
 
   constructor(
     private http: HttpClient
-  ) {
-  }
+  ) {}
 
   public getCinemas(): Observable<ICinema[]> {
+
     return this.http.get<ICinema[]>( this.REQUEST_URL + '/cinemas' );
   }
 
   public getMovies( cinema: string, page: string, limit: string ): Observable<IMovie[]> {
+
     if ( cinema === "all" ) {
       return this.http.get<IMovie[]>( this.REQUEST_URL + `/movies?_page=${ page }&_limit=${ limit }` );
     } else {
@@ -32,14 +33,22 @@ export class RequesthttpService {
   }
 
   public getMovie( query: string ): Observable<IMovie> {
+
     return this.http.get<IMovie>( this.REQUEST_URL + query );
   }
 
   public getSession( sessionId: string | null ): Observable<ISession> {
+
     return this.http.get<ISession>( this.REQUEST_URL + '/sessions/' + sessionId );
   }
 
+  public getAllSessions(): Observable<ISession[]> {
+
+    return this.http.get<ISession[]>( this.REQUEST_URL + '/sessions' );
+  }
+
   public getUsers(): Observable<IUser[]> {
+
     return this.http.get<IUser[]>( this.REQUEST_URL + '/users' );
   }
 
@@ -47,6 +56,8 @@ export class RequesthttpService {
     email: string | null | undefined,
     password: string | null | undefined
   ): Observable<IUser[] | []> {
+
     return this.http.get<IUser[] | []>( this.REQUEST_URL + `/users/?email=${ email }&password=${ password }` );
   }
+
 }

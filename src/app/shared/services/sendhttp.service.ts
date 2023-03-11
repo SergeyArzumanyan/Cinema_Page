@@ -13,7 +13,7 @@ import { IMovie } from "@project-interfaces/movie.interface";
 export class SendhttpService {
 
   private SEND_USER_URL = 'http://localhost:3000/users';
-  private SEND_SEATS_URL = 'http://localhost:3000/sessions/';
+  private SEND_SESSIONS_URL = 'http://localhost:3000/sessions/';
   private SEND_MOVIE_URL = 'http://localhost:3000/movies/';
 
   private httpOptions = {
@@ -34,7 +34,7 @@ export class SendhttpService {
 
   public sendReservedSeats( sessionId: string | null, newSessionInfo: ISession ): Observable<ISession> {
 
-    return this.http.put<ISession>( this.SEND_SEATS_URL + sessionId, newSessionInfo, this.httpOptions );
+    return this.http.put<ISession>( this.SEND_SESSIONS_URL + sessionId, newSessionInfo, this.httpOptions );
   }
 
   public sendNewCreatedMovie( movie: IMovie ): Observable<IMovie> {
@@ -47,8 +47,18 @@ export class SendhttpService {
     return this.http.put<IMovie>( this.SEND_MOVIE_URL + movie.id, movie, this.httpOptions );
   }
 
-  public deleteMovie( movieId?: number ): Observable<IMovie> {
-    return this.http.delete<any>( this.SEND_MOVIE_URL + movieId );
+  // public deleteMovie( movieId?: number ): Observable<IMovie> {
+  //   return this.http.delete<any>( this.SEND_MOVIE_URL + movieId );
+  // }
+
+  public sendNewSession( session: ISession ): Observable<ISession> {
+
+    return this.http.post<ISession>( this.SEND_SESSIONS_URL, session );
+  }
+
+  public sendEditedSession( session: ISession ): Observable<ISession> {
+
+    return this.http.put<ISession>( this.SEND_SESSIONS_URL + session.id, session, this.httpOptions );
   }
 
 }

@@ -4,8 +4,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { MessageToastsService } from "@project-services/toast.service";
-import { IMovie } from "@project-interfaces/movie.interface";
-import { IMovieForm } from "@project-interfaces/movie-form.interface";
+import { IMovie , IMovieForm } from "@project-interfaces/movie.interface";
 
 import { ConfirmationService, MenuItem } from 'primeng/api';
 import { Table } from "primeng/table";

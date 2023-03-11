@@ -4,8 +4,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { RequesthttpService } from "@project-services/requesthttp.service";
 import { MessageToastsService } from "@project-services/toast.service";
-import { ICinema } from "@project-interfaces/cinema.interface";
-import { ICinemaForm } from "@project-interfaces/cinema-form.interface";
+import { ICinema, ICinemaForm } from "@project-interfaces/cinema.interface";
 
 import { ConfirmationService, MenuItem } from "primeng/api";
 import { Table } from "primeng/table";
@@ -169,7 +168,7 @@ export class AdminCinemasComponent implements OnInit {
     return +new Date();
   }
 
-  public clearFilters(table: Table): void {
+  public clearFilters( table: Table ): void {
 
     table.clear();
   }

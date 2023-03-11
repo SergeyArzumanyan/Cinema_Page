@@ -1,1 +1,262 @@
-<h1 style="font-size: 10rem; color: white;">ADMIN SESSIONS COMPONENT.</h1>
+<div class="table-container">
+  <h1 class="table-header">Manage Movie Sessions</h1>
+  <div class="card">
+    <p-toolbar styleClass="mb-4 gap-2">
+      <ng-template pTemplate="left">
+        <div class="toolbars">
+          <div class="toolbars-left">
+            <button pButton
+                    pRipple
+                    label="New"
+                    icon="pi pi-plus"
+                    class="p-button-info mr-2 toolbar-buttons"
+                    (click)="openNew()">
+            </button>
+            <button pButton
+                    pRipple
+                    label="Delete"
+                    icon="pi pi-trash"
+                    class="p-button-danger toolbar-buttons"
+                    (click)="deleteSelectedSessions()"
+                    [disabled]="!(selectedSessions?.length)">
+            </button>
+          </div>
+        </div>
+
+
+      </ng-template>
+    </p-toolbar>
+    <p-table #dt
+             [value]="incomingSessions"
+             styleClass="p-datatable-gridlines"
+             responsiveLayout="stack"
+             [breakpoint]="'960px'"
+             [rows]="rows"
+             [paginator]="true"
+             [globalFilterFields]="['movieId' , 'id', 'date', 'price']"
+             [tableStyle]="{'min-width': '75rem'}"
+             [(selection)]="selectedSessions"
+             [rowHover]="true"
+             [contextMenu]="cm"
+             [(contextMenuSelection)]="session"
+             dataKey="id">
+      <ng-template pTemplate="header" class="headerMoviesMobile">
+        <tr>
+
+          <th style="width: 4rem">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+
+          <th pSortableColumn="id" style="max-width: 100px;">
+            <div class="th-items">
+              <div class="left-th">
+                ID
+                <p-sortIcon field="id"></p-sortIcon>
+              </div>
+              <p-columnFilter type="numeric" field="id" display="menu"></p-columnFilter>
+            </div>
+          </th>
+
+          <th pSortableColumn="movieId" style="min-width: 100px">
+            <div class="th-items">
+              <div class="left-th">
+                MovieId
+                <p-sortIcon field="movieId"></p-sortIcon>
+              </div>
+              <p-columnFilter type="text" field="movieId" display="menu"></p-columnFilter>
+            </div>
+          </th>
+
+          <th pSortableColumn="date" style="min-width: 100px">
+            <div class="th-items">
+              <div class="left-th">
+                Date
+                <p-sortIcon field="date"></p-sortIcon>
+              </div>
+              <p-columnFilter type="text" field="date" display="menu" [showAddButton]="false"></p-columnFilter>
+            </div>
+          </th>
+
+          <th style="min-width: 100px">
+            Time
+          </th>
+
+          <th pSortableColumn="price" style="min-width: 100px">
+            <div class="th-items">
+              <div class="left-th">
+                Price
+                <p-sortIcon field="price"></p-sortIcon>
+              </div>
+              <p-columnFilter type="numeric" field="price" display="menu" [showAddButton]="false"></p-columnFilter>
+            </div>
+          </th>
+
+          <th>
+            <div class="flex">
+              <button pButton
+                      (click)="clearFilters(dt)"
+                      label="Clear"
+                      class="p-button-outlined"
+                      icon="pi pi-filter-slash">
+              </button>
+            </div>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-session>
+        <tr [pContextMenuRow]="session">
+
+          <td class="table-checkbox">
+            <p-tableCheckbox [value]="session"></p-tableCheckbox>
+          </td>
+
+          <td class="id-td">
+            {{ session.id }}
+          </td>
+
+          <td>
+            {{ session['movieId'] }}
+          </td>
+
+          <td [pTooltip]="session.date"
+              tooltipPosition="bottom"
+              [showDelay]="400"
+              [hideDelay]="100">
+            <div class="shorter-text">
+              {{ session.date }}
+            </div>
+          </td>
+
+          <td>
+            {{ session.date | date: 'HH:mm' }}
+          </td>
+
+          <td>
+            {{ session['price'] }} AMD
+          </td>
+
+          <td class="editDialogColsButtons">
+            <button pButton
+                    pRipple
+                    icon="pi pi-pencil"
+                    class="p-button-rounded p-button-info mr-2 rounded-buttons-size buttons-distance"
+                    (click)="editSession(session)">
+            </button>
+            <button pButton
+                    pRipple
+                    icon="pi pi-trash"
+                    class="p-button-rounded p-button-danger rounded-buttons-size buttons-distance"
+                    (click)="deleteSession(session)">
+            </button>
+          </td>
+
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <p-dialog [(visible)]="sessionDialog"
+            [resizable]="false"
+            [draggable]="false"
+            [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '75vw'}"
+            [style]="{width: '650px'}"
+            header="Session Info"
+            [modal]="true"
+            (onHide)="hideSessionDialog()"
+            styleClass="p-fluid">
+    <ng-template pTemplate="content">
+      <form [formGroup]="sessionForm" (ngSubmit)="saveSession()">
+
+        <div class="field editDialogCols">
+          <label for="movieId">
+            MovieId
+          </label>
+          <input class="editDialogColsInput"
+                 [ngClass]="{
+                    'ng-invalid':
+                    sessionForm.get('movieId')?.hasError('required') && submitted,
+                    'ng-dirty':
+                    sessionForm.get('movieId')?.hasError('required')  && submitted
+                    }"
+                 type="number"
+                 min="1"
+                 formControlName="movieId"
+                 pInputText
+                 id="movieId"
+                 autofocus />
+          <small *ngIf="sessionForm.get('movieId')?.hasError('required')  && submitted"
+                 class="p-error">
+            MovieId is required.
+          </small>
+        </div>
+
+
+        <div class="field editDialogCols">
+          <label for="date">
+            Date
+          </label>
+
+          <p-calendar id="date"
+                      [ngClass]="{
+                        'ng-invalid':
+                        sessionForm.get('date')?.hasError('required') && submitted,
+                        'ng-dirty':
+                        sessionForm.get('date')?.hasError('required')  && submitted
+                        }"
+                      formControlName="date"
+                      [inline]="true"
+                      [showTime]="true">
+          </p-calendar>
+
+          <small *ngIf="sessionForm.get('date')?.hasError('required')  && submitted"
+                 class="p-error">
+            Date is required.
+          </small>
+        </div>
+
+
+        <div class="field editDialogCols">
+          <label for="price">
+            Price
+          </label>
+          <input class="editDialogColsInput"
+                 [ngClass]="{
+                    'ng-invalid':
+                    sessionForm.get('price')?.hasError('required') && submitted,
+                    'ng-dirty':
+                    sessionForm.get('price')?.hasError('required')  && submitted
+                    }"
+                 type="number"
+                 min="0"
+                 formControlName="price"
+                 pInputText
+                 id="price" />
+          <small *ngIf="sessionForm.get('price')?.hasError('required')  && submitted"
+                 class="p-error">
+            Price is required.
+          </small>
+        </div>
+
+      </form>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+      <button pButton
+              pRipple
+              label="Cancel"
+              icon="pi pi-times"
+              class="p-button-text"
+              (click)="hideSessionDialog()"></button>
+      <button pButton
+              pRipple
+              label="Save"
+              icon="pi pi-check"
+              class="p-button-text"
+              (click)="saveSession()"></button>
+    </ng-template>
+  </p-dialog>
+
+  <p-confirmDialog [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '75vw'}"
+                   [style]="{width: '450px'}"></p-confirmDialog>
+  <p-contextMenu #cm [model]="items"></p-contextMenu>
+</div>

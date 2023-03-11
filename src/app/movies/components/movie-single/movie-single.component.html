@@ -53,7 +53,7 @@
             type="button"
             label="Choose tickets"
             [disabled]="!dateIsSelected"
-            [routerLink]="['/movies/' + cinema_id , selected_movie.id , selectedSession?.id]"
+            [routerLink]="['/movies/' + cinema_id , selected_movie?.id , selectedSession?.id]"
             class="p-button-warning">
     </button>
 

@@ -17,6 +17,60 @@
   ],
   "sessions": [
     {
+      "date": "2023-02-01T13:30:00.000Z",
+      "id": 1000,
+      "movieId": 1,
+      "price": 2000,
+      "seats": [
+        "seat1-1",
+        "seat6-10",
+        "seat6-7",
+        "seat6-1",
+        "seat5-4",
+        "seat5-5",
+        "seat0-8",
+        "seat0-9",
+        "seat0-4",
+        "seat3-7",
+        "seat2-8"
+      ]
+    },
+    {
+      "date": "2023-02-02T14:45:00.000Z",
+      "id": 2000,
+      "movieId": 1,
+      "price": 6000,
+      "seats": [
+        "seat1-10",
+        "seat1-9",
+        "seat4-3",
+        "seat4-1"
+      ]
+    },
+    {
+      "date": "2023-02-03T12:00:00.000Z",
+      "id": 3000,
+      "movieId": 1,
+      "price": 1500,
+      "seats": [
+        "seat2-1",
+        "seat3-7",
+        "seat5-2",
+        "seat6-8"
+      ]
+    },
+    {
+      "date": "2023-02-04T16:00:00.000Z",
+      "id": 4000,
+      "movieId": 1,
+      "price": 4500,
+      "seats": [
+        "seat4-7",
+        "seat1-7",
+        "seat6-7"
+      ]
+    },
+    {
       "date": "2023-02-01T11:30:00.000Z",
       "id": 5000,
       "movieId": 2,

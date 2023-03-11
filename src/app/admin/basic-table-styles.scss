@@ -52,6 +52,11 @@ td {
   padding: 0 1rem !important;
 }
 
+.img-td {
+  display: flex;
+  justify-content: center;
+}
+
 .shorter-text {
   width: 250px;
   white-space: nowrap;
@@ -73,7 +78,7 @@ td {
   margin: 1rem 0;
 }
 
-.buttons-distance , .toolbar-buttons {
+.buttons-distance, .toolbar-buttons {
   margin: 0.5rem;
 }
 
@@ -117,6 +122,18 @@ td {
 
   .headerMoviesMobile {
     padding: 1rem 0.5rem !important;
+  }
+
+  .toolbars {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dialog-checkbox-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 0;
   }
 
   :host ::ng-deep .p-element.p-ripple {

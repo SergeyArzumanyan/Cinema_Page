@@ -97,9 +97,13 @@ export class SessionBookComponent implements OnInit {
       target.classList.toggle( 'selected' );
       if ( !this.ticketsArr.includes( target ) ) {
         this.ticketsArr.push( target );
-        this.ticketsAllPrice += this.sessionInfo.price;
+        if ( this.sessionInfo.price ) {
+          this.ticketsAllPrice += this.sessionInfo.price;
+        }
       } else {
-        this.ticketsAllPrice -= this.sessionInfo.price;
+        if ( this.sessionInfo.price ) {
+          this.ticketsAllPrice -= this.sessionInfo.price;
+        }
         this.ticketsArr.splice( this.ticketsArr.indexOf( target ), 1 );
       }
     }
@@ -109,7 +113,9 @@ export class SessionBookComponent implements OnInit {
   public deleteTicket( ticket: any ) {
 
     ticket.classList.remove( 'selected' );
-    this.ticketsAllPrice -= this.sessionInfo.price;
+    if ( this.sessionInfo.price ) {
+      this.ticketsAllPrice -= this.sessionInfo.price;
+    }
     this.ticketsArr.splice( this.ticketsArr.indexOf( ticket ), 1 );
   }
 

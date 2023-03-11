@@ -17,11 +17,6 @@
   text-align: center !important;
 }
 
-.img-td {
-  display: flex;
-  justify-content: center;
-}
-
 .img-dropzone {
   font-size: 16px;
   width: 300px;
@@ -89,18 +84,6 @@
 }
 
 @media (max-width: 650px) {
-  .toolbars {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .dialog-checkbox-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 1rem 0;
-  }
-
   .img-td {
     display: block;
   }

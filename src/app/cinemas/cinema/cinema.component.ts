@@ -14,8 +14,16 @@ import { MessageToastsService } from "@project-services/toast.service";
 export class CinemaComponent implements OnInit {
 
   public requestedCinemas?: ICinema[] = [];
-  public cinemaInfo_1: ICinema = {}
-  public cinemaInfo_2: ICinema = {}
+  public cinemaInfo_1: ICinema = {
+    cinemaName: "",
+    cinemaDescription: "",
+    cinemaAddress: ""
+  }
+  public cinemaInfo_2: ICinema = {
+    cinemaName: "",
+    cinemaDescription: "",
+    cinemaAddress: ""
+  }
 
   constructor(
     private http: RequesthttpService,
