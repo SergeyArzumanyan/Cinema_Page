@@ -14,7 +14,6 @@ import { SafePipe } from "../shared/pipes/safe.pipe";
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { ButtonModule } from "primeng/button";
 import { RippleModule } from "primeng/ripple";
-import { VirtualScrollerModule } from 'primeng/virtualscroller';
 
 
 @NgModule( {
@@ -32,8 +31,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     ScrollPanelModule,
     ButtonModule,
     RippleModule,
-    VirtualScrollerModule
   ]
 } )
-export class MoviesModule {
-}
+
+export class MoviesModule {}
