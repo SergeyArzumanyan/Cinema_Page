@@ -1,4 +1,5 @@
-@import "../../../../../data";
+@import "../../../../../data.scss";
+@import "../../../../lara-light-buttons.scss";
 
 .form-wrapper {
   width: 100%;
@@ -109,3 +110,4 @@
     width: 100%;
   }
 }
+

@@ -1,8 +1,9 @@
 @import "../../data.scss";
+@import "../lara-light-buttons.scss";
 
 .table-container {
   margin: 1rem 0;
-  padding: 3rem 4rem;
+  padding: 20px 25px;
 }
 
 .table-header {
@@ -46,10 +47,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-td {
-  padding: 0 1rem !important;
 }
 
 .img-td {

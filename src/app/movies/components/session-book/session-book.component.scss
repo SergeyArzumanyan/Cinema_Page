@@ -1,4 +1,5 @@
-@import "../../../../data";
+@import "../../../../data.scss";
+@import "../../../lara-light-buttons.scss";
 
 :host ::ng-deep  .p-scrollpanel-bar  {
   background-color: $orange;
@@ -199,6 +200,10 @@
   font-size: 14px;
   display: block;
   width: 100px;
+}
+
+.buy-btn-block {
+  align-self: center;
 }
 
 @media (max-width: 650px) {

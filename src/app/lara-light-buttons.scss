@@ -1,0 +1,41 @@
+$white: #e8e5e5;
+
+$warningPrimary: #F59E0B;
+$warningHover: #D97706;
+$warningActive: #B45309;
+
+$successPrimary: #22C55E;
+$successHover: #16A34A;
+$successActive: #15803D;
+
+// fulfilled
+:host ::ng-deep .p-element.p-ripple.p-button-warning.p-button.p-component {
+  background-color: $warningPrimary;
+}
+
+:host ::ng-deep .p-element.p-ripple.p-button-warning.p-button.p-component:hover {
+  background-color: $warningHover;
+}
+
+:host ::ng-deep .p-element.p-ripple.p-button-warning.p-button.p-component:active {
+  background-color: $warningActive;
+}
+
+:host ::ng-deep .p-element.p-ripple.p-button-success.p-button.p-component {
+  color: $white;
+  background-color: $successPrimary;
+}
+
+:host ::ng-deep .p-element.p-ripple.p-button-success.p-button.p-component:hover {
+  background-color: $successHover;
+}
+
+:host ::ng-deep .p-element.p-ripple.p-button-success.p-button.p-component:active {
+  background-color: $successActive;
+}
+
+// outlined
+:host ::ng-deep .p-element.p-ripple.p-button-outlined.p-button-warning.back-btn.p-button.p-component {
+  background-color: transparent;
+  color: $warningPrimary;
+}

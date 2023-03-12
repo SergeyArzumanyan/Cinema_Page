@@ -14,8 +14,14 @@
   display: grid;
   grid-template-columns: repeat(3, 30% );
   width: 70%;
+  height: 100%;
   gap: 30px;
   margin: 40px auto;
+}
+
+.movies-container ::ng-deep .ui-virtualscroller-list {
+  display: grid;
+  grid-template-columns: repeat(3, 30% );
 }
 
 .card {

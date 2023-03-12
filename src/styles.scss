@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import "data";
+@import "data.scss";
 
 * {
   font-family: 'Roboto', sans-serif;
@@ -10,8 +10,6 @@ body {
   background-image: linear-gradient( 90deg,  rgb(21, 20, 20) 11.2%, rgb(42, 43, 45) 91.1% );
   margin: 0;
   padding: 0;
-  //overflow-y: scroll;
   user-select: none;
   color: #4d4848;
 }
-
