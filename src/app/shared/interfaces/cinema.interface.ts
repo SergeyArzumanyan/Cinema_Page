@@ -1,6 +1,5 @@
 import { FormControl } from "@angular/forms";
 
-
 export interface ICinema {
   "cinemaId"?: number | null,
   "cinemaName"?: string | null,

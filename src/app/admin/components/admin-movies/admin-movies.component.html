@@ -157,7 +157,7 @@
   <p-dialog [(visible)]="movieDialog"
             [resizable]="false"
             [draggable]="false"
-            [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '75vw'}"
+            [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '85vw'}"
             [style]="{width: '450px'}"
             header="Movie Details"
             [modal]="true"
@@ -254,15 +254,14 @@
           <div class="img-dropzone"
                imgDrag
                (file)="imageDropped($event)">
-            <div class="drag-message">
+            <div class="drag-message" >
               Drag your image here or
               <a class="img-browse"
                  (click)="imgInput.click()">browse</a>
             </div>
           </div>
 
-          <input class="editDialogColsFile"
-                 style="display: none;"
+          <input style="display: none;"
                  #imgInput
                  type="file"
                  accept="image/png,image/jpg,image/jpeg"

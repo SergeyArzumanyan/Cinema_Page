@@ -117,6 +117,7 @@
   </div>
 
   <p-dialog [(visible)]="cinemaDialog"
+            [breakpoints]="{'1080px': '50vw','960px': '60vw', '640px': '85vw'}"
             [style]="{width: '450px'}"
             header="Cinema Details"
             [modal]="true"

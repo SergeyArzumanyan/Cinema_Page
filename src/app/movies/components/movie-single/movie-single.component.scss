@@ -116,10 +116,6 @@
 @media (max-width: 1000px) {
   .single-wrapper {
     width: 90%;
-    margin: 0 auto;
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
   }
 
   .movie-title {
@@ -154,10 +150,6 @@
   .img-wrapper , .img-wrapper > img {
     width: 115px;
     height: 160px;
-  }
-
-  .border {
-    padding: 0.25rem 0.5rem;
   }
 
   .date-block {
