@@ -34,7 +34,6 @@
              [rows]="rows"
              [paginator]="true"
              [globalFilterFields]="['movieId' , 'id', 'date', 'price']"
-             [tableStyle]="{'min-width': '75rem'}"
              [(selection)]="selectedSessions"
              [rowHover]="true"
              [contextMenu]="cm"
@@ -43,7 +42,7 @@
       <ng-template pTemplate="header" class="headerMoviesMobile">
         <tr>
 
-          <th style="width: 4rem">
+          <th style="width: 4rem" class="checkbox-td">
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
 
@@ -106,7 +105,7 @@
       <ng-template pTemplate="body" let-session>
         <tr [pContextMenuRow]="session">
 
-          <td class="table-checkbox">
+          <td class="checkbox-td">
             <p-tableCheckbox [value]="session"></p-tableCheckbox>
           </td>
 

@@ -8,6 +8,8 @@ import { ICinema, ICinemaForm } from "@project-interfaces/cinema.interface";
 
 import { ConfirmationService, MenuItem } from "primeng/api";
 import { Table } from "primeng/table";
+import { IMovie } from "@project-interfaces/movie.interface";
+import { SendhttpService } from "@project-services/sendhttp.service";
 
 @Component( {
   selector: 'app-admin-cinemas',
@@ -34,7 +36,7 @@ export class AdminCinemasComponent implements OnInit {
   ];
 
 
-  public form = new FormGroup<ICinemaForm>( {
+  public cinemaForm = new FormGroup<ICinemaForm>( {
     cinemaName: new FormControl( null, [
       Validators.required,
 
@@ -44,11 +46,15 @@ export class AdminCinemasComponent implements OnInit {
     ] ),
     cinemaAddress: new FormControl( null, [
       Validators.required,
-    ] )
+    ] ),
+    cinemaImg: new FormControl(null , [
+      Validators.required
+    ])
   } )
 
   constructor(
     private requestHttp: RequesthttpService,
+    private sendHttp: SendhttpService,
     private confirmationService: ConfirmationService,
     private toastMessage: MessageToastsService
   ) {
@@ -87,6 +93,14 @@ export class AdminCinemasComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.incomingCinemas = this.incomingCinemas.filter( val => !this.selectedCinemas?.includes( val ) );
+
+        // delete cinemas from the server
+
+        // this.selectedCinemas?.map( cinema => {
+        //   this.sendHttp.deleteCinema( cinema.id );
+        // } )
+
+
         this.selectedCinemas = null;
         this.toastMessage.deleteItems( "Cinemas" );
       }
@@ -96,6 +110,8 @@ export class AdminCinemasComponent implements OnInit {
   public editCinema( cinema: ICinema ) {
 
     this.cinema = { ...cinema };
+    this.cinemaForm.patchValue( this.cinema );
+
     this.cinemaDialog = true;
   }
 
@@ -109,13 +125,28 @@ export class AdminCinemasComponent implements OnInit {
         this.incomingCinemas = this.incomingCinemas.filter( val => val.cinemaId !== cinema.cinemaId );
         this.cinema = {};
         this.toastMessage.deleteItems( "Cinemas" );
+
+        // delete movie from server
+
+        // this.sendHttp.deleteCinema( cinema.id )
+        // .subscribe( {
+        //   next: () => {
+        //     this.incomingCinemas = this.incomingCinemas.filter( val => val.cinemaId !== cinema.cinemaId );
+        //     this.cinema = {};
+        //     this.toastMessage.deleteItems( "Cinemas" );
+        //   },
+        //   error: () => {
+        //      this.toastMessage.deleteItems( "Cinemas" );
+        //   }
+        // } )
+
       }
     } );
   }
 
   public hideDialog() {
 
-    this.form.reset();
+    this.cinemaForm.reset();
     this.cinemaDialog = false;
     this.submitted = false;
   }
@@ -124,29 +155,52 @@ export class AdminCinemasComponent implements OnInit {
 
     this.submitted = true;
     if (
-      this.form.valid
+      this.cinemaForm.valid
       &&
-      this.form.value.cinemaName?.trim()
+      this.cinemaForm.value.cinemaName?.trim() !== ""
       &&
-      this.form.value.cinemaDescription?.trim()
+      this.cinemaForm.value.cinemaDescription?.trim() !== ""
       &&
-      this.form.value.cinemaAddress?.trim()
+      this.cinemaForm.value.cinemaAddress?.trim() !== ""
+      &&
+      this.cinemaForm.value.cinemaImg
     ) {
       if ( this.cinema.cinemaId ) {
-        this.incomingCinemas[this.findIndexById( this.cinema.cinemaId.toString() )] = this.cinema;
+        this.cinema = { ...this.cinema, ...this.cinemaForm.value };
+        console.log( this.cinema );
+        this.sendHttp.sendEditedCinema( this.cinema )
+          .pipe( take( 1 ) ).subscribe();
+
+        if ( this.cinema.cinemaId ) {
+          this.incomingCinemas[this.findIndexById( this.cinema.cinemaId.toString() )] = this.cinema;
+        }
         this.toastMessage.updateItem( "Cinema" );
       } else {
-        this.cinema = { ...this.form.value };
-        this.cinema.cinemaId = this.createId();
+        console.log("ste mtav")
+        this.cinema = { ...this.cinemaForm.value };
+        this.cinema.id = this.cinema.cinemaId = this.createId();
         this.incomingCinemas.push( this.cinema );
-        this.toastMessage.createItem( "Cinema" );
+
+
+        this.sendHttp.sendNewCinema( this.cinema )
+          .pipe( take( 1 ) )
+          .subscribe( {
+            next: () => {
+              this.toastMessage.createItem( "Cinema" );
+            },
+            error: () => {
+              this.toastMessage.fileSizeError();
+              return;
+            }
+          } )
       }
+
 
       this.incomingCinemas = [ ...this.incomingCinemas ];
       this.cinemaDialog = false;
       this.cinema = {};
       this.submitted = false;
-      this.form.reset();
+      this.cinemaForm.reset();
     }
   }
 
@@ -171,6 +225,33 @@ export class AdminCinemasComponent implements OnInit {
   public clearFilters( table: Table ): void {
 
     table.clear();
+  }
+
+  public onFileChange( event: any ) {
+
+    const reader = new FileReader();
+
+    if ( event.target.files && event.target.files.length ) {
+      const [ file ] = event.target.files;
+      reader.readAsDataURL( file );
+
+      reader.onload = () => {
+        this.cinemaForm.controls.cinemaImg.setValue( reader.result as string );
+      };
+
+    }
+  }
+
+
+  public imageDropped( imgUrl: any ): void {
+
+    this.cinemaForm.controls.cinemaImg.setValue( imgUrl );
+  }
+
+  public imageClear(cinema: ICinema): void {
+
+    cinema.cinemaImg = null
+    this.cinemaForm.patchValue( cinema );
   }
 
 }

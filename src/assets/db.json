@@ -1,6 +1,7 @@
 {
   "cinemas": [
     {
+      "id": 10000,
       "cinemaId": 1,
       "cinemaName": "Rio Mall",
       "cinemaImg": "./assets/images/cinemas/cinema1.png",
@@ -8,6 +9,7 @@
       "cinemaAddress": "8 Vahram Papazyan St, Yerevan 0012"
     },
     {
+      "id": 20000,
       "cinemaId": 2,
       "cinemaName": "Dalma Garden Mall",
       "cinemaImg": "./assets/images/cinemas/cinema2.png",

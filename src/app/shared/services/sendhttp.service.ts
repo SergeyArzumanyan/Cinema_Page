@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { ISession } from "../interfaces/session.interface";
 import { IRegisterForm, IUser } from "../interfaces/authorization.interface";
 import { IMovie } from "@project-interfaces/movie.interface";
+import { ICinema } from "@project-interfaces/cinema.interface";
 
 @Injectable( {
   providedIn: 'root'
@@ -12,8 +13,9 @@ import { IMovie } from "@project-interfaces/movie.interface";
 
 export class SendhttpService {
 
+  private SEND_CINEMA_URL = 'http://localhost:3000/cinemas/';
   private SEND_USER_URL = 'http://localhost:3000/users';
-  private SEND_SESSIONS_URL = 'http://localhost:3000/sessions/';
+  private SEND_SESSION_URL = 'http://localhost:3000/sessions/';
   private SEND_MOVIE_URL = 'http://localhost:3000/movies/';
 
   private httpOptions = {
@@ -34,7 +36,7 @@ export class SendhttpService {
 
   public sendReservedSeats( sessionId: string | null, newSessionInfo: ISession ): Observable<ISession> {
 
-    return this.http.put<ISession>( this.SEND_SESSIONS_URL + sessionId, newSessionInfo, this.httpOptions );
+    return this.http.put<ISession>( this.SEND_SESSION_URL + sessionId, newSessionInfo, this.httpOptions );
   }
 
   public sendNewCreatedMovie( movie: IMovie ): Observable<IMovie> {
@@ -53,12 +55,22 @@ export class SendhttpService {
 
   public sendNewSession( session: ISession ): Observable<ISession> {
 
-    return this.http.post<ISession>( this.SEND_SESSIONS_URL, session );
+    return this.http.post<ISession>( this.SEND_SESSION_URL, session );
   }
 
   public sendEditedSession( session: ISession ): Observable<ISession> {
 
-    return this.http.put<ISession>( this.SEND_SESSIONS_URL + session.id, session, this.httpOptions );
+    return this.http.put<ISession>( this.SEND_SESSION_URL + session.id, session, this.httpOptions );
+  }
+
+  public sendNewCinema( cinema: ICinema ): Observable<ICinema> {
+
+    return this.http.post<ICinema>( this.SEND_CINEMA_URL, cinema );
+  }
+
+  public sendEditedCinema( cinema: ICinema ): Observable<ICinema> {
+
+    return this.http.put<ICinema>( this.SEND_CINEMA_URL + cinema.id, cinema, this.httpOptions );
   }
 
 }

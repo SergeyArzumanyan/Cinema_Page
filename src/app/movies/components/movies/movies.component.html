@@ -1,39 +1,49 @@
 <h3 class="movies-title">Ongoing Movies</h3>
-<div class="movies-container"
-     infiniteScroll
+
+<div infiniteScroll
+     [infiniteScrollContainer]="'.movies-container'"
      [infiniteScrollDistance]="2"
      [infiniteScrollThrottle]="50"
      [infiniteScrollDisabled]="infiniteScrollDisabled"
      (scrolled)="onScroll()">
-  <div class="card"
-       *ngFor="let movie of allMovies">
-    <img *ngIf="!isMobile"
-         [src]="movie.imgUrl"
-         alt="movie-img"
-         class="movie-img"
+
+  <div class="movies-container"
+       virtualScroller
+       [items]="allMovies"
+       (vsUpdate)="incomingMovies = $event">
+
+    <div class="card" *ngFor="let movie of incomingMovies">
+      <img *ngIf="!isMobile"
+           [src]="movie.imgUrl"
+           alt="movie-img"
+           class="movie-img"
+           [routerLink]="['/movies/' + cinemaId , movie.id]">
+      <img *ngIf="isMobile"
+           [src]="movie.imgUrl"
+           alt="movie-img"
+           class="movie-img">
+      <p class="movie-title"
+         *ngIf="!isMobile"
          [routerLink]="['/movies/' + cinemaId , movie.id]">
-    <img *ngIf="isMobile"
-         [src]="movie.imgUrl"
-         alt="movie-img"
-         class="movie-img">
-    <p class="movie-title"
-       *ngIf="!isMobile"
-       [routerLink]="['/movies/' + cinemaId , movie.id]">
-      {{movie.name}}
-    </p>
-    <p class="movie-title"
-       *ngIf="isMobile">
-      {{movie.name}}
-    </p>
-    <button class="movie-btn"
-            [routerLink]="['/movies/' + cinemaId , movie.id]">See Tickets
-    </button>
+        {{movie.name}}
+      </p>
+      <p class="movie-title"
+         *ngIf="isMobile">
+        {{movie.name}}
+      </p>
+      <button class="movie-btn"
+              [routerLink]="['/movies/' + cinemaId , movie.id]">See Tickets
+      </button>
+    </div>
+
   </div>
+
 </div>
-<div class="loading-wrapper" *ngIf="incomingMovies.length !== 0">
-  <div class="loader">
-    <i class="pi pi-spin pi-spinner loader-spinner"></i>
-    Loading...
-  </div>
-</div>
+
+
+
+
+
+
+
 

@@ -1,1 +1,72 @@
 @import "../../basic-table-styles.scss";
+
+.img-dropzone {
+  font-size: 16px;
+  width: 300px;
+  height: 150px;
+  display: table;
+  background-color: transparent !important;
+  border: 2px dashed #aaa;
+  margin: 25px auto;
+  border-radius: 1rem;
+}
+
+.img-browse {
+  color: #3B82F6;
+  cursor: pointer;
+}
+.img-browse:hover {
+  text-decoration: underline;
+}
+
+.drag-message {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.img-container {
+  display: block;
+  width: 130px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.img-cancel {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 0.8rem;
+  padding: 0;
+  border-radius: 0.2rem;
+  background-color: $red;
+  color: $white;
+  cursor: pointer;
+  transition: $animationTime;
+}
+
+.img-cancel:hover {
+  background-color: $darkRed;
+}
+
+.img-preview {
+  width: 100%;
+}
+
+.selected-cinema-image {
+  display: block;
+  width: 130px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  padding: 5px;
+}

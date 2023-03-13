@@ -132,7 +132,8 @@ export class AdminMoviesComponent implements OnInit {
 
         // delete movie from server
 
-        // this.sendHttp.deleteMovie( movie.id ).subscribe( {
+        // this.sendHttp.deleteMovie( movie.id )
+        // .subscribe( {
         //   next: () => {
         //     this.incomingMovies = this.incomingMovies.filter( val => val.id !== movie.id );
         //     this.movie = {};

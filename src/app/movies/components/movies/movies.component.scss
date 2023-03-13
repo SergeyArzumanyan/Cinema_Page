@@ -10,17 +10,17 @@
   border-bottom: 2px solid $white;
 }
 
-.movies-container {
-  display: grid;
+:host ::ng-deep .scrollable-content {
+  display: grid !important;
   grid-template-columns: repeat(3, 30% );
-  width: 70%;
   gap: 30px;
   margin: 40px auto;
 }
 
-.movies-container ::ng-deep .ui-virtualscroller-list {
-  display: grid;
-  grid-template-columns: repeat(3, 30% );
+.movies-container {
+  width: 70%;
+  height: 720px;
+  margin: 25px auto;
 }
 
 .card {
@@ -99,47 +99,31 @@
   padding: 0;
 }
 
-
-.loader {
-  color: $white;
-  text-align: center;
-  font-size: 16px;
-}
-
-.loader-spinner {
-  font-size: 16px;
-  margin: 0 5px;
-}
-
 @media (min-width: 1400px) {
   .movies-container {
     width: 75%;
-    gap: 60px;
+  }
+
+  :host ::ng-deep .scrollable-content {
     grid-template-columns: repeat(4, 22.5% );
   }
 }
 
-@media (max-width: 950px) {
-  .loader {
-    font-size: 1rem;
-  }
-
-  .loader-spinner {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .movies-title {
     width: 50%;
     margin: 2rem auto;
     font-size: 1.5rem;
   }
 
+  :host ::ng-deep .scrollable-content {
+    width: 95% !important;
+    gap: 5% 3%;
+    grid-template-columns: repeat(2 , 50%);
+  }
+
   .movies-container {
     width: 90%;
-    gap: 50px 25px;
-    grid-template-columns: repeat(2 , 45%);
   }
 
   .movie-title {

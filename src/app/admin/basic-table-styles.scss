@@ -49,9 +49,8 @@
   align-items: center;
 }
 
-.img-td {
-  display: flex;
-  justify-content: center;
+.img-td , .checkbox-td {
+  text-align: center !important;
 }
 
 .shorter-text {
@@ -84,6 +83,7 @@
   height: 75px;
   margin: 2px auto;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 @media (max-width: 950px) {
@@ -114,7 +114,7 @@
   }
 
   .editDialogColsButtons {
-    justify-content: flex-end !important;
+    justify-content: flex-start !important;
   }
 
   .headerMoviesMobile {
@@ -145,7 +145,7 @@
     margin: 1rem 0;
   }
 
-  .table-checkbox {
+  .checkbox-td {
     margin: 0 0 2rem 0;
   }
 

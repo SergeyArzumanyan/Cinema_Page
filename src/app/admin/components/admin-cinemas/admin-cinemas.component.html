@@ -28,7 +28,6 @@
              [rows]="rows"
              [paginator]="true"
              [globalFilterFields]="['cinemaName' , 'id']"
-             [tableStyle]="{'min-width': '75rem'}"
              [(selection)]="selectedCinemas"
              [rowHover]="true"
              [contextMenu]="cm"
@@ -37,7 +36,7 @@
       <ng-template pTemplate="header" class="headerMoviesMobile">
         <tr>
 
-          <th style="width: 4rem">
+          <th style="width: 4rem" class="checkbox-td">
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
 
@@ -50,6 +49,8 @@
               <p-columnFilter class="filter-margin" type="numeric" field="cinemaId" display="menu"></p-columnFilter>
             </div>
           </th>
+
+          <th>Img</th>
 
           <th pSortableColumn="cinemaName" style="min-width:15rem">
             <div class="th-items">
@@ -76,11 +77,19 @@
       </ng-template>
       <ng-template pTemplate="body" let-cinema>
         <tr [pContextMenuRow]="cinema">
-          <td class="table-checkbox">
+
+          <td class="checkbox-td">
             <p-tableCheckbox [value]="cinema"></p-tableCheckbox>
           </td>
+
           <td>{{ cinema['cinemaId'] }}</td>
+
+          <td class="img-td">
+            <img [src]="cinema['cinemaImg']" [alt]="cinema['cinemaName']" class="table-img">
+          </td>
+
           <td>{{ cinema['cinemaName'] }}</td>
+
           <td [pTooltip]="cinema['cinemaDescription']"
               tooltipPosition="bottom"
               [showDelay]="400"
@@ -89,6 +98,7 @@
               {{ cinema['cinemaDescription'] }}
             </div>
           </td>
+
           <td [pTooltip]="cinema['cinemaAddress']"
               tooltipPosition="bottom"
               [showDelay]="400"
@@ -97,6 +107,7 @@
               {{ cinema['cinemaAddress'] }}
             </div>
           </td>
+
           <td class="editDialogColsButtons">
             <button pButton
                     pRipple
@@ -111,6 +122,7 @@
                     (click)="deleteCinema(cinema)">
             </button>
           </td>
+
         </tr>
       </ng-template>
     </p-table>
@@ -126,7 +138,7 @@
             (onHide)="hideDialog()"
             styleClass="p-fluid">
     <ng-template pTemplate="content">
-      <form [formGroup]="form" (ngSubmit)="saveCinema()">
+      <form [formGroup]="cinemaForm" (ngSubmit)="saveCinema()">
 
         <div class="field editDialogCols">
           <label for="name">
@@ -134,8 +146,13 @@
           </label>
           <input class="editDialogColsInput"
                  [ngClass]="{
-                    'ng-invalid': submitted || !form.value.cinemaName?.trim() && submitted,
-                    'ng-dirty': submitted || !form.value.cinemaName?.trim() && submitted
+                    'ng-invalid':
+                    cinemaForm.get('cinemaName')?.hasError('required') && submitted
+                    ||
+                    !cinemaForm.value.cinemaName?.trim() && submitted,
+                    'ng-dirty':
+                    cinemaForm.get('cinemaName')?.hasError('required')  && submitted
+                    || !cinemaForm.value.cinemaName?.trim() && submitted
                     }"
                  type="text"
                  formControlName="cinemaName"
@@ -143,9 +160,8 @@
                  [(ngModel)]="cinema.cinemaName"
                  id="name"
                  autofocus />
-          <small *ngIf="form.get('cinemaName')?.hasError('required')  && submitted
-                         ||
-                         !cinema.cinemaName?.trim() && submitted"
+          <small *ngIf="cinemaForm.get('cinemaName')?.hasError('required')  && submitted
+                        || !cinemaForm.value.cinemaName?.trim() && submitted"
                  class="p-error">
             Name is required.
           </small>
@@ -157,8 +173,13 @@
           </label>
           <textarea class="editDialogColTextArea"
                     [ngClass]="{
-                    'ng-invalid': submitted || !form.value.cinemaName?.trim() && submitted,
-                    'ng-dirty': submitted || !form.value.cinemaName?.trim() && submitted
+                    'ng-invalid':
+                    cinemaForm.get('cinemaDescription')?.hasError('required') && submitted
+                    ||
+                    !cinemaForm.value.cinemaDescription?.trim() && submitted,
+                    'ng-dirty':
+                    cinemaForm.get('cinemaDescription')?.hasError('required')  && submitted
+                    || !cinemaForm.value.cinemaDescription?.trim() && submitted
                     }"
                     id="description"
                     formControlName="cinemaDescription"
@@ -167,9 +188,8 @@
                     rows="3"
                     cols="20">
           </textarea>
-          <small *ngIf="form.get('cinemaDescription')?.hasError('required')  && submitted
-                         ||
-                         !cinema.cinemaDescription?.trim() && submitted"
+          <small *ngIf="cinemaForm.get('cinemaDescription')?.hasError('required')  && submitted
+                        || !cinemaForm.value.cinemaDescription?.trim() && submitted"
                  class="p-error">
             Description is required.
           </small>
@@ -181,20 +201,62 @@
           </label>
           <input class="editDialogColsInput"
                  [ngClass]="{
-                    'ng-invalid': submitted || !form.value.cinemaName?.trim() && submitted,
-                    'ng-dirty': submitted || !form.value.cinemaName?.trim() && submitted
+                    'ng-invalid':
+                    cinemaForm.get('cinemaAddress')?.hasError('required') && submitted
+                    ||
+                    !cinemaForm.value.cinemaAddress?.trim() && submitted,
+                    'ng-dirty':
+                    cinemaForm.get('cinemaAddress')?.hasError('required')  && submitted
+                    || !cinemaForm.value.cinemaAddress?.trim() && submitted
                     }"
                  type="text"
                  id="address"
                  formControlName="cinemaAddress"
                  [(ngModel)]="cinema.cinemaAddress"
                  pInputText />
-          <small *ngIf="form.get('cinemaAddress')?.hasError('required')  && submitted
-                         ||
-                         !cinema.cinemaAddress?.trim() && submitted"
+          <small *ngIf="cinemaForm.get('cinemaAddress')?.hasError('required')  && submitted
+                        || !cinemaForm.value.cinemaAddress?.trim() && submitted"
                  class="p-error">
             Address is required.
           </small>
+        </div>
+
+        <div class="field editDialogCols">
+
+          <label>
+            Image
+          </label>
+
+
+          <div class="img-dropzone"
+               imgDrag
+               (file)="imageDropped($event)">
+            <div class="drag-message">
+              Drag your image here or
+              <a class="img-browse"
+                 (click)="imgInput.click()">browse</a>
+            </div>
+          </div>
+
+          <input style="display: none;"
+                 #imgInput
+                 type="file"
+                 accept="image/png,image/jpg,image/jpeg"
+                 (change)="onFileChange($event)" />
+
+          <div class="img-preview">
+            <div class="img-container" *ngIf="(cinemaForm.controls.cinemaImg.value) || (cinema.cinemaImg)">
+              <div class="img-cancel" (click)="imageClear(cinema)">X</div>
+              <img [src]="(cinemaForm.controls.cinemaImg.value) || (cinema.cinemaImg)"
+                   class="selected-cinema-image" [alt]="cinema.cinemaName">
+            </div>
+          </div>
+
+          <small *ngIf="cinemaForm.get('cinemaImg')?.hasError('required')  && submitted"
+                 class="p-error">
+            Image is required.
+          </small>
+
         </div>
 
       </form>

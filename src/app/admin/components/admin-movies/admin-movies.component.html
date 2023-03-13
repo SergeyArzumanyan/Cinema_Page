@@ -44,7 +44,6 @@
              [rows]="rows"
              [paginator]="true"
              [globalFilterFields]="['name' , 'id']"
-             [tableStyle]="{'min-width': '75rem'}"
              [(selection)]="selectedMovies"
              [rowHover]="true"
              [contextMenu]="cm"
@@ -53,7 +52,7 @@
       <ng-template pTemplate="header" class="headerMoviesMobile">
         <tr>
 
-          <th style="width: 4rem">
+          <th style="width: 4rem" class="checkbox-td">
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
 
@@ -95,7 +94,7 @@
       <ng-template pTemplate="body" let-movie>
         <tr [pContextMenuRow]="movie">
 
-          <td class="table-checkbox">
+          <td class="checkbox-td">
             <p-tableCheckbox [value]="movie"></p-tableCheckbox>
           </td>
 
@@ -254,7 +253,7 @@
           <div class="img-dropzone"
                imgDrag
                (file)="imageDropped($event)">
-            <div class="drag-message" >
+            <div class="drag-message">
               Drag your image here or
               <a class="img-browse"
                  (click)="imgInput.click()">browse</a>
