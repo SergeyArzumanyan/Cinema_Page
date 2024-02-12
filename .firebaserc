@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cinema--page",
+  },
+  "targets": {
+    "cinema--page": {
+      "hosting": {
+        "cinema--page": [
+          "cinema--page"
+        ]
+      }
+    }
+  }
+}
