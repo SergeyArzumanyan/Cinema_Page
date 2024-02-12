@@ -12,7 +12,7 @@ import { IUser } from "../interfaces/authorization.interface";
 } )
 export class RequesthttpService {
 
-  private REQUEST_URL = 'http://localhost:3000';
+  private REQUEST_URL = 'https://cinema-json-server.onrender.com';
 
   constructor(
     private http: HttpClient

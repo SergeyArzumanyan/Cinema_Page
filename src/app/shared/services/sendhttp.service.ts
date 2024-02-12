@@ -13,10 +13,10 @@ import { ICinema } from "@project-interfaces/cinema.interface";
 
 export class SendhttpService {
 
-  private SEND_CINEMA_URL = 'http://localhost:3000/cinemas/';
-  private SEND_USER_URL = 'http://localhost:3000/users';
-  private SEND_SESSION_URL = 'http://localhost:3000/sessions/';
-  private SEND_MOVIE_URL = 'http://localhost:3000/movies/';
+  private SEND_CINEMA_URL = 'https://cinema-json-server.onrender.com//cinemas/';
+  private SEND_USER_URL = 'https://cinema-json-server.onrender.com//users';
+  private SEND_SESSION_URL = 'https://cinema-json-server.onrender.com//sessions/';
+  private SEND_MOVIE_URL = 'https://cinema-json-server.onrender.com//movies/';
 
   private httpOptions = {
     headers: new HttpHeaders( {
